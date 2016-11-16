@@ -7,7 +7,7 @@ if (!defined('BASEPATH')) {
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>中山市走出去项目管理系统-管理员后台</title>
+        <title>微信抢红包项目管理系统-管理员后台</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />   
         <!--meta http-equiv="X-UA-Compatible" content="IE=edge" /-->
         <style>
@@ -175,7 +175,7 @@ if (!defined('BASEPATH')) {
 
             <div class="dl-title">
              <!--<img src="/chinapost/Public/assets/img/top.png">-->			 
-			 中山市走出去项目管理系统-管理员后台
+			 微信抢红包项目管理系统-管理员后台
             </div>
 
             <div class="dl-log">
