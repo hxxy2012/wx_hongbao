@@ -1,0 +1,86 @@
+@charset "utf-8";
+/* CSS Document */
+body{font-family: 'Microsoft Yahei','微软雅黑'; font-size:14px; background:url(bg.jpg) fixed; background-size:cover; line-height:150%;}
+*{ margin:0; padding:0;}
+nav ul{list-style:none}
+ul,ol { list-style: none outside none; }
+.f_l{ float:left;}
+.f_r{ float:right;}
+a{ text-decoration:none; color:#333;}
+a:hover{ color:#e51717;}
+.clear{ clear:both;}
+h1,h2,h3,h4,h5,h6{ font-weight:normal;}
+img{ border:0;}
+.r5{-moz-border-radius: 5px;      /* Gecko browsers */-webkit-border-radius: 5px;   /* Webkit browsers */border-radius:5px;}
+.r10{-moz-border-radius: 8px;      /* Gecko browsers */-webkit-border-radius: 8px;   /* Webkit browsers */border-radius:8px;}
+/**********************/
+.logo{ width:599px; margin:0 auto; padding-top:60px; padding-bottom:25px;}
+.login{ background:url(index_01.png); width:1000px; height:335px; margin:0 auto;}
+.login ul{ width:415px; float:right; margin-right:70px; margin-top:40px;}
+.login span{ font-size:14px; color:#333; width:60px; display:inline-block;}
+.login_box1,.login_box2{ height:40px; line-height:40px; border:1px solid #000; font-size:16px;}
+.login_box1{ width:300px; padding:0 10px;}
+.login_box2{ width:160px; padding:0 10px;}
+.login img{ vertical-align:middle; display:inline-block; margin-left:10px;}
+.login li{ height:63px;}
+.login_btn1,.login_btn2,.login_btn3{ width:121px; height:35px; margin:10px 5px; text-align:center; border:0; cursor:pointer; font-size:17px; line-height:35px;}
+.login_btn1{ background:#0085d0; color:#fff;}
+.login_btn1:hover{ font-weight:bold; color:#001c58;}
+.login_btn2{ background:#eb6100; color:#fff;}
+.login_btn2:hover{ font-weight:bold; color:#333;}
+.login_btn3{ background:#959595; color:#fff;}
+.login_btn3:hover{ font-weight:bold; color:#000;}
+/**********/
+.middle{ background:url(index_02.png) repeat-x #3e89c7; width:1000px; margin:0 auto; min-height:218px;}
+.foot{width:1000px; margin:0 auto; height:28px;}
+.news,.activity{ float:left; width:480px; margin:10px;}
+.news h3,.activity h3{ color:#fff; font-size:24px; margin-bottom:15px; line-height:150%; font-weight:bold;}
+.news h4{ color:#fff100; width:480px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.news li{ border-bottom:1px dashed #333; margin-bottom:15px; padding-bottom:5px;font-size:14px;}
+.news a{ color:#fff; }
+.news a:hover{ color:#333;}
+.news p{ text-indent:2em;}
+.activity img{ float:left; width:176px; height:106px; margin-right:10px;}
+.activity p{ float:left; width:294px;}
+.activity li{ height:110px; width:480px; border-bottom:1px dashed #333; margin-bottom:15px; overflow:hidden;}
+.activity h4{ color:#fff100; width:100%;}
+.activity a{ color:#fff;}
+.activity a:hover{ color:#333;}
+/****************/
+#login{ width:900px; margin:0px auto;}
+#login h3{ text-align:center; font-size:36px; line-height:180%; padding:15px 0; margin-bottom:15px; border-bottom:1px solid #333; color:#fff; font-weight:bold;}
+#login ul{ padding:0 30px;}
+#login li{ font-size:16px; color:#fff; min-height:35px;}
+#login span{ width:120px; text-align:right; display:inline-block;}
+#login .login_box3{ line-height:25px; height:25px; border:1px solid #333; padding:0 10px;}
+.login_btn4{ border:0; height:25px; text-align:center; width:100px; background:#ccc; color:#333; cursor:pointer; margin-left:10px; font-size:16px;}
+.login_btn4:hover{ background:#f60; color:#fff;}
+/******/
+.middle h1{ font-size:36px; color:#fff; line-height:180%; padding:15px;}
+.news_list{ width:960px; margin:0 auto;}
+.news_list li{ border-bottom:1px dashed #333; margin-bottom:15px; padding-bottom:5px;font-size:14px;}
+.news_list h4{ color:#fff100; width:480px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.news_list a{ color:#fff; }
+.news_list a:hover{ color:#333;}
+/****fy***/
+.list_fy{ margin:20px; text-align:center; width:100%; margin-bottom:0; padding-bottom:20px;}
+.list_fy a{ display:inline-block; border:1px solid #cacaca; width:24px; height:24px; line-height:24px; text-align:center; color:#444; margin-right:5px; background:#fff;}
+.list_fy .fy_box{ width:38px; line-height:22px; border:1px solid #cacaca; margin:0 5px; padding:0 3px;}
+.list_fy .fy_btn{ border:1px solid #cacaca; height:24px; line-height:24px; text-align:center; color:#444444; cursor:pointer;}
+.list_fy a:hover,.list_fy .on,.list_fy .fy_btn:hover{ background:#f05225; color:#fff;border:1px solid #f05225;}
+/**************/
+.act_list{width:960px; margin:0 auto;}
+.act_list img{ float:left; width:176px; height:106px; margin-right:20px;}
+.act_list p{ float:left;}
+.act_list li{ height:110px; width:960px; border-bottom:1px dashed #333; margin-bottom:25px; overflow:hidden;}
+.act_list h4{ color:#fff100; width:100%;}
+.act_list a{ color:#fff;}
+.act_list a:hover{ color:#333;}
+/***********/
+.title{ font-size:36px; text-align:center; line-height:180%; color:#fff; padding:20px 10px; padding-bottom:0px;}
+.time{ text-align:center; font-size:14px; color:#ddd; padding-bottom:10px; border-bottom:1px solid #ddd; width:980px; margin:0 auto; margin-bottom:15px;}
+.page{ width:980px; margin:0 auto; line-height:24px; color:#fff;}
+.page img{ max-width:100%;}
+.list_back{border-top:1px solid #c3c3c3;width:940px; margin:0 auto; text-align:center; padding:20px; margin-top:20px;}
+.list_back a{ color:#fff; font-size:18px;}
+.list_back a:hover{ color:#91282e;}

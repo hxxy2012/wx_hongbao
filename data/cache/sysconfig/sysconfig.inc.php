@@ -1,0 +1,36 @@
+<?php
+/*网站基本信息配置*/
+/*author wangjian*/
+/*time 2014_03_03*/
+$cdf_install ='kkk';
+$cfg_cookie_encode ='UsSQu3494J';
+$cfg_thumb_small ='200';
+$cfg_isopen_huiyuan ='Y';
+$des ='----wx983b3bb525b5b1ea';
+$cfg_zhian_open ='N';
+$cfg_thumb_mid ='400';
+$cfg_memcsche ='N';
+$cfg_xingneng ='120';
+$cfg_thumb_small_height ='160';
+$cfg_thumb_big ='800';
+$cfg_thumb_mid_height ='300';
+$cfg_thumb_big_height ='600';
+$sms_name ='';
+$sms_pwd ='';
+$weixin_token ='s4T8ofildchxs29o369o';
+$weixin_appid ='wx983b3bb525b5b1ea';
+$weixin_appsecret ='d53fec545d5642ef0d621bb7167383cd';
+$cfg_weixin_type ='2';
+$site_fullname ='中山市走出去项目管理系统';
+$site_keywd ='中山市走出去项目管理系统';
+$site_desc ='中山市走出去项目管理系统';
+$cfg_tel ='0760-88990009';
+$cfg_www ='http://www.baidu.com';
+$cfg_cookie_domain ='www.wxhongbao.com';
+$cfg_qq ='';
+$cfg_qianfei ='请未交本年度会员费的单位尽快缴交';
+$cfg_sms_open ='N';
+$cfg_beian_day ='7';
+$cfg_dx_server_url ='http://localhost/services/cmcc_mas_wbs';
+$failed_login_limitnum ='3';
+$failed_login_limittime ='30';

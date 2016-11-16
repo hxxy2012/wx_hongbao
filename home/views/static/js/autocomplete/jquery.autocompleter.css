@@ -1,0 +1,77 @@
+/*
+ * jquery-autocompleter v0.1.10 - 2015-01-22
+ * Simple, easy, customisable and with localStorage cache support.
+ * http://github.com/ArtemFitiskin/jquery-autocompleter
+ *
+ * Copyright 2015 Artem Fitiskin; MIT Licensed
+ */
+
+.autocompleter {
+    width: 511px;
+    background: #ffffff;
+    position:absolute;
+    top: 25px;
+    left: 0px;
+    z-index: 100;
+	color:#000000;
+	border:#cccccc solid 1px;
+	display:none;
+}
+
+.autocompleter-show {
+    display: block;
+}
+
+.autocompleter,
+.autocompleter-hint {
+    position: absolute;
+}
+
+.autocompleter-list {
+ box-shadow: inset 0px 0px 1px rgba(0,0,0,0.1);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.autocompleter-item {
+    cursor: pointer;
+}
+
+.autocompleter-item:hover {
+    /* Hover State */
+    background: #cccccc;
+}
+
+.autocompleter-item-selected {
+    /* Selected State */
+    background: #f9f9f9;
+}
+
+.autocompleter-item strong {
+    /* Highlight Matches */
+}
+
+.autocompleter-hint {
+    width: 100%;
+    display: none;
+    color: #ccc;
+    text-align: left;
+    top: -56px;
+    font-weight: 400;
+    left: 0;
+    padding: 12px 12px 12px 13px;
+    font-size: 24px;    
+    /** Need absolute position over input text */
+}
+
+.autocompleter-hint-show {
+    display: block;
+}
+
+.autocompleter-hint span {
+    color: transparent;
+}

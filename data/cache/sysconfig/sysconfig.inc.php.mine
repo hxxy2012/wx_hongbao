@@ -1,0 +1,30 @@
+<?php
+/*网站基本信息配置*/
+/*author wangjian*/
+/*time 2014_03_03*/
+$cdf_install ='kkk';
+$cfg_cookie_encode ='UsSQu3494J';
+$cfg_thumb_small ='200';
+$cfg_isopen_huiyuan ='Y';
+$des ='----wx983b3bb525b5b1ea';
+$cfg_zhian_open ='N';
+$cfg_thumb_mid ='400';
+$cfg_memcsche ='N';
+$cfg_xingneng ='120';
+$cfg_thumb_small_height ='160';
+$cfg_thumb_big ='800';
+$cfg_thumb_mid_height ='300';
+$cfg_thumb_big_height ='600';
+$sms_name ='';
+$sms_pwd ='';
+$weixin_token ='s4T8ofildchxs29o369o';
+$weixin_appid ='wx983b3bb525b5b1ea';
+$weixin_appsecret ='d53fec545d5642ef0d621bb7167383cd';
+$cfg_weixin_type ='2';
+$site_fullname ='直学网';
+$site_keywd ='直学网';
+$site_desc ='直学网';
+$cfg_tel ='0760-88990009';
+$cfg_www ='http://www.zx9.cn';
+$cfg_cookie_domain ='zx99.cn';
+$cfg_qq ='8005555';

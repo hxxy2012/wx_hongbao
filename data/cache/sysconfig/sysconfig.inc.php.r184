@@ -1,0 +1,23 @@
+<?php
+/*网站基本信息配置*/
+/*author wangjian*/
+/*time 2014_03_03*/
+$cdf_install ='kkk';
+$cfg_cookie_encode ='UsSQu3494J';
+$cfg_thumb_small ='200';
+$cfg_isopen_huiyuan ='Y';
+$des ='----';
+$cfg_zhian_open ='N';
+$cfg_thumb_mid ='400';
+$cfg_memcsche ='N';
+$cfg_xingneng ='120';
+$cfg_thumb_small_height ='160';
+$cfg_thumb_big ='800';
+$cfg_thumb_mid_height ='300';
+$cfg_thumb_big_height ='600';
+$sms_name ='';
+$sms_pwd ='';
+$weixin_token ='';
+$weixin_appid ='';
+$weixin_appsecret ='';
+$cfg_weixin_type ='2';

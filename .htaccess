@@ -1,0 +1,136 @@
+<IfModule mod_rewrite.c>
+	Options +FollowSymLinks
+	RewriteEngine On
+	RewriteBase /
+
+
+	RewriteCond $1 !^(index\.php|images|robots\.txt)
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^(.*)$ index.php/$1 [QSA,L]
+
+	
+
+
+#博客
+RewriteRule /?boke/([0-9]+)/? /home/zxnews?cid=$1 [P,QSA,L,NC]
+#产品列表
+
+RewriteCond %{HTTP_HOST} ^www\.([a-z0-9\-]+)\.zx99\.cn$ 
+RewriteRule /mallmx/([a-z0-9\-]+)/? /ren/zxmallmx?zxuser=%1&id=$1 [P,QSA,L,NC]
+
+#RewriteCond %{HTTP_HOST} !^www.zx99.cn$ [NC] 
+RewriteCond %{HTTP_HOST} ^www\.([a-z0-9\-]+)\.zx99\.cn$ 
+RewriteRule /mall/? /ren/zxmall?zxuser=%1 [P,QSA,L,NC]
+
+
+
+#直销用户
+RewriteCond %{HTTP_HOST} ^www\.([a-z0-9\-]+)\.zx99\.cn$ 
+RewriteRule /dianzan/? /ren/zxdianzan?zxuser=%1 [P,QSA,L,NC]
+
+RewriteCond %{HTTP_HOST} ^www\.([a-z0-9\-]+)\.zx99\.cn$ 
+RewriteRule /dinggou/savedinggou /ren/savedinggou?zxuser=%1 [P,QSA,L,NC]
+
+RewriteCond %{HTTP_HOST} ^www\.([a-z0-9\-]+)\.zx99\.cn$ 
+RewriteRule /dinggou/? /ren/zxdinggou?zxuser=%1 [P,QSA,L,NC]
+
+RewriteCond %{HTTP_HOST} ^www\.([a-z0-9\-]+)\.zx99\.cn$ 
+RewriteRule /order/? /ren/zxorder?zxuser=%1 [P,QSA,L,NC]
+
+RewriteCond %{HTTP_HOST} ^www\.([a-z0-9\-]+)\.zx99\.cn$ 
+RewriteRule /cart/add/? /ren/addcart?zxuser=%1 [P,QSA,L,NC]
+
+RewriteCond %{HTTP_HOST} ^www\.([a-z0-9\-]+)\.zx99\.cn$ 
+RewriteRule /cart/post/? /ren/postcart?zxuser=%1 [P,QSA,L,NC]
+
+RewriteCond %{HTTP_HOST} ^www\.([a-z0-9\-]+)\.zx99\.cn$ 
+RewriteRule /cart/clear/([a-z0-9\-\,]+)/? /ren/clearcart?zxuser=%1&guid=$1 [P,QSA,L,NC]
+
+RewriteCond %{HTTP_HOST} ^www\.([a-z0-9\-]+)\.zx99\.cn$ 
+RewriteRule /cart/update/([a-z0-9\-\,]+)/([0-9]+)/? /ren/updatecart?zxuser=%1&guid=$1&qty=$2 [P,QSA,L,NC]
+
+RewriteCond %{HTTP_HOST} ^www\.([a-z0-9\-]+)\.zx99\.cn$ 
+RewriteRule /zxbrand/? /ren/pinpai?zxuser=%1 [P,QSA,L,NC]
+
+RewriteCond %{HTTP_HOST} ^www\.([a-z0-9\-]+)\.zx99\.cn$ 
+RewriteRule /gushi/? /ren/zxgushi?zxuser=%1 [P,QSA,L,NC]
+
+RewriteCond %{HTTP_HOST} ^www\.([a-z0-9\-]+)\.zx99\.cn$ 
+RewriteRule /info/art/([0-9]*)/? /ren/infoarticle?zxuser=%1&aid=$1 [P,QSA,L,NC]
+
+RewriteCond %{HTTP_HOST} ^www\.([a-z0-9\-]+)\.zx99\.cn$ 
+RewriteRule /info/cid/([0-9]*)/? /ren/infolist?zxuser=%1&cid=$1 [P,QSA,L,NC]
+
+RewriteCond %{HTTP_HOST} ^www\.([a-z0-9\-]+)\.zx99\.cn$ 
+RewriteRule /boke/? /ren/zxboke?zxuser=%1 [P,QSA,L,NC]
+
+RewriteCond %{HTTP_HOST} ^www\.([a-z0-9\-]+)\.zx99\.cn$    
+RewriteRule ^(index\.php)$ http://www.zx99.cn/ren/index?zxuser=%1 [P,QSA,L,NC]
+
+
+     
+	    
+#品牌首页
+RewriteCond %{HTTP_HOST} ^([a-z0-9\-]+)\.zx99\.cn$
+RewriteCond %{HTTP_HOST} !^www           
+RewriteRule ^(index\.php)$ http://www.zx99.cn/brand/index?zxbrand=%1 [P,QSA,L,NC]
+
+RewriteCond %{HTTP_HOST} ^([a-z0-9\-]+)\.zx99\.cn$
+RewriteCond %{HTTP_HOST} !^www
+RewriteRule /brandmallmx/([a-z0-9\-]+)/? /brand/zxmallmx?zxbrand=%1&id=$1 [P,QSA,L,NC]
+
+RewriteCond %{HTTP_HOST} ^([a-z0-9\-]+)\.zx99\.cn$
+RewriteCond %{HTTP_HOST} !^www
+RewriteRule /brandmall/? /brand/zxmall?zxbrand=%1 [P,QSA,L,NC]	
+       
+RewriteCond %{HTTP_HOST} ^www\.([a-z0-9\-]+)\.zx99\.cn$ 
+RewriteRule /brandorder/? /brand/zxorder?zxbrand=%1 [P,QSA,L,NC]
+
+RewriteCond %{HTTP_HOST} ^([a-z0-9\-]+)\.zx99\.cn$
+RewriteCond %{HTTP_HOST} !^www
+RewriteRule /brandcart/add/? /brand/addcart?zxbrand=%1 [P,QSA,L,NC]
+
+RewriteCond %{HTTP_HOST} ^([a-z0-9\-]+)\.zx99\.cn$
+RewriteCond %{HTTP_HOST} !^www
+RewriteRule /brandcart/post/? /brand/postcart?zxbrand=%1 [P,QSA,L,NC]
+
+RewriteCond %{HTTP_HOST} ^([a-z0-9\-]+)\.zx99\.cn$
+RewriteCond %{HTTP_HOST} !^www
+RewriteRule /brandcart/clear/([a-z0-9\-\,]+)/? /brand/clearcart?zxbrand=%1&guid=$1 [P,QSA,L,NC]
+
+RewriteCond %{HTTP_HOST} ^([a-z0-9\-]+)\.zx99\.cn$
+RewriteCond %{HTTP_HOST} !^www
+RewriteRule /brandcart/update/([a-z0-9\-\,]+)/([0-9]+)/? /brand/updatecart?zxbrand=%1&guid=$1&qty=$2 [P,QSA,L,NC]    
+
+RewriteCond %{HTTP_HOST} ^([a-z0-9\-]+)\.zx99\.cn$
+RewriteCond %{HTTP_HOST} !^www
+RewriteRule /brandorder/? /brand/zxorder?zxbrand=%1 [P,QSA,L,NC]
+    
+
+RewriteCond %{HTTP_HOST} ^([a-z0-9\-]+)\.zx99\.cn$
+RewriteCond %{HTTP_HOST} !^www
+RewriteRule /brandtuijian/? /brand/zxtuijian?zxbrand=%1 [P,QSA,L,NC]
+
+RewriteCond %{HTTP_HOST} ^([a-z0-9\-]+)\.zx99\.cn$
+RewriteCond %{HTTP_HOST} !^www
+RewriteRule /brandboke/art/([0-9]*)/? /brand/infoboke?zxbrand=%1&aid=$1 [P,QSA,L,NC]
+
+RewriteCond %{HTTP_HOST} ^([a-z0-9\-]+)\.zx99\.cn$
+RewriteCond %{HTTP_HOST} !^www
+RewriteRule /brandboke/? /brand/zxboke?zxbrand=%1 [P,QSA,L,NC]
+
+RewriteCond %{HTTP_HOST} ^([a-z0-9\-]+)\.zx99\.cn$
+RewriteCond %{HTTP_HOST} !^www
+RewriteRule /brandinfo/art/([0-9]*)/? /brand/infoarticle?zxbrand=%1&aid=$1 [P,QSA,L,NC]
+
+RewriteCond %{HTTP_HOST} ^([a-z0-9\-]+)\.zx99\.cn$
+RewriteCond %{HTTP_HOST} !^www
+RewriteRule /brandinfo/cid/([0-9]*)/? /brand/infolist?zxbrand=%1&cid=$1 [P,QSA,L,NC]
+
+RewriteCond %{HTTP_HOST} ^([a-z0-9\-]+)\.zx99\.cn$
+RewriteCond %{HTTP_HOST} !^www
+RewriteRule /brandcity/? /brand/getshi?zxbrand=%1 [P,QSA,L,NC]
+
+
+</IfModule>

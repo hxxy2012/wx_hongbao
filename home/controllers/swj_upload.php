@@ -1,0 +1,163 @@
+<?php
+if (! defined('BASEPATH')) {
+    exit('Access Denied');
+}
+
+class Swj_upload extends MY_Controller{
+
+	function Swj_upload(){
+		parent::__construct();
+		$this->load->model('M_common');
+		$this->load->model('M_swj_fujian','fj');
+		$this->table_ =table_pre('real_data');
+		$this->table = "swj_activity_beian";
+		$post = $this->input->get();	
+		$this->userInfo = $this->parent_getsession(isset($post["session_id"])?$post["session_id"]:"");//获取登录信息
+		if (!isset($this->userInfo["userid"])) {
+			showmessage("请先登录","home/login",3,0);
+			exit();
+		}
+		$this->upload_path = __ROOT__."/data/upload/user/"; // 编辑器上传的文件保存的位置
+		$this->upload_save_url = __ROOT__."/data/upload/user/"; //编辑器上传图片的访问的路径		
+	}
+
+	function index(){
+		
+	}
+	
+
+	//多文件上传
+	public function upload() {		
+		//设置上传目录
+		$path = 'data/upload/act_record/';
+		if (!is_dir($path)) {//不存在文件夹创建
+			mkdir($path);
+		}
+		$year = date('Y', time());//文件按年份存储
+		$path .= $year.'/';
+		if (!is_dir($path)) {//不存在文件夹创建
+			mkdir($path);
+		}
+
+		if (!empty($_FILES)) {
+			
+			//得到上传的临时文件流
+			$tempFile = $_FILES['Filedata']['tmp_name'];
+			/*if (!isset($_SESSION['tmp'])) {
+				$_SESSION['tmp'] = $_FILES;
+			} else {
+				$_SESSION['tmp'] = array_merge($_SESSION['tmp'],$_FILES);
+			}
+			file_put_contents("f:\aaa.txt", var_export($_SESSION['tmp'], true));*/
+			//允许的文件后缀
+			$fileTypes = array('jpg','jpeg','gif','png','doc','pdf','rar','xls','xlsx','bmp'
+								,'docx','ppt','pptx','zip'); 
+			
+			$this->load->library("common_upload");
+
+			$fujian_path = $this->common_upload->upload_path_ym_width($this->upload_path, 'Filedata',implode("|",$fileTypes),2000);
+			if ($fujian_path != "") {
+				//写入附件表
+				$user = $this->parent_getsession();				
+				$model["title"] = $fujian_path;
+				$model["filesrc"] = $fujian_path;
+				$model["beizhu"] = "";
+				$model["userid"] = $this->userInfo["userid"];
+				$model["system_userid"] = "0";
+				$model["createtime"] = time();
+				$model["beizhu"] = "临时";
+				$newid = $this->fj->add($model);				
+				echo $newid;
+				
+			}
+			else{
+				echo "-1";	
+			}
+		}
+		else{
+			echo "-1";	
+		}
+	}
+	
+	public function delfj(){
+		$get = $this->input->get();
+		$id = $get["id"];		
+		if($id>0){
+			$model = $this->fj->GetModel($id);
+			$userid = $this->userInfo["userid"];
+			if(isset($model["filesrc"])){
+				if($model["filesrc"]!=""){
+					@unlink(realpath($model["filesrc"]));
+				}
+			}
+			$this->fj->del($id,$userid);
+		}
+	}
+
+	//通过附件id获取文件的路径
+	public function getUrl() {
+		$post =  $this->input->post();
+		$id   =  $post['id'];
+		$rst  =  array('code' => -1, 'id' => $id);
+		if ($id>0) {
+			$model = $this->fj->GetModel($id);
+			if(isset($model["filesrc"])){
+				if($model["filesrc"]!=""){
+					$rst['filesrc'] = $model["filesrc"];
+					$rst['code'] = 0;
+				}
+			}
+		}
+		echo json_encode($rst);
+	}
+
+	//删除临时附件(前一天)
+	public function delLsFj() {
+		$nowTime = time();//当前时间戳
+		$day     = 86400 * 1;//相差一天
+		$nowDay  = date('Y-m-d H:i:s', $nowTime);//当前日期
+		$where = " where beizhu='临时' and (createtime-$nowTime>$day) ";//删除条件
+		$sql = "select filesrc from swj_fujian {$where}";
+		$model = $this->M_common->querylist($sql);
+		foreach ($model as $key => $value) {
+			if($model["filesrc"]!=""){//删除该附件
+				@unlink(realpath($model["filesrc"]));
+			}
+		}
+		//删除数据库的数据
+		$sql = "delete from swj_fujian {$where}";
+		$this->M_common->del_data($sql);
+	}
+
+    //上传文件，不写入附件表
+    public function upload2(){
+        $get = $this->input->get();
+        //设置上传目录
+        $path = 'data/upload/'.(isset($get["path"])?$get["path"]:"user");
+        if (!is_dir($path)) {//不存在文件夹创建
+            mkdir($path);
+        }
+        $year = date('Y', time());//文件按年份存储
+        $path .= $year.'/';
+        if (!is_dir($path)) {//不存在文件夹创建
+            mkdir($path);
+        }
+
+        if (!empty($_FILES)) {
+
+            //得到上传的临时文件流
+            $tempFile = $_FILES['Filedata']['tmp_name'];
+
+            //允许的文件后缀
+            $fileTypes = array('jpg','jpeg','gif','png','doc','pdf','rar','xls','xlsx','docx','ppt','pptx','txt');
+
+            $this->load->library("common_upload");
+            $fujian_path = $this->common_upload->upload_path_ym_width(
+                $this->upload_path,
+                'Filedata',
+                implode("|",$fileTypes),
+                2000);//宽度
+            echo $fujian_path;
+        }
+    }
+}
