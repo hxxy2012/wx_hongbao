@@ -1,6 +1,6 @@
 <?php
 /**
- * 导入走出去数据页面
+ * 导入手机号页面
  * User: 嘉辉
  * Date: 2016-08-09
  * Time: 14:49
@@ -13,7 +13,7 @@ if (!defined('BASEPATH')) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>走出去数据导入</title>
+    <title>手机号导入</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="/<?php echo APPPATH ?>/views/static/Css/bootstrap.css"/>
     <link rel="stylesheet" type="text/css" href="/<?php echo APPPATH ?>/views/static/Css/bootstrap-responsive.css"/>
@@ -84,10 +84,10 @@ if (!defined('BASEPATH')) {
 <body>
 
 <div class="form-inline definewidth m20">
-    <a href="/admin_application/views/default/zcq/datamanage/zcqtpl.xls">下载excel模板</a>
+    <a href="/admin_application/views/default/hb/phone/phone.xls">下载excel模板</a>
 </div>
 
-<form action="<?php echo site_url("zcq_datamanage/doimport"); ?>" enctype="multipart/form-data" method="post"
+<form action="<?php echo site_url("hb_phone/doimport"); ?>" enctype="multipart/form-data" method="post"
       onsubmit="openload('处理中……请稍等。');"
       class="definewidth m2" name="myform" id="myform">
 
@@ -101,6 +101,7 @@ if (!defined('BASEPATH')) {
     </table>
 
     <div class="center" style="margin:0 auto;text-align:center;">
+        <input type="hidden" name="backurl" value="<?php echo $ls;?>">
         <input type="submit" class="btn btn-primary" value="导入" id="btn-submit">
         <input type="button" class="btn btn-primary" value="关闭"
                onclick="top.topManager.closePage();">
@@ -108,7 +109,7 @@ if (!defined('BASEPATH')) {
 
     <div class="alert alert-warning alert-dismissable">
         <strong>温馨提示</strong>
-        请严格按照下载的excel模板进行填写数据<br>
+        请严格按照下载的excel模板进行填写数据(备注一列可不填)<br>
         导入数据库可能比较大，请耐心等候
     </div>
 </form>
@@ -150,44 +151,7 @@ if (!defined('BASEPATH')) {
 
     $(document).ready(function () {
 
-//        var $input_file = $('#input_file');
-//        $input_file.uploadify({
-//            'auto': false,//关闭自动上传
-//            'removeTimeout': 1,//文件队列上传完成1秒后删除
-//            'swf': '/home/views/static/js/uploadfile/uploadify.swf',
-//            'uploader': '<?php //echo site_url("zcq_datamanage/doimport"); ?>//',
-//            'method': 'post',//方法，服务端可以用$_POST数组获取数据
-//            'buttonText': '选择文件',//设置按钮文本
-//            'multi': false,//允许同时上传多张图片
-////            'uploadLimit': 1,//一次最多只允许上传10张图片
-//            'fileTypeDesc': 'All Files',//只允许上传图像
-//            'fileTypeExts': '*.xlsx; *.xlsx;',//限制允许上传的图片后缀
-//            'fileSizeLimit': '20000KB',//限制上传的图片不得超过200KB
-//            'onUploadSuccess': function (file, data, response) {//每次成功上传后执行的回调函数，从服务端返回数据到前端
-//                var result = $.parseJSON(data);
-//                if (result.success) {
-//                    //保存成功的图片路径
-//                    var filepath = result.filepath;
-//                    //$business_license_copy_real.val(filepath);
-//                    layer.msg('文件上传成功，正在导入数据', {time: 1000});
-//                    //uploadsuccess($fj1, filepath, true);
-//                } else {
-//                    layer.msg('上传失败,请检查上传文件类型或者刷新重试', {time: 1000});
-//                }
-//            },
-//            'onQueueComplete': function (queueData) {
-//                //上传队列全部完成后执行的回调函数
-//            },
-//            'onError': function (event, ID, fileObj, errorObj) {
-//                if (errorObj.type === "File Size") {
-//                    layer.msg('超过文件上传大小限制（2M）！', {time: 1000});
-//                    //alert('超过文件上传大小限制（2M）！');
-//                    return;
-//                }
-//                layer.msg(errorObj.type + ', Error: ' + errorObj.info, {time: 1000});
-//                //alert(errorObj.type + ', Error: ' + errorObj.info);
-//            }
-//        });
+
     });
 
 </script>

@@ -1,20 +1,20 @@
 <?php
 
-class M_zcq_diaocha_wenti extends M_common {
+class M_hb_hongbao_list extends M_common {
 
-    private $table = "zcq_diaocha_wenti";
-    private $tablename = "调查问卷表所属问题表";
+    private $table = "hb_hongbao_list";
+    private $tablename = "红包中奖表";
 
-    function M_zcq_diaocha_wenti() {
+    function M_hb_hongbao_set() {
         parent::__construct();
     }
 
     function count($where) {
         $model = $this->M_common->query_one("select count(*) as dd from " . $this->table . " where $where");
-		return $model["dd"];
+        return $model["dd"];
     }
 
-    function getlist($where,$orderby="create_time desc",$limit=9999999) {
+    function getlist($where,$orderby="id desc",$limit=9999999) {
         $sql = "select * from " . $this->table . " where $where order by ".$orderby." limit ".$limit;
         return $this->M_common->querylist($sql);
     }
@@ -69,16 +69,16 @@ class M_zcq_diaocha_wenti extends M_common {
                     $arr['sql'], $this->uri->uri_string(), login_name(), get_client_ip(), ($arr['affect_num'] >= 1 ? 1 : 0), "删除" . $this->tablename . "：" . login_name() . "|管理员ID=" . ($arr['affect_num'] >= 1 ? "成功" : "失败"));
         }
     }
-	function delcheck(){
-		$list = $this->getlist($where);
-		$i=0;
-		foreach($list as $k=>$v){
-			if($v["starttime"]<time() && $v["endtime"]>time()){
-				$i++;
-			}
-		}
-		echo $i;
-	}
+    function delcheck(){
+        $list = $this->getlist($where);
+        $i=0;
+        foreach($list as $k=>$v){
+            if($v["starttime"]<time() && $v["endtime"]>time()){
+                $i++;
+            }
+        }
+        echo $i;
+    }
     function delwhere($where) {
         $list = $this->getlist($where);
         foreach ($list as $v) {
@@ -99,11 +99,17 @@ class M_zcq_diaocha_wenti extends M_common {
         }
         $limit = ($page - 1) * $pagesize;
         $limit.=",{$pagesize}";
-        $where = " where t1.isdel='0' and t2.isdel='0' ";
+        $where = " where 1=1 ";
 
         foreach ($search as $k => $v) {
             if ($k == "title") {
-                $where .= " and (t1.title like '%" . $v . "%' )";
+                $where .= " and (t1.openid like '%" . $v . "%' 
+                            or t1.nickname like '%" . $v . "%' 
+                            or t1.username like '%" . $v . "%' 
+                            or t1.tel like '%" . $v . "%')";
+            }
+            elseif ($k == 'hb_sid') {
+                $where .= " and t2.id='$v'";
             }
             /*else if ($k =='pid'&&$v>0) {//显示选项
                 $where .= "and t1.pid>0 ";
@@ -129,13 +135,14 @@ class M_zcq_diaocha_wenti extends M_common {
         } else {
             $orderby_str = " order by id desc"; //默认
         }
-        $sql_count = "SELECT COUNT(*) AS tt FROM " . $this->table . " t1 left join zcq_diaocha t2 on t1.diaocha_id=t2.id 
-		 {$where}";
+        $sql_count = "SELECT COUNT(*) AS tt FROM " . $this->table . " t1  
+         left join hb_hongbao_set t2 on t2.id=t1.set_id 
+         {$where}";
 
         $total = $this->M_common->query_count($sql_count);
         $page_string = $this->common_page->page_string2($total, $pagesize, $page);
-        $sql = "SELECT t1.*,t2.title diaochatitle FROM " . $this->table . " t1  
-        left join zcq_diaocha t2 on t1.diaocha_id=t2.id 
+        $sql = "SELECT t1.*,t2.title FROM " . $this->table . " t1  
+        left join hb_hongbao_set t2 on t2.id=t1.set_id 
        {$where} " . $orderby_str . " limit  {$limit}";
 
         $list = $this->M_common->querylist($sql);

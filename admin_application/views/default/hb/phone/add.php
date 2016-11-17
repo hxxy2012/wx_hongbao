@@ -82,6 +82,14 @@ $(function () {
 			if($("#myform").Valid() == false || !$("#myform").Valid()) {
 				return false ;
 			}
+      var tel = $('#tel').val();
+      var tel_arr = tel.split(',');
+      for (var i = tel_arr.length - 1; i >= 0; i--) {
+        if (tel_arr[i].length != 11) {
+          layer.msg('手机号码：' + tel_arr[i] + '格式不正确');
+          return false;
+        }
+      };
 		});
 
        

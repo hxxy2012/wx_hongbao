@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2016 年 11 月 16 日 15:35
--- 服务器版本: 5.5.40
--- PHP 版本: 5.3.29
+-- 生成日期: 2016 年 11 月 17 日 22:50
+-- 服务器版本: 5.5.38
+-- PHP 版本: 5.3.28
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `57sy_common_adminloginlog` (
   `ip` char(15) NOT NULL COMMENT '登陆的ip地址',
   PRIMARY KEY (`id`),
   KEY `username` (`username`) USING BTREE
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='后台用户登陆的日志表' AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='后台用户登陆的日志表' AUTO_INCREMENT=10 ;
 
 --
 -- 转存表中的数据 `57sy_common_adminloginlog`
@@ -42,7 +42,13 @@ CREATE TABLE IF NOT EXISTS `57sy_common_adminloginlog` (
 INSERT INTO `57sy_common_adminloginlog` (`id`, `username`, `logintime`, `ip`) VALUES
 (1, 'admin', '2016-11-16 14:34:52', '127.0.0.1'),
 (2, 'admin', '2016-11-16 14:35:42', '127.0.0.1'),
-(3, 'admin', '2016-11-16 15:19:46', '127.0.0.1');
+(3, 'admin', '2016-11-16 15:19:46', '127.0.0.1'),
+(4, 'admin', '2016-11-16 21:03:03', '127.0.0.1'),
+(5, 'admin', '2016-11-16 21:27:21', '127.0.0.1'),
+(6, 'admin', '2016-11-16 21:27:21', '127.0.0.1'),
+(7, 'admin', '2016-11-16 22:03:32', '127.0.0.1'),
+(8, 'admin', '2016-11-17 20:37:12', '127.0.0.1'),
+(9, 'admin', '2016-11-17 22:24:21', '127.0.0.1');
 
 -- --------------------------------------------------------
 
@@ -128,65 +134,15 @@ INSERT INTO `57sy_common_admin_nav` (`id`, `name`, `status`, `pid`, `addtime`, `
 (140, '注册资料', 0, 128, '2015-03-23 09:28:44', 1, 'user/index/', 1, 0),
 (141, '用户列表', 0, 140, '2015-03-23 09:29:30', 2, 'user/index/', 1, 1),
 (143, '删除', 0, 141, '2015-03-23 14:29:39', 1, 'user/del/', 1, 0),
-(225, '资金申请审批', 0, 128, '2015-12-31 11:02:15', 2, 'dbdb3edc-3bac-443c-8ada-316a00b965e0', 1, 1),
 (146, '修改', 0, 141, '2015-03-23 20:29:15', 5, 'user/edit', 1, 0),
 (147, '添加', 0, 141, '2015-03-23 21:03:41', 30, 'user/add/', 1, 0),
 (148, '修改密码', 1, 59, '2015-03-23 22:33:11', 30, 'sys_admin/edit_passwd', 1, 0),
 (166, '短信管理', 0, 128, '2015-03-31 16:23:42', 49, 'sms/index', 1, 1),
 (167, '发送短信', 0, 166, '2015-03-31 16:24:17', 1, 'sms/add', 1, 0),
 (168, '发送记录', 0, 166, '2015-03-31 16:24:50', 2, 'sms/index', 1, 0),
-(196, '留言管理', 0, 128, '2015-04-07 16:36:13', 31, 'guestbook/index', 1, 1),
-(197, '留言列表', 0, 196, '2015-04-07 16:36:28', 1, 'zzb_guestbook/index', 1, 0),
-(198, '审核留言', 0, 196, '2015-04-07 16:37:09', 1, 'zzb_guestbook/check', 1, 0),
-(199, '新增', 0, 197, '2015-04-07 16:37:42', 1, 'zzb_guestbook/add', 1, 0),
-(200, '修改', 0, 197, '2015-04-07 16:38:03', 2, 'zzb_guestbook/edit', 1, 0),
-(201, '删除', 0, 197, '2015-04-07 16:38:18', 3, 'zzb_guestbook/del', 1, 0),
-(202, '审核', 0, 198, '2015-04-07 18:02:36', 1, 'zzb_guestbook/docheck', 1, 0),
-(259, '题目列表', 0, 257, '2016-08-04 14:10:56', 102, 'zcq_surveywt/index/', 1, 0),
 (231, '信息发布', 0, 128, '2015-12-31 15:48:39', 3, 'f3601b46-d254-464a-92cf-70d4ffc169ec', 1, 1),
 (232, '信息列表', 0, 231, '2015-12-31 15:49:14', 1, 'Website_category/infolist', 1, 0),
-(233, '服务咨询解答', 0, 128, '2015-12-31 15:49:30', 4, '29bfe154-e847-48d0-88aa-4e962a3983fd', 1, 1),
-(227, '申报类型管理', 0, 225, '2015-12-31 11:04:34', 2, 'zcq_pro_type/index', 1, 0),
-(228, '附件管理', 0, 225, '2015-12-31 11:05:32', 3, 'zcq_zijin/fujian', 1, 0),
-(226, '申请列表', 0, 225, '2015-12-31 11:04:14', 1, 'zcq_pro_shenqing/index', 1, 0),
 (224, '后台首页', 0, 140, '2015-12-31 09:26:50', 0, 'zcq_index/index', 1, 0),
-(234, '回复', 0, 233, '2015-12-31 15:53:52', 1, 'zcq_fuwu_zixun', 1, 0),
-(235, '业务追踪管理', 0, 233, '2015-12-31 15:54:23', 2, 'swj_businesstracking', 1, 0),
-(236, '项目管理', 0, 128, '2015-12-31 15:55:35', 5, 'd094e0b0-fcb6-4401-8669-6c40a7b11d61', 1, 1),
-(237, '项目管理', 0, 236, '2015-12-31 15:55:53', 1, 'zcq_pro_guanli', 1, 0),
-(238, '重点项目管理', 0, 236, '2015-12-31 15:56:14', 2, 'zcq_zhongdian_pro', 1, 0),
-(239, '得分排名', 0, 236, '2015-12-31 15:56:37', 3, 'swj_fenshu/index', 1, 0),
-(240, '备案管理', 0, 128, '2015-12-31 15:56:59', 6, '9bd1144b-0940-48b2-8c2a-1dce67740f77', 1, 1),
-(241, '备案管理', 0, 240, '2015-12-31 15:57:16', 1, 'swj_xxbagl/index', 1, 0),
-(242, '备案审批', 0, 240, '2015-12-31 15:57:46', 2, 'swj_xxbasp/index?caozuo=1', 1, 0),
-(243, '备案查询', 0, 240, '2015-12-31 15:57:59', 3, 'swj_xxbasp/index?caozuo=2', 1, 0),
-(244, '对外投资联系表', 0, 128, '2015-12-31 15:58:26', 7, '', 1, 1),
-(245, '管理', 0, 244, '2015-12-31 15:58:40', 1, 'zcq_duiwaitouzi', 1, 0),
-(246, '数据上报查询', 0, 244, '2015-12-31 15:59:09', 2, 'swj_sjsbcx/index', 1, 0),
-(247, '新增', 0, 237, '2016-04-07 11:58:09', 1, 'swj_project/add', 1, 0),
-(248, '修改', 0, 237, '2016-04-11 14:10:50', 2, 'swj_project/edit', 1, 0),
-(249, '审核', 0, 238, '2016-04-11 17:16:32', 1, 'swj_shenbao/check_shenbao', 1, 0),
-(250, '查看', 0, 238, '2016-04-11 17:18:52', 2, 'swj_shenbao/check_look', 1, 0),
-(251, '审服务项目', 0, 238, '2016-04-18 11:54:20', 102, 'swj_project_shenbao_fuwu_xiangmu/check', 1, 0),
-(252, '审协会机构', 0, 238, '2016-04-18 11:55:16', 103, 'swj_project_shenbao_xiehui_jigou/check', 1, 0),
-(253, '审应用项目', 0, 238, '2016-04-18 11:56:03', 104, 'swj_project_shenbao_yingyong_xiangmu/check', 1, 0),
-(254, '审园区', 0, 238, '2016-04-18 11:56:50', 105, 'swj_project_shenbao_yuanqu/check', 1, 0),
-(255, '审交易平台', 0, 238, '2016-04-18 11:57:22', 106, 'swj_project_shenbao_jiaoyi_pingtai/check', 1, 0),
-(256, '审综合服务平台', 0, 238, '2016-04-18 11:57:59', 107, 'swj_project_shenbao_zonghe_fuwu/check', 1, 0),
-(257, '调查问卷', 0, 128, '2016-08-04 14:07:47', 50, 'survey/index/', 1, 1),
-(258, '问卷列表', 0, 257, '2016-08-04 14:09:18', 101, 'zcq_survey/index/', 1, 0),
-(263, '新增类型', 0, 227, '2016-08-08 18:06:50', 50, 'zcq_pro_type/add', 1, 0),
-(260, '走出去数据管理', 0, 128, '2016-08-08 14:16:17', 6, 'f4c763e1-15ef-41cb-9cb1-a100f0ffd901', 1, 1),
-(261, '导入', 0, 260, '2016-08-08 15:06:10', 2, 'zcq_datamanage/import', 1, 0),
-(262, '列表', 0, 260, '2016-08-08 15:06:40', 1, 'zcq_datamanage', 1, 0),
-(264, '选择附件', 0, 227, '2016-08-08 18:07:09', 51, 'zcq_pro_type/selfj', 1, 0),
-(265, '活动报名', 0, 128, '2016-08-09 14:34:43', 51, 'zcq_huodong/index/', 1, 1),
-(266, '活动列表', 0, 265, '2016-08-09 14:35:32', 50, 'zcq_huodong/index/', 1, 0),
-(267, '报名列表', 0, 265, '2016-08-09 14:36:28', 51, 'zcq_hdbaoming/index/', 1, 0),
-(268, '修改', 0, 226, '2016-08-12 15:02:07', 1, 'zcq_pro_shenqing/edit', 1, 0),
-(269, '站内信箱', 0, 128, '2016-08-15 09:42:59', 2, 'zcq_mail/index', 1, 1),
-(270, '写信', 0, 269, '2016-08-15 10:10:50', 100, 'zcq_mail/add', 1, 0),
-(271, '收件箱', 0, 269, '2016-08-15 10:11:51', 200, 'zcq_mail/index', 1, 0),
 (272, '新增信息', 0, 130, '2016-09-09 14:11:20', 101, 'website_category/addinfo', 1, 0),
 (273, '修改信息', 0, 130, '2016-09-09 14:12:19', 110, 'website_category/editinfo', 1, 0),
 (274, '删除信息', 0, 130, '2016-09-09 14:12:59', 120, 'website_category/delinfo', 1, 0),
@@ -46294,7 +46250,7 @@ CREATE TABLE IF NOT EXISTS `57sy_common_log_201611` (
   `log_status` tinyint(1) NOT NULL DEFAULT '1',
   `log_message` varchar(255) NOT NULL,
   PRIMARY KEY (`log_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=114 ;
 
 --
 -- 转存表中的数据 `57sy_common_log_201611`
@@ -46309,7 +46265,111 @@ INSERT INTO `57sy_common_log_201611` (`log_id`, `log_url`, `log_person`, `log_ti
 (6, 'nav/add', 'admin', '2016-11-16 15:30:22', '127.0.0.1', 'INSERT INTO `57sy_common_admin_nav` (`pid`, `name`, `status`, `addtime`, `url`, `disorder`) VALUES (278, ''红包管理'', 1, ''2016-11-16 15:30:22'', ''hb_index/index/'', 10)', 1, '添加导航红包管理成功'),
 (7, 'nav/add', 'admin', '2016-11-16 15:30:48', '127.0.0.1', 'INSERT INTO `57sy_common_admin_nav` (`pid`, `name`, `status`, `addtime`, `url`, `disorder`) VALUES (278, ''手机管理'', 1, ''2016-11-16 15:30:48'', ''hb_phone/index'', 20)', 1, '添加导航手机管理成功'),
 (8, 'nav/add', 'admin', '2016-11-16 15:31:49', '127.0.0.1', 'INSERT INTO `57sy_common_admin_nav` (`pid`, `name`, `status`, `addtime`, `url`, `disorder`) VALUES (278, ''中奖纪录'', 1, ''2016-11-16 15:31:49'', ''hb_prize/index/'', 30)', 1, '添加导航中奖纪录成功'),
-(9, 'nav/edit', 'admin', '2016-11-16 15:32:03', '127.0.0.1', 'UPDATE `57sy_common_admin_nav` set pid = ''278'',name = ''手机管理'',url = ''hb_phone/index/'' ,disorder = ''20'' ,status = ''1'' ,url_type = ''1'' ,`collapsed` = ''0'' where id = ''280''', 1, '编辑导航手机管理成功');
+(9, 'nav/edit', 'admin', '2016-11-16 15:32:03', '127.0.0.1', 'UPDATE `57sy_common_admin_nav` set pid = ''278'',name = ''手机管理'',url = ''hb_phone/index/'' ,disorder = ''20'' ,status = ''1'' ,url_type = ''1'' ,`collapsed` = ''0'' where id = ''280''', 1, '编辑导航手机管理成功'),
+(10, 'login/dologin', 'admin', '2016-11-16 21:03:03', '127.0.0.1', 'login_sql', 1, '用户admin登录成功'),
+(11, 'hb_index/index', '前台', '2016-11-16 21:27:19', '127.0.0.1', 'delete from admin_user_session where session_id=''5f069fa096f84eaf20058fa0e01269c3''', 1, '删除后台用户会话表：成功'),
+(12, 'login/dologin', 'admin', '2016-11-16 21:27:21', '127.0.0.1', 'login_sql', 1, '用户admin登录成功'),
+(13, 'login/dologin', 'admin', '2016-11-16 21:27:21', '127.0.0.1', 'login_sql', 1, '用户admin登录成功'),
+(14, 'sysconfig/edit', 'admin', '2016-11-16 21:30:41', '127.0.0.1', 'sysconfig_update', 1, '修改系统变量成功'),
+(15, 'admin/index', '前台', '2016-11-16 22:03:31', '127.0.0.1', 'delete from admin_user_session where session_id=''2cafe41f47a29551dc7a9237c203f488''', 1, '删除后台用户会话表：成功'),
+(16, 'login/dologin', 'admin', '2016-11-16 22:03:32', '127.0.0.1', 'login_sql', 1, '用户admin登录成功'),
+(17, 'hb_index/add', 'admin', '2016-11-16 22:04:00', '127.0.0.1', 'INSERT INTO `hb_hongbao_set` (`title`, `curr`, `suiji`, `hongbao_shu`, `jine`, `qibu_jine`) VALUES (''测试红包'', ''1'', ''0'', ''10'', ''200'', ''1.00'')', 1, '添加红包设置表：admin|管理员ID=16成功'),
+(18, 'hb_index/add', 'admin', '2016-11-16 22:04:37', '127.0.0.1', 'INSERT INTO `hb_hongbao_set` (`title`, `curr`, `suiji`, `hongbao_shu`, `jine`, `qibu_jine`) VALUES (''测试红包'', ''1'', ''1'', ''45'', ''45345'', ''4.00'')', 1, '添加红包设置表：admin|管理员ID=16成功'),
+(19, 'hb_index/add', 'admin', '2016-11-16 22:09:41', '127.0.0.1', 'INSERT INTO `hb_hongbao_set` (`title`, `curr`, `suiji`, `hongbao_shu`, `jine`, `qibu_jine`) VALUES (''345345'', ''0'', ''0'', ''10'', ''345345'', ''1.00'')', 1, '添加红包设置表：admin|管理员ID=16成功'),
+(20, 'hb_index/add', 'admin', '2016-11-16 22:09:51', '127.0.0.1', 'INSERT INTO `hb_hongbao_set` (`title`, `curr`, `suiji`, `hongbao_shu`, `jine`, `qibu_jine`) VALUES (''234234'', ''1'', ''0'', ''10'', ''10'', ''1.00'')', 1, '添加红包设置表：admin|管理员ID=16成功'),
+(21, 'hb_index/add', 'admin', '2016-11-16 22:10:02', '127.0.0.1', 'INSERT INTO `hb_hongbao_set` (`title`, `curr`, `suiji`, `hongbao_shu`, `jine`, `qibu_jine`) VALUES (''234234'', ''1'', ''1'', ''10'', ''10'', ''1.00'')', 1, '添加红包设置表：admin|管理员ID=16成功'),
+(22, 'hb_index/add', 'admin', '2016-11-16 22:11:29', '127.0.0.1', 'INSERT INTO `hb_hongbao_set` (`title`, `curr`, `suiji`, `hongbao_shu`, `jine`, `qibu_jine`) VALUES (''234234'', ''1'', ''0'', ''102'', ''234234'', ''1.00'')', 1, '添加红包设置表：admin|管理员ID=16成功'),
+(23, 'hb_index/add', 'admin', '2016-11-16 22:11:45', '127.0.0.1', 'INSERT INTO `hb_hongbao_set` (`title`, `curr`, `suiji`, `hongbao_shu`, `jine`, `qibu_jine`) VALUES (''23424'', ''1'', ''0'', ''10'', ''234234'', ''1.00'')', 1, '添加红包设置表：admin|管理员ID=16成功'),
+(24, 'hb_index/add', 'admin', '2016-11-16 22:13:02', '127.0.0.1', 'INSERT INTO `hb_hongbao_set` (`title`, `curr`, `suiji`, `hongbao_shu`, `jine`, `qibu_jine`) VALUES (''234234'', ''1'', ''0'', ''10'', ''234234'', ''1.00'')', 1, '添加红包设置表：admin|管理员ID=16成功'),
+(25, 'hb_index/add', 'admin', '2016-11-16 22:13:11', '127.0.0.1', 'INSERT INTO `hb_hongbao_set` (`title`, `curr`, `suiji`, `hongbao_shu`, `jine`, `qibu_jine`) VALUES (''234234'', ''1'', ''0'', ''10'', ''234234'', ''1.00'')', 1, '添加红包设置表：admin|管理员ID=16成功'),
+(26, 'hb_index/add', 'admin', '2016-11-16 22:14:11', '127.0.0.1', 'INSERT INTO `hb_hongbao_set` (`title`, `curr`, `suiji`, `hongbao_shu`, `jine`, `qibu_jine`) VALUES (''45345'', ''1'', ''0'', ''10'', ''2344'', ''1.00'')', 1, '添加红包设置表：admin|管理员ID=16成功'),
+(27, 'hb_index/add', 'admin', '2016-11-16 22:14:54', '127.0.0.1', 'INSERT INTO `hb_hongbao_set` (`title`, `curr`, `suiji`, `hongbao_shu`, `jine`, `qibu_jine`) VALUES (''34545'', ''1'', ''0'', ''10'', ''345'', ''1.00'')', 1, '添加红包设置表：admin|管理员ID=16成功'),
+(28, 'hb_index/add', 'admin', '2016-11-16 22:20:41', '127.0.0.1', 'INSERT INTO `hb_hongbao_set` (`title`, `curr`, `suiji`, `hongbao_shu`, `jine`, `qibu_jine`) VALUES (''23243'', ''1'', ''0'', ''10'', ''24234'', ''1.00'')', 1, '添加红包设置表：admin|管理员ID=16成功'),
+(29, 'hb_index/add', 'admin', '2016-11-16 22:20:52', '127.0.0.1', 'INSERT INTO `hb_hongbao_set` (`title`, `curr`, `suiji`, `hongbao_shu`, `jine`, `qibu_jine`) VALUES (''23423423'', ''1'', ''0'', ''10'', ''242342'', ''1.00'')', 1, '添加红包设置表：admin|管理员ID=16成功'),
+(30, 'hb_index/add', 'admin', '2016-11-16 22:24:49', '127.0.0.1', 'INSERT INTO `hb_hongbao_set` (`title`, `curr`, `suiji`, `hongbao_shu`, `jine`, `qibu_jine`) VALUES (''测试红包'', ''1'', ''0'', ''10'', ''23'', ''1.00'')', 1, '添加红包设置表：admin|管理员ID=16成功'),
+(31, 'hb_index/add', 'admin', '2016-11-16 22:25:10', '127.0.0.1', 'INSERT INTO `hb_hongbao_set` (`title`, `curr`, `suiji`, `hongbao_shu`, `jine`, `qibu_jine`) VALUES (''测试红包2'', ''0'', ''1'', ''102'', ''23234'', ''12.00'')', 1, '添加红包设置表：admin|管理员ID=16成功'),
+(32, 'hb_index/add', 'admin', '2016-11-16 22:41:36', '127.0.0.1', 'INSERT INTO `hb_hongbao_set` (`title`, `curr`, `suiji`, `hongbao_shu`, `jine`, `qibu_jine`) VALUES (''测试红包3'', ''0'', ''0'', ''10'', ''3343'', ''1234.00'')', 1, '添加红包设置表：admin|管理员ID=16成功'),
+(33, 'hb_index/add', 'admin', '2016-11-16 22:41:45', '127.0.0.1', 'INSERT INTO `hb_hongbao_set` (`title`, `curr`, `suiji`, `hongbao_shu`, `jine`, `qibu_jine`) VALUES (''测试红包4'', ''0'', ''0'', ''2310'', ''234'', ''1.00'')', 1, '添加红包设置表：admin|管理员ID=16成功'),
+(34, 'hb_index/add', 'admin', '2016-11-16 22:41:56', '127.0.0.1', 'INSERT INTO `hb_hongbao_set` (`title`, `curr`, `suiji`, `hongbao_shu`, `jine`, `qibu_jine`) VALUES (''测试红包5'', ''0'', ''0'', ''10'', ''2234'', ''1.00'')', 1, '添加红包设置表：admin|管理员ID=16成功'),
+(35, 'hb_index/add', 'admin', '2016-11-16 22:42:06', '127.0.0.1', 'INSERT INTO `hb_hongbao_set` (`title`, `curr`, `suiji`, `hongbao_shu`, `jine`, `qibu_jine`) VALUES (''测试红包6'', ''0'', ''0'', ''10'', ''342'', ''1.00'')', 1, '添加红包设置表：admin|管理员ID=16成功'),
+(36, 'hb_index/add', 'admin', '2016-11-16 22:42:22', '127.0.0.1', 'INSERT INTO `hb_hongbao_set` (`title`, `curr`, `suiji`, `hongbao_shu`, `jine`, `qibu_jine`) VALUES (''测试红包7'', ''0'', ''0'', ''10'', ''33'', ''1.00'')', 1, '添加红包设置表：admin|管理员ID=16成功'),
+(37, 'hb_index/add', 'admin', '2016-11-16 22:51:26', '127.0.0.1', 'INSERT INTO `hb_hongbao_set` (`title`, `curr`, `suiji`, `hongbao_shu`, `jine`, `qibu_jine`) VALUES (''测试红包8'', ''0'', ''0'', ''10'', ''234'', ''1.00'')', 1, '添加红包设置表：admin|管理员ID=16成功'),
+(38, 'hb_index/edit', 'admin', '2016-11-16 23:10:39', '127.0.0.1', 'UPDATE `hb_hongbao_set` SET `id` = ''18'', `title` = ''测试红包5'', `curr` = ''0'', `suiji` = ''0'', `hongbao_shu` = ''10'', `jine` = ''2234.00'', `qibu_jine` = ''1.00'' WHERE `id` =  ''18''', 1, '更新红包设置表：admin|管理员ID=16成功'),
+(39, 'hb_index/edit', 'admin', '2016-11-16 23:14:05', '127.0.0.1', 'UPDATE `hb_hongbao_set` SET `id` = ''18'', `title` = ''测试红包5'', `curr` = ''0'', `suiji` = ''0'', `hongbao_shu` = ''10'', `jine` = ''2234.00'', `qibu_jine` = ''1.00'' WHERE `id` =  ''18''', 1, '更新红包设置表：admin|管理员ID=16成功'),
+(40, 'hb_index/edit', 'admin', '2016-11-16 23:14:18', '127.0.0.1', 'UPDATE `hb_hongbao_set` SET `id` = ''14'', `title` = ''测试红包'', `curr` = ''1'' WHERE `id` =  ''14''', 1, '更新红包设置表：admin|管理员ID=16成功'),
+(41, 'hb_index/edit', 'admin', '2016-11-16 23:20:26', '127.0.0.1', 'UPDATE `hb_hongbao_set` SET `id` = ''18'', `title` = ''测试红包51'', `curr` = ''0'', `suiji` = ''0'', `hongbao_shu` = ''10'', `jine` = ''2234.00'', `qibu_jine` = ''1.00'' WHERE `id` =  ''18''', 1, '更新红包设置表：admin|管理员ID=16成功'),
+(42, 'hb_index/edit', 'admin', '2016-11-16 23:20:44', '127.0.0.1', 'UPDATE `hb_hongbao_set` SET `id` = ''18'', `title` = ''测试红包5'', `curr` = ''0'', `suiji` = ''1'', `hongbao_shu` = ''103'', `jine` = ''223.00'', `qibu_jine` = ''13.00'' WHERE `id` =  ''18''', 1, '更新红包设置表：admin|管理员ID=16成功'),
+(43, 'hb_index/edit', 'admin', '2016-11-16 23:24:11', '127.0.0.1', 'UPDATE `hb_hongbao_set` SET `id` = ''18'', `title` = ''测试红包5'', `curr` = ''0'', `suiji` = ''0'', `hongbao_shu` = ''1031'', `jine` = ''223.001'', `qibu_jine` = ''131.00'' WHERE `id` =  ''18''', 1, '更新红包设置表：admin|管理员ID=16成功'),
+(44, 'hb_index/edit', 'admin', '2016-11-16 23:24:23', '127.0.0.1', 'UPDATE `hb_hongbao_set` SET `id` = ''18'', `title` = ''测试红包5'', `curr` = ''0'', `suiji` = ''1'', `hongbao_shu` = ''1031'', `jine` = ''2231.00'', `qibu_jine` = ''131.00'' WHERE `id` =  ''18''', 1, '更新红包设置表：admin|管理员ID=16成功'),
+(45, 'hb_index/edit', 'admin', '2016-11-16 23:24:32', '127.0.0.1', 'UPDATE `hb_hongbao_set` SET `id` = ''18'', `title` = ''测试红包5'', `curr` = ''0'', `suiji` = ''1'', `hongbao_shu` = ''1031'', `jine` = ''21.00'', `qibu_jine` = ''131.00'' WHERE `id` =  ''18''', 1, '更新红包设置表：admin|管理员ID=16成功'),
+(46, 'hb_index/edit', 'admin', '2016-11-16 23:24:41', '127.0.0.1', 'UPDATE `hb_hongbao_set` SET `id` = ''18'', `title` = ''测试红包5'', `curr` = ''0'', `suiji` = ''1'', `hongbao_shu` = ''11'', `jine` = ''21.00'', `qibu_jine` = ''11.00'' WHERE `id` =  ''18''', 1, '更新红包设置表：admin|管理员ID=16成功'),
+(47, 'hb_index/edit', 'admin', '2016-11-16 23:24:58', '127.0.0.1', 'UPDATE `hb_hongbao_set` SET `id` = ''18'', `title` = ''测试红包5'', `curr` = ''0'', `suiji` = ''0'', `hongbao_shu` = ''11'', `jine` = ''21.00'', `qibu_jine` = ''11.00'' WHERE `id` =  ''18''', 1, '更新红包设置表：admin|管理员ID=16成功'),
+(48, 'login/dologin', 'admin', '2016-11-17 20:37:12', '127.0.0.1', 'login_sql', 1, '用户admin登录成功'),
+(49, 'hb_phone/add', 'admin', '2016-11-17 20:37:39', '127.0.0.1', 'INSERT INTO `hb_tel` (`create_time`, `tel`, `beizhu`) VALUES (1479386259, ''15902075668'', '''')', 1, '添加能参与红包的手机号表：admin|管理员ID=16成功'),
+(50, 'hb_phone/add', 'admin', '2016-11-17 20:37:39', '127.0.0.1', 'INSERT INTO `hb_tel` (`create_time`, `tel`, `beizhu`) VALUES (1479386259, ''12585258856'', '''')', 1, '添加能参与红包的手机号表：admin|管理员ID=16成功'),
+(51, 'hb_phone/add', 'admin', '2016-11-17 20:37:39', '127.0.0.1', 'INSERT INTO `hb_tel` (`create_time`, `tel`, `beizhu`) VALUES (1479386259, ''13585258586'', '''')', 1, '添加能参与红包的手机号表：admin|管理员ID=16成功'),
+(52, 'hb_index/edit', 'admin', '2016-11-17 20:38:20', '127.0.0.1', 'UPDATE `hb_hongbao_set` SET `id` = ''14'', `title` = ''测试红包'', `curr` = ''0'' WHERE `id` =  ''14''', 1, '更新红包设置表：admin|管理员ID=16成功'),
+(53, 'hb_index/edit', 'admin', '2016-11-17 20:38:28', '127.0.0.1', 'UPDATE `hb_hongbao_set` SET `id` = ''14'', `title` = ''测试红包'', `curr` = ''1'', `suiji` = ''0'', `hongbao_shu` = ''10'', `jine` = ''23.00'', `qibu_jine` = ''1.00'' WHERE `id` =  ''14''', 1, '更新红包设置表：admin|管理员ID=16成功'),
+(54, 'hb_phone/add', 'admin', '2016-11-17 20:46:29', '127.0.0.1', 'INSERT INTO `hb_tel` (`create_time`, `tel`, `beizhu`) VALUES (1479386789, ''13532154258'', '''')', 1, '添加能参与红包的手机号表：admin|管理员ID=16成功'),
+(55, 'hb_phone/add', 'admin', '2016-11-17 20:46:29', '127.0.0.1', 'INSERT INTO `hb_tel` (`create_time`, `tel`, `beizhu`) VALUES (1479386789, ''15905245596'', '''')', 1, '添加能参与红包的手机号表：admin|管理员ID=16成功'),
+(56, 'hb_phone/add', 'admin', '2016-11-17 20:46:29', '127.0.0.1', 'INSERT INTO `hb_tel` (`create_time`, `tel`, `beizhu`) VALUES (1479386789, ''15905245591'', '''')', 1, '添加能参与红包的手机号表：admin|管理员ID=16成功'),
+(57, 'hb_phone/add', 'admin', '2016-11-17 20:47:07', '127.0.0.1', 'INSERT INTO `hb_tel` (`create_time`, `tel`, `beizhu`) VALUES (1479386827, ''13532154251'', '''')', 1, '添加能参与红包的手机号表：admin|管理员ID=16成功'),
+(58, 'hb_phone/add', 'admin', '2016-11-17 20:47:07', '127.0.0.1', 'INSERT INTO `hb_tel` (`create_time`, `tel`, `beizhu`) VALUES (1479386827, ''15905245333'', '''')', 1, '添加能参与红包的手机号表：admin|管理员ID=16成功'),
+(59, 'hb_phone/doimport', 'admin', '2016-11-17 21:40:00', '127.0.0.1', 'INSERT INTO `hb_tel` (`tel`, `beizhu`, `create_time`) VALUES (''13532065325'', '''', 1479390000)', 1, '添加能参与红包的手机号表：admin|管理员ID=16成功'),
+(60, 'hb_phone/doimport', 'admin', '2016-11-17 21:40:01', '127.0.0.1', 'INSERT INTO `hb_tel` (`tel`, `beizhu`, `create_time`) VALUES (''13532035325'', '''', 1479390000)', 1, '添加能参与红包的手机号表：admin|管理员ID=16成功'),
+(61, 'hb_phone/doimport', 'admin', '2016-11-17 21:40:01', '127.0.0.1', 'INSERT INTO `hb_tel` (`tel`, `beizhu`, `create_time`) VALUES (''13532045325'', '''', 1479390000)', 1, '添加能参与红包的手机号表：admin|管理员ID=16成功'),
+(62, 'hb_phone/doimport', 'admin', '2016-11-17 21:40:01', '127.0.0.1', 'INSERT INTO `hb_tel` (`tel`, `beizhu`, `create_time`) VALUES (''13532055325'', '''', 1479390000)', 1, '添加能参与红包的手机号表：admin|管理员ID=16成功'),
+(63, 'hb_phone/doimport', 'admin', '2016-11-17 21:40:01', '127.0.0.1', 'INSERT INTO `hb_tel` (`tel`, `beizhu`, `create_time`) VALUES (''13532085325'', '''', 1479390000)', 1, '添加能参与红包的手机号表：admin|管理员ID=16成功'),
+(64, 'hb_phone/doimport', 'admin', '2016-11-17 21:40:01', '127.0.0.1', 'INSERT INTO `hb_tel` (`tel`, `beizhu`, `create_time`) VALUES (''13532365325'', '''', 1479390000)', 1, '添加能参与红包的手机号表：admin|管理员ID=16成功'),
+(65, 'hb_phone/doimport', 'admin', '2016-11-17 21:40:01', '127.0.0.1', 'INSERT INTO `hb_tel` (`tel`, `beizhu`, `create_time`) VALUES (''13532465325'', '''', 1479390000)', 1, '添加能参与红包的手机号表：admin|管理员ID=16成功'),
+(66, 'hb_phone/doimport', 'admin', '2016-11-17 21:40:01', '127.0.0.1', 'INSERT INTO `hb_tel` (`tel`, `beizhu`, `create_time`) VALUES (''13532565325'', '''', 1479390000)', 1, '添加能参与红包的手机号表：admin|管理员ID=16成功'),
+(67, 'hb_phone/doimport', 'admin', '2016-11-17 21:40:01', '127.0.0.1', 'INSERT INTO `hb_tel` (`tel`, `beizhu`, `create_time`) VALUES (''13532066325'', '''', 1479390000)', 1, '添加能参与红包的手机号表：admin|管理员ID=16成功'),
+(68, 'hb_phone/doimport', 'admin', '2016-11-17 21:40:01', '127.0.0.1', 'INSERT INTO `hb_tel` (`tel`, `beizhu`, `create_time`) VALUES (''13532072325'', '''', 1479390000)', 1, '添加能参与红包的手机号表：admin|管理员ID=16成功'),
+(69, 'hb_phone/doimport', 'admin', '2016-11-17 21:40:01', '127.0.0.1', 'INSERT INTO `hb_tel` (`tel`, `beizhu`, `create_time`) VALUES (''13532065324'', '''', 1479390000)', 1, '添加能参与红包的手机号表：admin|管理员ID=16成功'),
+(70, 'hb_phone/doimport', 'admin', '2016-11-17 21:45:37', '127.0.0.1', 'INSERT INTO `hb_tel` (`tel`, `beizhu`, `create_time`) VALUES (''123'', '''', 1479390337)', 1, '添加能参与红包的手机号表：admin|管理员ID=16成功'),
+(71, 'hb_phone/doimport', 'admin', '2016-11-17 21:45:37', '127.0.0.1', 'INSERT INTO `hb_tel` (`tel`, `beizhu`, `create_time`) VALUES (''1234'', '''', 1479390337)', 1, '添加能参与红包的手机号表：admin|管理员ID=16成功'),
+(72, 'hb_phone/doimport', 'admin', '2016-11-17 21:45:37', '127.0.0.1', 'INSERT INTO `hb_tel` (`tel`, `beizhu`, `create_time`) VALUES (''12345'', '''', 1479390337)', 1, '添加能参与红包的手机号表：admin|管理员ID=16成功'),
+(73, 'hb_phone/doimport', 'admin', '2016-11-17 21:45:37', '127.0.0.1', 'INSERT INTO `hb_tel` (`tel`, `beizhu`, `create_time`) VALUES (''123456'', '''', 1479390337)', 1, '添加能参与红包的手机号表：admin|管理员ID=16成功'),
+(74, 'hb_phone/doimport', 'admin', '2016-11-17 21:51:36', '127.0.0.1', 'INSERT INTO `hb_tel` (`tel`, `beizhu`, `create_time`) VALUES (''13532065322'', '''', 1479390696)', 1, '添加能参与红包的手机号表：admin|管理员ID=16成功'),
+(75, 'hb_phone/doimport', 'admin', '2016-11-17 21:51:36', '127.0.0.1', 'INSERT INTO `hb_tel` (`tel`, `beizhu`, `create_time`) VALUES (''13532065323'', '''', 1479390696)', 1, '添加能参与红包的手机号表：admin|管理员ID=16成功'),
+(76, 'hb_phone/doimport', 'admin', '2016-11-17 21:51:36', '127.0.0.1', 'INSERT INTO `hb_tel` (`tel`, `beizhu`, `create_time`) VALUES (''13532065330'', '''', 1479390696)', 1, '添加能参与红包的手机号表：admin|管理员ID=16成功'),
+(77, 'hb_phone/doimport', 'admin', '2016-11-17 21:51:36', '127.0.0.1', 'INSERT INTO `hb_tel` (`tel`, `beizhu`, `create_time`) VALUES (''13532065332'', '''', 1479390696)', 1, '添加能参与红包的手机号表：admin|管理员ID=16成功'),
+(78, 'hb_phone/doimport', 'admin', '2016-11-17 21:51:36', '127.0.0.1', 'INSERT INTO `hb_tel` (`tel`, `beizhu`, `create_time`) VALUES (''13532065335'', '''', 1479390696)', 1, '添加能参与红包的手机号表：admin|管理员ID=16成功'),
+(79, 'hb_phone/doimport', 'admin', '2016-11-17 21:51:36', '127.0.0.1', 'INSERT INTO `hb_tel` (`tel`, `beizhu`, `create_time`) VALUES (''13532065336'', '''', 1479390696)', 1, '添加能参与红包的手机号表：admin|管理员ID=16成功'),
+(80, 'admin/index', '前台', '2016-11-17 22:24:20', '127.0.0.1', 'delete from admin_user_session where session_id=''00a1f0b76e6430518326266429697443''', 1, '删除后台用户会话表：成功'),
+(81, 'login/dologin', 'admin', '2016-11-17 22:24:21', '127.0.0.1', 'login_sql', 1, '用户admin登录成功'),
+(82, 'nav/dodel', 'admin', '2016-11-17 22:37:45', '127.0.0.1', 'delete from 57sy_common_admin_nav where id in(268)', 1, '导航菜单删除成功：admin|管理员ID=成功'),
+(83, 'nav/dodel', 'admin', '2016-11-17 22:37:51', '127.0.0.1', 'delete from 57sy_common_admin_nav where id in(226)', 1, '导航菜单删除成功：admin|管理员ID=成功'),
+(84, 'nav/dodel', 'admin', '2016-11-17 22:38:15', '127.0.0.1', 'delete from 57sy_common_admin_nav where id in(263,264)', 1, '导航菜单删除成功：admin|管理员ID=成功'),
+(85, 'nav/dodel', 'admin', '2016-11-17 22:38:20', '127.0.0.1', 'delete from 57sy_common_admin_nav where id in(227,228)', 1, '导航菜单删除成功：admin|管理员ID=成功'),
+(86, 'nav/dodel', 'admin', '2016-11-17 22:38:24', '127.0.0.1', 'delete from 57sy_common_admin_nav where id in(225)', 1, '导航菜单删除成功：admin|管理员ID=成功'),
+(87, 'nav/dodel', 'admin', '2016-11-17 22:38:30', '127.0.0.1', 'delete from 57sy_common_admin_nav where id in(234,235)', 1, '导航菜单删除成功：admin|管理员ID=成功'),
+(88, 'nav/dodel', 'admin', '2016-11-17 22:38:34', '127.0.0.1', 'delete from 57sy_common_admin_nav where id in(233)', 1, '导航菜单删除成功：admin|管理员ID=成功'),
+(89, 'nav/dodel', 'admin', '2016-11-17 22:38:39', '127.0.0.1', 'delete from 57sy_common_admin_nav where id in(247,248)', 1, '导航菜单删除成功：admin|管理员ID=成功'),
+(90, 'nav/dodel', 'admin', '2016-11-17 22:38:52', '127.0.0.1', 'delete from 57sy_common_admin_nav where id in(249,250,251,252,253,254,255,256)', 1, '导航菜单删除成功：admin|管理员ID=成功'),
+(91, 'nav/dodel', 'admin', '2016-11-17 22:38:58', '127.0.0.1', 'delete from 57sy_common_admin_nav where id in(237,238,239)', 1, '导航菜单删除成功：admin|管理员ID=成功'),
+(92, 'nav/dodel', 'admin', '2016-11-17 22:39:04', '127.0.0.1', 'delete from 57sy_common_admin_nav where id in(236)', 1, '导航菜单删除成功：admin|管理员ID=成功'),
+(93, 'nav/dodel', 'admin', '2016-11-17 22:39:10', '127.0.0.1', 'delete from 57sy_common_admin_nav where id in(262,261)', 1, '导航菜单删除成功：admin|管理员ID=成功'),
+(94, 'nav/dodel', 'admin', '2016-11-17 22:39:16', '127.0.0.1', 'delete from 57sy_common_admin_nav where id in(260)', 1, '导航菜单删除成功：admin|管理员ID=成功'),
+(95, 'nav/dodel', 'admin', '2016-11-17 22:39:22', '127.0.0.1', 'delete from 57sy_common_admin_nav where id in(241,242,243)', 1, '导航菜单删除成功：admin|管理员ID=成功'),
+(96, 'nav/dodel', 'admin', '2016-11-17 22:39:26', '127.0.0.1', 'delete from 57sy_common_admin_nav where id in(240)', 1, '导航菜单删除成功：admin|管理员ID=成功'),
+(97, 'nav/dodel', 'admin', '2016-11-17 22:39:32', '127.0.0.1', 'delete from 57sy_common_admin_nav where id in(245,246)', 1, '导航菜单删除成功：admin|管理员ID=成功'),
+(98, 'nav/dodel', 'admin', '2016-11-17 22:39:36', '127.0.0.1', 'delete from 57sy_common_admin_nav where id in(244)', 1, '导航菜单删除成功：admin|管理员ID=成功'),
+(99, 'nav/dodel', 'admin', '2016-11-17 22:39:43', '127.0.0.1', 'delete from 57sy_common_admin_nav where id in(202)', 1, '导航菜单删除成功：admin|管理员ID=成功'),
+(100, 'nav/dodel', 'admin', '2016-11-17 22:39:50', '127.0.0.1', 'delete from 57sy_common_admin_nav where id in(199,200,201)', 1, '导航菜单删除成功：admin|管理员ID=成功'),
+(101, 'nav/dodel', 'admin', '2016-11-17 22:39:57', '127.0.0.1', 'delete from 57sy_common_admin_nav where id in(198,197)', 1, '导航菜单删除成功：admin|管理员ID=成功'),
+(102, 'nav/dodel', 'admin', '2016-11-17 22:40:03', '127.0.0.1', 'delete from 57sy_common_admin_nav where id in(196)', 1, '导航菜单删除成功：admin|管理员ID=成功'),
+(103, 'nav/dodel', 'admin', '2016-11-17 22:40:11', '127.0.0.1', 'delete from 57sy_common_admin_nav where id in(258,259)', 1, '导航菜单删除成功：admin|管理员ID=成功'),
+(104, 'nav/dodel', 'admin', '2016-11-17 22:40:19', '127.0.0.1', 'delete from 57sy_common_admin_nav where id in(266,267)', 1, '导航菜单删除成功：admin|管理员ID=成功'),
+(105, 'nav/dodel', 'admin', '2016-11-17 22:40:32', '127.0.0.1', 'delete from 57sy_common_admin_nav where id in(257,265)', 1, '导航菜单删除成功：admin|管理员ID=成功'),
+(106, 'nav/dodel', 'admin', '2016-11-17 22:41:56', '127.0.0.1', 'delete from 57sy_common_admin_nav where id in(270,271)', 1, '导航菜单删除成功：admin|管理员ID=成功'),
+(107, 'nav/dodel', 'admin', '2016-11-17 22:41:59', '127.0.0.1', 'delete from 57sy_common_admin_nav where id in(269)', 1, '导航菜单删除成功：admin|管理员ID=成功'),
+(108, 'hb_index/edit', 'admin', '2016-11-17 22:45:52', '127.0.0.1', 'UPDATE `hb_hongbao_set` SET `id` = ''18'', `title` = ''测试红包5'', `curr` = ''0'', `suiji` = ''0'', `hongbao_shu` = ''11'', `jine` = ''21.00'', `qibu_jine` = ''11.00'' WHERE `id` =  ''18''', 1, '更新红包设置表：admin|管理员ID=16成功'),
+(109, 'hb_index/edit', 'admin', '2016-11-17 22:45:59', '127.0.0.1', 'UPDATE `hb_hongbao_set` SET `id` = ''18'', `title` = ''测试红包51'', `curr` = ''0'', `suiji` = ''0'', `hongbao_shu` = ''11'', `jine` = ''21.00'', `qibu_jine` = ''11.00'' WHERE `id` =  ''18''', 1, '更新红包设置表：admin|管理员ID=16成功'),
+(110, 'hb_index/edit', 'admin', '2016-11-17 22:46:07', '127.0.0.1', 'UPDATE `hb_hongbao_set` SET `id` = ''18'', `title` = ''测试红包5'', `curr` = ''0'', `suiji` = ''0'', `hongbao_shu` = ''11'', `jine` = ''21.00'', `qibu_jine` = ''11.00'' WHERE `id` =  ''18''', 1, '更新红包设置表：admin|管理员ID=16成功'),
+(111, 'hb_phone/edit', 'admin', '2016-11-17 22:46:25', '127.0.0.1', 'UPDATE `hb_tel` SET `id` = ''28'', `tel` = ''13532065333'', `beizhu` = '''' WHERE `id` =  ''28''', 1, '更新能参与红包的手机号表：admin|管理员ID=16成功'),
+(112, 'hb_index/add', 'admin', '2016-11-17 22:49:46', '127.0.0.1', 'INSERT INTO `hb_hongbao_set` (`title`, `curr`, `suiji`, `hongbao_shu`, `jine`, `qibu_jine`) VALUES (''hgon'', ''0'', ''0'', ''10'', '''', ''1.00'')', 1, '添加红包设置表：admin|管理员ID=16成功'),
+(113, 'hb_phone/add', 'admin', '2016-11-17 22:49:59', '127.0.0.1', 'INSERT INTO `hb_tel` (`create_time`, `tel`, `beizhu`) VALUES (1479394199, ''13532065324'', '''')', 1, '添加能参与红包的手机号表：admin|管理员ID=16成功');
 
 -- --------------------------------------------------------
 
@@ -46378,7 +46438,7 @@ INSERT INTO `57sy_common_sysconfig` (`varname`, `value`, `info`, `groupid`, `typ
 ('site_desc', '微信抢红包项目管理系统', '站点描述', 1, 'string'),
 ('cfg_tel', '0760-88990009', '客服电话', 1, 'string'),
 ('cfg_www', 'http://www.baidu.com', '用于前台读出主站网站', 1, 'string'),
-('cfg_cookie_domain', 'www.wxhongbao.com', '用于单点登录，域名', 1, 'string'),
+('cfg_cookie_domain', 'www.wx_hongbao.com', '用于单点登录，域名', 1, 'string'),
 ('cfg_qq', '', '客服QQ', 1, 'string'),
 ('cfg_qianfei', '请未交本年度会员费的单位尽快缴交', '会员欠费提醒', 1, 'string'),
 ('cfg_sms_open', 'N', '是否开启短信', 1, 'boolean'),
@@ -46830,7 +46890,9 @@ INSERT INTO `admin_user_session` (`session_id`, `ip_address`, `user_agent`, `las
 ('0613aebc6f198df226fceacc43f73cbf', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.155 Safari/537.36', 1479280786, 'a:9:{s:9:"user_data";s:0:"";s:8:"admin_id";s:2:"16";s:8:"username";s:5:"admin";s:3:"tel";s:11:"15902076693";s:5:"email";s:15:"20986646@qq.com";s:7:"isadmin";b:1;s:3:"gid";s:1:"9";s:16:"website_category";N;s:10:"group_name";s:15:"超级管理员";}', 1479281564),
 ('566512a5e0854950a5a2001d7b14755a', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.155 Safari/537.36', 1479281039, '', NULL),
 ('97d0a81cecfc85c0ce49731656c56af4', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.155 Safari/537.36', 1479281046, '', NULL),
-('fabeac363574fd0ba8ad5166b3b65d3b', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.155 Safari/537.36', 1479281215, '', NULL);
+('fabeac363574fd0ba8ad5166b3b65d3b', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.155 Safari/537.36', 1479281215, '', NULL),
+('a30711f5f06970c25f4c7e5e2f1bb551', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.70 Safari/537.36', 1479392661, 'a:9:{s:9:"user_data";s:0:"";s:8:"admin_id";s:2:"16";s:8:"username";s:5:"admin";s:3:"tel";s:11:"15902076693";s:5:"email";s:15:"20986646@qq.com";s:7:"isadmin";b:1;s:3:"gid";s:1:"9";s:16:"website_category";N;s:10:"group_name";s:15:"超级管理员";}', 1479394208),
+('a21584b9fe9c290516c5f94ba183605e', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.70 Safari/537.36', 1479302841, 'a:9:{s:9:"user_data";s:0:"";s:8:"admin_id";s:2:"16";s:8:"username";s:5:"admin";s:3:"tel";s:11:"15902076693";s:5:"email";s:15:"20986646@qq.com";s:7:"isadmin";b:1;s:3:"gid";s:1:"9";s:16:"website_category";N;s:10:"group_name";s:15:"超级管理员";}', NULL);
 
 -- --------------------------------------------------------
 
@@ -46849,7 +46911,17 @@ CREATE TABLE IF NOT EXISTS `hb_hongbao_list` (
   `tel` varchar(255) DEFAULT NULL COMMENT '中奖人的手机号',
   `create_time` int(11) DEFAULT '0' COMMENT '中奖时间',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='后台生成红包，前台中奖后，才会有openid等资料' AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='后台生成红包，前台中奖后，才会有openid等资料' AUTO_INCREMENT=5 ;
+
+--
+-- 转存表中的数据 `hb_hongbao_list`
+--
+
+INSERT INTO `hb_hongbao_list` (`id`, `set_id`, `openid`, `nickname`, `username`, `logo`, `jine`, `tel`, `create_time`) VALUES
+(1, 18, '12345645678789', '林科', 'username', 'www.hao123.com', '546456.00', '13532065324', 1414525258),
+(2, 18, '12345645678789', '林科01', 'username', 'www.hao123.com', '5464.00', '13532065424', 1414525258),
+(3, 18, '12345645678789', '林科01', '12323', 'www.hao123.com', '5464.00', '13532065424', 1414525258),
+(4, 17, '12345645678789', '林科01', '12323', 'www.hao123.com', '5464.00', '13532065424', 1414525258);
 
 -- --------------------------------------------------------
 
@@ -46866,7 +46938,7 @@ CREATE TABLE IF NOT EXISTS `hb_hongbao_set` (
   `jine` decimal(6,2) DEFAULT '0.00' COMMENT '本次金额',
   `qibu_jine` decimal(6,2) DEFAULT '1.00' COMMENT '每个红包最小的钱数，默认是1元',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='设置每一轮的红包数量及本轮总金额' AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='设置每一轮的红包数量及本轮总金额' AUTO_INCREMENT=23 ;
 
 -- --------------------------------------------------------
 
@@ -46880,7 +46952,7 @@ CREATE TABLE IF NOT EXISTS `hb_tel` (
   `beizhu` text COMMENT '备注',
   `create_time` int(255) DEFAULT '0' COMMENT '录入时间',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='手机库，用于前台登录用，录入手机号' AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='手机库，用于前台登录用，录入手机号' AUTO_INCREMENT=31 ;
 
 -- --------------------------------------------------------
 
@@ -47139,1473 +47211,6 @@ CREATE TABLE IF NOT EXISTS `weixin_jsapi_ticket` (
 -- --------------------------------------------------------
 
 --
--- 表的结构 `zcq_datamanage`
---
-
-CREATE TABLE IF NOT EXISTS `zcq_datamanage` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `baobiao_time` date DEFAULT NULL COMMENT '报表时间',
-  `baobu_status` varchar(100) DEFAULT NULL COMMENT '报部状态',
-  `baobiao_status` varchar(100) DEFAULT NULL COMMENT '报表状态',
-  `addr` varchar(100) DEFAULT NULL COMMENT '地区',
-  `company` varchar(100) DEFAULT NULL COMMENT '境内企业名称',
-  `company2_code` varchar(100) DEFAULT NULL COMMENT '境外项目编码',
-  `company2` varchar(100) DEFAULT NULL COMMENT '境外项目名称',
-  `shenqing` varchar(100) DEFAULT NULL COMMENT '申请事项',
-  `yewu_type` varchar(100) DEFAULT NULL COMMENT '业务类型',
-  `guobie` varchar(100) DEFAULT NULL COMMENT '国别',
-  `touzi_type` varchar(100) DEFAULT NULL COMMENT '投资类型',
-  `touzi_fangshi` varchar(100) DEFAULT NULL COMMENT '投资方式',
-  `zonge` decimal(18,4) DEFAULT NULL COMMENT '中方实际投资总额',
-  `zonge3` decimal(18,4) DEFAULT NULL COMMENT '中方实际投资总额',
-  `zonge2` decimal(18,4) DEFAULT NULL COMMENT '中方实际投资总额',
-  `huobi` decimal(18,4) DEFAULT NULL COMMENT '其中：货币投资',
-  `ziyou` decimal(18,4) DEFAULT NULL COMMENT '其中：自有资金',
-  `yinhang` decimal(18,4) DEFAULT NULL COMMENT '其中：银行贷款',
-  `other` decimal(18,4) DEFAULT NULL COMMENT '其中：其他',
-  `shiwu` decimal(18,4) DEFAULT NULL COMMENT '其中：实物投资',
-  `wuxing` decimal(18,4) DEFAULT NULL COMMENT '其中：无形资产投资',
-  `xinzeng` decimal(18,4) DEFAULT NULL COMMENT '其中：新增股权',
-  `xinzeng_zhai` decimal(18,4) DEFAULT NULL COMMENT '其中：新增债务工具',
-  `fuzeren` varchar(100) DEFAULT NULL COMMENT '项目负责人',
-  `linkman` varchar(100) DEFAULT NULL COMMENT '联系人',
-  `tel` varchar(100) DEFAULT NULL COMMENT '联系人手机',
-  `tianbaoren` varchar(100) DEFAULT NULL COMMENT '填报人',
-  `tianbao_time` datetime DEFAULT NULL COMMENT '填报时间',
-  `beizhu` varchar(100) DEFAULT NULL COMMENT '备注',
-  `create_sysuserid` int(11) DEFAULT NULL COMMENT '创建人ID，即管理员ID',
-  `update_sysuserid` int(11) DEFAULT NULL COMMENT '修改人ID，即管理员ID',
-  `del_sysuserid` int(11) DEFAULT NULL COMMENT '删除人ID，即管理员ID',
-  `createtime` int(11) DEFAULT NULL,
-  `updatetime` int(11) DEFAULT NULL,
-  `deltime` int(11) DEFAULT NULL,
-  `user_isread` enum('0','1') DEFAULT '0' COMMENT '是否已读，点入去看详细后，将值设为1',
-  `userid` int(11) DEFAULT NULL COMMENT '当境内企业名称跟会员表相同时绑定会员ID',
-  PRIMARY KEY (`id`),
-  KEY `AK_Key_2` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='走出去数据管理' AUTO_INCREMENT=305 ;
-
---
--- 转存表中的数据 `zcq_datamanage`
---
-
-INSERT INTO `zcq_datamanage` (`id`, `baobiao_time`, `baobu_status`, `baobiao_status`, `addr`, `company`, `company2_code`, `company2`, `shenqing`, `yewu_type`, `guobie`, `touzi_type`, `touzi_fangshi`, `zonge`, `zonge3`, `zonge2`, `huobi`, `ziyou`, `yinhang`, `other`, `shiwu`, `wuxing`, `xinzeng`, `xinzeng_zhai`, `fuzeren`, `linkman`, `tel`, `tianbaoren`, `tianbao_time`, `beizhu`, `create_sysuserid`, `update_sysuserid`, `del_sysuserid`, `createtime`, `updatetime`, `deltime`, `user_isread`, `userid`) VALUES
-(4, '2016-08-09', '15361363220', '15361363220', '15361363220', '15361363220', '15361363220', '15361363220', '15361363220', '15361363220', '15361363220', '15361363220', '15361363220', '186.1000', NULL, NULL, '55.4000', '12.2000', '54.2000', '45.5000', '1.5000', '7.4000', '4.4000', '5.5000', '15361363220', '15361363220', '15361363220', '15361363220', '2016-08-02 00:00:00', '15361363220', 16, 16, 0, 1470705446, 1470965488, 1470724191, '0', 88),
-(5, '1970-01-01', '15361363221', '15361363221', '15361363221', '15361363221', '15361363221', '15361363221', '15361363221', '15361363221', '15361363221', '15361363221', '15361363221', '19.4600', NULL, NULL, '0.0100', '12.2000', '0.0200', '1.2500', '0.0300', '1.3550', '0.0400', '4.5550', '15361363221', '15361363221', '15361363221', '15361363221', '2016-08-09 00:00:00', '15361363221', 16, NULL, 0, 1470722850, 1470789854, 1470724191, '1', 93),
-(6, '2016-08-09', '15361363662', '15361363662', '15361363662', '15361363662', '15361363662', '15361363662', '15361363662', '15361363662', '15361363662', '15361363662', '15361363662', '1198.0000', NULL, NULL, '135.0000', '169.0000', '149.0000', '165.0000', '198.0000', '112.0000', '106.0000', '164.0000', '15361363662', '15361363662', '15361363662', '15361363662', '2016-08-09 00:00:00', '15361363662', 16, NULL, 0, 1470724166, NULL, NULL, '1', 93),
-(296, '2016-09-05', 'I', 'Y', '中山市', '中山市华旺实业投资有限公司', '0845070270002', '大华纸业（尼日利亚）有限公司', '新设立境外企业', '直接投资业务', '尼日利亚', '投资办厂', '新设', '0.0000', NULL, NULL, '0.0000', '0.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1970-01-01 08:00:00', NULL, 16, NULL, 0, 1473061057, NULL, NULL, '0', 86),
-(297, '2016-09-05', 'I2', 'Y2', '中山市', '超人用户', '0845070270003', '大华纸业（尼日利亚）有限公司2', '新设立境外企业2', '直接投资业务2', '尼日利亚2', '投资办厂2', '新设2', '0.0001', NULL, NULL, '0.0002', '0.0003', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1970-01-01 08:00:00', NULL, 16, NULL, 0, 1473061058, NULL, NULL, '0', 93),
-(298, '2016-09-06', 'I', 'Y', '中山市', '中山市华旺实业投资有限公司', '0845070270002', '大华纸业（尼日利亚）有限公司', '新设立境外企业', '直接投资业务', '尼日利亚', '投资办厂', '新设', '0.0000', NULL, NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '洪伟俭', '余彩云', '13823913922', '余彩云', '2016-08-16 08:58:11', '', 16, NULL, 0, 1473134374, NULL, NULL, '0', 86),
-(299, '2016-09-06', 'I2', 'Y2', '中山市', '超人用户', '0845070270003', '大华纸业（尼日利亚）有限公司2', '新设立境外企业2', '直接投资业务2', '尼日利亚2', '投资办厂2', '新设2', '0.0001', NULL, NULL, '0.0002', '0.0003', '0.0004', '0.0005', '0.0006', '70.0000', '0.0008', '0.0009', '洪伟俭2', '余彩云2', '12823913923', '余彩云2', '2016-08-16 08:58:11', '', 16, NULL, 0, 1473134375, NULL, NULL, '1', 93),
-(300, '2016-09-06', '企业简称企业简称', '企业简称企业简称', '企业简称企业简称', '企业简称企业简称', '企业简称企业简称', '企业简称企业简称', '企业简称企业简称', '企业简称企业简称', '企业简称企业简称', '企业简称企业简称', '企业简称企业简称', '3.0000', NULL, NULL, '0.0000', '1.0000', '0.0000', '2.0000', '0.0000', '0.0000', '0.0000', '0.0000', '企业简称企业简称', '企业简称企业简称', '15678787878', '企业简称企业简称', '2016-09-06 00:00:00', '企业简称企业简称', 16, 16, 0, 1473152185, 1473152196, NULL, '0', 96),
-(301, '2016-09-10', 'I', 'Y', '中山市', '机构用户全称2', '0845070270002', '大华纸业（尼日利亚）有限公司', '新设立境外企业', '直接投资业务', '尼日利亚', '投资办厂', '新设', '0.0000', NULL, NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '洪伟俭', '余彩云', '13823913922', '余彩云', '2016-08-16 08:58:11', '', 16, NULL, 0, 1473474118, NULL, NULL, '0', 101),
-(302, '2016-09-10', 'I2', 'Y2', '中山市', '机构用户全称2', '0845070270003', '大华纸业（尼日利亚）有限公司2', '新设立境外企业2', '直接投资业务2', '尼日利亚2', '投资办厂2', '新设2', '0.0001', NULL, NULL, '0.0002', '0.0003', '0.0004', '0.0005', '0.0006', '70.0000', '0.0008', '0.0009', '洪伟俭2', '余彩云2', '12823913923', '余彩云2', '2016-08-16 08:58:11', '', 16, NULL, 0, 1473474118, NULL, NULL, '0', 101),
-(303, '2016-09-10', 'I', 'Y', '中山市', '超人用户', '0845070270002', '大华纸业（尼日利亚）有限公司', '新设立境外企业', '直接投资业务', '尼日利亚', '投资办厂', '新设', '0.0000', NULL, NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '洪伟俭', '余彩云', '13823913922', '余彩云', '2016-08-16 08:58:11', '', 16, NULL, 0, 1473474261, NULL, NULL, '0', 93),
-(304, '2016-09-10', 'I2', 'Y2', '中山市', '超人用户', '0845070270003', '大华纸业（尼日利亚）有限公司2', '新设立境外企业2', '直接投资业务2', '尼日利亚2', '投资办厂2', '新设2', '0.0001', NULL, NULL, '0.0002', '0.0003', '0.0004', '0.0005', '0.0006', '70.0000', '0.0008', '0.0009', '洪伟俭2', '余彩云2', '12823913923', '余彩云2', '2016-08-16 08:58:11', '', 16, NULL, 0, 1473474261, NULL, NULL, '0', 93),
-(232, '2016-08-10', 'I', 'Y', '中山市', '中山市华旺实业投资有限公司', '0845070270002', '大华纸业（尼日利亚）有限公司', '新设立境外企业', '直接投资业务', '尼日利亚', '投资办厂', '新设', '9.9000', NULL, NULL, '0.0000', '1.0000', '1.2000', '2.2000', '0.0000', '3.3000', '0.0000', '2.2000', '洪伟俭', '余彩云', '13823913922', '余彩云', '2016-06-16 00:00:00', '', 16, NULL, 0, 1470789644, 1470791607, NULL, '0', 86),
-(270, '2016-08-10', 'I', 'Y', '中山市', '中山市华旺实业投资有限公司', '0845070270002', '大华纸业（尼日利亚）有限公司', '新设立境外企业', '直接投资业务', '尼日利亚', '投资办厂', '新设', '0.0000', NULL, NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '洪伟俭', '余彩云', '13823913922', '余彩云', '2016-06-16 08:58:05', '', 16, NULL, 0, 1470819256, NULL, NULL, '0', 86),
-(271, '2016-08-10', 'I', 'Y', '中山市', '中山市华旺实业投资有限公司', '0845070270002', '大华纸业（尼日利亚）有限公司', '新设立境外企业', '直接投资业务', '尼日利亚', '投资办厂', '新设', '0.0000', NULL, NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '洪伟俭', '余彩云', '13823913922', '余彩云', '2016-06-16 08:58:05', '', 16, NULL, 0, 1470819445, NULL, NULL, '0', 86),
-(272, '2016-08-19', '15361363662', '15361363662', '15361363662', '15361363662', '15361363662', '15361363662', '15361363662', '15361363662', '15361363662', '15361363662', '15361363662', '1304.0000', NULL, NULL, '185.0000', '179.0000', '200.0000', '163.0000', '131.0000', '140.0000', '137.0000', '169.0000', '15361363662', '15361363662', '15361363662', '15361363662', '2016-08-19 00:00:00', '15361363662', 16, NULL, 0, 1471570368, NULL, NULL, '0', NULL),
-(273, '2016-08-19', '15361363662', '15361363662', '15361363662', '15361363662', '15361363662', '15361363662', '15361363662', '15361363662', '15361363662', '15361363662', '15361363662', '1184.0000', NULL, NULL, '173.0000', '135.0000', '105.0000', '187.0000', '159.0000', '137.0000', '177.0000', '111.0000', '15361363662', '15361363662', '15361363662', '15361363662', '2016-08-19 00:00:00', '15361363662', 16, NULL, 0, 1471570697, NULL, NULL, '0', NULL),
-(274, '2016-08-19', '13055527000', '13055579000', '13055567000', '13055524000', '13055584000', '13055517000', '13055514000', '13055550000', '13055517000', '13055537000', '13055589000', '1244.0000', NULL, NULL, '136.0000', '119.0000', '183.0000', '137.0000', '119.0000', '183.0000', '177.0000', '190.0000', '13055563000', '13055533000', '13055527000', '13055573000', '2016-08-19 00:00:00', '13055537000', 16, NULL, 0, 1471570779, NULL, NULL, '0', NULL),
-(275, '2016-08-19', '13055581000', '13055556000', '13055545000', '13055529000', '13055557000', '13055518000', '13055525000', '13055537000', '13055566000', '13055553000', '13055536000', '1153.0000', NULL, NULL, '187.0000', '101.0000', '179.0000', '107.0000', '147.0000', '157.0000', '104.0000', '171.0000', '13055529000', '13055545000', '13055513000', '13055512000', '2016-08-19 00:00:00', '13055570000', 16, NULL, 0, 1471570808, NULL, NULL, '0', NULL),
-(276, '2016-08-19', '13055596000', '13055574000', '13055552000', '武术公司', '13055588000', '13055586000', '13055519000', '13055559000', '13055527000', '13055591000', '13055510000', '186.0000', NULL, NULL, '102.0000', '174.0000', '194.0000', '114.0000', '150.0000', '164.0000', '105.0000', '127.0000', '13055535000', '13055558000', '13055596000', '13055526000', '2016-08-19 00:00:00', '13055573000', 16, NULL, 0, 1471570925, NULL, NULL, '0', 93),
-(277, '2016-08-19', 'I', 'Y', '中山市', '中山市华旺实业投资有限公司', '0845070270002', '大华纸业（尼日利亚）有限公司', '新设立境外企业', '直接投资业务', '尼日利亚', '投资办厂', '新设', '0.0000', NULL, NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '洪伟俭', '余彩云', '13823913922', '余彩云', '2016-08-16 08:58:11', '', 16, NULL, 0, 1471573009, NULL, NULL, '1', 86),
-(278, '2016-08-19', 'I2', 'Y2', '中山市2', '超人用户', '0845070270003', '大华纸业（尼日利亚）有限公司2', '新设立境外企业2', '直接投资业务2', '尼日利亚2', '投资办厂2', '新设2', '0.0001', NULL, NULL, '0.0002', '0.0003', '0.0004', '0.0005', '0.0006', '70.0000', '0.0008', '0.0009', '洪伟俭2', '余彩云2', '13823913923', '余彩云2', '2016-08-16 08:58:11', '', 16, NULL, 0, 1471573010, NULL, NULL, '0', 93),
-(279, '2016-08-24', 'I', 'Y', '中山市', '中山市华旺实业投资有限公司', '0845070270002', '大华纸业（尼日利亚）有限公司', '新设立境外企业', '直接投资业务', '尼日利亚', '投资办厂', '新设', '0.0000', NULL, NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '洪伟俭', '余彩云', '13823913922', '余彩云', '2016-08-16 08:58:11', '', 16, NULL, 0, 1472019769, NULL, NULL, '0', 86),
-(280, '2016-08-24', 'I2', 'Y2', '中山市', '超人用户', '0845070270003', '大华纸业（尼日利亚）有限公司2', '新设立境外企业2', '直接投资业务2', '尼日利亚2', '投资办厂2', '新设2', '0.0001', NULL, NULL, '0.0002', '0.0003', '0.0004', '0.0005', '0.0006', '70.0000', '0.0008', '0.0009', '洪伟俭2', '余彩云2', '12823913923', '余彩云2', '2016-08-16 08:58:11', '', 16, NULL, 0, 1472019770, NULL, NULL, '0', 93),
-(281, '2016-08-24', 'I', 'Y', '中山市', '中山市华旺实业投资有限公司', '0845070270002', '大华纸业（尼日利亚）有限公司', '新设立境外企业', '直接投资业务', '尼日利亚', '投资办厂', '新设', '0.0000', NULL, NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '洪伟俭', '余彩云', '13823913922', '余彩云', '2016-08-16 08:58:11', '', 16, NULL, 0, 1472020293, NULL, NULL, '0', 86),
-(282, '2016-08-24', 'I2', 'Y2', '中山市', '超人用户', '0845070270003', '大华纸业（尼日利亚）有限公司2', '新设立境外企业2', '直接投资业务2', '尼日利亚2', '投资办厂2', '新设2', '0.0001', NULL, NULL, '0.0002', '0.0003', '0.0004', '0.0005', '0.0006', '70.0000', '0.0008', '0.0009', '洪伟俭2', '余彩云2', '12823913923', '余彩云2', '2016-08-16 08:58:11', '', 16, NULL, 0, 1472020294, NULL, NULL, '0', 93),
-(283, '2016-08-24', 'I', 'Y', '中山市', '中山市华旺实业投资有限公司', '0845070270002', '大华纸业（尼日利亚）有限公司', '新设立境外企业', '直接投资业务', '尼日利亚', '投资办厂', '新设', '0.0000', NULL, NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '洪伟俭', '余彩云', '13823913922', '余彩云', '2016-08-16 08:58:11', '', 16, NULL, 0, 1472020813, NULL, NULL, '0', 86),
-(284, '2016-08-24', 'I2', 'Y2', '中山市', '超人用户', '0845070270003', '大华纸业（尼日利亚）有限公司2', '新设立境外企业2', '直接投资业务2', '尼日利亚2', '投资办厂2', '新设2', '0.0001', NULL, NULL, '0.0002', '0.0003', '0.0004', '0.0005', '0.0006', '70.0000', '0.0008', '0.0009', '洪伟俭2', '余彩云2', '12823913923', '余彩云2', '2016-08-16 08:58:11', '', 16, NULL, 0, 1472020814, NULL, NULL, '0', 93),
-(285, '2016-08-24', 'I', 'Y', '中山市', '中山市华旺实业投资有限公司', '0845070270002', '大华纸业（尼日利亚）有限公司', '新设立境外企业', '直接投资业务', '尼日利亚', '投资办厂', '新设', '0.0000', NULL, NULL, '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '0.0000', '洪伟俭', '余彩云', '13823913922', '余彩云', '2016-08-16 08:58:11', '', 16, NULL, 0, 1472020933, NULL, NULL, '1', 86),
-(286, '2016-08-24', 'I2', 'Y2', '中山市', '超人用户', '0845070270003', '大华纸业（尼日利亚）有限公司2', '新设立境外企业2', '直接投资业务2', '尼日利亚2', '投资办厂2', '新设2', '0.0001', NULL, NULL, '0.0002', '0.0003', '0.0004', '0.0005', '0.0006', '70.0000', '0.0008', '0.0009', '洪伟俭2', '余彩云2', '12823913923', '余彩云2', '2016-08-16 08:58:11', '', 16, NULL, 0, 1472020933, NULL, NULL, '0', 93),
-(287, '2016-08-24', '13055539000', '13055581000', '13055551000', '13055596000', '13055523000', '13055580000', '13055580000', '13055548000', '13055595000', '13055588000', '13055532000', '1244.0000', NULL, NULL, '185.0000', '140.0000', '190.0000', '115.0000', '103.0000', '160.0000', '196.0000', '155.0000', '13055581000', '13055590000', '13055589000', '13055546000', '2016-08-24 00:00:00', '爱是肯德基阿拉山口空空荡荡的顶顶顶顶顶顶顶顶顶顶', 16, 16, 0, 1472021717, 1472106717, NULL, '0', NULL),
-(288, '2016-09-03', 'I', 'Y', '中山市', '中山市华旺实业投资有限公司', '0845070270002', '大华纸业（尼日利亚）有限公司', '新设立境外企业', '直接投资业务', '尼日利亚', '投资办厂', '新设', '23.0000', NULL, NULL, '23.0000', '232.0000', '32.0000', '2323.0000', '2323.0000', '2323.0000', '23.0000', '32.0000', '李四', '费事', '13823913922', '大富大贵', '2016-08-16 08:58:11', '', 16, NULL, 0, 1472873982, NULL, NULL, '0', 86),
-(289, '2016-09-03', 'I2', 'Y2', '中山市', '超人用户', '0845070270003', '大华纸业（尼日利亚）有限公司2', '新设立境外企业2', '直接投资业务2', '尼日利亚2', '投资办厂2', '新设2', '23.0000', NULL, NULL, '23.0000', '232323.0000', '232323.0000', '232323232.0000', '2323.0000', '2323.0000', '23.0000', '23.0000', '绿色通道', '高度', '12823913923', '得到', '2016-08-16 08:58:11', '', 16, NULL, 0, 1472873983, NULL, NULL, '0', 93),
-(290, '2016-09-03', 'I', 'Y', '中山市', '中山市华旺实业投资有限公司', '0845070270002', '大华纸业（尼日利亚）有限公司', '新设立境外企业', '直接投资业务', '尼日利亚', '投资办厂', '天天', '230000.0000', NULL, NULL, '10000.0000', '10000.0000', '5000.0000', '0.0000', '10000.0000', '20000.0000', '3.0000', '12.0000', '极乐净土', '极乐净土', '13598745964', '极乐净土', '2016-08-16 08:58:11', '', 16, NULL, 16, 1472874216, NULL, 1472875022, '0', 86),
-(291, '2016-09-03', 'I', 'Y', '中山市', '极乐净土', '0845070270002', '明月几时有，把酒问青天，不知天上宫阙，今夕是何年', '新设立境外企业', '直接投资业务', '尼日利亚', '投资办厂', '天天', '230000.0000', NULL, NULL, '10000.0000', '10000.0000', '5000.0000', '0.0000', '10000.0000', '20000.0000', '3.0000', '12.0000', '极乐净土', '极乐净土', '13598745964', '极乐净土', '2016-08-16 08:58:11', '', 16, NULL, 16, 1472875034, NULL, 1472875131, '0', 106),
-(292, '2016-09-03', 'I', 'Y', '中山市', '极乐净土', '0845070270002', '明月几时有，把酒问青天，不知天上宫阙，今夕是何年', '新设立境外企业', '直接投资业务', '尼日利亚', '投资办厂', '天天', '230000.0000', NULL, NULL, '10000.0000', '10000.0000', '5000.0000', '0.0000', '10000.0000', '20000.0000', '3.0000', '12.0000', '极乐净土', '极乐净土', '13598745964', '极乐净土', '2016-08-16 08:58:11', '', 16, NULL, 16, 1472875143, NULL, 1472875678, '1', 106),
-(293, '2016-09-03', 'I', 'Y', '中山市', '超人用户', '0845070270002', '明月几时有，把酒问青天，不知天上宫阙，今夕是何年', '新设立境外企业', '直接投资业务', '尼日利亚', '投资办厂', '天天', '55015.0000', NULL, NULL, '10000.0000', '10000.0000', '5000.0000', '0.0000', '10000.0000', '20000.0000', '3.0000', '12.0000', '超人用户', '超人用户', '13598745964', '超人用户', '2016-08-16 00:00:00', '超人用户超人用户超人用户超人用户', 16, 16, 0, 1472875706, 1473046762, NULL, '1', 93),
-(294, '2016-09-05', 'I', 'Y', '中山市', '中山市华旺实业投资有限公司', '0845070270002', '大华纸业（尼日利亚）有限公司', '新设立境外企业', '直接投资业务', '尼日利亚', '投资办厂', '新设', '0.0000', NULL, NULL, '0.0000', '0.0000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1970-01-01 08:00:00', NULL, 16, NULL, 0, 1473061006, NULL, NULL, '0', 86),
-(295, '2016-09-05', 'I2', 'Y2', '中山市', '超人用户', '0845070270003', '大华纸业（尼日利亚）有限公司2', '新设立境外企业2', '直接投资业务2', '尼日利亚2', '投资办厂2', '新设2', '0.0001', NULL, NULL, '0.0002', '0.0003', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1970-01-01 08:00:00', NULL, 16, NULL, 0, 1473061007, NULL, NULL, '0', 93);
-
--- --------------------------------------------------------
-
---
--- 表的结构 `zcq_diaocha`
---
-
-CREATE TABLE IF NOT EXISTS `zcq_diaocha` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键id',
-  `title` varchar(250) DEFAULT NULL COMMENT '问卷主题',
-  `quanxian` varchar(50) DEFAULT NULL COMMENT '投票限制，用","隔开，0：公开网友能参与，1：投资者，2：服务机构',
-  `isshow` enum('0','1') DEFAULT '1' COMMENT '是否显示1显示，0隐藏',
-  `content` text COMMENT ' 描述',
-  `create_time` int(10) DEFAULT NULL COMMENT '添加时间',
-  `update_time` int(10) DEFAULT NULL COMMENT '最后更新时间',
-  `isdel` enum('0','1') DEFAULT '0' COMMENT '是否删除，0未 1删除',
-  `create_sysuserid` int(10) DEFAULT NULL COMMENT '创建人userid 即管理员ID',
-  `update_sysuserid` int(10) DEFAULT NULL COMMENT '更新人userid 即管理员ID',
-  `del_sysuserid` int(10) DEFAULT NULL COMMENT '删除人userid 即管理员ID',
-  `del_time` int(10) DEFAULT NULL COMMENT '删除时间',
-  PRIMARY KEY (`id`),
-  KEY `AK_Key_1` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='调查问卷主表' AUTO_INCREMENT=5 ;
-
---
--- 转存表中的数据 `zcq_diaocha`
---
-
-INSERT INTO `zcq_diaocha` (`id`, `title`, `quanxian`, `isshow`, `content`, `create_time`, `update_time`, `isdel`, `create_sysuserid`, `update_sysuserid`, `del_sysuserid`, `del_time`) VALUES
-(1, '测试问卷', '0,2', '0', '先不公开', 1470364085, 1470364085, '0', 16, 16, 16, 1470369687),
-(2, '测试问卷11', '1', '1', '不公开2', 1470364382, 1470367768, '1', 16, 16, 16, 1473413610),
-(3, '爱因斯坦', '0,1,2', '1', '', 1472779520, 1472873926, '0', 16, 16, NULL, NULL),
-(4, '超级问卷', '0,1,2', '1', '超级问卷', 1473403641, 1473403663, '0', 16, 16, NULL, NULL);
-
--- --------------------------------------------------------
-
---
--- 表的结构 `zcq_diaocha_canjia`
---
-
-CREATE TABLE IF NOT EXISTS `zcq_diaocha_canjia` (
-  `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '主键id',
-  `diaocha_id` int(10) DEFAULT '0' COMMENT '所属调查ID 读表 zcq_diaocha',
-  `wenti_id` int(10) DEFAULT '0' COMMENT '问题ID 读表：zcq_diaocha_wenti',
-  `item_id` varchar(250) DEFAULT NULL COMMENT '选项ID，多选就用逗号隔开 读表：zcq_diaocha_wenti',
-  `content` text COMMENT '问答题时，填内容',
-  `other` varchar(250) DEFAULT NULL COMMENT '当选其他时填写的内容',
-  `create_time` int(10) DEFAULT NULL COMMENT '添加时间',
-  `update_time` int(10) DEFAULT NULL COMMENT '最后更新时间',
-  `isdel` enum('0','1') DEFAULT '0' COMMENT '是否删除，0未 1删除',
-  `create_userid` int(10) DEFAULT NULL COMMENT '创建人userid 即会员ID',
-  `update_sysuserid` int(10) DEFAULT NULL COMMENT '更新人userid 即管理员ID',
-  `del_sysuserid` int(10) DEFAULT NULL COMMENT '删除人userid 即管理员ID',
-  `del_time` int(10) DEFAULT NULL COMMENT '删除时间',
-  `linkname` varchar(255) DEFAULT NULL COMMENT '联系人',
-  `tel` varchar(255) DEFAULT NULL COMMENT '联系人电话',
-  `company` varchar(255) DEFAULT NULL COMMENT '联系人单位',
-  `ip` varchar(255) DEFAULT NULL COMMENT '填表人ip',
-  PRIMARY KEY (`id`),
-  KEY `AK_Key_1` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='调查问卷 结果表' AUTO_INCREMENT=54 ;
-
---
--- 转存表中的数据 `zcq_diaocha_canjia`
---
-
-INSERT INTO `zcq_diaocha_canjia` (`id`, `diaocha_id`, `wenti_id`, `item_id`, `content`, `other`, `create_time`, `update_time`, `isdel`, `create_userid`, `update_sysuserid`, `del_sysuserid`, `del_time`, `linkname`, `tel`, `company`, `ip`) VALUES
-(39, 2, 8, '10', NULL, '', 1470993014, 1470993014, '0', 82, 82, NULL, NULL, 'linke', '15902076695', 'dw', '127.0.0.1'),
-(38, 2, 11, NULL, 'ss ', NULL, 1470993014, 1470993014, '0', 82, 82, NULL, NULL, 'linke', '15902076695', 'dw', '127.0.0.1'),
-(37, 2, 35, '36,37,38', NULL, 'qt', 1470993014, 1470993014, '0', 82, 82, 16, 1471058344, 'linke', '15902076695', 'dw', '127.0.0.1'),
-(40, 2, 5, NULL, 'dfsdf', NULL, 1470993014, 1470993014, '0', 82, 82, NULL, NULL, 'linke', '15902076695', 'dw', '127.0.0.1'),
-(41, 2, 35, '36,37', NULL, '', 1472713442, 1472713442, '0', 93, 93, NULL, NULL, '周杰伦2', '15361363299', '武术公司2', '127.0.0.1'),
-(42, 2, 11, NULL, '阿斯蒂', NULL, 1472713442, 1472713442, '0', 93, 93, NULL, NULL, '周杰伦2', '15361363299', '武术公司2', '127.0.0.1'),
-(43, 2, 8, '10', NULL, '', 1472713442, 1472713442, '0', 93, 93, NULL, NULL, '周杰伦2', '15361363299', '武术公司2', '127.0.0.1'),
-(44, 2, 5, NULL, '阿斯蒂', NULL, 1472713442, 1472713442, '0', 93, 93, NULL, NULL, '周杰伦2', '15361363299', '武术公司2', '127.0.0.1'),
-(45, 2, 35, '36,37', NULL, '', 1472784698, 1472784698, '0', 106, 106, NULL, NULL, '极乐净土', '15364555557', '极乐净土', '127.0.0.1'),
-(46, 2, 11, NULL, 'qwq', NULL, 1472784698, 1472784698, '0', 106, 106, NULL, NULL, '极乐净土', '15364555557', '极乐净土', '127.0.0.1'),
-(47, 2, 8, '10', NULL, '', 1472784698, 1472784698, '0', 106, 106, NULL, NULL, '极乐净土', '15364555557', '极乐净土', '127.0.0.1'),
-(48, 2, 5, NULL, 'asdeqwe', NULL, 1472784698, 1472784698, '0', 106, 106, NULL, NULL, '极乐净土', '15364555557', '极乐净土', '127.0.0.1'),
-(49, 3, 39, '43', NULL, '', 1472873942, 1472873942, '0', 106, 106, NULL, NULL, '极乐净土', '15364555557', '极乐净土', '192.168.1.204'),
-(50, 3, 39, '43', NULL, '', 1473039228, 1473039228, '0', 107, 107, NULL, NULL, '立冬', '13112903470', '立冬', '192.168.1.204'),
-(51, 4, 116, '118', NULL, '', 1473403895, 1473403895, '0', 106, 106, NULL, NULL, '极乐净土', '15364555557', '极乐净土', '127.0.0.1'),
-(52, 4, 111, '114', NULL, '', 1473403895, 1473403895, '0', 106, 106, NULL, NULL, '极乐净土', '15364555557', '极乐净土', '127.0.0.1'),
-(53, 3, 39, '108', NULL, '', 1473470955, 1473470955, '0', 93, 93, NULL, NULL, '周杰伦7', '15361363299', '武术公司6', '127.0.0.1');
-
--- --------------------------------------------------------
-
---
--- 表的结构 `zcq_diaocha_wenti`
---
-
-CREATE TABLE IF NOT EXISTS `zcq_diaocha_wenti` (
-  `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '主键id',
-  `pid` int(10) DEFAULT '0' COMMENT '问题ID,大于0 时代表当前记录为选项',
-  `diaocha_id` int(10) DEFAULT '0' COMMENT '所属调查ID',
-  `title` varchar(250) NOT NULL COMMENT '标题或选项',
-  `content` text COMMENT '备注',
-  `itemtype` enum('1','2','3') DEFAULT '1' COMMENT '用于问题设置 选项类型 1单选 2多选 3问答题',
-  `isother` enum('0','1') DEFAULT '0' COMMENT '用于问题设置 遇到【其它】字眼是否增加录入框   0否 1 是',
-  `orderby` smallint(5) DEFAULT '100' COMMENT '从小到大排序',
-  `create_time` int(10) DEFAULT NULL COMMENT '添加时间',
-  `update_time` int(10) DEFAULT NULL COMMENT '最后更新时间',
-  `isdel` enum('0','1') DEFAULT '0' COMMENT '是否删除，0未 1删除',
-  `create_sysuserid` int(10) DEFAULT NULL COMMENT '创建人userid 即管理员ID',
-  `update_sysuserid` int(10) DEFAULT NULL COMMENT '更新人userid 即管理员ID',
-  `del_sysuserid` int(10) DEFAULT NULL COMMENT '删除人userid 即管理员ID',
-  `del_time` int(10) DEFAULT NULL COMMENT '删除时间',
-  PRIMARY KEY (`id`),
-  KEY `AK_Key_1` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='调查问卷问题表' AUTO_INCREMENT=132 ;
-
---
--- 转存表中的数据 `zcq_diaocha_wenti`
---
-
-INSERT INTO `zcq_diaocha_wenti` (`id`, `pid`, `diaocha_id`, `title`, `content`, `itemtype`, `isother`, `orderby`, `create_time`, `update_time`, `isdel`, `create_sysuserid`, `update_sysuserid`, `del_sysuserid`, `del_time`) VALUES
-(1, 0, 1, '天气热吗', NULL, NULL, NULL, 100, 1470364085, 1470364085, '0', 16, 16, NULL, NULL),
-(2, 1, 1, '', NULL, '1', '0', 100, 1470364085, 1470364085, '1', 16, 16, 16, 1470386699),
-(3, 0, 1, '喜欢看什么电影', '', '3', '0', 100, 1470364085, 1470389770, '0', 16, 16, NULL, NULL),
-(4, 3, 1, '', NULL, '1', '0', 100, 1470364085, 1470364085, '1', 16, 16, 16, 1470386699),
-(5, 0, 2, '美国多管闲事吗', '', '3', '0', 100, 1470364382, 1473326022, '0', 16, 16, 16, 1470382037),
-(6, 5, 2, '1、是\r', NULL, '1', '0', 100, 1470364382, 1470364382, '1', 16, 16, 16, 1473326022),
-(7, 5, 2, '2、肯定是', NULL, '1', '0', 100, 1470364382, 1470364382, '1', 16, 16, 16, 1473326022),
-(8, 0, 2, '天气热吗', '', '1', '1', 100, 1470364382, 1473325995, '0', 16, 16, 16, 1470382037),
-(9, 8, 2, '1、是\r', NULL, '1', '0', 100, 1470364382, 1470364382, '1', 16, 16, 16, 1473325995),
-(10, 8, 2, '2、恩', NULL, '1', '0', 100, 1470364382, 1470364382, '1', 16, 16, 16, 1473325995),
-(11, 0, 2, '给你一个支点，你能干嘛', '', '3', '0', 100, 1470364382, 1473325798, '0', 16, 16, 16, 1470382030),
-(12, 11, 2, '', NULL, '1', '0', 100, 1470364382, 1470364382, '1', 16, 16, 16, 1470388900),
-(13, 0, 1, '测试问卷第一题', NULL, '1', '1', 100, 1470384786, 1470384786, '0', 16, 16, NULL, NULL),
-(14, 13, 1, '1、送豆腐\r', NULL, '1', '0', 100, 1470384786, 1470384786, '0', 16, 16, NULL, NULL),
-(15, 13, 1, '2、第三方', NULL, '1', '0', 100, 1470384786, 1470384786, '0', 16, 16, NULL, NULL),
-(16, 0, 1, '测试问卷第三题', '', '1', '1', 50, 1470384786, 1470388838, '0', 16, 16, NULL, NULL),
-(17, 16, 1, '1、不知道\r', NULL, '1', '0', 100, 1470384786, 1470384786, '0', 16, 16, NULL, NULL),
-(18, 16, 1, '2、知道了吗', '', '1', '0', 100, 1470384786, 1470388550, '0', 16, 16, NULL, NULL),
-(19, 16, 1, '重新添加一个问题\r', NULL, '1', '0', 100, 1470446479, 1470446479, '0', 16, 16, NULL, NULL),
-(20, 16, 1, '重新添加两个问题', '111', '1', '1', 100, 1470446479, 1470446495, '0', 16, 16, NULL, NULL),
-(21, 16, 1, '再添加一个问题\r', NULL, '1', '0', 100, 1470446777, 1470446777, '0', 16, 16, NULL, NULL),
-(22, 16, 1, '再添加两个问题\r', NULL, '1', '0', 100, 1470446777, 1470446777, '0', 16, 16, NULL, NULL),
-(23, 16, 1, '再添加三个问题', NULL, '1', '0', 100, 1470446777, 1470446777, '0', 16, 16, NULL, NULL),
-(24, 13, 1, '测试添加问题\r', NULL, '1', '0', 100, 1470446840, 1470446840, '0', 16, 16, NULL, NULL),
-(25, 13, 1, '测试添加问题2', NULL, '1', '0', 100, 1470446840, 1470446840, '0', 16, 16, NULL, NULL),
-(26, 8, 2, '添加问题\r', NULL, '1', '0', 100, 1470446909, 1470446909, '1', 16, 16, 16, 1473325995),
-(27, 8, 2, '添加问题2', NULL, '1', '0', 100, 1470446909, 1470446909, '1', 16, 16, 16, 1473325995),
-(28, 16, 1, '添加选项\r', NULL, '1', '0', 100, 1470446945, 1470446945, '0', 16, 16, NULL, NULL),
-(29, 16, 1, '添加选项2\r', NULL, '1', '0', 100, 1470446945, 1470446945, '0', 16, 16, NULL, NULL),
-(30, 16, 1, '添加选型3', '修改看看', '1', '1', 50, 1470446945, 1470446967, '0', 16, 16, NULL, NULL),
-(31, 0, 1, '多选问题1', NULL, '2', '1', 100, 1470962835, 1470962835, '0', 16, 16, NULL, NULL),
-(32, 31, 1, '你是谁？\r', NULL, '1', '0', 100, 1470962835, 1470962835, '0', 16, 16, NULL, NULL),
-(33, 31, 1, '不知道？\r', NULL, '1', '0', 100, 1470962835, 1470962835, '0', 16, 16, NULL, NULL),
-(34, 31, 1, '其他', NULL, '1', '0', 100, 1470962835, 1470962835, '0', 16, 16, NULL, NULL),
-(35, 0, 2, '你是谁', '', '2', '0', 100, 1470962954, 1473325971, '0', 16, 16, NULL, NULL),
-(36, 35, 2, '人\r', NULL, '1', '0', 100, 1470962954, 1470962954, '1', 16, 16, 16, 1473325787),
-(37, 35, 2, '不知道\r', NULL, '1', '0', 100, 1470962954, 1470962954, '1', 16, 16, 16, 1473325787),
-(38, 35, 2, '其他', NULL, '1', '0', 100, 1470962954, 1470962954, '1', 16, 16, 16, 1473325787),
-(39, 0, 3, '爱因斯坦是哪里人', '', '1', '1', 100, 1472779520, 1473393271, '0', 16, 16, NULL, NULL),
-(40, 39, 3, 'A  英国人\r', NULL, '1', '0', 100, 1472779520, 1472779520, '1', 16, 16, 16, 1473325124),
-(41, 39, 3, 'B  德国人\r', NULL, '1', '0', 100, 1472779520, 1472779520, '1', 16, 16, 16, 1473325124),
-(42, 39, 3, 'C  法国人\r', NULL, '1', '0', 100, 1472779520, 1472779520, '1', 16, 16, 16, 1473325124),
-(43, 39, 3, 'D  犹太人', NULL, '1', '0', 100, 1472779520, 1472779520, '1', 16, 16, 16, 1473325124),
-(44, 39, 3, 'A  英国人\r', NULL, '1', '0', 100, 1473325124, 1473325124, '1', 16, 16, 16, 1473326630),
-(45, 39, 3, 'B  德国人\r', NULL, '1', '0', 100, 1473325124, 1473325124, '1', 16, 16, 16, 1473326630),
-(46, 39, 3, 'C  法国人\r', NULL, '1', '0', 100, 1473325124, 1473325124, '1', 16, 16, 16, 1473326630),
-(47, 39, 3, 'D  犹太人\r', NULL, '1', '0', 100, 1473325124, 1473325124, '1', 16, 16, 16, 1473326630),
-(48, 39, 3, 'F 不知道', NULL, '1', '0', 100, 1473325124, 1473325124, '1', 16, 16, 16, 1473326630),
-(49, 35, 2, '不知道啊\r', NULL, '1', '0', 100, 1473325246, 1473325246, '1', 16, 16, 16, 1473325787),
-(50, 35, 2, '是吗', NULL, '1', '0', 100, 1473325246, 1473325246, '1', 16, 16, 16, 1473325787),
-(51, 35, 2, '测试过问题', NULL, '1', '0', 100, 1473325787, 1473325787, '1', 16, 16, 16, 1473325971),
-(52, 35, 2, '不知道', NULL, '1', '0', 100, 1473325787, 1473325787, '1', 16, 16, 16, 1473325971),
-(53, 11, 2, '', NULL, '1', '0', 100, 1473325798, 1473325798, '0', 16, 16, NULL, NULL),
-(54, 35, 2, '测试过问题', NULL, '1', '0', 100, 1473325971, 1473325971, '0', 16, 16, NULL, NULL),
-(55, 35, 2, '不知道', NULL, '1', '0', 100, 1473325971, 1473325971, '0', 16, 16, NULL, NULL),
-(56, 35, 2, '再来测试', NULL, '1', '0', 100, 1473325971, 1473325971, '0', 16, 16, NULL, NULL),
-(57, 8, 2, '出错了', NULL, '1', '0', 100, 1473325995, 1473325995, '0', 16, 16, NULL, NULL),
-(58, 8, 2, '是啊', NULL, '1', '0', 100, 1473325995, 1473325995, '0', 16, 16, NULL, NULL),
-(59, 5, 2, '之前的不行', NULL, '1', '0', 100, 1473326022, 1473326022, '0', 16, 16, NULL, NULL),
-(60, 5, 2, '测过', NULL, '1', '0', 100, 1473326022, 1473326022, '0', 16, 16, NULL, NULL),
-(61, 8, 2, '不知为什么', NULL, '1', '0', 100, 1473326038, 1473326038, '0', 16, 16, NULL, NULL),
-(62, 8, 2, '则呢么版纳', NULL, '1', '0', 100, 1473326038, 1473326038, '0', 16, 16, NULL, NULL),
-(63, 39, 3, 'A  英国人', NULL, '1', '0', 100, 1473326630, 1473326630, '1', 16, 16, 16, 1473392173),
-(64, 39, 3, 'B  重新来', NULL, '1', '0', 100, 1473326630, 1473326630, '1', 16, 16, 16, 1473392173),
-(65, 39, 3, 'C  不知道', NULL, '1', '0', 100, 1473326630, 1473326630, '1', 16, 16, 16, 1473392173),
-(66, 39, 3, 'D  是吧', NULL, '1', '0', 100, 1473326630, 1473326630, '1', 16, 16, 16, 1473392173),
-(67, 39, 3, 'A  英国人', NULL, '1', '0', 100, 1473392173, 1473392173, '1', 16, 16, 16, 1473392204),
-(68, 39, 3, 'B  重新来', NULL, '1', '0', 100, 1473392173, 1473392173, '1', 16, 16, 16, 1473392204),
-(69, 39, 3, 'C  不知道', NULL, '1', '0', 100, 1473392173, 1473392173, '1', 16, 16, 16, 1473392204),
-(70, 39, 3, 'D  是吧', NULL, '1', '0', 100, 1473392173, 1473392173, '1', 16, 16, 16, 1473392204),
-(71, 39, 3, 'A  英国人', NULL, '1', '0', 100, 1473392204, 1473392204, '1', 16, 16, 16, 1473392995),
-(72, 39, 3, 'B  重新来', NULL, '1', '0', 100, 1473392204, 1473392204, '1', 16, 16, 16, 1473392995),
-(73, 39, 3, 'C  不知道', NULL, '1', '0', 100, 1473392204, 1473392204, '1', 16, 16, 16, 1473392995),
-(74, 39, 3, 'D  是吧', NULL, '1', '0', 100, 1473392204, 1473392204, '1', 16, 16, 16, 1473392995),
-(75, 39, 3, 'F 不知道吧', NULL, '1', '0', 100, 1473392204, 1473392204, '1', 16, 16, 16, 1473392995),
-(76, 39, 3, 'A  英国人\r', NULL, '1', '0', 100, 1473392995, 1473392995, '1', 16, 16, 16, 1473393019),
-(77, 39, 3, 'B  重新来\r', NULL, '1', '0', 100, 1473392995, 1473392995, '1', 16, 16, 16, 1473393019),
-(78, 39, 3, 'C  不知道\r', NULL, '1', '0', 100, 1473392995, 1473392995, '1', 16, 16, 16, 1473393019),
-(79, 39, 3, 'D  是吧\r', NULL, '1', '0', 100, 1473392995, 1473392995, '1', 16, 16, 16, 1473393019),
-(80, 39, 3, 'F 不知道吧', NULL, '1', '0', 100, 1473392995, 1473392995, '1', 16, 16, 16, 1473393019),
-(81, 39, 3, 'A  英国人\r', NULL, '1', '0', 100, 1473393019, 1473393019, '1', 16, 16, 16, 1473393220),
-(82, 39, 3, '\r', NULL, '1', '0', 100, 1473393019, 1473393019, '1', 16, 16, 16, 1473393220),
-(83, 39, 3, 'B  重新来\r', NULL, '1', '0', 100, 1473393019, 1473393019, '1', 16, 16, 16, 1473393220),
-(84, 39, 3, '\r', NULL, '1', '0', 100, 1473393019, 1473393019, '1', 16, 16, 16, 1473393220),
-(85, 39, 3, 'C  不知道\r', NULL, '1', '0', 100, 1473393019, 1473393019, '1', 16, 16, 16, 1473393220),
-(86, 39, 3, '\r', NULL, '1', '0', 100, 1473393019, 1473393019, '1', 16, 16, 16, 1473393220),
-(87, 39, 3, 'D  是吧\r', NULL, '1', '0', 100, 1473393019, 1473393019, '1', 16, 16, 16, 1473393220),
-(88, 39, 3, '\r', NULL, '1', '0', 100, 1473393019, 1473393019, '1', 16, 16, 16, 1473393220),
-(89, 39, 3, 'F 不知道吧\r', NULL, '1', '0', 100, 1473393019, 1473393019, '1', 16, 16, 16, 1473393220),
-(90, 39, 3, '\r', NULL, '1', '0', 100, 1473393019, 1473393019, '1', 16, 16, 16, 1473393220),
-(91, 39, 3, 'GF 不知道吧', NULL, '1', '0', 100, 1473393019, 1473393019, '1', 16, 16, 16, 1473393220),
-(92, 39, 3, 'A  英国人\r', NULL, '1', '0', 100, 1473393219, 1473393219, '1', 16, 16, 16, 1473393255),
-(93, 39, 3, 'B  重新来\r', NULL, '1', '0', 100, 1473393219, 1473393219, '1', 16, 16, 16, 1473393255),
-(94, 39, 3, 'C  不知道\r', NULL, '1', '0', 100, 1473393219, 1473393219, '1', 16, 16, 16, 1473393255),
-(95, 39, 3, 'D  是吧\r', NULL, '1', '0', 100, 1473393219, 1473393219, '1', 16, 16, 16, 1473393255),
-(96, 39, 3, 'F 不知道吧\r', NULL, '1', '0', 100, 1473393219, 1473393219, '1', 16, 16, 16, 1473393255),
-(97, 39, 3, 'GF 不知道吧', NULL, '1', '0', 100, 1473393219, 1473393219, '1', 16, 16, 16, 1473393255),
-(98, 39, 3, 'A  英国人', NULL, '1', '0', 100, 1473393255, 1473393255, '1', 16, 16, 16, 1473393271),
-(99, 39, 3, 'B  重新来', NULL, '1', '0', 100, 1473393255, 1473393255, '1', 16, 16, 16, 1473393271),
-(100, 39, 3, 'C  不知道', NULL, '1', '0', 100, 1473393255, 1473393255, '1', 16, 16, 16, 1473393271),
-(101, 39, 3, 'D  是吧', NULL, '1', '0', 100, 1473393255, 1473393255, '1', 16, 16, 16, 1473393271),
-(102, 39, 3, 'F 不知道吧', NULL, '1', '0', 100, 1473393255, 1473393255, '1', 16, 16, 16, 1473393271),
-(103, 39, 3, 'GF 不知道吧', NULL, '1', '0', 100, 1473393255, 1473393255, '1', 16, 16, 16, 1473393271),
-(104, 39, 3, 'A  英国人', NULL, '1', '0', 100, 1473393271, 1473393271, '0', 16, 16, NULL, NULL),
-(105, 39, 3, 'B  重新来', NULL, '1', '0', 100, 1473393271, 1473393271, '0', 16, 16, NULL, NULL),
-(106, 39, 3, 'C  不知道', NULL, '1', '0', 100, 1473393271, 1473393271, '0', 16, 16, NULL, NULL),
-(107, 39, 3, 'D  是吧', NULL, '1', '0', 100, 1473393271, 1473393271, '0', 16, 16, NULL, NULL),
-(108, 39, 3, 'F 不知道吧', NULL, '1', '0', 100, 1473393271, 1473393271, '0', 16, 16, NULL, NULL),
-(109, 39, 3, 'GF 不知道吧', NULL, '1', '0', 100, 1473393271, 1473393271, '0', 16, 16, NULL, NULL),
-(110, 39, 3, 'H还不行吗', NULL, '1', '0', 100, 1473393271, 1473393271, '0', 16, 16, NULL, NULL),
-(111, 0, 4, '按时', NULL, '1', '0', 100, 1473403641, 1473403641, '0', 16, 16, NULL, NULL),
-(112, 111, 4, '按时\r', NULL, '1', '0', 100, 1473403641, 1473403641, '0', 16, 16, NULL, NULL),
-(113, 111, 4, '人员\r', NULL, '1', '0', 100, 1473403641, 1473403641, '0', 16, 16, NULL, NULL),
-(114, 111, 4, '阿斯蒂芬\r', NULL, '1', '0', 100, 1473403641, 1473403641, '0', 16, 16, NULL, NULL),
-(115, 111, 4, '玩儿', NULL, '1', '0', 100, 1473403641, 1473403641, '0', 16, 16, NULL, NULL),
-(116, 0, 4, '发给', '', '1', '1', 100, 1473403641, 1473470420, '0', 16, 16, NULL, NULL),
-(117, 116, 4, '水电费\r', NULL, '1', '0', 100, 1473403641, 1473403641, '1', 16, 16, 16, 1473470364),
-(118, 116, 4, '权威', NULL, '1', '0', 100, 1473403641, 1473403641, '1', 16, 16, 16, 1473470364),
-(119, 116, 4, '水电费', NULL, '1', '0', 100, 1473470364, 1473470364, '1', 16, 16, 16, 1473470400),
-(120, 116, 4, '', NULL, '1', '0', 100, 1473470364, 1473470364, '1', 16, 16, 16, 1473470400),
-(121, 116, 4, '权威', NULL, '1', '0', 100, 1473470364, 1473470364, '1', 16, 16, 16, 1473470400),
-(122, 116, 4, '其他', NULL, '1', '0', 100, 1473470364, 1473470364, '1', 16, 16, 16, 1473470400),
-(123, 116, 4, '水电费', NULL, '1', '0', 100, 1473470400, 1473470400, '1', 16, 16, 16, 1473470420),
-(124, 116, 4, '其他', NULL, '1', '0', 100, 1473470400, 1473470400, '1', 16, 16, 16, 1473470420),
-(125, 116, 4, '权威', NULL, '1', '0', 100, 1473470400, 1473470400, '1', 16, 16, 16, 1473470420),
-(126, 116, 4, '其他', NULL, '1', '0', 100, 1473470400, 1473470400, '1', 16, 16, 16, 1473470420),
-(127, 116, 4, '水电费', NULL, '1', '0', 100, 1473470420, 1473470420, '0', 16, 16, NULL, NULL),
-(128, 116, 4, '其他', NULL, '1', '0', 100, 1473470420, 1473470420, '0', 16, 16, NULL, NULL),
-(129, 116, 4, '权威', NULL, '1', '0', 100, 1473470420, 1473470420, '0', 16, 16, NULL, NULL),
-(130, 116, 4, '其他', NULL, '1', '0', 100, 1473470420, 1473470420, '0', 16, 16, NULL, NULL),
-(131, 116, 4, '12', NULL, '1', '0', 100, 1473470420, 1473470420, '0', 16, 16, NULL, NULL);
-
--- --------------------------------------------------------
-
---
--- 表的结构 `zcq_duiwaitouzi`
---
-
-CREATE TABLE IF NOT EXISTS `zcq_duiwaitouzi` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `company_name` varchar(250) DEFAULT NULL COMMENT '境内企业名称',
-  `company_name2` varchar(250) DEFAULT NULL COMMENT '境外企业名称',
-  `sea_realname` varchar(30) DEFAULT NULL COMMENT '(境外联系人)姓名',
-  `sea_zhiwei` varchar(30) DEFAULT NULL COMMENT '(境外联系人)职务',
-  `sea_zuoji` varchar(30) DEFAULT NULL COMMENT '(境外联系人)座机',
-  `sea_tel` varchar(30) DEFAULT NULL COMMENT '(境外联系人)手机',
-  `sea_email` varchar(30) DEFAULT NULL COMMENT '(境外联系人)邮箱',
-  `pro_realname` varchar(30) DEFAULT NULL COMMENT '(项目联系人)姓名',
-  `pro_zhiwei` varchar(30) DEFAULT NULL COMMENT '(项目联系人)职务',
-  `pro_zuoji` varchar(30) DEFAULT NULL COMMENT '(项目联系人)座机',
-  `pro_tel` varchar(30) DEFAULT NULL COMMENT '(项目联系人)手机',
-  `pro_email` varchar(30) DEFAULT NULL COMMENT '(项目联系人)邮箱',
-  `stat_realname` varchar(30) DEFAULT NULL COMMENT '(统计报表联系人)姓名',
-  `stat_zhiwei` varchar(30) DEFAULT NULL COMMENT '(统计报表联系人)职务',
-  `stat_zuoji` varchar(30) DEFAULT NULL COMMENT '(统计报表联系人)座机',
-  `stat_tel` varchar(30) DEFAULT NULL COMMENT '(统计报表联系人)手机',
-  `stat_email` varchar(30) DEFAULT NULL COMMENT '(统计报表联系人)邮箱',
-  `create_userid` int(11) DEFAULT '0' COMMENT '创建人 会员ID',
-  `update_userid` int(11) DEFAULT '0' COMMENT '更新人 会员ID',
-  `update_sysuserid` int(11) DEFAULT '0' COMMENT '更新人userid 即管理员ID',
-  `create_sysuserid` int(11) DEFAULT '0' COMMENT '创建人userid 会员ID',
-  `del_sysuserid` int(11) DEFAULT '0' COMMENT '删除人userid 即管理员ID',
-  `isdel` enum('0','1') DEFAULT '0' COMMENT '是否删除，0未 1删除',
-  `create_time` int(11) DEFAULT '0' COMMENT '创建时间 会员 管理员 共用',
-  `update_time` int(11) DEFAULT '0' COMMENT '更新时间 会员 管理员 共用',
-  `del_time` int(11) DEFAULT '0' COMMENT '删除时间',
-  `check_status` enum('0','1','2','3') DEFAULT NULL COMMENT '0未提交 1未审核 2通过 3退回',
-  `check_content` varchar(250) DEFAULT NULL COMMENT '不通过时输入',
-  PRIMARY KEY (`id`),
-  KEY `AK_Key_1` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='对外投资联系表' AUTO_INCREMENT=21 ;
-
---
--- 转存表中的数据 `zcq_duiwaitouzi`
---
-
-INSERT INTO `zcq_duiwaitouzi` (`id`, `company_name`, `company_name2`, `sea_realname`, `sea_zhiwei`, `sea_zuoji`, `sea_tel`, `sea_email`, `pro_realname`, `pro_zhiwei`, `pro_zuoji`, `pro_tel`, `pro_email`, `stat_realname`, `stat_zhiwei`, `stat_zuoji`, `stat_tel`, `stat_email`, `create_userid`, `update_userid`, `update_sysuserid`, `create_sysuserid`, `del_sysuserid`, `isdel`, `create_time`, `update_time`, `del_time`, `check_status`, `check_content`) VALUES
-(11, '内企业名称', '内企业名称', '内企业名称', '内企业名称', '1536-13534000', '15361353400', '12456@163.com', '内企业名称', '内企业名称', '1536-13534002', '15361353400', '12345@163.com', '内企业名称', '内企业名称', '1536-13534000', '15361353400', '12378@qq.com', 106, 106, 0, 0, 0, '0', 1472804573, 1472868834, 0, '1', NULL),
-(8, '15361315800', '15361327500', '15361332700', '15361352100', '0755-88880000', '15361355200', '15361332400@gmail.com', '15361347600', '15361321100', '0755-88880000', '15361353900', '15361316800@qq.com', '15361335700', '15361351200', '0755-88880000', '15361314400', '15361347900@gmail.com', 93, 93, 0, 0, 0, '0', 1471852867, 1471853020, 0, '2', NULL),
-(6, '爱啥啥级好2', '啊生大好时光2', '爱时代2', '15361330800', '0755-88880000', '15361337200', '15361333300@163.com', '爱时代2', '15361324500', '0755-88880000', '15361331000', '15361358200@163.com', '爱时代2', '15361315400', '0755-88880000', '15361356800', '15361360900@163.com', 93, 93, 0, 0, 0, '0', 1471851640, 1471913736, 0, '0', '阿斯杜甫is党员'),
-(9, '15361331000', '15361353600', '15361345100', '15361320000', '0755-88880000', '15361357800', '15361320300@gmail.com', '15361334800', '15361328100', '0755-88880000', '15361315100', '15361317700@qq.com', '15361313200', '15361359300', '0755-88880000', '15361336200', '15361362500@qq.com', 0, 0, 0, 16, 0, '0', 1471852945, 1471852945, 0, '3', '需要完善啊'),
-(12, '名称', '名称', '名称', '名称', '', '15361353400', '', '名称', '名称', '', '', '123@126.com', '名称', '名称', '0755-88880000', '', '', 106, 0, 0, 0, 0, '0', 1472804929, 1472804929, 0, '0', NULL),
-(13, '孔子学院', '中国驻南非孔子学院', '李斌', '董事', '0760-88869546', '', '', '李琦', '秘书', '0760-88857894', '', '', '李银', '业务员', '0760-88845876', '', '', 108, 108, 16, 0, 0, '0', 1473040473, 1473843228, 0, '2', '信息不全'),
-(14, 'The domestic enterprise name', 'The domestic enterprise name', 'The domestic enterprise name', 'The domestic enterprise name', '1234-89456112', '', '', 'The domestic enterprise name', 'The domestic enterprise name', '', '14533335555', '', 'The domestic enterprise name', 'The domestic enterprise name', '', '', '1245345@163.com', 0, 0, 0, 16, 0, '0', 1473216285, 1473216285, 0, '1', NULL),
-(15, '对外投资联系表 国内企业名称：	', '对外投资联系表 国内企业名称：', '阿士大', '阿士大', '', '15361363220', '12456@163.com', '阿士大', '阿士大', '', '', '45278@qq.com', '阿士大', '阿士大', '', '', '4521345@163.com', 106, 0, 0, 0, 0, '0', 1473317193, 1473317193, 0, '0', NULL),
-(16, '当前位置：会员后台首页', '当前位置：会员后台首页', '当前位置：会员后台首页', '当前位置：会员后台首页', '', '', '123@163.com', '当前位置：会员后台首页', '当前位置：会员后台首页', '', '', '45678645@163.com', '当前位置：会员后台首页', '当前位置：会员后台首页', '', '', '789453212@126.com', 106, 0, 0, 0, 0, '0', 1473317585, 1473317585, 0, '1', NULL),
-(17, '测试企业', '名称', '林科', '1244', '0665-73854595', '13532065324', 'kelinsss@163.com', '1231', '4546', '0665-73853595', '13532065324', 'kelinsss@126.com', '4564', '464', '0665-73854595', '13532065324', 'kelinsss@sina.com', 82, 82, 0, 0, 16, '1', 1473411157, 1473411167, 1473411420, '1', NULL),
-(18, '国内企业名称', ' 国内企业名称：	 国内企业名称 境外企业名称', 'asd', 'asd', '', '', 'asd@163.com', 'asd', 'asd', '', '', 'qwe@163.com', 'asd', 'asd', '', '', 'ewrt@163.com', 0, 0, 0, 16, 0, '0', 1473843193, 1473843193, 0, '1', NULL),
-(19, '国内企业名称', '境外企业名称', '境外企业名称', '境外企业名称', '', '', 'asdf@126.com', '境外企业名称', '境外企业名称', '', '', 'wertet@126.com', '境外企业名称', '境外企业名称', '', '', 'dfgeraw@163.com', 93, 0, 0, 0, 0, '0', 1473845771, 1473845771, 0, '1', NULL),
-(20, '$newid', '$newid', '$newid', '$newid', '', '', 'asd@163.com', '$newid', '$newid', '', '', 'rtert@126.com', '$newid', '$newid', '', '', 'dfge@126.com', 93, 0, 0, 0, 0, '0', 1473845912, 1473845912, 0, '1', NULL);
-
--- --------------------------------------------------------
-
---
--- 表的结构 `zcq_fuwu_zixun`
---
-
-CREATE TABLE IF NOT EXISTS `zcq_fuwu_zixun` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `pid` int(10) NOT NULL DEFAULT '0' COMMENT '父级id，默认为0（代表是第一个问题）',
-  `title` varchar(250) DEFAULT NULL COMMENT '咨询标题',
-  `content` text COMMENT '咨询内容',
-  `send_userid` int(11) DEFAULT '0' COMMENT '发送人用户ID',
-  `receive_isread` enum('0','1') DEFAULT '0' COMMENT '接收人是否已读',
-  `receive_content` text COMMENT '接收人回复内容',
-  `receive_time` int(11) DEFAULT '0' COMMENT '接收人回复时间',
-  `receive_userid` int(11) DEFAULT '0' COMMENT '接收人用户ID 跟 receive_sysuserid 只能其中一个有值',
-  `receive_sysuserid` int(11) DEFAULT '0' COMMENT '接收人管理员ID 跟 receive_userid 只能其中一个有值',
-  `isdel_sysuser` enum('0','1') DEFAULT '0' COMMENT '管理员是否删除',
-  `del_time_sysuser` int(11) DEFAULT NULL COMMENT '管理员删除时间',
-  `del_sysuserid` int(11) DEFAULT NULL COMMENT '删除记录的管理员ID',
-  `isdel_send` enum('0','1') DEFAULT '0' COMMENT '发送者是否删除',
-  `del_time_send` int(11) DEFAULT '0' COMMENT '发送者删除时间',
-  `del_send_userid` int(11) DEFAULT NULL COMMENT '删除记录的用户ID',
-  `isdel_receive` enum('0','1') DEFAULT '0' COMMENT '接收者是否删除',
-  `del_time_receive` int(11) DEFAULT NULL COMMENT '接收者删除时间',
-  `del_receive_userid` int(11) DEFAULT NULL COMMENT '删除记录用户ID',
-  `create_time` int(11) DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `AK_Key_1` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='服务咨询表' AUTO_INCREMENT=82 ;
-
---
--- 转存表中的数据 `zcq_fuwu_zixun`
---
-
-INSERT INTO `zcq_fuwu_zixun` (`id`, `pid`, `title`, `content`, `send_userid`, `receive_isread`, `receive_content`, `receive_time`, `receive_userid`, `receive_sysuserid`, `isdel_sysuser`, `del_time_sysuser`, `del_sysuserid`, `isdel_send`, `del_time_send`, `del_send_userid`, `isdel_receive`, `del_time_receive`, `del_receive_userid`, `create_time`) VALUES
-(1, 0, '咨询', '按时打算发', 88, '1', '<p>\r\n	<strong><em>这暗示较大积分那抠脚大汉粉丝符合·1爱上对方过后就哭了大师傅安师大文</em></strong> \r\n</p>\r\n<p>\r\n	<strong><em><img src="/data/upload/editor/image/20160808/20160808101116_24331.png" alt="" /></em></strong> \r\n</p>\r\n<p>\r\n	<b><i>阿士大夫的</i></b> \r\n</p>', 1470622726, 0, 16, '0', 1470629228, 16, '0', 0, NULL, '0', NULL, NULL, 0),
-(2, 0, '咨询2', '艾丝凡', 87, '1', '<p>\r\n	<strong><em>这暗示较大积分那抠脚大汉粉丝符合·1爱上对方过后就哭了大师傅安师大文</em></strong>\r\n</p>\r\n<p>\r\n	<strong><em><img src="http://www.zcq.com:8892/data/upload/editor/image/20160808/20160808101116_24331.png" alt="" /></em></strong>\r\n</p>\r\n<p>\r\n	<b><i>阿士大夫的</i></b>\r\n</p>', 1471054979, 0, 16, '0', 1470629228, 16, '0', 0, NULL, '0', NULL, NULL, 0),
-(3, 0, '咨询3', '按时发货', 88, '0', NULL, 0, 0, 0, '0', 1470631643, 16, '0', 0, NULL, '0', NULL, NULL, 0),
-(4, 0, '咨询4', NULL, 87, '0', NULL, 0, 0, 0, '0', 1470631643, 16, '0', 0, NULL, '0', NULL, NULL, 0),
-(5, 0, '咨询5', '没啥接受符合就', 86, '0', NULL, 0, 0, 0, '1', 1470633143, 16, '0', 0, NULL, '0', NULL, NULL, 0),
-(20, 0, '阿斯顿', '<h2>\r\n	<strong><span style="color:#99BB00;"><span style="color:#E56600;">阿诗丹顿覆盖是东方闪电lkvhbiudfsdf爱发呆时发广告是梵蒂冈·1</span><br />\r\n</span></strong><em><u><span style="color:#E56600;">爱是大法官</span></u></em> \r\n</h2>', 93, '0', NULL, 0, 0, 16, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1471919284),
-(6, 0, 'asdajsd', 'asfafqwe', 0, '0', NULL, 0, 16, 0, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1471424146),
-(7, 0, 'asdajsd', 'asfafqwe', 0, '0', NULL, 0, 68, 0, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1471424146),
-(8, 0, 'asdajsd', 'asfafqwe', 0, '0', NULL, 0, 69, 0, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1471424146),
-(9, 0, '阿斯蒂2', '爱上当然他asjdhkjjlkvhbiudf', 93, '1', '<p>\r\n	<img src="/data/upload/editor/image/20160818/20160818151403_18923.png" alt="" /> \r\n</p>\r\n<p>\r\n	打卡交话费按时发斯蒂芬\r\n</p>', 1471504582, 0, 16, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1471485023),
-(10, 0, '阿斯蒂2', '快圣诞节和，莫愁女的FUIGIasjdhkjjlkvhbiudf啊数据库的老客户方', 93, '0', NULL, 0, 0, 68, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1471485023),
-(11, 0, '阿斯蒂2', '爱上当然他asjdhkjjlkvhbiudf', 93, '0', NULL, 0, 0, 69, '0', NULL, NULL, '1', 1471492562, 93, '0', NULL, NULL, 1471485023),
-(12, 0, '阿斯蒂2', '爱上当然他asjdhkjjlkvhbiudf', 93, '0', NULL, 0, 25, 69, '0', NULL, NULL, '1', 1471492524, 93, '0', NULL, NULL, 1471485023),
-(13, 0, '阿斯蒂2', '爱上当然他asjdhkjjlkvhbiudf', 93, '0', NULL, 0, 29, 69, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1471485023),
-(14, 0, '阿斯蒂2', '爱上当然他asjdhkjjlkvhbiudf', 93, '0', NULL, 0, 91, 69, '0', NULL, NULL, '1', 1471492562, 93, '0', NULL, NULL, 1471485023),
-(15, 0, '阿斯顿', '<h2>\r\n	<strong><span style="color:#99BB00;"><span style="color:#E56600;">阿诗丹顿覆盖是东方闪电lkvhbiudfsdf爱发呆时发广告是梵蒂冈·1</span><br />\r\n</span></strong><em><u><span style="color:#E56600;">爱是大法官</span></u></em>\r\n</h2>', 93, '1', '卡死机地方环境的是美女库设计', 1471501953, 101, 0, '0', NULL, NULL, '0', 0, NULL, '1', 1471502077, 101, 1471492678),
-(16, 0, '阿士大夫', '阿士大夫公司的阿萨德刚·djfhjsdk', 93, '0', NULL, 0, 0, 16, '1', 1471504750, 16, '0', 0, NULL, '0', NULL, NULL, 1471502361),
-(17, 0, '阿士大夫', '阿士大夫公司的阿萨德刚·', 93, '1', '<p>\r\n	<strong><em><span style="color:#EE33EE;font-size:32px;background-color:#999999;">阿斯顿电饭锅电饭锅打发斯蒂芬阿斯蒂芬</span></em></strong>\r\n</p>\r\n<p>\r\n	<strong>asfsdf</strong>\r\n</p>', 1473740874, 101, 16, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1471502361),
-(18, 0, '服务啊', '<strong><em><span style="font-size:16px;background-color:#FF9900;">阿斯蒂没看到佛项目，时点击开发还是东方航空</span></em></strong>', 93, '1', '收到了会计分录款式大家否是东方航空是简单分页hi', 1471577938, 101, 0, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1471577468),
-(19, 0, '按实际的', '不IE哟<img src="http://www.zcq.com:9002/home/views/static/js/kindeditor/plugins/emoticons/images/22.gif" border="0" alt="" />掐架还早呢的发布会<img src="http://www.zcq.com:9002/home/views/static/js/kindeditor/plugins/emoticons/images/18.gif" border="0" alt="" /><img src="http://www.zcq.com:9002/home/views/static/js/kindeditor/plugins/emoticons/images/1.gif" border="0" alt="" /><img src="http://www.zcq.com:9002/home/views/static/js/kindeditor/plugins/emoticons/images/18.gif" border="0" alt="" />', 93, '1', '<p>\r\n	<strong><span style="font-size:24px;">是靠近的返回搜的会计法搜V你<img src="http://www.zcq.com:9002/home/views/static/js/kindeditor/plugins/emoticons/images/20.gif" border="0" alt="" /><img src="http://www.zcq.com:9002/home/views/static/js/kindeditor/plugins/emoticons/images/10.gif" border="0" alt="" /><img src="http://www.zcq.com:9002/home/views/static/js/kindeditor/plugins/emoticons/images/10.gif" border="0" alt="" />搜嗖地富哦恶如地方asd</span></strong> \r\n</p>\r\n<p>\r\n	<strong><span style="font-size:24px;">askjdh奥斯迪福后即可后即可</span></strong>\r\n</p>', 1473733907, 101, 0, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1471588975),
-(21, 0, '阿斯顿', '<h2>\r\n	<strong><span style="color:#99BB00;"><span style="color:#E56600;">阿诗丹顿覆盖是东方闪电lkvhbiudfsdf爱发呆时发广告是梵蒂冈·1</span><br />\r\n</span></strong><em><u><span style="color:#E56600;">爱是大法官</span></u></em> \r\n</h2>', 93, '0', NULL, 0, 0, 68, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1471919284),
-(22, 0, '阿斯顿', '<h2>\r\n	<strong><span style="color:#99BB00;"><span style="color:#E56600;">阿诗丹顿覆盖是东方闪电lkvhbiudfsdf爱发呆时发广告是梵蒂冈·1</span><br />\r\n</span></strong><em><u><span style="color:#E56600;">爱是大法官</span></u></em> \r\n</h2>', 93, '0', NULL, 0, 0, 69, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1471919284),
-(23, 0, '如何卡圣诞节', '<strong><em><span style="font-size:32px;background-color:#FF9900;">按时交话费S<img src="http://www.zcq.com:9002/home/views/static/js/kindeditor/plugins/emoticons/images/19.gif" border="0" alt="" /><img src="http://www.zcq.com:9002/home/views/static/js/kindeditor/plugins/emoticons/images/22.gif" border="0" alt="" />OI答复我饿和你ROI是都没法女款就啥地方和<span style="color:#333333;">asda</span></span></em></strong>', 93, '0', NULL, 0, 0, 16, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1471938421),
-(24, 0, '人的心脏究竟能够承受多大的重量', '<p>\r\n	管理员，要不你试试看？？\r\n</p>\r\n<p>\r\n	佛说：不可说，不可说\r\n</p>\r\n<p>\r\n	道说：道可道，非常道\r\n</p>', 106, '1', '人说，管你们什么事，看自己是被命运掌控还是掌控命运，这才是人生', 1472779275, 0, 16, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1472779208),
-(25, 0, '超人啊', '阿斯蒂阿斯蒂芬<img src="http://www.zcq.com:9002/home/views/static/js/kindeditor/plugins/emoticons/images/18.gif" border="0" alt="" /><img src="http://www.zcq.com:9002/home/views/static/js/kindeditor/plugins/emoticons/images/0.gif" border="0" alt="" />', 106, '0', NULL, 0, 104, 0, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1472799282),
-(26, 0, '超人啊', '阿斯蒂阿斯蒂芬<img src="http://www.zcq.com:9002/home/views/static/js/kindeditor/plugins/emoticons/images/18.gif" border="0" alt="" /><img src="http://www.zcq.com:9002/home/views/static/js/kindeditor/plugins/emoticons/images/0.gif" border="0" alt="" />asf1', 106, '0', NULL, 0, 101, 0, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1472799282),
-(31, 0, '我要咨询111', '<strong><em>我要咨询111</em></strong><strong><em>我要咨询111</em></strong><strong><em>我要咨询111</em></strong>', 106, '0', NULL, 0, 0, 16, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473123786),
-(32, 0, '我要咨询111', '<strong><em>我要咨询111</em></strong><strong><em>我要咨询111</em></strong><strong><em>我要咨询111</em></strong>', 106, '0', NULL, 0, 104, 0, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473123786),
-(33, 0, '测试', '345435', 82, '0', NULL, 0, 0, 68, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473327648),
-(34, 0, '3423', '34234', 82, '0', NULL, 0, 0, 68, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473327834),
-(35, 0, '324234', '24234234', 82, '0', NULL, 0, 0, 68, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473383137),
-(36, 0, '34', '435', 82, '0', NULL, 0, 0, 68, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473383214),
-(37, 0, '34', '435', 82, '0', NULL, 0, 0, 68, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473383298),
-(38, 0, '34', '43545345', 82, '0', NULL, 0, 0, 68, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473383383),
-(39, 0, '34', '43545345', 82, '0', NULL, 0, 0, 68, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473383440),
-(40, 0, '234', '234', 82, '0', NULL, 0, 0, 68, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473383930),
-(41, 0, '多个机构咨询', '谁放的', 82, '0', NULL, 0, 12, 0, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473385652),
-(42, 0, '多个机构咨询', '谁放的', 82, '0', NULL, 0, 17, 0, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473385652),
-(43, 0, '多个机构咨询', '谁放的', 82, '0', NULL, 0, 25, 0, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473385652),
-(44, 0, '多个机构咨询', '谁放的', 82, '1', '回复一下看看', 1473402179, 26, 0, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473385652),
-(45, 0, '4545', '4234', 82, '0', NULL, 0, 0, 68, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473401056),
-(46, 0, '4545', '4234', 82, '0', NULL, 0, 12, 0, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473401056),
-(47, 0, '4545', '4234', 82, '0', NULL, 0, 17, 0, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473401056),
-(48, 47, '4545', '追问第一次', 82, '0', NULL, 0, 17, 0, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473401850),
-(49, 44, '多个机构咨询', '再追问一下', 82, '1', '回复一下', 1473407394, 26, 0, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473403210),
-(50, 32, '我要咨询111', 'asfsdf', 106, '0', NULL, 0, 104, 0, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473403247),
-(51, 32, '我要咨询111', 'bnmfgjhtyu', 106, '0', NULL, 0, 104, 0, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473403267),
-(52, 24, '人的心脏究竟能够承受多大的重量', 'qweqweqweqwe', 106, '0', NULL, 0, 0, 0, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473403289),
-(53, 44, '多个机构咨询', '还有追问呢', 82, '1', '追问一下啊，是吧234', 1473408405, 26, 0, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473403371),
-(54, 44, '多个机构咨询', '继续追问啊', 82, '0', NULL, 0, 26, 0, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473409255),
-(55, 0, '测试咨询', '而威尔', 86, '0', NULL, 0, 0, 16, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473470451),
-(56, 0, '测试咨询', '而威尔', 86, '0', NULL, 0, 0, 68, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473470451),
-(57, 0, '测试咨询', '而威尔', 86, '0', NULL, 0, 0, 69, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473470451),
-(58, 0, '测试咨询', '而威尔', 86, '0', NULL, 0, 0, 70, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473470451),
-(59, 0, '测试咨询', '而威尔', 86, '0', NULL, 0, 0, 71, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473470451),
-(60, 0, '测试咨询', '而威尔', 86, '0', NULL, 0, 107, 0, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473470451),
-(61, 0, '测试咨询', '而威尔', 86, '0', NULL, 0, 103, 0, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473470451),
-(62, 0, '测试咨询', '而威尔', 86, '0', NULL, 0, 87, 0, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473470451),
-(63, 0, '测试咨询', '而威尔', 86, '0', NULL, 0, 26, 0, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473470451),
-(64, 0, '324234', '344545345', 86, '0', NULL, 0, 0, 16, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473470551),
-(65, 0, '324234', '344545345', 86, '0', NULL, 0, 0, 71, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473470551),
-(66, 0, '324234', '344545345', 86, '0', NULL, 0, 0, 68, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473470551),
-(67, 0, '324234', '344545345', 86, '0', NULL, 0, 0, 69, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473470551),
-(68, 0, '324234', '344545345', 86, '0', NULL, 0, 0, 70, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473470551),
-(69, 0, '324234', '344545345', 86, '0', NULL, 0, 107, 0, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473470551),
-(70, 0, '324234', '344545345', 86, '0', NULL, 0, 103, 0, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473470551),
-(71, 0, '324234', '344545345', 86, '0', NULL, 0, 87, 0, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473470551),
-(72, 0, '456456', '345345345', 86, '0', NULL, 0, 26, 0, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473470684),
-(73, 23, '如何卡圣诞节', '爱上的电饭锅', 93, '0', NULL, 0, 0, 0, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473471250),
-(74, 19, '按实际的', '个哈哈哈哈哈哈哈哈哈哈哈哈就', 93, '1', '<span style="font-size:16px;">水电费梵蒂冈和覆盖和</span>', 1473748293, 101, 0, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473471278),
-(75, 19, '按实际的', '啊十几块等哈说会计师的浩丰科技', 93, '1', '<p>\n	<strong><span style="color:#006600;font-size:24px;">阿斯顿水电费<strong><span style="color:#006600;font-size:24px;">阿斯顿水电费</span></strong><strong><span style="color:#006600;font-size:24px;">阿斯顿水电费</span></strong><strong><span style="color:#006600;font-size:24px;">阿斯顿水电费</span></strong><strong><span style="color:#006600;font-size:24px;">阿斯顿水电费<img src="http://www.zcq.com:9002/home/views/static/js/kindeditor/plugins/emoticons/images/22.gif" border="0" alt="" /></span></strong></span></strong>\n</p>\n<p>\n	<strong><span style="color:#006600;font-size:24px;"><strong><span style="color:#006600;font-size:24px;">\n	<table style="width:100%;" cellpadding="2" cellspacing="0" border="1" bordercolor="#000000">\n		<tbody>\n			<tr>\n				<td>\n					<br />\n				</td>\n				<td>\n					<br />\n				</td>\n			</tr>\n			<tr>\n				<td>\n					<br />\n				</td>\n				<td>\n					<br />\n				</td>\n			</tr>\n			<tr>\n				<td>\n					<br />\n				</td>\n				<td>\n					<br />\n				</td>\n			</tr>\n		</tbody>\n	</table>\n<br />\n<br />\n</span></strong></span></strong>\n</p>', 1473748379, 101, 0, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473733630),
-(77, 17, '阿士大夫', '万千瓦发士大夫123水电费', 93, '1', '阿斯顿发郭德纲打算发广告asfsdf', 1473740863, 101, 16, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473737067),
-(78, 17, '阿士大夫', '电饭锅电饭锅电饭锅电饭锅', 93, '1', 'sdffsgdfgggggggggvbnnnnnnnnnnnn1hhasssdasdfasdfghfgh<strong></strong>', 1473745434, 101, 16, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473740902),
-(79, 0, '向管理员咨询', '<p>\r\n	<strong><em><span style="font-size:32px;">这是一个非常难的咨询,望采纳!!!!!</span></em></strong>\r\n</p>\r\n<p>\r\n	<strong><em><span style="font-size:32px;"><img src="http://www.zcq.com:9002/home/views/static/js/kindeditor/plugins/emoticons/images/0.gif" border="0" alt="" /><br />\r\n</span></em></strong>\r\n</p>', 93, '1', '<img src="http://www.zcq.com:9002/admin_application/views/static/Js/kindeditor/plugins/emoticons/images/28.gif" border="0" alt="" /><strong>a( ⊙ o ⊙ )是的</strong>', 1473748435, 0, 16, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473745558),
-(80, 79, '向管理员咨询', '<h2>\r\n	<strong>你好!我要追问</strong>\r\n</h2>', 93, '1', '<em><strong><span style="color:#9933E5;font-size:32px;">阿斯蒂电饭锅电饭锅是水水水水水水水水水水水水是</span></strong></em><img src="http://www.zcq.com:9002/home/views/static/js/kindeditor/plugins/emoticons/images/9.gif" border="0" alt="" /><em><strong><span style="color:#9933E5;font-size:32px;">阿斯蒂电饭锅电饭锅是水水水水水水水水水水水水是</span></strong></em><em><strong><span style="color:#9933E5;font-size:32px;">阿斯蒂电饭锅电饭锅是水水水水水水水水水水水水是</span></strong></em>', 1473747105, 0, 16, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473745682),
-(81, 79, '向管理员咨询', '<h1>\r\n	追问不行啊\r\n</h1>', 93, '1', '<img src="http://www.zcq.com:9002/home/views/static/js/kindeditor/plugins/emoticons/images/10.gif" border="0" alt="" />a十多个号', 1473748069, 0, 16, '0', NULL, NULL, '0', 0, NULL, '0', NULL, NULL, 1473747440);
-
--- --------------------------------------------------------
-
---
--- 表的结构 `zcq_huodong`
---
-
-CREATE TABLE IF NOT EXISTS `zcq_huodong` (
-  `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '主键id',
-  `title` varchar(250) DEFAULT NULL COMMENT '活动标题',
-  `starttime` int(10) DEFAULT '0' COMMENT '活动开始时间',
-  `endtime` int(10) DEFAULT '0' COMMENT '活动结束时间',
-  `baoming_start` int(10) DEFAULT '0' COMMENT '报名开始时间',
-  `baoming_end` int(10) DEFAULT '0' COMMENT '报名结束时间',
-  `thumb` varchar(250) DEFAULT NULL COMMENT '封面图',
-  `isshow` enum('0','1') DEFAULT '1' COMMENT '是否显示,0否1是',
-  `content` text COMMENT '介绍 ',
-  `isdel` enum('0','1') DEFAULT NULL COMMENT '是否删除,0否1是',
-  `create_sysuserid` int(10) DEFAULT NULL COMMENT '创建管理员ID',
-  `update_sysuserid` int(10) DEFAULT NULL COMMENT '更新管理员ID',
-  `del_sysuserid` int(10) DEFAULT NULL COMMENT '删除管理员ID',
-  `createtime` int(10) DEFAULT NULL COMMENT '添加时间',
-  `updatetime` int(10) DEFAULT NULL COMMENT '最后更新时间',
-  `deltime` int(10) DEFAULT NULL COMMENT '删除时间',
-  `pnum` int(10) DEFAULT NULL COMMENT '限制人数',
-  PRIMARY KEY (`id`),
-  KEY `AK_Key_1` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='活动表' AUTO_INCREMENT=6 ;
-
---
--- 转存表中的数据 `zcq_huodong`
---
-
-INSERT INTO `zcq_huodong` (`id`, `title`, `starttime`, `endtime`, `baoming_start`, `baoming_end`, `thumb`, `isshow`, `content`, `isdel`, `create_sysuserid`, `update_sysuserid`, `del_sysuserid`, `createtime`, `updatetime`, `deltime`, `pnum`) VALUES
-(1, '测试活动334', 1471968000, 1472227200, 1470585600, 1471622400, 'data/upload/huodong/2016/147073391017348.jpg', '1', '<p>\r\n	&nbsp; &nbsp;34234234\r\n</p>\r\n<p>\r\n	&nbsp; &nbsp;&nbsp;\r\n</p>\r\n<p>\r\n	&nbsp; &nbsp; &nbsp; &nbsp;水电费水电费234234\r\n</p>', '0', 16, 16, 16, 1470731668, 1471226919, 1470789986, 50),
-(2, '活动主题', 1472486400, 1472745600, 1471276800, 1472227200, 'data/upload/huodong/2016/147078993323539.jpg', '1', '<p>\r\n	5623234\r\n</p>\r\n<p>\r\n	&nbsp; &nbsp; 送豆腐\r\n</p>', '0', 16, 16, 16, 1470789933, 1471226894, 1470789986, 100),
-(3, '测试限制', 1471449600, 1472227200, 1470499200, 1471276800, 'data/upload/huodong/2016/147122697115825.png', '1', '23324', '0', 16, 16, NULL, 1471226971, 1471226971, NULL, 50),
-(4, '未开始活动', 1473955200, 1475164800, 1473436800, 1473868800, 'data/upload/huodong/2016/14725429393048.jpg', '1', '2343423', '0', 16, 16, NULL, 1472542938, 1473124671, NULL, 100),
-(5, '新活动', 1473436800, 1475164800, 1472978178, 1473004800, 'data/upload/huodong/2016/147280542628311.jpg', '1', '<strong><em><span style="font-size:18px;background-color:#4C33E5;">新活动新活动新活动新活动新活动<img src="http://www.zcq.com:9002/admin_application/views/static/Js/kindeditor/plugins/emoticons/images/27.gif" border="0" alt="" /></span></em></strong>', '0', 16, 16, NULL, 1472805426, 1473410513, NULL, 100);
-
--- --------------------------------------------------------
-
---
--- 表的结构 `zcq_huodong_baoming`
---
-
-CREATE TABLE IF NOT EXISTS `zcq_huodong_baoming` (
-  `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '主键id',
-  `huodong_id` int(10) DEFAULT '0' COMMENT '活动id,读表：zcq_huodong',
-  `userid` int(10) DEFAULT '0' COMMENT '报名用户ID',
-  `isdel` enum('0','1') NOT NULL DEFAULT '0' COMMENT '是否删除0否1是',
-  `create_sysuserid` int(10) DEFAULT '0' COMMENT '创建的用户ID',
-  `update_sysuserid` int(10) DEFAULT '0' COMMENT '更新管理员ID',
-  `del_sysuserid` int(10) DEFAULT '0' COMMENT '删除管理员ID',
-  `createtime` int(10) DEFAULT '0' COMMENT '报名时间',
-  `updatetime` int(10) DEFAULT '0' COMMENT '最后更新时间',
-  `deltime` int(10) DEFAULT '0' COMMENT '删除时间',
-  PRIMARY KEY (`id`),
-  KEY `AK_Key_1` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='活动报名表' AUTO_INCREMENT=10 ;
-
---
--- 转存表中的数据 `zcq_huodong_baoming`
---
-
-INSERT INTO `zcq_huodong_baoming` (`id`, `huodong_id`, `userid`, `isdel`, `create_sysuserid`, `update_sysuserid`, `del_sysuserid`, `createtime`, `updatetime`, `deltime`) VALUES
-(1, 1, 82, '0', 82, 16, 16, 1411000000, 0, 1470811133),
-(7, 2, 93, '0', 93, 93, 0, 1471832726, 1471832726, 0),
-(6, 3, 82, '0', 82, 82, 0, 1471249229, 1471249229, 0),
-(8, 4, 106, '0', 106, 106, 0, 1472778828, 1472778828, 0),
-(9, 5, 106, '0', 106, 106, 0, 1473124023, 1473124023, 0);
-
--- --------------------------------------------------------
-
---
--- 表的结构 `zcq_mail`
---
-
-CREATE TABLE IF NOT EXISTS `zcq_mail` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `title` varchar(250) DEFAULT NULL COMMENT '标题',
-  `mail_status` enum('0','1') DEFAULT NULL COMMENT '相对于发送人邮件状态：0草稿，1已发，2已删除(在已删除列表显示)',
-  `receive_userid` bigint(20) DEFAULT NULL COMMENT '用户ID ',
-  `receive_sysuserid` bigint(20) DEFAULT NULL COMMENT '管理会用户ID ',
-  `content` text COMMENT '内容',
-  `isdel` enum('0','1') DEFAULT NULL COMMENT '是否删除(删除后不显示)',
-  `create_sysuserid` int(11) DEFAULT '0' COMMENT '创建管理员ID，即发送人管理员ID',
-  `update_sysuserid` int(11) DEFAULT '0' COMMENT '更新管理员ID',
-  `del_sysuserid` int(11) DEFAULT '0' COMMENT '删除管理员ID',
-  `createtime` int(11) DEFAULT '0',
-  `updatetime` int(11) DEFAULT '0',
-  `deltime` int(11) DEFAULT '0',
-  `create_userid` int(11) DEFAULT '0' COMMENT '创建人用户ID，即发送人用户ID',
-  `update_userid` int(11) DEFAULT '0' COMMENT '更新人用户ID',
-  `del_userid` int(11) DEFAULT '0' COMMENT '删除人用户ID',
-  `guid` varchar(100) DEFAULT NULL COMMENT '发送或草稿时同一批次的GUID',
-  `isread` enum('0','1') DEFAULT '0' COMMENT '是否已读',
-  PRIMARY KEY (`id`),
-  KEY `AK_Key_1` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='站内信' AUTO_INCREMENT=366 ;
-
---
--- 转存表中的数据 `zcq_mail`
---
-
-INSERT INTO `zcq_mail` (`id`, `title`, `mail_status`, `receive_userid`, `receive_sysuserid`, `content`, `isdel`, `create_sysuserid`, `update_sysuserid`, `del_sysuserid`, `createtime`, `updatetime`, `deltime`, `create_userid`, `update_userid`, `del_userid`, `guid`, `isread`) VALUES
-(1, 'test', '1', 21, 0, '<p>\r\n	sadfasdfasdf\r\n</p>\r\n<p>\r\n	asdf\r\n</p>\r\n<p>\r\n	asdfasdfasdfsadf\r\n</p>', '0', 0, 0, 0, 1471335449, 0, 0, 99, 0, 0, '1394e83c-f69e-ee79-7ffd-1bd2d9963b05', '0'),
-(2, 'test', '1', 94, 0, '<p>\r\n	sadfasdfasdf\r\n</p>\r\n<p>\r\n	asdf\r\n</p>\r\n<p>\r\n	asdfasdfasdfsadf\r\n</p>', '0', 0, 0, 0, 1471335449, 0, 0, 99, 0, 0, '1394e83c-f69e-ee79-7ffd-1bd2d9963b05', '0'),
-(3, 'test', '1', 0, 16, '<p>\r\n	sadfasdfasdf\r\n</p>\r\n<p>\r\n	asdf\r\n</p>\r\n<p>\r\n	asdfasdfasdfsadf\r\n</p>', '0', 0, 16, 0, 1471335449, 1472258649, 0, 99, 0, 0, '1394e83c-f69e-ee79-7ffd-1bd2d9963b05', '1'),
-(4, 'dfasdfasdfadsf', '1', 21, 0, '<p>\r\n	sdfasdfasdfasdfasdfasdf\r\n</p>\r\n<p>\r\n	sdf\r\n</p>\r\n<p>\r\n	asd\r\n</p>\r\n<p>\r\n	fsda\r\n</p>\r\n<p>\r\n	fasd\r\n</p>\r\n<p>\r\n	fasdfasdf\r\n</p>', '0', 0, 0, 0, 1471335589, 0, 0, 99, 0, 0, '194aa4a7-afaf-d7ab-b3e2-ab688709adce', '0'),
-(5, 'dfasdfasdfadsf', '1', 0, 16, '<p>\r\n	sdfasdfasdfasdfasdfasdf\r\n</p>\r\n<p>\r\n	sdf\r\n</p>\r\n<p>\r\n	asd\r\n</p>\r\n<p>\r\n	fsda\r\n</p>\r\n<p>\r\n	fasd\r\n</p>\r\n<p>\r\n	fasdfasdf\r\n</p>', '0', 0, 0, 0, 1471335589, 0, 0, 99, 0, 0, '194aa4a7-afaf-d7ab-b3e2-ab688709adce', '0'),
-(6, 'sadfssdfasdfasd', '1', 21, 0, '<p>\r\n	fasdfasdf\r\n</p>\r\n<p>\r\n	asf\r\n</p>\r\n<p>\r\n	asdf\r\n</p>\r\n<p>\r\n	sadfasfasdf\r\n</p>', '0', 0, 0, 0, 1471335715, 0, 0, 99, 0, 0, '3930c9e3-4994-e15c-b789-b5f37f85cca4', '0'),
-(7, 'sadfssdfasdfasd', '1', 0, 16, '<p>\r\n	fasdfasdf\r\n</p>\r\n<p>\r\n	asf\r\n</p>\r\n<p>\r\n	asdf\r\n</p>\r\n<p>\r\n	sadfasfasdf\r\n</p>', '0', 0, 16, 0, 1471335715, 1471399846, 0, 99, 0, 0, '3930c9e3-4994-e15c-b789-b5f37f85cca4', '1'),
-(8, 'asfdasfasfasfasd', '1', 99, 0, 'asdfsdfasdfasdf', '1', 0, 0, 0, 1471337545, 0, 1471337551, 99, 0, 0, '2275278c-2006-0c36-b0fe-9a8994692322', '0'),
-(9, 'sadfasdfasdfasd', '1', 99, 0, 'fasdfasdfasdfasdfasfasd', '1', 0, 0, 0, 1471337645, 0, 1471337653, 99, 0, 0, '0d010888-13bc-7751-5c80-a70de2ee48d4', '0'),
-(10, '服务机构', '1', 91, 0, '<p>\r\n	sadfsfasdfasdf\r\n</p>\r\n<p>\r\n	asdf\r\n</p>\r\n<p>\r\n	asd\r\n</p>\r\n<p>\r\n	fsad\r\n</p>\r\n<p>\r\n	fasdf\r\n</p>', '0', 0, 0, 0, 1471337716, 0, 0, 99, 0, 0, '2d807483-5560-e1cf-7094-f104f23f1a10', '0'),
-(11, '服务机构', '1', 28, 0, '<p>\r\n	sadfsfasdfasdf\r\n</p>\r\n<p>\r\n	asdf\r\n</p>\r\n<p>\r\n	asd\r\n</p>\r\n<p>\r\n	fsad\r\n</p>\r\n<p>\r\n	fasdf\r\n</p>', '0', 0, 0, 0, 1471337716, 0, 0, 99, 0, 0, '2d807483-5560-e1cf-7094-f104f23f1a10', '0'),
-(12, '服务机构', '1', 99, 0, '<p>\r\n	sadfsfasdfasdf\r\n</p>\r\n<p>\r\n	asdf\r\n</p>\r\n<p>\r\n	asd\r\n</p>\r\n<p>\r\n	fsad\r\n</p>\r\n<p>\r\n	fasdf\r\n</p>', '0', 0, 0, 0, 1471337716, 1471338074, 0, 99, 0, 0, '2d807483-5560-e1cf-7094-f104f23f1a10', '1'),
-(13, '深入学习贯彻习近平同志“七一”重要讲话精神', '1', 21, 0, '<p>\r\n	<p class="otitle" style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		（原标题：我们应该不忘什么样的初心（深入学习贯彻习近平同志系列重要讲话精神））\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		习近平同志在纪念中国共产党成立95周年大会上的重要讲话，在我们党95年建党史、60多年新中国执政史的时空中展开，在人类文明史、世界史、民族史、国家史的坐标中论述，构建了一个贯穿古今、纵横捭阖、纵论未来的宏大叙事。讲话立意高远、观点鲜明、气势磅礴、激情飞扬，绽放出马克思主义真理的光芒，是对党的十八大以来党中央治国理政新理念新思想新战略的系统阐述和高度概括，彰显了当代中国共产党人的政治胆识、理论勇气和科学精神。贯穿讲话的灵魂是“不忘初心、继续前进”。这是向着“两个一百年”奋斗目标和中华民族伟大复兴中国梦奋勇前进的中国共产党，在新的历史起点上再出发的动员令。学习贯彻习近平同志“七一”重要讲话精神，每一名党员都要问一问：我们应该不忘什么样的初心、应该如何保持初心。\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		<b>不忘初心，就要牢记历史</b>\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		一个不记得来路的民族是没有出路的民族。100多年前，马克思、恩格斯在《共产党宣言》中以全球视野、深邃目光，分析了古罗马的历史、中世纪的历史，欧洲商业、航海业和工业的历史，美洲的殖民历史，指出“一切社会的历史都是阶级斗争的历史”。他们作出的政治结论是：“只有无产阶级是真正革命的阶级”“资产阶级的灭亡和无产阶级的胜利是同样不可避免的”。这一政治结论，就是基于对历史的深刻分析。\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		习近平同志“七一”重要讲话，从历史角度切入，回顾了中国共产党团结带领中国人民不懈奋斗的光辉历程，分析了中华文明的历史、中华民族的历史、中国革命的历史。通过回顾历史，习近平同志深刻指出，中国共产党领导中国人民取得的伟大胜利，让中华文明在现代化进程中焕发出新的蓬勃生机，让科学社会主义在21世纪焕发出新的蓬勃生机，使中华民族焕发出新的蓬勃生机；团结带领中国人民完成新民主主义革命、建立了中华人民共和国，团结带领中国人民完成社会主义革命、确立社会主义基本制度、推进了社会主义建设，团结带领中国人民进行改革开放新的伟大革命，是中国共产党紧紧依靠人民为中华民族作出的伟大历史贡献。这些历史是我们“不忘初心、继续前进”的历史依据，也正是从这些历史中我们深刻认识到：历史和人民选择中国共产党领导中华民族伟大复兴的事业是正确的，必须长期坚持、永不动摇；中国共产党领导中国人民开辟的中国特色社会主义道路是正确的，必须长期坚持、永不动摇；中国共产党和中国人民扎根中国大地、吸纳人类文明优秀成果、独立自主实现国家发展的战略是正确的，必须长期坚持、永不动摇。不忘初心，就要重视从人类发展史、民族进步史、国家奋斗史、社会兴衰史、政党成长史中吸收营养、汲取力量。不忘初心，就要不忘我国悠久的历史和灿烂的文明；不忘建党的初衷和宗旨，党所经历的苦难和辉煌、曲折和胜利；不忘开天辟地的伟大创举和党在奋斗中形成的伟大精神；不忘改革开放的伟大探索和民族复兴的伟大梦想。\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		<b>不忘初心，就要坚守政治灵魂</b>\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		习近平同志在讲话中强调：“保持全党在理想追求上的政治定力，自觉做共产主义远大理想和中国特色社会主义共同理想的坚定信仰者、忠实实践者”。马克思主义信仰、共产主义远大理想和中国特色社会主义共同理想，是我们党的政治灵魂。不忘初心，就要坚守政治灵魂。\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		政治灵魂统摄政党实践，政治主张构建政党理想。古今中外的思想家对人类社会的未来状态有过许多设想，但只有马克思、恩格斯建立在唯物辩证法之上的科学社会主义，才走出空想，真正反映了人类对理想社会的美好憧憬。世界社会主义500年的历史表明，理想召唤现实、现实趋向理想，理想与现实正艰难而坚定地走向统一。无论是全面建成小康社会这个近期目标，还是中国梦这个长期目标，都是《共产党宣言》所描绘的“在那里，每个人的自由发展是一切人的自由发展的条件”的共产主义远大理想的重要组成部分，是中国特色社会主义共同理想的阶段性目标。不忘初心，就要坚定对马克思主义的信仰，坚定对远大理想与共同理想的追求。中国特色社会主义是科学社会主义理论逻辑和中国社会发展历史逻辑的辩证统一，是根植于中国大地、反映人民意愿、适应时代发展的科学社会主义。不忘初心，就要始终坚持和发展中国特色社会主义。为此，我们要坚定道路自信、理论自信、制度自信、文化自信。习近平同志在讲话中对中国道路、中国理论、中国制度、中国文化作了深入阐述，广大党员干部要深入学习领会，坚守政治灵魂。\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		<b>不忘初心，就要敢于担当</b>\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		1847年6月共产主义者同盟在伦敦成立时，就旗帜鲜明地宣布自己的任务是“推翻资产阶级政权，建立无产阶级统治，消灭旧的以阶级对立为基础的资产阶级社会和建立没有阶级、没有私有制的新社会”，提出要同传统的所有制关系、传统的观念“实行最彻底的决裂”，表现出大无畏的政治勇气和革命精神。《共产党宣言》正是为这个同盟写的。宣言就是宣誓，宣誓意味着担当。当今世界正经历一场深刻变局，波及范围之广、影响程度之深、改变世界格局之大，前所未有；当今中国正经历一场深刻变革，涉及人数之众、阶层之多，触及利益问题之深刻复杂，世所罕见。相互交织、相互激荡的世情与国情，对我们党的胆识、定力和担当提出了更高要求。在这样的形势下，如何实现国家富强、民族振兴、人民幸福？如何开辟中国特色社会主义新境界？这是中国共产党必须面对的责任担当。有初心就会有担当，不忘初心才能敢于担当。\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		使命呼唤担当，目标意味责任。一个强大的国家背后要有一个强大的政权，一个强大的政权背后要有一个强大的执政党，这是近代以来中国历史带给我们的启示。又一次走到历史关头的中国共产党要担当如此重任，先进性和纯洁性是第一位要求。习近平同志在讲话中指出：“先进性和纯洁性是马克思主义政党的本质属性，我们加强党的建设，就是要同一切弱化先进性、损害纯洁性的问题作斗争。”保持和发展党的先进性、纯洁性，必须开展严肃认真的党内政治生活，建设风清气正、充满正能量的政治生态。要健体强身，必先祛病疗伤、刮骨疗毒，有自我纠偏、自我疗伤、自我纠错、自我革命的勇气。这是一场始于建党、贯穿党史，没有终点、永远在路上的伟大斗争，也是新时期建党、管党、治党、兴党的重要政治任务。建设一个大而强、敢于担当的马克思主义政党，是我们不能忘记的初心。\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		<b>不忘初心，就要不忘人民</b>\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		《共产党宣言》指出：“过去的一切运动都是少数人的或者为少数人谋利益的运动。无产阶级的运动是绝大多数人的、为绝大多数人谋利益的独立的运动。”这是一个庄严的承诺，是一切共产主义者的初心。综观我们党的理论和路线方针政策以及党的奋斗目标、阶段任务、近期规划和长远战略，不难发现，所有这一切都只有一个指向，那就是为了人民。习近平同志在讲话中指出：“人民立场是中国共产党的根本政治立场，是马克思主义政党区别于其他政党的显著标志。”不忘初心，就要不忘人民。\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		全心全意为人民服务是我们党的根本宗旨。习近平同志要求全党树立以人民为中心的发展思想、工作导向，是对党员的党性要求，是对“为了谁、依靠谁、我是谁”这“执政三问”的明确回答。人民群众是社会实践的主体、政治舞台的主角、推动历史前进的主力、书写历史的主人，这是马克思主义的唯物史观。我们党的根基在人民、血脉在人民、力量在人民。在实现中华民族伟大复兴中国梦的进程中，党是领导力量，人民是依靠力量。我们党刚刚成立时，面对血雨腥风，人民把党紧紧抱在怀里，让我们深深感受到什么叫生死相依、患难与共。党对人民有感情，人民对党情深似海；党把人民看得很重，人民把党看得比生命还宝贵。“最后一口粮，做的是军粮；最后一块布，做的是军装；最后一个儿子啊，送到了部队上。”当年的歌谣一腔深情、满怀衷肠。淮海战役中人民群众倾家荡产支援前线的宏大场面，让我们深刻感受到什么是人民的力量、什么叫人民的分量。今天，少数党员干部脱离群众，把自己当成“官老爷”，这就忘记了初心、违背了诺言。习近平同志在讲话中强调，“要坚信党的根基在人民、党的力量在人民，坚持一切为了人民、一切依靠人民，充分发挥广大人民群众积极性、主动性、创造性，不断把为人民造福事业推向前进”。不忘初心，就是不能忘记人民，始终保持党同人民群众的血肉联系，践行党全心全意为人民服务的根本宗旨。\r\n	</p>\r\n</p>', '0', 0, 0, 0, 1471338886, 0, 0, 99, 0, 0, '962c7a46-2766-dd2b-e240-a181d6c9097c', '0'),
-(14, '深入学习贯彻习近平同志“七一”重要讲话精神', '1', 91, 0, '<p>\r\n	<p class="otitle" style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		（原标题：我们应该不忘什么样的初心（深入学习贯彻习近平同志系列重要讲话精神））\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		习近平同志在纪念中国共产党成立95周年大会上的重要讲话，在我们党95年建党史、60多年新中国执政史的时空中展开，在人类文明史、世界史、民族史、国家史的坐标中论述，构建了一个贯穿古今、纵横捭阖、纵论未来的宏大叙事。讲话立意高远、观点鲜明、气势磅礴、激情飞扬，绽放出马克思主义真理的光芒，是对党的十八大以来党中央治国理政新理念新思想新战略的系统阐述和高度概括，彰显了当代中国共产党人的政治胆识、理论勇气和科学精神。贯穿讲话的灵魂是“不忘初心、继续前进”。这是向着“两个一百年”奋斗目标和中华民族伟大复兴中国梦奋勇前进的中国共产党，在新的历史起点上再出发的动员令。学习贯彻习近平同志“七一”重要讲话精神，每一名党员都要问一问：我们应该不忘什么样的初心、应该如何保持初心。\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		<b>不忘初心，就要牢记历史</b>\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		一个不记得来路的民族是没有出路的民族。100多年前，马克思、恩格斯在《共产党宣言》中以全球视野、深邃目光，分析了古罗马的历史、中世纪的历史，欧洲商业、航海业和工业的历史，美洲的殖民历史，指出“一切社会的历史都是阶级斗争的历史”。他们作出的政治结论是：“只有无产阶级是真正革命的阶级”“资产阶级的灭亡和无产阶级的胜利是同样不可避免的”。这一政治结论，就是基于对历史的深刻分析。\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		习近平同志“七一”重要讲话，从历史角度切入，回顾了中国共产党团结带领中国人民不懈奋斗的光辉历程，分析了中华文明的历史、中华民族的历史、中国革命的历史。通过回顾历史，习近平同志深刻指出，中国共产党领导中国人民取得的伟大胜利，让中华文明在现代化进程中焕发出新的蓬勃生机，让科学社会主义在21世纪焕发出新的蓬勃生机，使中华民族焕发出新的蓬勃生机；团结带领中国人民完成新民主主义革命、建立了中华人民共和国，团结带领中国人民完成社会主义革命、确立社会主义基本制度、推进了社会主义建设，团结带领中国人民进行改革开放新的伟大革命，是中国共产党紧紧依靠人民为中华民族作出的伟大历史贡献。这些历史是我们“不忘初心、继续前进”的历史依据，也正是从这些历史中我们深刻认识到：历史和人民选择中国共产党领导中华民族伟大复兴的事业是正确的，必须长期坚持、永不动摇；中国共产党领导中国人民开辟的中国特色社会主义道路是正确的，必须长期坚持、永不动摇；中国共产党和中国人民扎根中国大地、吸纳人类文明优秀成果、独立自主实现国家发展的战略是正确的，必须长期坚持、永不动摇。不忘初心，就要重视从人类发展史、民族进步史、国家奋斗史、社会兴衰史、政党成长史中吸收营养、汲取力量。不忘初心，就要不忘我国悠久的历史和灿烂的文明；不忘建党的初衷和宗旨，党所经历的苦难和辉煌、曲折和胜利；不忘开天辟地的伟大创举和党在奋斗中形成的伟大精神；不忘改革开放的伟大探索和民族复兴的伟大梦想。\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		<b>不忘初心，就要坚守政治灵魂</b>\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		习近平同志在讲话中强调：“保持全党在理想追求上的政治定力，自觉做共产主义远大理想和中国特色社会主义共同理想的坚定信仰者、忠实实践者”。马克思主义信仰、共产主义远大理想和中国特色社会主义共同理想，是我们党的政治灵魂。不忘初心，就要坚守政治灵魂。\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		政治灵魂统摄政党实践，政治主张构建政党理想。古今中外的思想家对人类社会的未来状态有过许多设想，但只有马克思、恩格斯建立在唯物辩证法之上的科学社会主义，才走出空想，真正反映了人类对理想社会的美好憧憬。世界社会主义500年的历史表明，理想召唤现实、现实趋向理想，理想与现实正艰难而坚定地走向统一。无论是全面建成小康社会这个近期目标，还是中国梦这个长期目标，都是《共产党宣言》所描绘的“在那里，每个人的自由发展是一切人的自由发展的条件”的共产主义远大理想的重要组成部分，是中国特色社会主义共同理想的阶段性目标。不忘初心，就要坚定对马克思主义的信仰，坚定对远大理想与共同理想的追求。中国特色社会主义是科学社会主义理论逻辑和中国社会发展历史逻辑的辩证统一，是根植于中国大地、反映人民意愿、适应时代发展的科学社会主义。不忘初心，就要始终坚持和发展中国特色社会主义。为此，我们要坚定道路自信、理论自信、制度自信、文化自信。习近平同志在讲话中对中国道路、中国理论、中国制度、中国文化作了深入阐述，广大党员干部要深入学习领会，坚守政治灵魂。\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		<b>不忘初心，就要敢于担当</b>\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		1847年6月共产主义者同盟在伦敦成立时，就旗帜鲜明地宣布自己的任务是“推翻资产阶级政权，建立无产阶级统治，消灭旧的以阶级对立为基础的资产阶级社会和建立没有阶级、没有私有制的新社会”，提出要同传统的所有制关系、传统的观念“实行最彻底的决裂”，表现出大无畏的政治勇气和革命精神。《共产党宣言》正是为这个同盟写的。宣言就是宣誓，宣誓意味着担当。当今世界正经历一场深刻变局，波及范围之广、影响程度之深、改变世界格局之大，前所未有；当今中国正经历一场深刻变革，涉及人数之众、阶层之多，触及利益问题之深刻复杂，世所罕见。相互交织、相互激荡的世情与国情，对我们党的胆识、定力和担当提出了更高要求。在这样的形势下，如何实现国家富强、民族振兴、人民幸福？如何开辟中国特色社会主义新境界？这是中国共产党必须面对的责任担当。有初心就会有担当，不忘初心才能敢于担当。\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		使命呼唤担当，目标意味责任。一个强大的国家背后要有一个强大的政权，一个强大的政权背后要有一个强大的执政党，这是近代以来中国历史带给我们的启示。又一次走到历史关头的中国共产党要担当如此重任，先进性和纯洁性是第一位要求。习近平同志在讲话中指出：“先进性和纯洁性是马克思主义政党的本质属性，我们加强党的建设，就是要同一切弱化先进性、损害纯洁性的问题作斗争。”保持和发展党的先进性、纯洁性，必须开展严肃认真的党内政治生活，建设风清气正、充满正能量的政治生态。要健体强身，必先祛病疗伤、刮骨疗毒，有自我纠偏、自我疗伤、自我纠错、自我革命的勇气。这是一场始于建党、贯穿党史，没有终点、永远在路上的伟大斗争，也是新时期建党、管党、治党、兴党的重要政治任务。建设一个大而强、敢于担当的马克思主义政党，是我们不能忘记的初心。\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		<b>不忘初心，就要不忘人民</b>\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		《共产党宣言》指出：“过去的一切运动都是少数人的或者为少数人谋利益的运动。无产阶级的运动是绝大多数人的、为绝大多数人谋利益的独立的运动。”这是一个庄严的承诺，是一切共产主义者的初心。综观我们党的理论和路线方针政策以及党的奋斗目标、阶段任务、近期规划和长远战略，不难发现，所有这一切都只有一个指向，那就是为了人民。习近平同志在讲话中指出：“人民立场是中国共产党的根本政治立场，是马克思主义政党区别于其他政党的显著标志。”不忘初心，就要不忘人民。\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		全心全意为人民服务是我们党的根本宗旨。习近平同志要求全党树立以人民为中心的发展思想、工作导向，是对党员的党性要求，是对“为了谁、依靠谁、我是谁”这“执政三问”的明确回答。人民群众是社会实践的主体、政治舞台的主角、推动历史前进的主力、书写历史的主人，这是马克思主义的唯物史观。我们党的根基在人民、血脉在人民、力量在人民。在实现中华民族伟大复兴中国梦的进程中，党是领导力量，人民是依靠力量。我们党刚刚成立时，面对血雨腥风，人民把党紧紧抱在怀里，让我们深深感受到什么叫生死相依、患难与共。党对人民有感情，人民对党情深似海；党把人民看得很重，人民把党看得比生命还宝贵。“最后一口粮，做的是军粮；最后一块布，做的是军装；最后一个儿子啊，送到了部队上。”当年的歌谣一腔深情、满怀衷肠。淮海战役中人民群众倾家荡产支援前线的宏大场面，让我们深刻感受到什么是人民的力量、什么叫人民的分量。今天，少数党员干部脱离群众，把自己当成“官老爷”，这就忘记了初心、违背了诺言。习近平同志在讲话中强调，“要坚信党的根基在人民、党的力量在人民，坚持一切为了人民、一切依靠人民，充分发挥广大人民群众积极性、主动性、创造性，不断把为人民造福事业推向前进”。不忘初心，就是不能忘记人民，始终保持党同人民群众的血肉联系，践行党全心全意为人民服务的根本宗旨。\r\n	</p>\r\n</p>', '0', 0, 0, 0, 1471338886, 0, 0, 99, 0, 0, '962c7a46-2766-dd2b-e240-a181d6c9097c', '0'),
-(15, '深入学习贯彻习近平同志“七一”重要讲话精神', '1', 0, 16, '<p>\r\n	<p class="otitle" style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		（原标题：我们应该不忘什么样的初心（深入学习贯彻习近平同志系列重要讲话精神））\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		习近平同志在纪念中国共产党成立95周年大会上的重要讲话，在我们党95年建党史、60多年新中国执政史的时空中展开，在人类文明史、世界史、民族史、国家史的坐标中论述，构建了一个贯穿古今、纵横捭阖、纵论未来的宏大叙事。讲话立意高远、观点鲜明、气势磅礴、激情飞扬，绽放出马克思主义真理的光芒，是对党的十八大以来党中央治国理政新理念新思想新战略的系统阐述和高度概括，彰显了当代中国共产党人的政治胆识、理论勇气和科学精神。贯穿讲话的灵魂是“不忘初心、继续前进”。这是向着“两个一百年”奋斗目标和中华民族伟大复兴中国梦奋勇前进的中国共产党，在新的历史起点上再出发的动员令。学习贯彻习近平同志“七一”重要讲话精神，每一名党员都要问一问：我们应该不忘什么样的初心、应该如何保持初心。\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		<b>不忘初心，就要牢记历史</b>\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		一个不记得来路的民族是没有出路的民族。100多年前，马克思、恩格斯在《共产党宣言》中以全球视野、深邃目光，分析了古罗马的历史、中世纪的历史，欧洲商业、航海业和工业的历史，美洲的殖民历史，指出“一切社会的历史都是阶级斗争的历史”。他们作出的政治结论是：“只有无产阶级是真正革命的阶级”“资产阶级的灭亡和无产阶级的胜利是同样不可避免的”。这一政治结论，就是基于对历史的深刻分析。\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		习近平同志“七一”重要讲话，从历史角度切入，回顾了中国共产党团结带领中国人民不懈奋斗的光辉历程，分析了中华文明的历史、中华民族的历史、中国革命的历史。通过回顾历史，习近平同志深刻指出，中国共产党领导中国人民取得的伟大胜利，让中华文明在现代化进程中焕发出新的蓬勃生机，让科学社会主义在21世纪焕发出新的蓬勃生机，使中华民族焕发出新的蓬勃生机；团结带领中国人民完成新民主主义革命、建立了中华人民共和国，团结带领中国人民完成社会主义革命、确立社会主义基本制度、推进了社会主义建设，团结带领中国人民进行改革开放新的伟大革命，是中国共产党紧紧依靠人民为中华民族作出的伟大历史贡献。这些历史是我们“不忘初心、继续前进”的历史依据，也正是从这些历史中我们深刻认识到：历史和人民选择中国共产党领导中华民族伟大复兴的事业是正确的，必须长期坚持、永不动摇；中国共产党领导中国人民开辟的中国特色社会主义道路是正确的，必须长期坚持、永不动摇；中国共产党和中国人民扎根中国大地、吸纳人类文明优秀成果、独立自主实现国家发展的战略是正确的，必须长期坚持、永不动摇。不忘初心，就要重视从人类发展史、民族进步史、国家奋斗史、社会兴衰史、政党成长史中吸收营养、汲取力量。不忘初心，就要不忘我国悠久的历史和灿烂的文明；不忘建党的初衷和宗旨，党所经历的苦难和辉煌、曲折和胜利；不忘开天辟地的伟大创举和党在奋斗中形成的伟大精神；不忘改革开放的伟大探索和民族复兴的伟大梦想。\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		<b>不忘初心，就要坚守政治灵魂</b>\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		习近平同志在讲话中强调：“保持全党在理想追求上的政治定力，自觉做共产主义远大理想和中国特色社会主义共同理想的坚定信仰者、忠实实践者”。马克思主义信仰、共产主义远大理想和中国特色社会主义共同理想，是我们党的政治灵魂。不忘初心，就要坚守政治灵魂。\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		政治灵魂统摄政党实践，政治主张构建政党理想。古今中外的思想家对人类社会的未来状态有过许多设想，但只有马克思、恩格斯建立在唯物辩证法之上的科学社会主义，才走出空想，真正反映了人类对理想社会的美好憧憬。世界社会主义500年的历史表明，理想召唤现实、现实趋向理想，理想与现实正艰难而坚定地走向统一。无论是全面建成小康社会这个近期目标，还是中国梦这个长期目标，都是《共产党宣言》所描绘的“在那里，每个人的自由发展是一切人的自由发展的条件”的共产主义远大理想的重要组成部分，是中国特色社会主义共同理想的阶段性目标。不忘初心，就要坚定对马克思主义的信仰，坚定对远大理想与共同理想的追求。中国特色社会主义是科学社会主义理论逻辑和中国社会发展历史逻辑的辩证统一，是根植于中国大地、反映人民意愿、适应时代发展的科学社会主义。不忘初心，就要始终坚持和发展中国特色社会主义。为此，我们要坚定道路自信、理论自信、制度自信、文化自信。习近平同志在讲话中对中国道路、中国理论、中国制度、中国文化作了深入阐述，广大党员干部要深入学习领会，坚守政治灵魂。\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		<b>不忘初心，就要敢于担当</b>\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		1847年6月共产主义者同盟在伦敦成立时，就旗帜鲜明地宣布自己的任务是“推翻资产阶级政权，建立无产阶级统治，消灭旧的以阶级对立为基础的资产阶级社会和建立没有阶级、没有私有制的新社会”，提出要同传统的所有制关系、传统的观念“实行最彻底的决裂”，表现出大无畏的政治勇气和革命精神。《共产党宣言》正是为这个同盟写的。宣言就是宣誓，宣誓意味着担当。当今世界正经历一场深刻变局，波及范围之广、影响程度之深、改变世界格局之大，前所未有；当今中国正经历一场深刻变革，涉及人数之众、阶层之多，触及利益问题之深刻复杂，世所罕见。相互交织、相互激荡的世情与国情，对我们党的胆识、定力和担当提出了更高要求。在这样的形势下，如何实现国家富强、民族振兴、人民幸福？如何开辟中国特色社会主义新境界？这是中国共产党必须面对的责任担当。有初心就会有担当，不忘初心才能敢于担当。\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		使命呼唤担当，目标意味责任。一个强大的国家背后要有一个强大的政权，一个强大的政权背后要有一个强大的执政党，这是近代以来中国历史带给我们的启示。又一次走到历史关头的中国共产党要担当如此重任，先进性和纯洁性是第一位要求。习近平同志在讲话中指出：“先进性和纯洁性是马克思主义政党的本质属性，我们加强党的建设，就是要同一切弱化先进性、损害纯洁性的问题作斗争。”保持和发展党的先进性、纯洁性，必须开展严肃认真的党内政治生活，建设风清气正、充满正能量的政治生态。要健体强身，必先祛病疗伤、刮骨疗毒，有自我纠偏、自我疗伤、自我纠错、自我革命的勇气。这是一场始于建党、贯穿党史，没有终点、永远在路上的伟大斗争，也是新时期建党、管党、治党、兴党的重要政治任务。建设一个大而强、敢于担当的马克思主义政党，是我们不能忘记的初心。\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		<b>不忘初心，就要不忘人民</b>\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		《共产党宣言》指出：“过去的一切运动都是少数人的或者为少数人谋利益的运动。无产阶级的运动是绝大多数人的、为绝大多数人谋利益的独立的运动。”这是一个庄严的承诺，是一切共产主义者的初心。综观我们党的理论和路线方针政策以及党的奋斗目标、阶段任务、近期规划和长远战略，不难发现，所有这一切都只有一个指向，那就是为了人民。习近平同志在讲话中指出：“人民立场是中国共产党的根本政治立场，是马克思主义政党区别于其他政党的显著标志。”不忘初心，就要不忘人民。\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		全心全意为人民服务是我们党的根本宗旨。习近平同志要求全党树立以人民为中心的发展思想、工作导向，是对党员的党性要求，是对“为了谁、依靠谁、我是谁”这“执政三问”的明确回答。人民群众是社会实践的主体、政治舞台的主角、推动历史前进的主力、书写历史的主人，这是马克思主义的唯物史观。我们党的根基在人民、血脉在人民、力量在人民。在实现中华民族伟大复兴中国梦的进程中，党是领导力量，人民是依靠力量。我们党刚刚成立时，面对血雨腥风，人民把党紧紧抱在怀里，让我们深深感受到什么叫生死相依、患难与共。党对人民有感情，人民对党情深似海；党把人民看得很重，人民把党看得比生命还宝贵。“最后一口粮，做的是军粮；最后一块布，做的是军装；最后一个儿子啊，送到了部队上。”当年的歌谣一腔深情、满怀衷肠。淮海战役中人民群众倾家荡产支援前线的宏大场面，让我们深刻感受到什么是人民的力量、什么叫人民的分量。今天，少数党员干部脱离群众，把自己当成“官老爷”，这就忘记了初心、违背了诺言。习近平同志在讲话中强调，“要坚信党的根基在人民、党的力量在人民，坚持一切为了人民、一切依靠人民，充分发挥广大人民群众积极性、主动性、创造性，不断把为人民造福事业推向前进”。不忘初心，就是不能忘记人民，始终保持党同人民群众的血肉联系，践行党全心全意为人民服务的根本宗旨。\r\n	</p>\r\n</p>', '0', 0, 16, 0, 1471338886, 1471338893, 0, 99, 0, 0, '962c7a46-2766-dd2b-e240-a181d6c9097c', '1');
-INSERT INTO `zcq_mail` (`id`, `title`, `mail_status`, `receive_userid`, `receive_sysuserid`, `content`, `isdel`, `create_sysuserid`, `update_sysuserid`, `del_sysuserid`, `createtime`, `updatetime`, `deltime`, `create_userid`, `update_userid`, `del_userid`, `guid`, `isread`) VALUES
-(16, '深入学习贯彻习近平同志“七一”重要讲话精神', '1', 99, 0, '<p class="otitle" style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n	（原标题：我们应该不忘什么样的初心（深入学习贯彻习近平同志系列重要讲话精神））\r\n</p>\r\n<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n	习近平同志在纪念中国共产党成立95周年大会上的重要讲话，在我们党95年建党史、60多年新中国执政史的时空中展开，在人类文明史、世界史、民族史、国家史的坐标中论述，构建了一个贯穿古今、纵横捭阖、纵论未来的宏大叙事。讲话立意高远、观点鲜明、气势磅礴、激情飞扬，绽放出马克思主义真理的光芒，是对党的十八大以来党中央治国理政新理念新思想新战略的系统阐述和高度概括，彰显了当代中国共产党人的政治胆识、理论勇气和科学精神。贯穿讲话的灵魂是“不忘初心、继续前进”。这是向着“两个一百年”奋斗目标和中华民族伟大复兴中国梦奋勇前进的中国共产党，在新的历史起点上再出发的动员令。学习贯彻习近平同志“七一”重要讲话精神，每一名党员都要问一问：我们应该不忘什么样的初心、应该如何保持初心。\r\n</p>\r\n<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n	<b>不忘初心，就要牢记历史</b>\r\n</p>\r\n<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n	一个不记得来路的民族是没有出路的民族。100多年前，马克思、恩格斯在《共产党宣言》中以全球视野、深邃目光，分析了古罗马的历史、中世纪的历史，欧洲商业、航海业和工业的历史，美洲的殖民历史，指出“一切社会的历史都是阶级斗争的历史”。他们作出的政治结论是：“只有无产阶级是真正革命的阶级”“资产阶级的灭亡和无产阶级的胜利是同样不可避免的”。这一政治结论，就是基于对历史的深刻分析。\r\n</p>\r\n<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n	习近平同志“七一”重要讲话，从历史角度切入，回顾了中国共产党团结带领中国人民不懈奋斗的光辉历程，分析了中华文明的历史、中华民族的历史、中国革命的历史。通过回顾历史，习近平同志深刻指出，中国共产党领导中国人民取得的伟大胜利，让中华文明在现代化进程中焕发出新的蓬勃生机，让科学社会主义在21世纪焕发出新的蓬勃生机，使中华民族焕发出新的蓬勃生机；团结带领中国人民完成新民主主义革命、建立了中华人民共和国，团结带领中国人民完成社会主义革命、确立社会主义基本制度、推进了社会主义建设，团结带领中国人民进行改革开放新的伟大革命，是中国共产党紧紧依靠人民为中华民族作出的伟大历史贡献。这些历史是我们“不忘初心、继续前进”的历史依据，也正是从这些历史中我们深刻认识到：历史和人民选择中国共产党领导中华民族伟大复兴的事业是正确的，必须长期坚持、永不动摇；中国共产党领导中国人民开辟的中国特色社会主义道路是正确的，必须长期坚持、永不动摇；中国共产党和中国人民扎根中国大地、吸纳人类文明优秀成果、独立自主实现国家发展的战略是正确的，必须长期坚持、永不动摇。不忘初心，就要重视从人类发展史、民族进步史、国家奋斗史、社会兴衰史、政党成长史中吸收营养、汲取力量。不忘初心，就要不忘我国悠久的历史和灿烂的文明；不忘建党的初衷和宗旨，党所经历的苦难和辉煌、曲折和胜利；不忘开天辟地的伟大创举和党在奋斗中形成的伟大精神；不忘改革开放的伟大探索和民族复兴的伟大梦想。\r\n</p>\r\n<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n	<b>不忘初心，就要坚守政治灵魂</b>\r\n</p>\r\n<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n	习近平同志在讲话中强调：“保持全党在理想追求上的政治定力，自觉做共产主义远大理想和中国特色社会主义共同理想的坚定信仰者、忠实实践者”。马克思主义信仰、共产主义远大理想和中国特色社会主义共同理想，是我们党的政治灵魂。不忘初心，就要坚守政治灵魂。\r\n</p>\r\n<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n	政治灵魂统摄政党实践，政治主张构建政党理想。古今中外的思想家对人类社会的未来状态有过许多设想，但只有马克思、恩格斯建立在唯物辩证法之上的科学社会主义，才走出空想，真正反映了人类对理想社会的美好憧憬。世界社会主义500年的历史表明，理想召唤现实、现实趋向理想，理想与现实正艰难而坚定地走向统一。无论是全面建成小康社会这个近期目标，还是中国梦这个长期目标，都是《共产党宣言》所描绘的“在那里，每个人的自由发展是一切人的自由发展的条件”的共产主义远大理想的重要组成部分，是中国特色社会主义共同理想的阶段性目标。不忘初心，就要坚定对马克思主义的信仰，坚定对远大理想与共同理想的追求。中国特色社会主义是科学社会主义理论逻辑和中国社会发展历史逻辑的辩证统一，是根植于中国大地、反映人民意愿、适应时代发展的科学社会主义。不忘初心，就要始终坚持和发展中国特色社会主义。为此，我们要坚定道路自信、理论自信、制度自信、文化自信。习近平同志在讲话中对中国道路、中国理论、中国制度、中国文化作了深入阐述，广大党员干部要深入学习领会，坚守政治灵魂。\r\n</p>\r\n<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n	<b>不忘初心，就要敢于担当</b>\r\n</p>\r\n<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n	1847年6月共产主义者同盟在伦敦成立时，就旗帜鲜明地宣布自己的任务是“推翻资产阶级政权，建立无产阶级统治，消灭旧的以阶级对立为基础的资产阶级社会和建立没有阶级、没有私有制的新社会”，提出要同传统的所有制关系、传统的观念“实行最彻底的决裂”，表现出大无畏的政治勇气和革命精神。《共产党宣言》正是为这个同盟写的。宣言就是宣誓，宣誓意味着担当。当今世界正经历一场深刻变局，波及范围之广、影响程度之深、改变世界格局之大，前所未有；当今中国正经历一场深刻变革，涉及人数之众、阶层之多，触及利益问题之深刻复杂，世所罕见。相互交织、相互激荡的世情与国情，对我们党的胆识、定力和担当提出了更高要求。在这样的形势下，如何实现国家富强、民族振兴、人民幸福？如何开辟中国特色社会主义新境界？这是中国共产党必须面对的责任担当。有初心就会有担当，不忘初心才能敢于担当。\r\n</p>\r\n<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n	使命呼唤担当，目标意味责任。一个强大的国家背后要有一个强大的政权，一个强大的政权背后要有一个强大的执政党，这是近代以来中国历史带给我们的启示。又一次走到历史关头的中国共产党要担当如此重任，先进性和纯洁性是第一位要求。习近平同志在讲话中指出：“先进性和纯洁性是马克思主义政党的本质属性，我们加强党的建设，就是要同一切弱化先进性、损害纯洁性的问题作斗争。”保持和发展党的先进性、纯洁性，必须开展严肃认真的党内政治生活，建设风清气正、充满正能量的政治生态。要健体强身，必先祛病疗伤、刮骨疗毒，有自我纠偏、自我疗伤、自我纠错、自我革命的勇气。这是一场始于建党、贯穿党史，没有终点、永远在路上的伟大斗争，也是新时期建党、管党、治党、兴党的重要政治任务。建设一个大而强、敢于担当的马克思主义政党，是我们不能忘记的初心。\r\n</p>\r\n<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n	<b>不忘初心，就要不忘人民</b>\r\n</p>\r\n<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n	《共产党宣言》指出：“过去的一切运动都是少数人的或者为少数人谋利益的运动。无产阶级的运动是绝大多数人的、为绝大多数人谋利益的独立的运动。”这是一个庄严的承诺，是一切共产主义者的初心。综观我们党的理论和路线方针政策以及党的奋斗目标、阶段任务、近期规划和长远战略，不难发现，所有这一切都只有一个指向，那就是为了人民。习近平同志在讲话中指出：“人民立场是中国共产党的根本政治立场，是马克思主义政党区别于其他政党的显著标志。”不忘初心，就要不忘人民。\r\n</p>\r\n<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n	全心全意为人民服务是我们党的根本宗旨。习近平同志要求全党树立以人民为中心的发展思想、工作导向，是对党员的党性要求，是对“为了谁、依靠谁、我是谁”这“执政三问”的明确回答。人民群众是社会实践的主体、政治舞台的主角、推动历史前进的主力、书写历史的主人，这是马克思主义的唯物史观。我们党的根基在人民、血脉在人民、力量在人民。在实现中华民族伟大复兴中国梦的进程中，党是领导力量，人民是依靠力量。我们党刚刚成立时，面对血雨腥风，人民把党紧紧抱在怀里，让我们深深感受到什么叫生死相依、患难与共。党对人民有感情，人民对党情深似海；党把人民看得很重，人民把党看得比生命还宝贵。“最后一口粮，做的是军粮；最后一块布，做的是军装；最后一个儿子啊，送到了部队上。”当年的歌谣一腔深情、满怀衷肠。淮海战役中人民群众倾家荡产支援前线的宏大场面，让我们深刻感受到什么是人民的力量、什么叫人民的分量。今天，少数党员干部脱离群众，把自己当成“官老爷”，这就忘记了初心、违背了诺言。习近平同志在讲话中强调，“要坚信党的根基在人民、党的力量在人民，坚持一切为了人民、一切依靠人民，充分发挥广大人民群众积极性、主动性、创造性，不断把为人民造福事业推向前进”。不忘初心，就是不能忘记人民，始终保持党同人民群众的血肉联系，践行党全心全意为人民服务的根本宗旨。\r\n</p>', '0', 0, 0, 0, 1471338941, 1471338960, 0, 99, 0, 0, '62ce1709-34a0-18f6-b56f-e252e657665e', '1'),
-(17, 'C', '1', 99, 0, 'xZCZXzxcvxcv', '0', 0, 0, 0, 1471338948, 1472441788, 0, 99, 0, 0, '3ced2295-e205-6aa8-ae7c-5c470356d17a', '1'),
-(18, '关于服务条例', '1', 99, 0, '<p>\r\n	<p class="otitle" style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		（原标题：习近平告诫干部该敬畏什么）\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		“畏则不敢肆而德以成，无畏则从其所欲而及于祸。”官有所畏，业有所成。腐败总是发生在掌权者失去敬畏之心的地方。没有敬畏，权力就不受约束；就会出现滥权、专权、弄权。习近平多次强调，“领导干部要心存敬畏”。心存敬畏，律己、慎言、慎行，权力才不会用偏，行为才不会越界。每一位领导干部都要把“敬畏”二字根植于心间。习近平在庆祝中国共产党成立95周年大会上指出：“各级领导干部要牢固树立正确权力观，保持高尚精神追求，敬畏人民、敬畏组织、敬畏法纪，做到公正用权、依法用权、为民用权、廉洁用权，永葆共产党人拒腐蚀、永不沾的政治本色。”请随“学习中国”小编一起学习。\r\n	</p>\r\n	<p class="f_center" style="font-size:16px;font-family:''Microsoft Yahei'';color:#404040;text-align:center;background-color:#FFFFFF;">\r\n		<img alt="习近平告诫干部该敬畏什么" height="361" id="1126814703" src="http://cms-bucket.nosdn.127.net/catchpic/9/91/911ABB3B80BE2CC3008347D3A287621D.jpg" width="468" /><br />\r\n<span>图为：2016年7月1日，庆祝中国共产党成立95周年大会在北京人民大会堂隆重举行。中共中央总书记、国家主席、中央军委主席习近平在大会上发表重要讲话。</span>\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		<strong>一、敬畏人民</strong>\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		“水能载舟，亦能覆舟”。人心向背关系党的生死存亡，敬畏之心须臾不可忘却。越是成就辉煌，越需要保持对人民的谦逊敬畏之心。邓小平同志曾指出，共产党员“一怕党，二怕群众，三怕民主党派，总是好一些。”这里的“怕”，就是敬畏之心。敬畏人民，就是作为掌权者的领导干部要对人民群众赋予的权力心生敬畏，既要严谨持重、毫不懈怠地运用权力去为人民谋利益，又要老老实实、诚诚恳恳地去接受人民群众对权力运行的监督。习近平强调，各级党员干部要在“对待人民赋予权力上始终保持敬畏之心”。\r\n	</p>\r\n	<p class="f_center" style="font-size:16px;font-family:''Microsoft Yahei'';color:#404040;text-align:center;background-color:#FFFFFF;">\r\n		<img alt="习近平告诫干部该敬畏什么" src="http://cms-bucket.nosdn.127.net/catchpic/5/5E/5EF07BA8CD3474A42E7FB6D25BCC12E1.jpg" /><br />\r\n敬畏人民\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		<strong>敬畏人民，就要坚持人民立场，敬畏人民的历史主体地位。</strong>人民是历史的创造者，是真正的英雄。毛泽东同志说：“人民，只有人民，才是历史的创造者。”人民是认识活动的主体、实践活动的主体，也是评价实践成果的价值主体。坚持人民立场，敬畏人民的历史主体地位，体现了马克思主义政党的本色，是马克思主义政党区别于其他政党的显著标志。中国共产党95年的发展历程，就是党领导人民艰苦创业的历史，就是人民群众历史主体地位得到充分尊重的历史。一切为了人民，一切依靠人民是我们党不断夺取胜利的根本保证，是党从小到大、从弱变强、从革命党到执政党转变的决定性因素。习近平指出：“人民立场是中国共产党的根本政治立场，是马克思主义政党区别于其他政党的显著标志。党与人民风雨同舟、生死与共，始终保持血肉联系，是党战胜一切困难和风险的根本保证，正所谓‘得众则得国，失众则失国’。”\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		<strong>敬畏人民，就要牢记手中的权力是人民赋予的，坚持权为民所用。</strong>领导干部的权力是从哪里来的?有些人可能会认为:“是上级给的”，“是政府给的”，“是党给的”。这些回答没有弄清楚权力的真正来源。现代民主政治的基本原则是“人民主权”，即人民应当掌握国家最高权力，人民是一切政治权力的来源和基础。习近平指出：“马克思主义权力观，概括起来是两句话:权为民所赋，权为民所用。”我国宪法第一条明文规定:“中华人民共和国的一切权力属于人民。”“人民主权”意即国家的一切权力属于人民，意味着人民是国家的主人，各级领导干部都是人民的公仆，是受人民委托，为人民办事的，他们的权力是人民赋予的。人民和干部的这种关系是由社会主义国家性质所决定，是不容颠倒的。党章明确指出:“党的干部是党的事业的骨干，是人民的公仆。”既然人民群众是权力的所有者、委托者，作为权力受托者的党员干部，在行使权力时就理应忠实于人民，接受人民的监督。党员干部的权力不是自封的，也不是无限的，而是人民赋予的，必须在授权范围内活动，对人民群众负责，为人民掌好权、用好权。\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		<strong>敬畏人民，就要坚持心中有民、人民至上的执政理念，全心全意为人民服务。</strong>民心是最大的政治，得民心者，得天下。中国共产党从成立之日起，就把全心全意为人民谋利益作为自己的根本宗旨和行为准则。立党为公，执政为民，清正廉洁，诚心诚意为人民谋利益，这是我们党受到人民群众拥护、领导人民夺取革命和建设事业胜利的奥秘所在。党的十八大报告指出：“为人民服务是党的根本宗旨，以人为本、执政为民是检验党一切执政活动的最高标准。”习近平指出：“全党同志要把人民放在心中最高位置，坚持全心全意为人民服务的根本宗旨，实现好、维护好、发展好最广大人民根本利益，把人民拥护不拥护、赞成不赞成、高兴不高兴、答应不答应作为衡量一切工作得失的根本标准，使我们党始终拥有不竭的力量源泉。”\r\n	</p>\r\n	<p class="f_center" style="font-size:16px;font-family:''Microsoft Yahei'';color:#404040;text-align:center;background-color:#FFFFFF;">\r\n		<img alt="习近平告诫干部该敬畏什么" id="1126814705" src="http://cms-bucket.nosdn.127.net/catchpic/0/07/07AAD7ABDAC7B61C5905ACE2561A0F0B.jpg" /><br />\r\n<span>图为：2013年6月28日，中共中央总书记、国家主席、中央军委主席习近平在全国组织工作会议上发表重要讲话。</span>\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		<strong>二、敬畏组织</strong>\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		“组织”是党的生命线。马克思曾说：“只有在集体中，个人才能获得全面发展其才能的手段，也就是说，只有在集体中才可能有个人自由。”中国共产党是按照民主集中制原则建立起来的科学严密的为民组织，具有巨大的组织优势。作为党组织中的“关键少数”——领导干部执掌着人民赋予党的执政权和国家立法权、行政权、司法权等公权力，作用非常关键，必须对党组织有敬畏之心。一旦目无组织、目无法纪，个人凌驾于组织和法纪之上，必定会行为失范、放纵妄为，给党和人民事业造成严重伤害。因此，领导干部必须敬畏组织，敬畏组织的纪律、规章，敬畏组织的监督、教育；要心怀感恩，感念组织的培养、教育和信任，把敬畏之心转化成为兢兢业业、忠于职守、义无反顾的工作情怀，把敬畏之心当作履行职责、为官从政的基本底线。\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		<strong>敬畏组织，就要摆正个人与组织的关系，始终牢记自己是组织的普通一员。</strong>组织的培养是干部成长的外在因素和客观条件。习近平指出：“好干部不会自然而然产生。成长为一个好干部，一靠自身努力，二靠组织培养”。有个别领导干部，摆不正个人与组织的关系，被提拔了，不是认为自己能耐大，就是觉得自己“上面有人”。实际上，对领导干部来说，进步离不开组织的培养，没有了组织，纵有天大本事也毫无用武之地；背离了组织，再多的荣耀也会化为乌有。\r\n	</p>\r\n</p>\r\n<p>\r\n	<br />\r\n</p>', '0', 0, 0, 0, 1471339698, 0, 0, 103, 0, 0, 'e08bb317-76c0-5902-3d10-648e2c442511', '0'),
-(19, '关于服务条例', '1', 103, 0, '<p>\r\n	<p class="otitle" style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		（原标题：习近平告诫干部该敬畏什么）\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		“畏则不敢肆而德以成，无畏则从其所欲而及于祸。”官有所畏，业有所成。腐败总是发生在掌权者失去敬畏之心的地方。没有敬畏，权力就不受约束；就会出现滥权、专权、弄权。习近平多次强调，“领导干部要心存敬畏”。心存敬畏，律己、慎言、慎行，权力才不会用偏，行为才不会越界。每一位领导干部都要把“敬畏”二字根植于心间。习近平在庆祝中国共产党成立95周年大会上指出：“各级领导干部要牢固树立正确权力观，保持高尚精神追求，敬畏人民、敬畏组织、敬畏法纪，做到公正用权、依法用权、为民用权、廉洁用权，永葆共产党人拒腐蚀、永不沾的政治本色。”请随“学习中国”小编一起学习。\r\n	</p>\r\n	<p class="f_center" style="font-size:16px;font-family:''Microsoft Yahei'';color:#404040;text-align:center;background-color:#FFFFFF;">\r\n		<img alt="习近平告诫干部该敬畏什么" height="361" id="1126814703" src="http://cms-bucket.nosdn.127.net/catchpic/9/91/911ABB3B80BE2CC3008347D3A287621D.jpg" width="468" /><br />\r\n<span>图为：2016年7月1日，庆祝中国共产党成立95周年大会在北京人民大会堂隆重举行。中共中央总书记、国家主席、中央军委主席习近平在大会上发表重要讲话。</span>\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		<strong>一、敬畏人民</strong>\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		“水能载舟，亦能覆舟”。人心向背关系党的生死存亡，敬畏之心须臾不可忘却。越是成就辉煌，越需要保持对人民的谦逊敬畏之心。邓小平同志曾指出，共产党员“一怕党，二怕群众，三怕民主党派，总是好一些。”这里的“怕”，就是敬畏之心。敬畏人民，就是作为掌权者的领导干部要对人民群众赋予的权力心生敬畏，既要严谨持重、毫不懈怠地运用权力去为人民谋利益，又要老老实实、诚诚恳恳地去接受人民群众对权力运行的监督。习近平强调，各级党员干部要在“对待人民赋予权力上始终保持敬畏之心”。\r\n	</p>\r\n	<p class="f_center" style="font-size:16px;font-family:''Microsoft Yahei'';color:#404040;text-align:center;background-color:#FFFFFF;">\r\n		<img alt="习近平告诫干部该敬畏什么" src="http://cms-bucket.nosdn.127.net/catchpic/5/5E/5EF07BA8CD3474A42E7FB6D25BCC12E1.jpg" /><br />\r\n敬畏人民\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		<strong>敬畏人民，就要坚持人民立场，敬畏人民的历史主体地位。</strong>人民是历史的创造者，是真正的英雄。毛泽东同志说：“人民，只有人民，才是历史的创造者。”人民是认识活动的主体、实践活动的主体，也是评价实践成果的价值主体。坚持人民立场，敬畏人民的历史主体地位，体现了马克思主义政党的本色，是马克思主义政党区别于其他政党的显著标志。中国共产党95年的发展历程，就是党领导人民艰苦创业的历史，就是人民群众历史主体地位得到充分尊重的历史。一切为了人民，一切依靠人民是我们党不断夺取胜利的根本保证，是党从小到大、从弱变强、从革命党到执政党转变的决定性因素。习近平指出：“人民立场是中国共产党的根本政治立场，是马克思主义政党区别于其他政党的显著标志。党与人民风雨同舟、生死与共，始终保持血肉联系，是党战胜一切困难和风险的根本保证，正所谓‘得众则得国，失众则失国’。”\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		<strong>敬畏人民，就要牢记手中的权力是人民赋予的，坚持权为民所用。</strong>领导干部的权力是从哪里来的?有些人可能会认为:“是上级给的”，“是政府给的”，“是党给的”。这些回答没有弄清楚权力的真正来源。现代民主政治的基本原则是“人民主权”，即人民应当掌握国家最高权力，人民是一切政治权力的来源和基础。习近平指出：“马克思主义权力观，概括起来是两句话:权为民所赋，权为民所用。”我国宪法第一条明文规定:“中华人民共和国的一切权力属于人民。”“人民主权”意即国家的一切权力属于人民，意味着人民是国家的主人，各级领导干部都是人民的公仆，是受人民委托，为人民办事的，他们的权力是人民赋予的。人民和干部的这种关系是由社会主义国家性质所决定，是不容颠倒的。党章明确指出:“党的干部是党的事业的骨干，是人民的公仆。”既然人民群众是权力的所有者、委托者，作为权力受托者的党员干部，在行使权力时就理应忠实于人民，接受人民的监督。党员干部的权力不是自封的，也不是无限的，而是人民赋予的，必须在授权范围内活动，对人民群众负责，为人民掌好权、用好权。\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		<strong>敬畏人民，就要坚持心中有民、人民至上的执政理念，全心全意为人民服务。</strong>民心是最大的政治，得民心者，得天下。中国共产党从成立之日起，就把全心全意为人民谋利益作为自己的根本宗旨和行为准则。立党为公，执政为民，清正廉洁，诚心诚意为人民谋利益，这是我们党受到人民群众拥护、领导人民夺取革命和建设事业胜利的奥秘所在。党的十八大报告指出：“为人民服务是党的根本宗旨，以人为本、执政为民是检验党一切执政活动的最高标准。”习近平指出：“全党同志要把人民放在心中最高位置，坚持全心全意为人民服务的根本宗旨，实现好、维护好、发展好最广大人民根本利益，把人民拥护不拥护、赞成不赞成、高兴不高兴、答应不答应作为衡量一切工作得失的根本标准，使我们党始终拥有不竭的力量源泉。”\r\n	</p>\r\n	<p class="f_center" style="font-size:16px;font-family:''Microsoft Yahei'';color:#404040;text-align:center;background-color:#FFFFFF;">\r\n		<img alt="习近平告诫干部该敬畏什么" id="1126814705" src="http://cms-bucket.nosdn.127.net/catchpic/0/07/07AAD7ABDAC7B61C5905ACE2561A0F0B.jpg" /><br />\r\n<span>图为：2013年6月28日，中共中央总书记、国家主席、中央军委主席习近平在全国组织工作会议上发表重要讲话。</span>\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		<strong>二、敬畏组织</strong>\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		“组织”是党的生命线。马克思曾说：“只有在集体中，个人才能获得全面发展其才能的手段，也就是说，只有在集体中才可能有个人自由。”中国共产党是按照民主集中制原则建立起来的科学严密的为民组织，具有巨大的组织优势。作为党组织中的“关键少数”——领导干部执掌着人民赋予党的执政权和国家立法权、行政权、司法权等公权力，作用非常关键，必须对党组织有敬畏之心。一旦目无组织、目无法纪，个人凌驾于组织和法纪之上，必定会行为失范、放纵妄为，给党和人民事业造成严重伤害。因此，领导干部必须敬畏组织，敬畏组织的纪律、规章，敬畏组织的监督、教育；要心怀感恩，感念组织的培养、教育和信任，把敬畏之心转化成为兢兢业业、忠于职守、义无反顾的工作情怀，把敬畏之心当作履行职责、为官从政的基本底线。\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		<strong>敬畏组织，就要摆正个人与组织的关系，始终牢记自己是组织的普通一员。</strong>组织的培养是干部成长的外在因素和客观条件。习近平指出：“好干部不会自然而然产生。成长为一个好干部，一靠自身努力，二靠组织培养”。有个别领导干部，摆不正个人与组织的关系，被提拔了，不是认为自己能耐大，就是觉得自己“上面有人”。实际上，对领导干部来说，进步离不开组织的培养，没有了组织，纵有天大本事也毫无用武之地；背离了组织，再多的荣耀也会化为乌有。\r\n	</p>\r\n</p>\r\n<p>\r\n	<br />\r\n</p>', '0', 0, 0, 0, 1471339698, 1471339705, 0, 103, 0, 0, 'e08bb317-76c0-5902-3d10-648e2c442511', '1'),
-(20, '关于服务条例', '1', 0, 16, '<p>\r\n	<p class="otitle" style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		（原标题：习近平告诫干部该敬畏什么）\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		“畏则不敢肆而德以成，无畏则从其所欲而及于祸。”官有所畏，业有所成。腐败总是发生在掌权者失去敬畏之心的地方。没有敬畏，权力就不受约束；就会出现滥权、专权、弄权。习近平多次强调，“领导干部要心存敬畏”。心存敬畏，律己、慎言、慎行，权力才不会用偏，行为才不会越界。每一位领导干部都要把“敬畏”二字根植于心间。习近平在庆祝中国共产党成立95周年大会上指出：“各级领导干部要牢固树立正确权力观，保持高尚精神追求，敬畏人民、敬畏组织、敬畏法纪，做到公正用权、依法用权、为民用权、廉洁用权，永葆共产党人拒腐蚀、永不沾的政治本色。”请随“学习中国”小编一起学习。\r\n	</p>\r\n	<p class="f_center" style="font-size:16px;font-family:''Microsoft Yahei'';color:#404040;text-align:center;background-color:#FFFFFF;">\r\n		<img alt="习近平告诫干部该敬畏什么" height="361" id="1126814703" src="http://cms-bucket.nosdn.127.net/catchpic/9/91/911ABB3B80BE2CC3008347D3A287621D.jpg" width="468" /><br />\r\n<span>图为：2016年7月1日，庆祝中国共产党成立95周年大会在北京人民大会堂隆重举行。中共中央总书记、国家主席、中央军委主席习近平在大会上发表重要讲话。</span>\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		<strong>一、敬畏人民</strong>\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		“水能载舟，亦能覆舟”。人心向背关系党的生死存亡，敬畏之心须臾不可忘却。越是成就辉煌，越需要保持对人民的谦逊敬畏之心。邓小平同志曾指出，共产党员“一怕党，二怕群众，三怕民主党派，总是好一些。”这里的“怕”，就是敬畏之心。敬畏人民，就是作为掌权者的领导干部要对人民群众赋予的权力心生敬畏，既要严谨持重、毫不懈怠地运用权力去为人民谋利益，又要老老实实、诚诚恳恳地去接受人民群众对权力运行的监督。习近平强调，各级党员干部要在“对待人民赋予权力上始终保持敬畏之心”。\r\n	</p>\r\n	<p class="f_center" style="font-size:16px;font-family:''Microsoft Yahei'';color:#404040;text-align:center;background-color:#FFFFFF;">\r\n		<img alt="习近平告诫干部该敬畏什么" src="http://cms-bucket.nosdn.127.net/catchpic/5/5E/5EF07BA8CD3474A42E7FB6D25BCC12E1.jpg" /><br />\r\n敬畏人民\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		<strong>敬畏人民，就要坚持人民立场，敬畏人民的历史主体地位。</strong>人民是历史的创造者，是真正的英雄。毛泽东同志说：“人民，只有人民，才是历史的创造者。”人民是认识活动的主体、实践活动的主体，也是评价实践成果的价值主体。坚持人民立场，敬畏人民的历史主体地位，体现了马克思主义政党的本色，是马克思主义政党区别于其他政党的显著标志。中国共产党95年的发展历程，就是党领导人民艰苦创业的历史，就是人民群众历史主体地位得到充分尊重的历史。一切为了人民，一切依靠人民是我们党不断夺取胜利的根本保证，是党从小到大、从弱变强、从革命党到执政党转变的决定性因素。习近平指出：“人民立场是中国共产党的根本政治立场，是马克思主义政党区别于其他政党的显著标志。党与人民风雨同舟、生死与共，始终保持血肉联系，是党战胜一切困难和风险的根本保证，正所谓‘得众则得国，失众则失国’。”\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		<strong>敬畏人民，就要牢记手中的权力是人民赋予的，坚持权为民所用。</strong>领导干部的权力是从哪里来的?有些人可能会认为:“是上级给的”，“是政府给的”，“是党给的”。这些回答没有弄清楚权力的真正来源。现代民主政治的基本原则是“人民主权”，即人民应当掌握国家最高权力，人民是一切政治权力的来源和基础。习近平指出：“马克思主义权力观，概括起来是两句话:权为民所赋，权为民所用。”我国宪法第一条明文规定:“中华人民共和国的一切权力属于人民。”“人民主权”意即国家的一切权力属于人民，意味着人民是国家的主人，各级领导干部都是人民的公仆，是受人民委托，为人民办事的，他们的权力是人民赋予的。人民和干部的这种关系是由社会主义国家性质所决定，是不容颠倒的。党章明确指出:“党的干部是党的事业的骨干，是人民的公仆。”既然人民群众是权力的所有者、委托者，作为权力受托者的党员干部，在行使权力时就理应忠实于人民，接受人民的监督。党员干部的权力不是自封的，也不是无限的，而是人民赋予的，必须在授权范围内活动，对人民群众负责，为人民掌好权、用好权。\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		<strong>敬畏人民，就要坚持心中有民、人民至上的执政理念，全心全意为人民服务。</strong>民心是最大的政治，得民心者，得天下。中国共产党从成立之日起，就把全心全意为人民谋利益作为自己的根本宗旨和行为准则。立党为公，执政为民，清正廉洁，诚心诚意为人民谋利益，这是我们党受到人民群众拥护、领导人民夺取革命和建设事业胜利的奥秘所在。党的十八大报告指出：“为人民服务是党的根本宗旨，以人为本、执政为民是检验党一切执政活动的最高标准。”习近平指出：“全党同志要把人民放在心中最高位置，坚持全心全意为人民服务的根本宗旨，实现好、维护好、发展好最广大人民根本利益，把人民拥护不拥护、赞成不赞成、高兴不高兴、答应不答应作为衡量一切工作得失的根本标准，使我们党始终拥有不竭的力量源泉。”\r\n	</p>\r\n	<p class="f_center" style="font-size:16px;font-family:''Microsoft Yahei'';color:#404040;text-align:center;background-color:#FFFFFF;">\r\n		<img alt="习近平告诫干部该敬畏什么" id="1126814705" src="http://cms-bucket.nosdn.127.net/catchpic/0/07/07AAD7ABDAC7B61C5905ACE2561A0F0B.jpg" /><br />\r\n<span>图为：2013年6月28日，中共中央总书记、国家主席、中央军委主席习近平在全国组织工作会议上发表重要讲话。</span>\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		<strong>二、敬畏组织</strong>\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		“组织”是党的生命线。马克思曾说：“只有在集体中，个人才能获得全面发展其才能的手段，也就是说，只有在集体中才可能有个人自由。”中国共产党是按照民主集中制原则建立起来的科学严密的为民组织，具有巨大的组织优势。作为党组织中的“关键少数”——领导干部执掌着人民赋予党的执政权和国家立法权、行政权、司法权等公权力，作用非常关键，必须对党组织有敬畏之心。一旦目无组织、目无法纪，个人凌驾于组织和法纪之上，必定会行为失范、放纵妄为，给党和人民事业造成严重伤害。因此，领导干部必须敬畏组织，敬畏组织的纪律、规章，敬畏组织的监督、教育；要心怀感恩，感念组织的培养、教育和信任，把敬畏之心转化成为兢兢业业、忠于职守、义无反顾的工作情怀，把敬畏之心当作履行职责、为官从政的基本底线。\r\n	</p>\r\n	<p style="font-size:16px;text-indent:2em;font-family:''Microsoft Yahei'';color:#404040;text-align:justify;background-color:#FFFFFF;">\r\n		<strong>敬畏组织，就要摆正个人与组织的关系，始终牢记自己是组织的普通一员。</strong>组织的培养是干部成长的外在因素和客观条件。习近平指出：“好干部不会自然而然产生。成长为一个好干部，一靠自身努力，二靠组织培养”。有个别领导干部，摆不正个人与组织的关系，被提拔了，不是认为自己能耐大，就是觉得自己“上面有人”。实际上，对领导干部来说，进步离不开组织的培养，没有了组织，纵有天大本事也毫无用武之地；背离了组织，再多的荣耀也会化为乌有。\r\n	</p>\r\n</p>\r\n<p>\r\n	<br />\r\n</p>', '0', 0, 16, 0, 1471339698, 1471399835, 0, 103, 0, 0, 'e08bb317-76c0-5902-3d10-648e2c442511', '1'),
-(21, 'asdfsdafasf', '1', 103, 0, 'dfafasdfsdf', '0', 0, 0, 0, 1471339724, 0, 0, 103, 0, 0, 'f4a81b07-f3cc-667c-d46a-a7a38256fbab', '0'),
-(22, 'fgfgfff', '1', 84, 0, 'fffff', '0', 0, 0, 0, 1471395933, 0, 0, 93, 0, 0, '70707b7e-873e-70c5-bbde-304ef166cee2', '0'),
-(23, 'fgfgfff', '1', 96, 0, 'fffff', '0', 0, 0, 0, 1471395934, 0, 0, 93, 0, 0, '70707b7e-873e-70c5-bbde-304ef166cee2', '0'),
-(24, 'aaa', '1', 0, 16, 'test', '0', 0, 0, 0, 1471427280, 0, 0, 0, 0, 0, '20cd40a4-44b7-71ac-4e0f-e5622e06a843', '0'),
-(25, 'aaa', '1', 0, 16, 'test', '0', 0, 0, 0, 1471427316, 0, 0, 0, 0, 0, 'c59e48da-deda-9187-1912-a363b8aac119', '0'),
-(26, 'aaa', '1', 0, 16, 'test', '0', 0, 16, 0, 1471427638, 1472258633, 0, 0, 0, 0, '175ec258-01da-341a-e9cc-936914f30b04', '1'),
-(27, 'aaa', '1', 0, 16, 'test', '0', 0, 16, 0, 1471427687, 1472001335, 0, 0, 0, 0, '258461e9-943c-05bb-0b16-ba3049ae9bb4', '1'),
-(28, '申报编号:8需要审核！', '1', 0, 16, '您好，管理员，智达公司提交了申报资料，请查阅后审核。', '0', 0, 16, 0, 1471427718, 1471427728, 0, 0, 0, 0, '0b98d6d0-40e5-b93b-7c33-2b0b9d90931f', '1'),
-(29, '申报编号:8需要审核！', '1', 0, 68, '您好，管理员，智达公司提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1471427719, 0, 0, 0, 0, 0, '0b98d6d0-40e5-b93b-7c33-2b0b9d90931f', '0'),
-(30, '申报编号：9,审核不通过，请根据审核意见修改。', '1', 99, 0, '您好，请按审核意见修改：testetsttestetsttestetst', '0', 16, 0, 0, 1471428131, 1471428236, 0, 0, 0, 0, 'd9ca13e8-8c60-5212-3631-1e084c2d1844', '1'),
-(31, '申报编号：8,审核不通过，请根据审核意见修改。', '1', 99, 0, '您好，请按审核意见修改：testetsttestetsttestetst', '0', 16, 0, 0, 1471428132, 1471428145, 0, 0, 0, 0, 'c62c4000-4327-1c31-5180-ef31138d236b', '1'),
-(32, '申报编号:9需要审核！', '1', 0, 16, '您好，管理员，智达公司提交了申报资料，请查阅后审核。', '0', 0, 16, 0, 1471428458, 1471569303, 0, 0, 0, 0, 'a2de0a57-b4cf-b7b8-3c34-beae72bc3f08', '1'),
-(33, '申报编号:9需要审核！', '1', 0, 68, '您好，管理员，智达公司提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1471428458, 0, 0, 0, 0, 0, 'a2de0a57-b4cf-b7b8-3c34-beae72bc3f08', '0'),
-(34, '阿斯蒂芬', '1', 84, 0, '啊实打实地方官', '0', 0, 0, 0, 1471489862, 0, 0, 93, 0, 0, 'a498edde-083d-512d-4ef3-5a3ee983386b', '0'),
-(35, '阿斯蒂芬', '1', 96, 0, '啊实打实地方官', '0', 0, 0, 0, 1471489863, 0, 0, 93, 0, 0, 'a498edde-083d-512d-4ef3-5a3ee983386b', '0'),
-(36, '站内信', '1', 21, 0, '阿士大夫是电饭锅', '0', 0, 0, 0, 1471507714, 0, 0, 101, 0, 0, '25fbedd6-cfae-0e3a-c921-d5c54bc9535a', '0'),
-(37, '站内信', '1', 94, 0, '阿士大夫是电饭锅', '0', 0, 0, 0, 1471507714, 0, 0, 101, 0, 0, '25fbedd6-cfae-0e3a-c921-d5c54bc9535a', '0'),
-(38, '站内信', '1', 97, 0, '阿士大夫是电饭锅', '0', 0, 0, 0, 1471507714, 0, 0, 101, 0, 0, '25fbedd6-cfae-0e3a-c921-d5c54bc9535a', '0'),
-(39, '站内信', '1', 95, 0, '阿士大夫是电饭锅', '0', 0, 0, 0, 1471507714, 0, 0, 101, 0, 0, '25fbedd6-cfae-0e3a-c921-d5c54bc9535a', '0'),
-(40, '站内信', '1', 92, 0, '阿士大夫是电饭锅', '0', 0, 0, 0, 1471507714, 0, 0, 101, 0, 0, '25fbedd6-cfae-0e3a-c921-d5c54bc9535a', '0'),
-(41, '站内信', '1', 22, 0, '阿士大夫是电饭锅', '0', 0, 0, 0, 1471507714, 0, 0, 101, 0, 0, '25fbedd6-cfae-0e3a-c921-d5c54bc9535a', '0'),
-(42, '站内信', '1', 14, 0, '阿士大夫是电饭锅', '0', 0, 0, 0, 1471507714, 0, 0, 101, 0, 0, '25fbedd6-cfae-0e3a-c921-d5c54bc9535a', '0'),
-(43, '站内信', '1', 30, 0, '阿士大夫是电饭锅', '0', 0, 0, 0, 1471507714, 0, 0, 101, 0, 0, '25fbedd6-cfae-0e3a-c921-d5c54bc9535a', '0'),
-(44, '站内信', '1', 27, 0, '阿士大夫是电饭锅', '0', 0, 0, 0, 1471507714, 0, 0, 101, 0, 0, '25fbedd6-cfae-0e3a-c921-d5c54bc9535a', '0'),
-(45, '站内信', '1', 20, 0, '阿士大夫是电饭锅', '0', 0, 0, 0, 1471507715, 0, 0, 101, 0, 0, '25fbedd6-cfae-0e3a-c921-d5c54bc9535a', '0'),
-(46, '站内信', '1', 85, 0, '阿士大夫是电饭锅', '0', 0, 0, 0, 1471507715, 0, 0, 101, 0, 0, '25fbedd6-cfae-0e3a-c921-d5c54bc9535a', '0'),
-(47, '站内信', '1', 82, 0, '阿士大夫是电饭锅', '0', 0, 0, 0, 1471507715, 0, 0, 101, 0, 0, '25fbedd6-cfae-0e3a-c921-d5c54bc9535a', '0'),
-(48, '站内信', '1', 81, 0, '阿士大夫是电饭锅', '0', 0, 0, 0, 1471507715, 0, 0, 101, 0, 0, '25fbedd6-cfae-0e3a-c921-d5c54bc9535a', '0'),
-(49, '站内信', '1', 83, 0, '阿士大夫是电饭锅', '0', 0, 0, 0, 1471507715, 0, 0, 101, 0, 0, '25fbedd6-cfae-0e3a-c921-d5c54bc9535a', '0'),
-(50, '站内信', '1', 84, 0, '阿士大夫是电饭锅', '0', 0, 0, 0, 1471507715, 0, 0, 101, 0, 0, '25fbedd6-cfae-0e3a-c921-d5c54bc9535a', '0'),
-(51, '站内信', '1', 86, 0, '阿士大夫是电饭锅', '0', 0, 0, 0, 1471507715, 0, 0, 101, 0, 0, '25fbedd6-cfae-0e3a-c921-d5c54bc9535a', '0'),
-(52, '站内信', '1', 1, 0, '阿士大夫是电饭锅', '0', 0, 0, 0, 1471507715, 0, 0, 101, 0, 0, '25fbedd6-cfae-0e3a-c921-d5c54bc9535a', '0'),
-(53, '站内信', '1', 24, 0, '阿士大夫是电饭锅', '0', 0, 0, 0, 1471507715, 0, 0, 101, 0, 0, '25fbedd6-cfae-0e3a-c921-d5c54bc9535a', '0'),
-(54, '站内信', '1', 102, 0, '阿士大夫是电饭锅', '0', 0, 0, 0, 1471507715, 0, 0, 101, 0, 0, '25fbedd6-cfae-0e3a-c921-d5c54bc9535a', '0'),
-(55, '站内信', '1', 93, 0, '阿士大夫是电饭锅', '0', 0, 0, 0, 1471507715, 1471507737, 0, 101, 0, 0, '25fbedd6-cfae-0e3a-c921-d5c54bc9535a', '1'),
-(56, '站内信', '1', 96, 0, '阿士大夫是电饭锅', '0', 0, 0, 0, 1471507715, 0, 0, 101, 0, 0, '25fbedd6-cfae-0e3a-c921-d5c54bc9535a', '0'),
-(57, '站内信', '1', 100, 0, '阿士大夫是电饭锅', '0', 0, 0, 0, 1471507715, 0, 0, 101, 0, 0, '25fbedd6-cfae-0e3a-c921-d5c54bc9535a', '0'),
-(58, '站内信', '1', 99, 0, '阿士大夫是电饭锅', '0', 0, 0, 0, 1471507715, 0, 0, 101, 0, 0, '25fbedd6-cfae-0e3a-c921-d5c54bc9535a', '0'),
-(59, '站内信', '1', 98, 0, '阿士大夫是电饭锅', '0', 0, 0, 0, 1471507715, 0, 0, 101, 0, 0, '25fbedd6-cfae-0e3a-c921-d5c54bc9535a', '0'),
-(60, '数据需要核对，编号为276', '1', 93, 0, '您好，您有一条数据需要核对，编号为{276}，请到位置："会员后台 > 数据核对" 栏目，查看。', '0', 16, 0, 0, 1471570926, 1471570974, 0, 0, 0, 0, '5fa5cf6e-76a3-8bfe-029d-33a4e6ba5450', '1'),
-(61, '数据需要核对，编号为277', '1', 86, 0, '您好，您有一条数据需要核对，编号为{277}，请到位置："会员后台 > 数据核对" 栏目，查看。', '0', 16, 0, 0, 1471573010, 0, 0, 0, 0, 0, '946d3da2-6f78-2224-a113-00334945fe69', '0'),
-(62, '数据需要核对，编号为278', '1', 93, 0, '您好，您有一条数据需要核对，编号为{278}，请到位置："会员后台 > 数据核对" 栏目，查看。', '0', 16, 0, 0, 1471573010, 1471578332, 0, 0, 0, 0, '098c88b3-ffcd-4644-39f5-e9c308268a9f', '1'),
-(78, '您的服务咨询已收到回复，编号为19', '1', 93, 0, '您好，您有一条服务咨询已收到回复，编号为19，请到位置："会员后台 > 我的咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/view.shtml?id=19'' target=''_blank''>点击此处直接查看</a>', '0', 0, 0, 0, 1471592861, 1471592877, 0, 101, 0, 0, '1b8b60d8-62e5-2520-6164-bfa6a6c8f49f', '1'),
-(79, '有一条新的对外投资联系表需要审核，编号为4', '1', 0, 16, '管理员您好，您有一条新的对外投资联系表需要审核，编号为4，请到对外投资联系表管理栏目查看', '0', 0, 16, 0, 1471850381, 1471850747, 0, 93, 0, 0, '916092d1-c2ee-6d31-41eb-c9bb9690d519', '1'),
-(80, '有一条新的对外投资联系表需要审核，编号为4', '1', 0, 68, '管理员您好，您有一条新的对外投资联系表需要审核，编号为4，请到对外投资联系表管理栏目查看', '0', 0, 0, 0, 1471850382, 0, 0, 93, 0, 0, '916092d1-c2ee-6d31-41eb-c9bb9690d519', '0');
-INSERT INTO `zcq_mail` (`id`, `title`, `mail_status`, `receive_userid`, `receive_sysuserid`, `content`, `isdel`, `create_sysuserid`, `update_sysuserid`, `del_sysuserid`, `createtime`, `updatetime`, `deltime`, `create_userid`, `update_userid`, `del_userid`, `guid`, `isread`) VALUES
-(81, '有一条新的对外投资联系表需要审核，编号为5', '1', 0, 16, '管理员您好，您有一条新的对外投资联系表需要审核，编号为5，请到对外投资联系表管理栏目查看', '0', 0, 16, 0, 1471851494, 1471924315, 0, 93, 0, 0, 'd3d1e325-faea-694e-9d1a-aec4f1bf03b4', '1'),
-(82, '有一条新的对外投资联系表需要审核，编号为5', '1', 0, 68, '管理员您好，您有一条新的对外投资联系表需要审核，编号为5，请到对外投资联系表管理栏目查看', '0', 0, 0, 0, 1471851494, 0, 0, 93, 0, 0, 'd3d1e325-faea-694e-9d1a-aec4f1bf03b4', '0'),
-(83, '有一条新的对外投资联系表需要审核，编号为6', '1', 0, 16, '管理员您好，您有一条新的对外投资联系表需要审核，编号为6，请到对外投资联系表管理栏目查看', '0', 0, 0, 0, 1471851560, 0, 0, 93, 0, 0, '9507bc3e-64d9-22d0-f17b-65153f4b7b4f', '0'),
-(84, '有一条新的对外投资联系表需要审核，编号为6', '1', 0, 68, '管理员您好，您有一条新的对外投资联系表需要审核，编号为6，请到对外投资联系表管理栏目查看', '0', 0, 0, 0, 1471851561, 0, 0, 93, 0, 0, '9507bc3e-64d9-22d0-f17b-65153f4b7b4f', '0'),
-(85, '有一条新的对外投资联系表需要审核，编号为7', '1', 0, 16, '管理员您好，您有一条新的对外投资联系表需要审核，编号为7，请到对外投资联系表管理栏目查看', '0', 0, 16, 0, 1471851655, 1471851725, 0, 93, 0, 0, 'a4bd38db-5edf-9656-ed2f-0bc78cddcfbc', '1'),
-(86, '有一条新的对外投资联系表需要审核，编号为7', '1', 0, 68, '管理员您好，您有一条新的对外投资联系表需要审核，编号为7，请到对外投资联系表管理栏目查看', '0', 0, 0, 0, 1471851656, 0, 0, 93, 0, 0, 'a4bd38db-5edf-9656-ed2f-0bc78cddcfbc', '0'),
-(87, '您好，您的对外投资联系表通过审核，编号为7', '1', 93, 0, '您好，您的对外投资联系表通过审核，编号为7，请到位置："会员后台 > 对外投资联系表" 栏目，查看。', '1', 16, 0, 0, 1471851702, 1471852255, 1471852280, 0, 0, 0, '091ff9ab-0c5e-b296-7fab-2a59457f1775', '1'),
-(88, '您好，您的对外投资联系表通过审核，编号为6', '1', 93, 0, '您好，您的对外投资联系表通过审核，编号为6，请到位置："会员后台 > 对外投资联系表" 栏目，查看。', '1', 16, 0, 0, 1471851703, 0, 1471852279, 0, 0, 0, '9cd4e9ed-10d8-4bd9-630d-a121cec99ebc', '0'),
-(89, '您好，您的对外投资联系表通过审核，编号为5', '1', 93, 0, '您好，您的对外投资联系表通过审核，编号为5，请到位置："会员后台 > 对外投资联系表" 栏目，查看。', '1', 16, 0, 0, 1471851706, 0, 1471852278, 0, 0, 0, 'ee5e2e87-6961-2f1e-60b4-c345e2809d6a', '0'),
-(90, '您好，您的对外投资联系表通过审核，编号为7', '1', 93, 0, '您好，您的对外投资联系表通过审核，编号为7，请到位置："会员后台 > 对外投资联系表" 栏目，查看。', '1', 16, 0, 0, 1471851709, 0, 1471852278, 0, 0, 0, '626ba661-3f82-1f0a-8991-4f4ba8ceacc5', '0'),
-(91, '您好，您的对外投资联系表通过审核，编号为6', '1', 93, 0, '您好，您的对外投资联系表通过审核，编号为6，请到位置："会员后台 > 对外投资联系表" 栏目，查看。', '1', 16, 0, 0, 1471851711, 0, 1471852278, 0, 0, 0, '4b956cdb-2388-d9bd-6a9f-8ebe957e7ba7', '0'),
-(92, '您好，您的对外投资联系表通过审核，编号为5', '1', 93, 0, '您好，您的对外投资联系表通过审核，编号为5，请到位置："会员后台 > 对外投资联系表" 栏目，查看。', '1', 16, 0, 0, 1471851712, 1471852245, 1471852279, 0, 0, 0, '746b2ef7-6ea6-c45f-fe33-e3b42a10ff76', '1'),
-(93, '您好，您的对外投资联系表审核不通过，编号为7', '1', 93, 0, '您好，您的对外投资联系表审核不通过，编号为7，请到位置："会员后台 > 对外投资联系表" 栏目，查看。', '0', 16, 0, 0, 1471852308, 0, 0, 0, 0, 0, '8842d00e-4ae2-cb36-ebf1-0086aebc90f4', '0'),
-(94, '您好，您的对外投资联系表审核不通过，编号为6', '1', 93, 0, '您好，您的对外投资联系表审核不通过，编号为6，请到位置："会员后台 > 对外投资联系表" 栏目，查看。', '0', 16, 0, 0, 1471852309, 0, 0, 0, 0, 0, '2963151a-7a6e-fe10-2864-e9dfa293994e', '0'),
-(95, '您好，您的对外投资联系表审核不通过，编号为5', '1', 93, 0, '您好，您的对外投资联系表审核不通过，编号为5，请到位置："会员后台 > 对外投资联系表" 栏目，查看。', '0', 16, 0, 0, 1471852311, 0, 0, 0, 0, 0, 'fe34f0fb-fec9-888e-e986-b41d9b2e5da6', '0'),
-(96, '您好，您的对外投资联系表审核不通过，编号为7', '1', 93, 0, '您好，您的对外投资联系表审核不通过，编号为7，请到位置："会员后台 > 对外投资联系表" 栏目，查看。', '0', 16, 0, 0, 1471852544, 0, 0, 0, 0, 0, 'cc89c1aa-6b44-33dd-8202-cf618c2fb7cb', '0'),
-(97, '您好，您的对外投资联系表审核不通过，编号为6', '1', 93, 0, '您好，您的对外投资联系表审核不通过，编号为6，请到位置："会员后台 > 对外投资联系表" 栏目，查看。', '0', 16, 0, 0, 1471852546, 0, 0, 0, 0, 0, '390cb30f-e122-5c36-461e-a15d73be2210', '0'),
-(98, '您好，您的对外投资联系表审核不通过，编号为5', '1', 93, 0, '您好，您的对外投资联系表审核不通过，编号为5，请到位置："会员后台 > 对外投资联系表" 栏目，查看。', '0', 16, 0, 0, 1471852548, 0, 0, 0, 0, 0, '7bc0c815-7687-c19d-833d-2740f59d0275', '0'),
-(99, '您好，您的对外投资联系表审核不通过，编号为7', '1', 93, 0, '您好，您的对外投资联系表审核不通过，编号为7，请到位置："会员后台 > 对外投资联系表" 栏目，查看。', '0', 16, 0, 0, 1471852586, 0, 0, 0, 0, 0, '3c67ee3d-b359-0bfa-5161-390dfad26647', '0'),
-(100, '您好，您的对外投资联系表审核不通过，编号为6', '1', 93, 0, '您好，您的对外投资联系表审核不通过，编号为6，请到位置："会员后台 > 对外投资联系表" 栏目，查看。', '0', 16, 0, 0, 1471852587, 0, 0, 0, 0, 0, 'c694c098-9ac7-3d4a-624d-5af76c32880f', '0'),
-(101, '您好，您的对外投资联系表审核不通过，编号为5', '1', 93, 0, '您好，您的对外投资联系表审核不通过，编号为5，请到位置："会员后台 > 对外投资联系表" 栏目，查看。', '0', 16, 0, 0, 1471852589, 0, 0, 0, 0, 0, 'ddb57a0e-466a-e5af-b304-141ebbe5863e', '0'),
-(102, '您好，您的对外投资联系表审核不通过，编号为7', '1', 93, 0, '您好，您的对外投资联系表审核不通过，编号为7，请到位置："会员后台 > 对外投资联系表" 栏目，查看。', '0', 16, 0, 0, 1471852672, 0, 0, 0, 0, 0, '38b51ebe-ee7b-f816-acc7-65760ed8e30f', '0'),
-(103, '您好，您的对外投资联系表审核不通过，编号为6', '1', 93, 0, '您好，您的对外投资联系表审核不通过，编号为6，请到位置："会员后台 > 对外投资联系表" 栏目，查看。', '0', 16, 0, 0, 1471852673, 0, 0, 0, 0, 0, 'b28d69cf-adf3-8c8f-cb8c-1cd955fab36e', '0'),
-(104, '您好，您的对外投资联系表审核不通过，编号为5', '1', 93, 0, '您好，您的对外投资联系表审核不通过，编号为5，请到位置："会员后台 > 对外投资联系表" 栏目，查看。', '0', 16, 0, 0, 1471852675, 1471852774, 0, 0, 0, 0, 'e0e9e66c-3f04-46fe-bf4e-3ace46341bb2', '1'),
-(105, '有一条新的对外投资联系表需要审核，编号为7', '1', 0, 16, '管理员您好，您有一条新的对外投资联系表需要审核，编号为7，请到对外投资联系表管理栏目查看', '0', 0, 16, 0, 1471852829, 1472258612, 0, 93, 0, 0, '7d3d1559-c456-0dd1-a106-476d2936c681', '1'),
-(106, '有一条新的对外投资联系表需要审核，编号为7', '1', 0, 68, '管理员您好，您有一条新的对外投资联系表需要审核，编号为7，请到对外投资联系表管理栏目查看', '0', 0, 0, 0, 1471852829, 0, 0, 93, 0, 0, '7d3d1559-c456-0dd1-a106-476d2936c681', '0'),
-(107, '有一条新的对外投资联系表需要审核，编号为8', '1', 0, 16, '管理员您好，您有一条新的对外投资联系表需要审核，编号为8，请到对外投资联系表管理栏目查看', '0', 0, 16, 0, 1471853020, 1472116893, 0, 93, 0, 0, '99f6e9ad-63cb-5749-2472-648a448e953e', '1'),
-(108, '有一条新的对外投资联系表需要审核，编号为8', '1', 0, 68, '管理员您好，您有一条新的对外投资联系表需要审核，编号为8，请到对外投资联系表管理栏目查看', '0', 0, 0, 0, 1471853020, 0, 0, 93, 0, 0, '99f6e9ad-63cb-5749-2472-648a448e953e', '0'),
-(109, '您好，您的对外投资联系表通过审核，编号为8', '1', 93, 0, '您好，您的对外投资联系表通过审核，编号为8，请到位置："会员后台 > 对外投资联系表" 栏目，查看。', '0', 16, 0, 0, 1471853069, 1471853090, 0, 0, 0, 0, 'd4bf9e9e-de63-b22a-8250-e70c098128ec', '1'),
-(110, '您好，您的对外投资联系表审核不通过，编号为6', '1', 93, 0, '您好，您的对外投资联系表审核不通过，编号为6，请到位置："会员后台 > 对外投资联系表" 栏目，查看。', '0', 16, 0, 0, 1471853142, 1472712678, 0, 0, 0, 0, 'adc172cd-caf8-78ef-d005-492a107abcb3', '1'),
-(111, '有一条新的对外投资联系表需要审核，编号为6', '1', 0, 16, '管理员您好，您有一条新的对外投资联系表需要审核，编号为6，请到对外投资联系表管理栏目查看', '0', 0, 16, 0, 1471853577, 1471924311, 0, 93, 0, 0, '174be3c9-16f5-0440-59d3-3fcdacc6635e', '1'),
-(112, '有一条新的对外投资联系表需要审核，编号为6', '1', 0, 68, '管理员您好，您有一条新的对外投资联系表需要审核，编号为6，请到对外投资联系表管理栏目查看', '0', 0, 0, 0, 1471853577, 0, 0, 93, 0, 0, '174be3c9-16f5-0440-59d3-3fcdacc6635e', '0'),
-(113, '您好，您的对外投资联系表审核不通过，编号为6', '1', 93, 0, '您好，您的对外投资联系表审核不通过，编号为6，请到位置："会员后台 > 对外投资联系表" 栏目，查看。', '0', 16, 0, 0, 1471853588, 1472112689, 0, 0, 0, 0, '8df5c2d2-64d0-2224-465a-cb145bfcefed', '1'),
-(114, '有一条新的对外投资联系表需要审核，编号为6', '1', 0, 16, '管理员您好，您有一条新的对外投资联系表需要审核，编号为6，请到对外投资联系表管理栏目查看', '0', 0, 16, 0, 1471853610, 1471917709, 0, 93, 0, 0, '7a799ede-c27b-38c6-d292-7dee72817457', '1'),
-(115, '有一条新的对外投资联系表需要审核，编号为6', '1', 0, 68, '管理员您好，您有一条新的对外投资联系表需要审核，编号为6，请到对外投资联系表管理栏目查看', '0', 0, 0, 0, 1471853610, 0, 0, 93, 0, 0, '7a799ede-c27b-38c6-d292-7dee72817457', '0'),
-(116, '[超人用户]重新上传了证书，请审核！', '1', 0, 16, '管理员您好，[超人用户]重新上传了证书，请审核！', '0', 0, 16, 0, 1471999683, 1471999708, 0, 93, 0, 0, 'd61b8306-42f4-f284-8b4f-6d2f537e36e1', '1'),
-(117, '[超人用户]重新上传了证书，请审核！', '1', 0, 68, '管理员您好，[超人用户]重新上传了证书，请审核！', '0', 0, 0, 0, 1471999683, 0, 0, 93, 0, 0, 'd61b8306-42f4-f284-8b4f-6d2f537e36e1', '0'),
-(118, '[超人用户]重新上传了证书，请审核！<a href=''【user/edit】?id=93''>点击此处直接查看</a>', '1', 0, 16, '管理员您好，[超人用户]重新上传了证书，请审核！', '1', 0, 16, 16, 1472001905, 1472001964, 1473146216, 93, 0, 0, '7f17a6a5-1528-c3ca-f20a-baa03e2e6067', '1'),
-(119, '[超人用户]重新上传了证书，请审核！<a href=''【user/edit】?id=93''>点击此处直接查看</a>', '1', 0, 68, '管理员您好，[超人用户]重新上传了证书，请审核！', '0', 0, 0, 0, 1472001905, 0, 0, 93, 0, 0, '7f17a6a5-1528-c3ca-f20a-baa03e2e6067', '0'),
-(120, '[超人用户]重新上传了证书，请审核！', '1', 0, 16, '管理员您好，[超人用户]重新上传了证书，请审核！<a href=''【user/edit】?id=93''>点击此处直接查看</a>', '0', 0, 16, 0, 1472002012, 1472002033, 0, 93, 0, 0, '7c27321a-099f-6380-244d-5221c50a73d4', '1'),
-(121, '[超人用户]重新上传了证书，请审核！', '1', 0, 68, '管理员您好，[超人用户]重新上传了证书，请审核！<a href=''【user/edit】?id=93''>点击此处直接查看</a>', '0', 0, 0, 0, 1472002012, 0, 0, 93, 0, 0, '7c27321a-099f-6380-244d-5221c50a73d4', '0'),
-(122, '数据需要核对，编号为279', '1', 86, 0, '您好，您有一条数据需要核对，编号为{279}，请到位置："会员后台 > 数据核对" 栏目，查看。', '0', 16, 0, 0, 1472019770, 0, 0, 0, 0, 0, '4fabd80e-f563-6f52-0723-0fb3ee18e67c', '0'),
-(123, '数据需要核对，编号为280', '1', 93, 0, '您好，您有一条数据需要核对，编号为{280}，请到位置："会员后台 > 数据核对" 栏目，查看。', '0', 16, 0, 0, 1472019770, 1472777669, 0, 0, 0, 0, '1e3ddb3a-e5ae-3d75-45e5-5e8b5f0679ec', '1'),
-(124, '数据需要核对，编号为281', '1', 86, 0, '您好，您有一条数据需要核对，编号为{281}，请到位置："会员后台 > 数据核对" 栏目，查看。', '0', 16, 0, 0, 1472020294, 0, 0, 0, 0, 0, 'b1936f9f-3638-ab0d-7bfc-2f739a88b26f', '0'),
-(125, '数据需要核对，编号为282', '1', 93, 0, '您好，您有一条数据需要核对，编号为{282}，请到位置："会员后台 > 数据核对" 栏目，查看。', '0', 16, 0, 0, 1472020294, 1472716580, 0, 0, 0, 0, 'c0b48926-60d6-2c1f-f874-dfa8994b8b60', '1'),
-(126, '数据需要核对，编号为283', '1', 86, 0, '您好，您有一条数据需要核对，编号为{283}，请到位置："会员后台 > 数据核对" 栏目，查看。', '0', 16, 0, 0, 1472020813, 0, 0, 0, 0, 0, '9212ef17-32e4-089a-eea2-f651d51e52b0', '0'),
-(127, '数据需要核对，编号为284', '1', 93, 0, '您好，您有一条数据需要核对，编号为{284}，请到位置："会员后台 > 数据核对" 栏目，查看。', '0', 16, 0, 0, 1472020814, 1472112573, 0, 0, 0, 0, '1f329f96-3b11-4c08-3cfa-da50edc0868e', '1'),
-(128, '数据需要核对，编号为285', '1', 86, 0, '您好，您有一条数据需要核对，编号为{285}，请到位置："会员后台 > 数据核对" 栏目，查看。', '0', 16, 0, 0, 1472020933, 0, 0, 0, 0, 0, '5c38e4d4-957f-cede-fb7f-2f6682423c2e', '0'),
-(129, '数据需要核对，编号为286', '1', 93, 0, '您好，您有一条数据需要核对，编号为{286}，请到位置："会员后台 > 数据核对" 栏目，查看。', '0', 16, 0, 0, 1472020934, 1472028761, 0, 0, 0, 0, 'ad856cbd-ad5f-de37-9b3f-bf566b024ba7', '1'),
-(130, '[超人用户]重新上传了证书，请审核！', '1', 0, 16, '管理员您好，[超人用户]重新上传了证书，请审核！<a href=''【user/edit】?id=93''>点击此处直接查看</a>', '0', 0, 16, 0, 1472101332, 1472105766, 0, 93, 0, 0, '93ca6fa5-11f9-b86a-c8d1-2d6b9b5d44f5', '1'),
-(131, '[超人用户]重新上传了证书，请审核！', '1', 0, 68, '管理员您好，[超人用户]重新上传了证书，请审核！<a href=''【user/edit】?id=93''>点击此处直接查看</a>', '0', 0, 0, 0, 1472101332, 0, 0, 93, 0, 0, '93ca6fa5-11f9-b86a-c8d1-2d6b9b5d44f5', '0'),
-(132, '[超人用户]重新上传了证书，请审核！', '1', 0, 16, '管理员您好，[超人用户]重新上传了证书，请审核！<a href=''【user/edit】?id=93''>点击此处直接查看</a>', '0', 0, 16, 0, 1472101453, 1472102295, 0, 93, 0, 0, '6ab626d8-46f7-eaed-7312-65877012b74a', '1'),
-(133, '[超人用户]重新上传了证书，请审核！', '1', 0, 68, '管理员您好，[超人用户]重新上传了证书，请审核！<a href=''【user/edit】?id=93''>点击此处直接查看</a>', '0', 0, 0, 0, 1472101453, 0, 0, 93, 0, 0, '6ab626d8-46f7-eaed-7312-65877012b74a', '0'),
-(134, '[超人用户]重新上传了证书，请审核！', '1', 0, 16, '管理员您好，[超人用户]重新上传了证书，请审核！<a class=''page-action'' data-id=''news_'' data-href=''【user/edit】?id=93''>点击此处直接查看</a>', '0', 0, 16, 0, 1472117885, 1472117905, 0, 93, 0, 0, '15011139-d0c3-ce59-18ab-34277e4ebf05', '1'),
-(135, '[超人用户]重新上传了证书，请审核！', '1', 0, 68, '管理员您好，[超人用户]重新上传了证书，请审核！<a class=''page-action'' data-id=''news_'' data-href=''【user/edit】?id=93''>点击此处直接查看</a>', '0', 0, 0, 0, 1472117885, 0, 0, 93, 0, 0, '15011139-d0c3-ce59-18ab-34277e4ebf05', '0'),
-(136, 'hello world', '1', 99, 0, 'hello', '0', 0, 0, 0, 1472441771, 1472441778, 0, 99, 0, 0, 'bd9125f8-2cd8-3691-2c8a-ffe9356bed87', '1'),
-(137, 'hello world', '1', 91, 0, 'hello', '0', 0, 0, 0, 1472441771, 0, 0, 99, 0, 0, 'bd9125f8-2cd8-3691-2c8a-ffe9356bed87', '0'),
-(138, 'hello world', '1', 0, 16, 'hello', '0', 0, 0, 0, 1472441771, 0, 0, 99, 0, 0, 'bd9125f8-2cd8-3691-2c8a-ffe9356bed87', '0'),
-(139, '今天周五，天气有点阴', '1', 0, 16, '今天周五，天气不太好，恐怕会下雨', '0', 0, 16, 0, 1472778657, 1472778669, 0, 106, 0, 0, '215a5c5b-9d00-611b-5193-3099b71a8967', '1'),
-(140, '郁闷的我，郁闷的天气', '1', 106, 0, '<p>\r\n	人生若只是初识\r\n</p>\r\n<p>\r\n	前生500次的回眸，换今生的一次擦肩而过 -- 某人名言\r\n</p>', '0', 16, 0, 0, 1472778772, 1472778780, 0, 0, 0, 0, '596d16f9-4750-b70a-7bcf-3256a66aa8cb', '1'),
-(141, '申报编号:12需要审核！', '1', 0, 16, '您好，管理员，极乐净土提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1472786966, 0, 0, 0, 0, 0, 'e2462c6a-f38a-3789-75d3-ef4d3e45e7ba', '0'),
-(142, '申报编号:12需要审核！', '1', 0, 68, '您好，管理员，极乐净土提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1472786966, 0, 0, 0, 0, 0, 'e2462c6a-f38a-3789-75d3-ef4d3e45e7ba', '0'),
-(143, '申报编号:12需要审核！', '1', 0, 16, '您好，管理员，极乐净土提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1472787630, 0, 0, 0, 0, 0, 'e62754a3-2e41-612e-036b-fc3557182bbe', '0'),
-(144, '申报编号:12需要审核！', '1', 0, 68, '您好，管理员，极乐净土提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1472787630, 0, 0, 0, 0, 0, 'e62754a3-2e41-612e-036b-fc3557182bbe', '0'),
-(145, '申报编号:13需要审核！', '1', 0, 16, '您好，管理员，极乐净土提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1472788120, 0, 0, 0, 0, 0, 'cee86ade-8c03-21d6-49bf-6c3395c70bbe', '0'),
-(146, '申报编号:13需要审核！', '1', 0, 68, '您好，管理员，极乐净土提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1472788120, 0, 0, 0, 0, 0, 'cee86ade-8c03-21d6-49bf-6c3395c70bbe', '0'),
-(147, '申报编号:13需要审核！', '1', 0, 16, '您好，管理员，极乐净土提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1472789055, 0, 0, 0, 0, 0, '7001da2b-e65a-64a3-6f4c-cace561a8a17', '0'),
-(148, '申报编号:13需要审核！', '1', 0, 68, '您好，管理员，极乐净土提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1472789055, 0, 0, 0, 0, 0, '7001da2b-e65a-64a3-6f4c-cace561a8a17', '0'),
-(149, '申报编号:13需要审核！', '1', 0, 16, '您好，管理员，极乐净土提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1472789064, 0, 0, 0, 0, 0, '4674ccaa-7544-63d3-edf5-fbb35561eb4a', '0'),
-(150, '申报编号:13需要审核！', '1', 0, 68, '您好，管理员，极乐净土提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1472789064, 0, 0, 0, 0, 0, '4674ccaa-7544-63d3-edf5-fbb35561eb4a', '0'),
-(151, '申报编号:13需要审核！', '1', 0, 16, '您好，管理员，极乐净土提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1472789065, 0, 0, 0, 0, 0, 'e6b8297b-6b11-81e9-6aa3-7d0d8d0aa49b', '0'),
-(152, '申报编号:13需要审核！', '1', 0, 68, '您好，管理员，极乐净土提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1472789065, 0, 0, 0, 0, 0, 'e6b8297b-6b11-81e9-6aa3-7d0d8d0aa49b', '0'),
-(153, '申报编号:11需要审核！', '1', 0, 16, '您好，管理员，极乐净土提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1472798137, 0, 0, 0, 0, 0, '46d1f098-0777-8768-2b94-ceec3896a963', '0'),
-(154, '申报编号:11需要审核！', '1', 0, 68, '您好，管理员，极乐净土提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1472798137, 0, 0, 0, 0, 0, '46d1f098-0777-8768-2b94-ceec3896a963', '0'),
-(155, '奥巴马向您咨询', '1', 104, 0, '您好，您有一条新的服务咨询，编号为25，请到位置："会员后台 > 服务咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/view.shtml?id=25'' target=''_blank''>或点击此处直接查看</a>', '0', 0, 0, 0, 1472799283, 0, 0, 106, 0, 0, 'e517c0cb-43ec-79e6-15a4-8d83136b635c', '0'),
-(156, '机构用户简称向您咨询', '1', 101, 0, '您好，您有一条新的服务咨询，编号为26，请到位置："会员后台 > 服务咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/view.shtml?id=26'' target=''_blank''>或点击此处直接查看</a>', '0', 0, 0, 0, 1472799283, 1472800856, 0, 106, 0, 0, '51d518d8-ddfd-a88b-dc84-57e2435709e5', '1'),
-(157, '极乐净土向您咨询', '1', 101, 0, '您好，您有一条新的服务咨询，编号为28，请到位置："会员后台 > 服务咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/view.shtml?id=28'' target=''_blank''>或点击此处直接查看</a>', '0', 0, 0, 0, 1472800650, 1472800809, 0, 106, 0, 0, '5da1d5e6-a33e-ce27-b264-dbbf86f427fc', '1'),
-(158, '有一条新的对外投资联系表需要审核，编号为11', '1', 0, 16, '管理员您好，您有一条新的对外投资联系表需要审核，编号为11，请到对外投资联系表管理栏目查看', '0', 0, 0, 0, 1472804878, 0, 0, 106, 0, 0, '858fc65e-f2c2-130c-5125-13c7c72e2bfa', '0'),
-(159, '有一条新的对外投资联系表需要审核，编号为11', '1', 0, 68, '管理员您好，您有一条新的对外投资联系表需要审核，编号为11，请到对外投资联系表管理栏目查看', '0', 0, 0, 0, 1472804878, 0, 0, 106, 0, 0, '858fc65e-f2c2-130c-5125-13c7c72e2bfa', '0'),
-(160, '有一条新的对外投资联系表需要审核，编号为11', '1', 0, 16, '管理员您好，您有一条新的对外投资联系表需要审核，编号为11，请到对外投资联系表管理栏目查看', '0', 0, 0, 0, 1472804879, 0, 0, 106, 0, 0, 'd1ec414b-2d47-2062-343e-a74b6e41cbfa', '0'),
-(161, '有一条新的对外投资联系表需要审核，编号为11', '1', 0, 68, '管理员您好，您有一条新的对外投资联系表需要审核，编号为11，请到对外投资联系表管理栏目查看', '0', 0, 0, 0, 1472804879, 0, 0, 106, 0, 0, 'd1ec414b-2d47-2062-343e-a74b6e41cbfa', '0'),
-(162, '有一条新的对外投资联系表需要审核，编号为11', '1', 0, 16, '管理员您好，您有一条新的对外投资联系表需要审核，编号为11，请到对外投资联系表管理栏目查看', '0', 0, 0, 0, 1472868081, 0, 0, 106, 0, 0, '9a38adb7-f067-44fd-115e-559e279597fa', '0'),
-(163, '有一条新的对外投资联系表需要审核，编号为11', '1', 0, 68, '管理员您好，您有一条新的对外投资联系表需要审核，编号为11，请到对外投资联系表管理栏目查看', '0', 0, 0, 0, 1472868081, 0, 0, 106, 0, 0, '9a38adb7-f067-44fd-115e-559e279597fa', '0'),
-(164, '数据需要核对，编号为288', '1', 86, 0, '您好，您有一条数据需要核对，编号为{288}，请到位置："会员后台 > 数据核对" 栏目，查看。', '0', 16, 0, 0, 1472873983, 0, 0, 0, 0, 0, '26d91f39-142c-8ce8-dac8-941bdd42baa8', '0'),
-(165, '数据需要核对，编号为289', '1', 93, 0, '您好，您有一条数据需要核对，编号为{289}，请到位置："会员后台 > 数据核对" 栏目，查看。', '0', 16, 0, 0, 1472873983, 1473046610, 0, 0, 0, 0, '9726ab1f-a118-30ee-2526-a3b74f894915', '1'),
-(166, '数据需要核对，编号为290', '1', 86, 0, '您好，您有一条数据需要核对，编号为{290}，请到位置："会员后台 > 数据核对" 栏目，查看。', '0', 16, 0, 0, 1472874216, 0, 0, 0, 0, 0, '9ff31c23-8b2e-22de-d4cb-c2628850df8d', '0'),
-(167, '数据需要核对，编号为291', '1', 106, 0, '您好，您有一条数据需要核对，编号为{291}，请到位置："会员后台 > 数据核对" 栏目，查看。', '1', 16, 0, 0, 1472875034, 1472875658, 1472875693, 0, 0, 0, '93e62164-533b-8ac1-de65-52eac1834f61', '1'),
-(168, '数据需要核对，编号为292', '1', 106, 0, '您好，您有一条数据需要核对，编号为{292}，请到位置："会员后台 > 数据核对" 栏目，查看。', '1', 16, 0, 0, 1472875144, 1472875296, 1472875693, 0, 0, 0, 'b95eceb1-495a-22e4-f50c-ae98dcc36df9', '1'),
-(169, '数据需要核对，编号为293', '1', 106, 0, '您好，您有一条数据需要核对，编号为{293}，请到位置："会员后台 > 数据核对" 栏目，查看。', '0', 16, 0, 0, 1472875707, 1472875747, 0, 0, 0, 0, 'd1c841f0-d055-fc0c-fa71-837efa01dfee', '1'),
-(170, '有一条新的对外投资联系表需要审核，编号为13', '1', 0, 16, '管理员您好，您有一条新的对外投资联系表需要审核，编号为13，请到对外投资联系表管理栏目查看', '0', 0, 0, 0, 1473040551, 0, 0, 108, 0, 0, '472e7b80-d4ca-2a49-4959-d5f93acf6bae', '0'),
-(171, '有一条新的对外投资联系表需要审核，编号为13', '1', 0, 68, '管理员您好，您有一条新的对外投资联系表需要审核，编号为13，请到对外投资联系表管理栏目查看', '0', 0, 0, 0, 1473040551, 0, 0, 108, 0, 0, '472e7b80-d4ca-2a49-4959-d5f93acf6bae', '0'),
-(172, '您好，您的对外投资联系表审核不通过，编号为13', '1', 108, 0, '您好，您的对外投资联系表审核不通过，编号为13，请到位置："会员后台 > 对外投资联系表" 栏目，查看。', '0', 16, 0, 0, 1473040661, 0, 0, 0, 0, 0, '7d918f39-17c8-34f6-f4a9-3a94a0443bec', '0'),
-(173, '有一条新的对外投资联系表需要审核，编号为13', '1', 0, 16, '管理员您好，您有一条新的对外投资联系表需要审核，编号为13，请到对外投资联系表管理栏目查看', '0', 0, 0, 0, 1473040677, 0, 0, 108, 0, 0, 'ea52f063-ebcf-962c-f332-fa04e25e4976', '0'),
-(174, '有一条新的对外投资联系表需要审核，编号为13', '1', 0, 68, '管理员您好，您有一条新的对外投资联系表需要审核，编号为13，请到对外投资联系表管理栏目查看', '0', 0, 0, 0, 1473040677, 0, 0, 108, 0, 0, 'ea52f063-ebcf-962c-f332-fa04e25e4976', '0'),
-(175, '您好，您的对外投资联系表通过审核，编号为13', '1', 108, 0, '您好，您的对外投资联系表通过审核，编号为13，请到位置："会员后台 > 对外投资联系表" 栏目，查看。', '0', 16, 0, 0, 1473040690, 0, 0, 0, 0, 0, 'a851d465-dc21-1ec9-cec6-c9264a13c6d1', '0'),
-(176, '走出去数据需要重新核对，编号为293', '1', 106, 0, '您好，您的走出去数据被管理员修改，请核对，编号为{293}，请到位置："会员后台 > 数据核对" 栏目，<a href=''【adminx/zcq_datamanage/view】?id=293''>查看</a>。', '0', 16, 0, 0, 1473045909, 1473045968, 0, 0, 0, 0, 'd8c3ebee-1424-62e9-e3c5-85679ad90d66', '1'),
-(177, '走出去数据需要重新核对，编号为293', '1', 93, 0, '您好，您的走出去数据被管理员修改，请核对，编号为{293}，请到位置："会员后台 > 资料核对" 栏目，<a href=''【adminx/zcq_datamanage/view】?id=293''>查看</a>。', '0', 16, 0, 0, 1473046401, 1473046547, 0, 0, 0, 0, '07e2f825-a5d9-3891-b8d2-ecf590ad7276', '1'),
-(178, '走出去数据需要重新核对，编号为293', '1', 106, 0, '您好，您的走出去数据被管理员修改，请核对，编号为{293}，请到位置："会员后台 > 资料核对" 栏目，<a href=''【adminx/zcq_datamanage/view】?id=293''>查看</a>。', '0', 16, 0, 0, 1473046652, 1473046689, 0, 0, 0, 0, '72e03d4f-e73a-9a9d-e444-ca17cc7f16c7', '1'),
-(179, '走出去数据需要重新核对，编号为293', '1', 93, 0, '您好，您的走出去数据被管理员修改，请核对，编号为{293}，请到位置："会员后台 > 资料核对" 栏目，<a href=''【adminx/zcq_datamanage/view】?id=293''>查看</a>。', '0', 16, 0, 0, 1473046763, 1473046771, 0, 0, 0, 0, 'ab55832c-4b4d-9ca9-5c95-aa3dd6702e23', '1'),
-(180, '数据需要核对，编号为294', '1', 86, 0, '您好，您有一条数据需要核对，编号为{294}，请到位置："会员后台 > 资料核对" 栏目，<a href=''【adminx/zcq_datamanage/view】?id=294''>查看</a>。', '0', 16, 0, 0, 1473061007, 0, 0, 0, 0, 0, '98b6da88-4e19-81cc-896f-d368941239a5', '0'),
-(181, '数据需要核对，编号为295', '1', 93, 0, '您好，您有一条数据需要核对，编号为{295}，请到位置："会员后台 > 资料核对" 栏目，<a href=''【adminx/zcq_datamanage/view】?id=295''>查看</a>。', '0', 16, 0, 0, 1473061007, 0, 0, 0, 0, 0, 'ec630359-b5e2-ea60-6b11-d30b5ffc8e44', '0'),
-(182, '数据需要核对，编号为296', '1', 86, 0, '您好，您有一条数据需要核对，编号为{296}，请到位置："会员后台 > 资料核对" 栏目，<a href=''【adminx/zcq_datamanage/view】?id=296''>查看</a>。', '0', 16, 0, 0, 1473061057, 0, 0, 0, 0, 0, 'fd765034-f062-6147-f049-83adcb5ad172', '0'),
-(183, '数据需要核对，编号为297', '1', 93, 0, '您好，您有一条数据需要核对，编号为{297}，请到位置："会员后台 > 资料核对" 栏目，<a href=''【adminx/zcq_datamanage/view】?id=297''>查看</a>。', '0', 16, 0, 0, 1473061058, 0, 0, 0, 0, 0, '0e2bd584-b419-5197-1b19-a09b633f5634', '0'),
-(184, '申报编号:14需要审核！', '1', 0, 16, '您好，管理员，超人用户提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1473063984, 0, 0, 0, 0, 0, '66723383-cd9f-8ed1-91c2-7c6a960c2eb3', '0'),
-(185, '申报编号:14需要审核！', '1', 0, 68, '您好，管理员，超人用户提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1473063985, 0, 0, 0, 0, 0, '66723383-cd9f-8ed1-91c2-7c6a960c2eb3', '0'),
-(186, '申报编号:14需要审核！', '1', 0, 16, '您好，管理员，超人用户提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1473064000, 0, 0, 0, 0, 0, 'e3b5eef1-c3fe-12b9-8b64-5f24e205dba2', '0'),
-(187, '申报编号:14需要审核！', '1', 0, 68, '您好，管理员，超人用户提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1473064000, 0, 0, 0, 0, 0, 'e3b5eef1-c3fe-12b9-8b64-5f24e205dba2', '0'),
-(188, '申报编号:14需要审核！', '1', 0, 16, '您好，管理员，超人用户提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1473064021, 0, 0, 0, 0, 0, '28ecd4fa-0d53-2db1-b537-16db657adaf3', '0'),
-(189, '申报编号:14需要审核！', '1', 0, 68, '您好，管理员，超人用户提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1473064021, 0, 0, 0, 0, 0, '28ecd4fa-0d53-2db1-b537-16db657adaf3', '0'),
-(190, '申报编号:14需要审核！', '1', 0, 16, '您好，管理员，超人用户提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1473064109, 0, 0, 0, 0, 0, '7065ee23-12cf-f96d-814d-52481733ea8d', '0'),
-(191, '申报编号:14需要审核！', '1', 0, 68, '您好，管理员，超人用户提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1473064109, 0, 0, 0, 0, 0, '7065ee23-12cf-f96d-814d-52481733ea8d', '0'),
-(192, '申报编号:14需要审核！', '1', 0, 16, '您好，管理员，超人用户提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1473065788, 0, 0, 0, 0, 0, '7e9b8adf-8831-c17e-d327-1280ffc1db65', '0'),
-(193, '申报编号:14需要审核！', '1', 0, 68, '您好，管理员，超人用户提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1473065788, 0, 0, 0, 0, 0, '7e9b8adf-8831-c17e-d327-1280ffc1db65', '0'),
-(194, '申报编号：15,审核不通过，请根据审核意见修改。', '1', 93, 0, '您好，请按审核意见修改：asd,位置：资金申请>我的申请。', '0', 16, 0, 0, 1473066140, 0, 0, 0, 0, 0, 'b344e9eb-e0a5-08ea-eb62-1a4d90549437', '0'),
-(195, '申报编号:15需要审核！', '1', 0, 16, '您好，管理员，超人用户提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1473066182, 0, 0, 0, 0, 0, 'f2512990-55b9-4448-7914-1c770ec5791f', '0'),
-(196, '申报编号:15需要审核！', '1', 0, 68, '您好，管理员，超人用户提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1473066182, 0, 0, 0, 0, 0, 'f2512990-55b9-4448-7914-1c770ec5791f', '0'),
-(197, '申报编号:15需要审核！', '1', 0, 16, '您好，管理员，超人用户提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1473066695, 0, 0, 0, 0, 0, '6368401d-75af-a3db-6232-a93d6b242be7', '0'),
-(198, '申报编号:15需要审核！', '1', 0, 68, '您好，管理员，超人用户提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1473066695, 0, 0, 0, 0, 0, '6368401d-75af-a3db-6232-a93d6b242be7', '0'),
-(199, '申报编号：15,审核不通过，请根据审核意见修改。', '1', 93, 0, '您好，请按审核意见修改：qweterger,位置：资金申请>我的申请。', '0', 16, 0, 0, 1473066713, 0, 0, 0, 0, 0, '4b00d970-bb2c-04da-5e08-45a6c48f33ab', '0'),
-(200, '极乐净土向您咨询', '1', 101, 0, '您好，您有一条新的服务咨询，编号为30，请到位置："会员后台 > 服务咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/reply.shtml?id=30'' target=''_blank''>或点击此处直接查看</a>', '0', 0, 0, 0, 1473123642, 0, 0, 106, 0, 0, 'e2e048e8-89b7-41d5-d6e8-be485a1bfe9e', '0'),
-(201, '极乐净土向您咨询', '1', 104, 0, '您好，您有一条新的服务咨询，编号为32，请到位置："会员后台 > 服务咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/reply.shtml?id=32'' target=''_blank''>或点击此处直接查看</a>', '0', 0, 0, 0, 1473123787, 0, 0, 106, 0, 0, '45373df5-13d3-ad20-8278-b052bc02a51b', '0'),
-(202, '申报编号：11,审核已通过。', '1', 106, 0, '您好，申报编号：11审核已通过,位置：资金申请>我的申请。', '0', 16, 0, 0, 1473128954, 0, 0, 0, 0, 0, '17a3df12-ec50-e161-0a1e-71e69a212d47', '0'),
-(203, '数据需要核对，编号为298', '1', 86, 0, '您好，您有一条数据需要核对，编号为{298}，请到位置："会员后台 > 资料核对" 栏目，<a href=''【adminx/zcq_datamanage/view】?id=298''>查看</a>。', '0', 16, 0, 0, 1473134375, 0, 0, 0, 0, 0, '4bb57267-ef95-aaec-05e7-a7d6e6fa37a0', '0'),
-(204, '数据需要核对，编号为299', '1', 93, 0, '您好，您有一条数据需要核对，编号为{299}，请到位置："会员后台 > 资料核对" 栏目，<a href=''【adminx/zcq_datamanage/view】?id=299''>查看</a>。', '0', 16, 0, 0, 1473134375, 0, 0, 0, 0, 0, '06c0abc9-7395-6bac-452f-3e47fd9b4686', '0'),
-(205, '[超人用户]重新上传了证书，请审核！', '1', 0, 16, '管理员您好，[超人用户]重新上传了证书，请审核！<a class=''page-action'' data-id=''news_'' data-href=''【user/edit】?id=93''>点击此处直接查看</a>', '0', 0, 0, 0, 1473147276, 0, 0, 93, 0, 0, '8943dab2-5063-5e4a-33ec-8bea2b1a50f1', '0'),
-(206, '[超人用户]重新上传了证书，请审核！', '1', 0, 68, '管理员您好，[超人用户]重新上传了证书，请审核！<a class=''page-action'' data-id=''news_'' data-href=''【user/edit】?id=93''>点击此处直接查看</a>', '0', 0, 0, 0, 1473147276, 0, 0, 93, 0, 0, '8943dab2-5063-5e4a-33ec-8bea2b1a50f1', '0'),
-(207, '[超人用户]重新上传了证书，请审核！', '1', 0, 16, '管理员您好，[超人用户]重新上传了证书，请审核！<a class=''page-action'' data-id=''news_'' data-href=''【user/edit】?id=93''>点击此处直接查看</a>', '0', 0, 16, 0, 1473147338, 1473212440, 0, 93, 0, 0, '5e766ced-d3df-a9d0-7661-dc6ce19843e2', '1'),
-(208, '[超人用户]重新上传了证书，请审核！', '1', 0, 68, '管理员您好，[超人用户]重新上传了证书，请审核！<a class=''page-action'' data-id=''news_'' data-href=''【user/edit】?id=93''>点击此处直接查看</a>', '0', 0, 0, 0, 1473147338, 0, 0, 93, 0, 0, '5e766ced-d3df-a9d0-7661-dc6ce19843e2', '0'),
-(209, '数据需要核对，编号为300', '1', 96, 0, '您好，您有一条数据需要核对，编号为{300}，请到位置："会员后台 > 资料核对" 栏目，<a href=''【adminx/zcq_datamanage/view】?id=300''>查看</a>。', '0', 16, 0, 0, 1473152185, 0, 0, 0, 0, 0, '0e0748da-72d7-1a2d-1931-923d19bba695', '0'),
-(210, '走出去数据需要重新核对，编号为300', '1', 96, 0, '您好，您的走出去数据被管理员修改，请核对，编号为{300}，请到位置："会员后台 > 资料核对" 栏目，<a href=''【adminx/zcq_datamanage/view】?id=300''>查看</a>。', '0', 16, 0, 0, 1473152197, 0, 0, 0, 0, 0, '4a3e8744-319c-a0f1-161a-d9a14ac88ef9', '0'),
-(211, '[超人用户]重新上传了证书，请审核！', '1', 0, 16, '管理员您好，[超人用户]重新上传了证书，请审核！<a class=''page-action'' data-id=''news_'' data-href=''【user/edit】?id=93''>点击此处直接查看</a>', '0', 0, 16, 0, 1473211444, 1473211461, 0, 93, 0, 0, '6d10e603-26ac-d6bf-7b0c-8c18a65e0717', '1'),
-(212, '[超人用户]重新上传了证书，请审核！', '1', 0, 68, '管理员您好，[超人用户]重新上传了证书，请审核！<a class=''page-action'' data-id=''news_'' data-href=''【user/edit】?id=93''>点击此处直接查看</a>', '0', 0, 0, 0, 1473211444, 0, 0, 93, 0, 0, '6d10e603-26ac-d6bf-7b0c-8c18a65e0717', '0'),
-(213, '[超人用户]重新修改了资料，请审核！', '1', 0, 16, '管理员您好，[超人用户]重新上传了证书，请审核！<a class=''page-action'' data-id=''news_'' data-href=''【user/edit】?id=93''>点击此处直接查看</a>', '0', 0, 0, 0, 1473233653, 0, 0, 93, 0, 0, '67cd20c9-ecfa-a238-3e20-ded8b109b4d7', '0'),
-(214, '[超人用户]重新修改了资料，请审核！', '1', 0, 68, '管理员您好，[超人用户]重新上传了证书，请审核！<a class=''page-action'' data-id=''news_'' data-href=''【user/edit】?id=93''>点击此处直接查看</a>', '0', 0, 0, 0, 1473233654, 0, 0, 93, 0, 0, '67cd20c9-ecfa-a238-3e20-ded8b109b4d7', '0'),
-(215, '申报编号:15需要审核！', '1', 0, 16, '您好，管理员，超人用户提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1473234000, 0, 0, 93, 0, 0, 'ae63d61f-5b5b-92c3-8896-6a60af63926a', '0'),
-(216, '申报编号:15需要审核！', '1', 0, 68, '您好，管理员，超人用户提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1473234000, 0, 0, 93, 0, 0, 'ae63d61f-5b5b-92c3-8896-6a60af63926a', '0'),
-(217, '申报编号:15需要审核！', '1', 0, 16, '您好，管理员，超人用户提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1473235405, 0, 0, 93, 0, 0, 'c9248543-6a1f-06d7-4788-049b423b03a6', '0'),
-(218, '申报编号:15需要审核！', '1', 0, 68, '您好，管理员，超人用户提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1473235405, 0, 0, 93, 0, 0, 'c9248543-6a1f-06d7-4788-049b423b03a6', '0'),
-(219, '申报编号：15,审核已通过。', '1', 93, 0, '您好，申报编号：15审核已通过,位置：资金申请>我的申请。', '0', 16, 0, 0, 1473236541, 0, 0, 0, 0, 0, '5667730d-c328-9906-ca83-6bd95b1b29c2', '0'),
-(220, '申报编号：15,审核已通过。', '1', 93, 0, '您好，申报编号：15审核已通过,位置：资金申请>我的申请。', '0', 16, 0, 0, 1473237458, 0, 0, 0, 0, 0, '3e16fd02-073f-33f6-a24b-e5ef26d7acc0', '0'),
-(221, '申报编号：15,审核已通过。', '1', 93, 0, '您好，申报编号：15审核已通过,位置：资金申请>我的申请。', '0', 16, 0, 0, 1473237702, 0, 0, 0, 0, 0, 'be9e8bdb-3c62-8eba-c07a-73b2d98861a2', '0'),
-(222, '申报编号：15,审核已通过。', '1', 93, 0, '您好，申报编号：15审核已通过,位置：资金申请>我的申请。', '0', 16, 0, 0, 1473237735, 0, 0, 0, 0, 0, '786af9cd-9cd0-ba4a-9bce-7ba1a56b5e42', '0'),
-(223, '申报编号：15,审核已通过。', '1', 93, 0, '您好，申报编号：15审核已通过,位置：资金申请>我的申请。', '0', 16, 0, 0, 1473237741, 0, 0, 0, 0, 0, 'fe4bc66d-9d78-807d-d14b-95002a9d8ef5', '0'),
-(224, '申报编号：15,审核已通过。', '1', 93, 0, '您好，申报编号：15审核已通过,位置：资金申请>我的申请。', '0', 16, 0, 0, 1473237832, 0, 0, 0, 0, 0, 'e2bac96b-f2c9-8edd-3f6e-d4e7b8f3244d', '0'),
-(225, '申报编号：15,审核已通过。', '1', 93, 0, '您好，申报编号：15审核已通过,位置：资金申请>我的申请。', '0', 16, 0, 0, 1473237860, 0, 0, 0, 0, 0, '76e258a4-a5d5-8f69-0b77-7d9e1f1f63f5', '0'),
-(226, '申报编号：15,审核已通过。', '1', 93, 0, '您好，申报编号：15审核已通过,位置：资金申请>我的申请。', '0', 16, 0, 0, 1473237914, 0, 0, 0, 0, 0, 'd78e8e12-69c9-fde5-c9e9-ab83f1d272fe', '0'),
-(227, '申报编号：15,审核已通过。', '1', 93, 0, '您好，申报编号：15审核已通过,位置：资金申请>我的申请。', '0', 16, 0, 0, 1473238117, 0, 0, 0, 0, 0, '5eb97b2a-d97b-f149-b2a6-50adbcb42a39', '0'),
-(228, '申报编号：15,审核已通过。', '1', 93, 0, '您好，申报编号：15审核已通过,位置：资金申请>我的申请。', '0', 16, 0, 0, 1473238328, 0, 0, 0, 0, 0, '8b80ff9b-7f98-1abb-e484-3a82501a0b16', '0'),
-(229, '申报编号：15,审核已通过。', '1', 93, 0, '您好，申报编号：15审核已通过,位置：资金申请>我的申请。', '0', 16, 0, 0, 1473238398, 0, 0, 0, 0, 0, '01fd32b1-6b55-a6d0-a641-bcc7b4fad6ab', '0'),
-(230, '申报编号：15,审核已通过。', '1', 93, 0, '您好，申报编号：15审核已通过,位置：资金申请>我的申请。', '0', 16, 0, 0, 1473238463, 0, 0, 0, 0, 0, '02277bf0-9a44-1f95-4b25-6588893dfd23', '0'),
-(231, '[超人用户]重新修改了资料，请审核！', '1', 0, 16, '管理员您好，[超人用户]重新上传了证书，请审核！<a class=''page-action'' data-id=''news_'' data-href=''【user/edit】?id=93''>点击此处直接查看</a>', '0', 0, 0, 0, 1473238541, 0, 0, 93, 0, 0, '4701e4c3-08e5-391e-7ab1-40274b703ce8', '0'),
-(232, '[超人用户]重新修改了资料，请审核！', '1', 0, 68, '管理员您好，[超人用户]重新上传了证书，请审核！<a class=''page-action'' data-id=''news_'' data-href=''【user/edit】?id=93''>点击此处直接查看</a>', '0', 0, 0, 0, 1473238542, 0, 0, 93, 0, 0, '4701e4c3-08e5-391e-7ab1-40274b703ce8', '0'),
-(233, '有一条新的对外投资联系表需要审核，编号为', '1', 0, 16, '管理员您好，您有一条新的对外投资联系表需要审核，编号为，请到对外投资联系表管理栏目查看', '0', 0, 0, 0, 1473317587, 0, 0, 106, 0, 0, '118d13cc-e3f4-04b7-e536-5303ba5db559', '0'),
-(234, '有一条新的对外投资联系表需要审核，编号为', '1', 0, 68, '管理员您好，您有一条新的对外投资联系表需要审核，编号为，请到对外投资联系表管理栏目查看', '0', 0, 0, 0, 1473317587, 0, 0, 106, 0, 0, '118d13cc-e3f4-04b7-e536-5303ba5db559', '0'),
-(235, '[极乐净土]重新修改了资料，请审核！', '1', 0, 16, '管理员您好，[极乐净土]重新上传了证书，请审核！<a class=''page-action'' data-id=''news_'' data-href=''【user/edit】?id=106''>点击此处直接查看</a>', '0', 0, 0, 0, 1473318602, 0, 0, 106, 0, 0, 'ed8cc984-9397-c938-5be3-5738e1319a07', '0'),
-(236, '[极乐净土]重新修改了资料，请审核！', '1', 0, 68, '管理员您好，[极乐净土]重新上传了证书，请审核！<a class=''page-action'' data-id=''news_'' data-href=''【user/edit】?id=106''>点击此处直接查看</a>', '0', 0, 0, 0, 1473318602, 0, 0, 106, 0, 0, 'ed8cc984-9397-c938-5be3-5738e1319a07', '0'),
-(237, '[极乐净土]重新修改了资料，请审核！', '1', 0, 16, '管理员您好，[极乐净土]重新上传了证书，请审核！<a class=''page-action'' data-id=''news_'' data-href=''【user/edit】?id=106''>点击此处直接查看</a>', '0', 0, 0, 0, 1473318692, 0, 0, 106, 0, 0, 'a90f8249-8da2-110d-6016-8521009b858a', '0'),
-(238, '[极乐净土]重新修改了资料，请审核！', '1', 0, 68, '管理员您好，[极乐净土]重新上传了证书，请审核！<a class=''page-action'' data-id=''news_'' data-href=''【user/edit】?id=106''>点击此处直接查看</a>', '0', 0, 0, 0, 1473318692, 0, 0, 106, 0, 0, 'a90f8249-8da2-110d-6016-8521009b858a', '0'),
-(239, 'kelins34ss@163.com向您咨询', '1', 12, 0, '您好，您有一条新的服务咨询，编号为41，请到位置："会员后台 > 服务咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/reply.shtml?id=41'' target=''_blank''>或点击此处直接查看</a>', '0', 0, 0, 0, 1473385652, 0, 0, 82, 0, 0, 'd517ec12-e1a1-c134-effb-562c45ebd6fe', '0'),
-(240, 'kelins34ss@163.com向您咨询', '1', 17, 0, '您好，您有一条新的服务咨询，编号为42，请到位置："会员后台 > 服务咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/reply.shtml?id=42'' target=''_blank''>或点击此处直接查看</a>', '0', 0, 0, 0, 1473385653, 0, 0, 82, 0, 0, 'cb5d268d-251b-9fa9-f505-93c3560bf9f7', '0'),
-(241, 'kelins34ss@163.com向您咨询', '1', 25, 0, '您好，您有一条新的服务咨询，编号为43，请到位置："会员后台 > 服务咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/reply.shtml?id=43'' target=''_blank''>或点击此处直接查看</a>', '0', 0, 0, 0, 1473385653, 0, 0, 82, 0, 0, '1e44ae21-e95a-15f3-6d1d-8e83048591fc', '0'),
-(242, 'kelins34ss@163.com向您咨询', '1', 26, 0, '您好，您有一条新的服务咨询，编号为44，请到位置："会员后台 > 服务咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/reply.shtml?id=44'' target=''_blank''>或点击此处直接查看</a>', '0', 0, 0, 0, 1473385653, 0, 0, 82, 0, 0, '2a23c9aa-86a4-9ca8-7f29-77b1a9df483e', '0'),
-(243, '您的服务咨询已收到回复，编号为44', '1', 82, 0, '您好，您有一条服务咨询已收到回复，编号为44，请到位置："会员后台 > 我的咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/view.shtml?id=44'' target=''_blank''>点击此处直接查看</a>', '0', 0, 0, 0, 1473386392, 0, 0, 26, 0, 0, '72d6733e-4230-dd20-570a-89e105aa947e', '0'),
-(244, '您的服务咨询已收到回复，编号为44', '1', 82, 0, '您好，您有一条服务咨询已收到回复，编号为44，请到位置："会员后台 > 我的咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/view.shtml?id=44'' target=''_blank''>点击此处直接查看</a>', '0', 0, 0, 0, 1473386403, 0, 0, 26, 0, 0, 'a2fa9c49-ce0b-80ad-8fdf-cfaf021983df', '0'),
-(245, 'kelins34ss@163.com向您咨询', '1', 12, 0, '您好，您有一条新的服务咨询，编号为46，请到位置："会员后台 > 服务咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/reply.shtml?id=46'' target=''_blank''>或点击此处直接查看</a>', '0', 0, 0, 0, 1473401056, 0, 0, 82, 0, 0, '8f03c795-4282-35a8-946a-f70641c96b75', '0'),
-(246, 'kelins34ss@163.com向您咨询', '1', 17, 0, '您好，您有一条新的服务咨询，编号为47，请到位置："会员后台 > 服务咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/reply.shtml?id=47'' target=''_blank''>或点击此处直接查看</a>', '0', 0, 0, 0, 1473401057, 0, 0, 82, 0, 0, 'b94d5bbc-c75d-e035-4949-f5ec768f2a89', '0'),
-(247, 'kelins34ss@163.com向您追问咨询', '1', 17, 0, '您好，您有一条服务咨询追问信息，编号为47，请到位置："会员后台 > 服务咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/reply.shtml?id=47'' target=''_blank''>或点击此处直接查看</a>', '0', 0, 0, 0, 1473401850, 0, 0, 82, 0, 0, '8e3fa6e4-7451-9b53-09fc-ab6619b8fd48', '0'),
-(248, '您的服务咨询已收到回复，编号为44', '1', 82, 0, '您好，您有一条服务咨询已收到回复，编号为44，请到位置："会员后台 > 我的咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/view.shtml?id=44'' target=''_blank''>点击此处直接查看</a>', '0', 0, 0, 0, 1473402180, 0, 0, 26, 0, 0, '228dc549-57df-bbc9-d01d-38026d181b18', '0'),
-(249, 'kelins34ss@163.com向您追问咨询', '1', 26, 0, '您好，您有一条服务咨询追问信息，编号为44，请到位置："会员后台 > 服务咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/reply.shtml?id=44'' target=''_blank''>或点击此处直接查看</a>', '0', 0, 0, 0, 1473403211, 0, 0, 82, 0, 0, '06465a23-6a91-9236-08fc-6c5f51ede2ad', '0'),
-(250, '极乐净土向您追问咨询', '1', 104, 0, '您好，您有一条新的服务咨询，编号为32，请到位置："会员后台 > 服务咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/reply.shtml?id=32'' target=''_blank''>或点击此处直接查看</a>', '0', 0, 0, 0, 1473403247, 0, 0, 106, 0, 0, '8481eab2-3d54-86bb-159c-fbd4fc987056', '0'),
-(251, '极乐净土向您追问咨询', '1', 104, 0, '您好，您有一条新的服务咨询，编号为32，请到位置："会员后台 > 服务咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/reply.shtml?id=32'' target=''_blank''>或点击此处直接查看</a>', '0', 0, 0, 0, 1473403268, 0, 0, 106, 0, 0, '1777b326-ddda-2d3d-d0e0-467e42dd5e96', '0');
-INSERT INTO `zcq_mail` (`id`, `title`, `mail_status`, `receive_userid`, `receive_sysuserid`, `content`, `isdel`, `create_sysuserid`, `update_sysuserid`, `del_sysuserid`, `createtime`, `updatetime`, `deltime`, `create_userid`, `update_userid`, `del_userid`, `guid`, `isread`) VALUES
-(252, '极乐净土向您追问咨询', '1', 0, 0, '您好，您有一条新的服务咨询，编号为24，请到位置："会员后台 > 服务咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/reply.shtml?id=24'' target=''_blank''>或点击此处直接查看</a>', '0', 0, 0, 0, 1473403289, 0, 0, 106, 0, 0, 'aec07e92-2dc2-8855-cdd4-a4ced4d49a87', '0'),
-(253, 'kelins34ss@163.com向您追问咨询', '1', 26, 0, '您好，您有一条服务咨询追问信息，编号为44，请到位置："会员后台 > 服务咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/reply.shtml?id=44'' target=''_blank''>或点击此处直接查看</a>', '0', 0, 0, 0, 1473403371, 0, 0, 82, 0, 0, 'f6ea5e19-0b07-7708-5bbf-64c6e8a23dd2', '0'),
-(254, '您的追问服务咨询已收到回复，编号为44', '1', 82, 0, '您好，您有一条服务咨询已收到回复，编号为44，请到位置："会员后台 > 我的咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/view.shtml?id=44'' target=''_blank''>点击此处直接查看</a>', '0', 0, 0, 0, 1473407067, 0, 0, 26, 0, 0, 'a2a4135a-4b4a-85ae-f4b4-890f3afa7eab', '0'),
-(255, '您的追问服务咨询已收到回复，编号为44', '1', 82, 0, '您好，您有一条服务咨询已收到回复，编号为44，请到位置："会员后台 > 我的咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/view.shtml?id=44'' target=''_blank''>点击此处直接查看</a>', '0', 0, 0, 0, 1473407187, 0, 0, 26, 0, 0, '4de4cc5f-9fbb-7be8-1212-1c8244730f02', '0'),
-(256, '您的追问服务咨询已收到回复，编号为44', '1', 82, 0, '您好，您有一条服务咨询已收到回复，编号为44，请到位置："会员后台 > 我的咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/view.shtml?id=44'' target=''_blank''>点击此处直接查看</a>', '0', 0, 0, 0, 1473407251, 0, 0, 26, 0, 0, '26a780c8-8939-f2c5-e51d-592f3e8f1dfe', '0'),
-(257, '您的追问服务咨询已收到回复，编号为44', '1', 82, 0, '您好，您有一条服务咨询已收到回复，编号为44，请到位置："会员后台 > 我的咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/view.shtml?id=44'' target=''_blank''>点击此处直接查看</a>', '0', 0, 0, 0, 1473407259, 0, 0, 26, 0, 0, 'd1a33fbb-fdec-1f09-742d-6600b7a62d76', '0'),
-(258, '您的追问服务咨询已收到回复，编号为44', '1', 82, 0, '您好，您有一条服务咨询已收到回复，编号为44，请到位置："会员后台 > 我的咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/view.shtml?id=44'' target=''_blank''>点击此处直接查看</a>', '0', 0, 0, 0, 1473407297, 0, 0, 26, 0, 0, 'bf487706-d2a4-fdea-a8ba-009d45f7d7a8', '0'),
-(259, '您的追问服务咨询已收到回复，编号为44', '1', 82, 0, '您好，您有一条服务咨询已收到回复，编号为44，请到位置："会员后台 > 我的咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/view.shtml?id=44'' target=''_blank''>点击此处直接查看</a>', '0', 0, 0, 0, 1473408405, 0, 0, 26, 0, 0, '770b5738-d7c6-d220-33c4-e2a1f1237ab6', '0'),
-(260, 'kelins34ss@163.com向您追问咨询', '1', 26, 0, '您好，您有一条服务咨询追问信息，编号为44，请到位置："会员后台 > 服务咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/reply.shtml?id=44'' target=''_blank''>或点击此处直接查看</a>', '0', 0, 0, 0, 1473409255, 0, 0, 82, 0, 0, '2633df21-5e26-1978-120a-0fe4f4f5698c', '0'),
-(261, '有一条新的对外投资联系表需要审核，编号为17', '1', 0, 16, '管理员您好，您有一条新的对外投资联系表需要审核，编号为17，请到对外投资联系表管理栏目查看', '0', 0, 16, 0, 1473411167, 1473845689, 0, 82, 0, 0, '2962d700-0c90-2c3d-12cf-e6dbef94778c', '1'),
-(262, '有一条新的对外投资联系表需要审核，编号为17', '1', 0, 68, '管理员您好，您有一条新的对外投资联系表需要审核，编号为17，请到对外投资联系表管理栏目查看', '0', 0, 0, 0, 1473411167, 0, 0, 82, 0, 0, '2962d700-0c90-2c3d-12cf-e6dbef94778c', '0'),
-(263, '有一条新的对外投资联系表需要审核，编号为17', '1', 0, 70, '管理员您好，您有一条新的对外投资联系表需要审核，编号为17，请到对外投资联系表管理栏目查看', '0', 0, 0, 0, 1473411167, 0, 0, 82, 0, 0, '2962d700-0c90-2c3d-12cf-e6dbef94778c', '0'),
-(264, '有一条新的对外投资联系表需要审核，编号为17', '1', 0, 71, '管理员您好，您有一条新的对外投资联系表需要审核，编号为17，请到对外投资联系表管理栏目查看', '0', 0, 0, 0, 1473411167, 0, 0, 82, 0, 0, '2962d700-0c90-2c3d-12cf-e6dbef94778c', '0'),
-(265, '[极乐净土]重新修改了资料，请审核！', '1', 0, 16, '管理员您好，[极乐净土]重新上传了证书，请审核！<a class=''page-action'' data-id=''news_'' data-href=''【user/edit】?id=106''>点击此处直接查看</a>', '0', 0, 0, 0, 1473411418, 0, 0, 106, 0, 0, 'eaa22315-aa7d-62aa-d5bf-14b71252e838', '0'),
-(266, '[极乐净土]重新修改了资料，请审核！', '1', 0, 68, '管理员您好，[极乐净土]重新上传了证书，请审核！<a class=''page-action'' data-id=''news_'' data-href=''【user/edit】?id=106''>点击此处直接查看</a>', '0', 0, 0, 0, 1473411418, 0, 0, 106, 0, 0, 'eaa22315-aa7d-62aa-d5bf-14b71252e838', '0'),
-(267, '[极乐净土]重新修改了资料，请审核！', '1', 0, 70, '管理员您好，[极乐净土]重新上传了证书，请审核！<a class=''page-action'' data-id=''news_'' data-href=''【user/edit】?id=106''>点击此处直接查看</a>', '0', 0, 0, 0, 1473411418, 0, 0, 106, 0, 0, 'eaa22315-aa7d-62aa-d5bf-14b71252e838', '0'),
-(268, '[极乐净土]重新修改了资料，请审核！', '1', 0, 71, '管理员您好，[极乐净土]重新上传了证书，请审核！<a class=''page-action'' data-id=''news_'' data-href=''【user/edit】?id=106''>点击此处直接查看</a>', '0', 0, 0, 0, 1473411418, 0, 0, 106, 0, 0, 'eaa22315-aa7d-62aa-d5bf-14b71252e838', '0'),
-(269, '[kelins34ss@163.com]重新修改了资料，请审核！', '1', 0, 16, '管理员您好，[kelins34ss@163.com]重新上传了证书，请审核！<a class=''page-action'' data-id=''news_'' data-href=''【user/edit】?id=86''>点击此处直接查看</a>', '0', 0, 0, 0, 1473469556, 0, 0, 86, 0, 0, '9a6536ab-f414-7d5e-f13d-387c36ab03ba', '0'),
-(270, '[kelins34ss@163.com]重新修改了资料，请审核！', '1', 0, 68, '管理员您好，[kelins34ss@163.com]重新上传了证书，请审核！<a class=''page-action'' data-id=''news_'' data-href=''【user/edit】?id=86''>点击此处直接查看</a>', '0', 0, 0, 0, 1473469556, 0, 0, 86, 0, 0, '9a6536ab-f414-7d5e-f13d-387c36ab03ba', '0'),
-(271, '[kelins34ss@163.com]重新修改了资料，请审核！', '1', 0, 70, '管理员您好，[kelins34ss@163.com]重新上传了证书，请审核！<a class=''page-action'' data-id=''news_'' data-href=''【user/edit】?id=86''>点击此处直接查看</a>', '0', 0, 0, 0, 1473469556, 0, 0, 86, 0, 0, '9a6536ab-f414-7d5e-f13d-387c36ab03ba', '0'),
-(272, '[kelins34ss@163.com]重新修改了资料，请审核！', '1', 0, 71, '管理员您好，[kelins34ss@163.com]重新上传了证书，请审核！<a class=''page-action'' data-id=''news_'' data-href=''【user/edit】?id=86''>点击此处直接查看</a>', '0', 0, 0, 0, 1473469556, 0, 0, 86, 0, 0, '9a6536ab-f414-7d5e-f13d-387c36ab03ba', '0'),
-(273, '申报编号：8,审核已通过。', '1', 99, 0, '您好，申报编号：8审核已通过,位置：资金申请>我的申请。', '0', 16, 0, 0, 1473469722, 0, 0, 0, 0, 0, '6f2860c8-0c25-e802-635c-b1fe74d6d8c9', '0'),
-(274, '申报编号：7,审核已通过。', '1', 99, 0, '您好，申报编号：7审核已通过,位置：资金申请>我的申请。', '0', 16, 0, 0, 1473469733, 0, 0, 0, 0, 0, 'df3c68fe-da46-de28-567f-759a55b4d6aa', '0'),
-(275, '申报编号：16,审核不通过，请根据审核意见修改。', '1', 86, 0, '您好，请按审核意见修改：不通过,位置：资金申请>我的申请。', '0', 16, 0, 0, 1473469747, 0, 0, 0, 0, 0, 'eabb0bf3-1f4f-e691-de9e-78727637e34b', '0'),
-(276, '申报编号：7,审核不通过，请根据审核意见修改。', '1', 99, 0, '您好，请按审核意见修改：asdfgdfg,位置：资金申请>我的申请。', '0', 16, 0, 0, 1473469755, 0, 0, 0, 0, 0, 'fe66fa39-88b2-9f20-115e-1bc09ba55f6e', '0'),
-(277, '申报编号：16,审核不通过，请根据审核意见修改。', '1', 86, 0, '您好，请按审核意见修改：adsfsdghfgh,位置：资金申请>我的申请。', '0', 16, 0, 0, 1473469825, 0, 0, 0, 0, 0, '4f3e882f-7395-defa-0b5a-e98238d9040a', '0'),
-(278, '申报编号:16需要审核！', '1', 0, 16, '您好，管理员，kelins34ss@163.com提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1473469919, 0, 0, 86, 0, 0, '837b975f-3a91-7075-cb1d-c88d98a9cc34', '0'),
-(279, '申报编号:16需要审核！', '1', 0, 68, '您好，管理员，kelins34ss@163.com提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1473469919, 0, 0, 86, 0, 0, '837b975f-3a91-7075-cb1d-c88d98a9cc34', '0'),
-(280, '申报编号:16需要审核！', '1', 0, 70, '您好，管理员，kelins34ss@163.com提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1473469919, 0, 0, 86, 0, 0, '837b975f-3a91-7075-cb1d-c88d98a9cc34', '0'),
-(281, '申报编号:16需要审核！', '1', 0, 71, '您好，管理员，kelins34ss@163.com提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1473469919, 0, 0, 86, 0, 0, '837b975f-3a91-7075-cb1d-c88d98a9cc34', '0'),
-(282, '申报编号：16,审核不通过，请根据审核意见修改。', '1', 86, 0, '您好，请按审核意见修改：不通过,位置：资金申请>我的申请。', '0', 16, 0, 0, 1473469932, 0, 0, 0, 0, 0, '74bb9c01-2e2c-c172-6ff2-0706dc111c00', '0'),
-(283, '测试是不是', '1', 97, 0, '好的', '0', 0, 0, 0, 1473470102, 0, 0, 86, 0, 0, 'f28329a7-d268-c919-dd79-15775eb08a83', '0'),
-(284, '测试是不是', '1', 14, 0, '好的', '0', 0, 0, 0, 1473470102, 0, 0, 86, 0, 0, 'f28329a7-d268-c919-dd79-15775eb08a83', '0'),
-(285, '测试是不是', '1', 20, 0, '好的', '0', 0, 0, 0, 1473470102, 0, 0, 86, 0, 0, 'f28329a7-d268-c919-dd79-15775eb08a83', '0'),
-(286, '测试是不是', '1', 102, 0, '好的', '0', 0, 0, 0, 1473470102, 0, 0, 86, 0, 0, 'f28329a7-d268-c919-dd79-15775eb08a83', '0'),
-(287, '测试是不是', '1', 93, 0, '好的', '0', 0, 0, 0, 1473470102, 0, 0, 86, 0, 0, 'f28329a7-d268-c919-dd79-15775eb08a83', '0'),
-(288, '测试是不是', '1', 108, 0, '好的', '0', 0, 0, 0, 1473470102, 0, 0, 86, 0, 0, 'f28329a7-d268-c919-dd79-15775eb08a83', '0'),
-(289, '测试是不是', '1', 96, 0, '好的', '0', 0, 0, 0, 1473470102, 0, 0, 86, 0, 0, 'f28329a7-d268-c919-dd79-15775eb08a83', '0'),
-(290, '测试是不是', '1', 100, 0, '好的', '0', 0, 0, 0, 1473470102, 0, 0, 86, 0, 0, 'f28329a7-d268-c919-dd79-15775eb08a83', '0'),
-(291, '测试是不是', '1', 99, 0, '好的', '0', 0, 0, 0, 1473470102, 0, 0, 86, 0, 0, 'f28329a7-d268-c919-dd79-15775eb08a83', '0'),
-(292, '测试是不是', '1', 98, 0, '好的', '0', 0, 0, 0, 1473470102, 0, 0, 86, 0, 0, 'f28329a7-d268-c919-dd79-15775eb08a83', '0'),
-(293, '测试是不是', '1', 0, 16, '好的', '0', 0, 0, 0, 1473470102, 0, 0, 86, 0, 0, 'f28329a7-d268-c919-dd79-15775eb08a83', '0'),
-(294, '测试是不是', '1', 0, 68, '好的', '0', 0, 0, 0, 1473470102, 0, 0, 86, 0, 0, 'f28329a7-d268-c919-dd79-15775eb08a83', '0'),
-(295, '测试是不是', '1', 0, 70, '好的', '0', 0, 0, 0, 1473470103, 0, 0, 86, 0, 0, 'f28329a7-d268-c919-dd79-15775eb08a83', '0'),
-(296, '测试', '1', 102, 0, '是吗', '0', 0, 0, 0, 1473470133, 0, 0, 86, 0, 0, 'fd64b7ab-bd0c-4c27-9dc2-5f017d613b1b', '0'),
-(297, '测试', '1', 99, 0, '是吗', '0', 0, 0, 0, 1473470133, 0, 0, 86, 0, 0, 'fd64b7ab-bd0c-4c27-9dc2-5f017d613b1b', '0'),
-(298, '测试', '1', 98, 0, '是吗', '0', 0, 0, 0, 1473470133, 0, 0, 86, 0, 0, 'fd64b7ab-bd0c-4c27-9dc2-5f017d613b1b', '0'),
-(299, '测试机构', '1', 26, 0, '机构测试', '0', 0, 0, 0, 1473470153, 0, 0, 86, 0, 0, '0bdf8718-40b7-f38b-35ec-29b7e24e64f2', '0'),
-(300, '测试机构', '1', 107, 0, '机构测试', '0', 0, 0, 0, 1473470153, 0, 0, 86, 0, 0, '0bdf8718-40b7-f38b-35ec-29b7e24e64f2', '0'),
-(301, 'kelins34ss@163.com向您咨询', '1', 107, 0, '您好，您有一条新的服务咨询，编号为60，请到位置："会员后台 > 服务咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/reply.shtml?id=60'' target=''_blank''>或点击此处直接查看</a>', '0', 0, 0, 0, 1473470452, 0, 0, 86, 0, 0, '8153dc1f-591a-d28c-9617-0761b66981bd', '0'),
-(302, 'kelins34ss@163.com向您咨询', '1', 103, 0, '您好，您有一条新的服务咨询，编号为61，请到位置："会员后台 > 服务咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/reply.shtml?id=61'' target=''_blank''>或点击此处直接查看</a>', '0', 0, 0, 0, 1473470452, 0, 0, 86, 0, 0, '65c62b87-ac94-4354-a864-955bc84b13db', '0'),
-(303, 'kelins34ss@163.com向您咨询', '1', 87, 0, '您好，您有一条新的服务咨询，编号为62，请到位置："会员后台 > 服务咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/reply.shtml?id=62'' target=''_blank''>或点击此处直接查看</a>', '0', 0, 0, 0, 1473470452, 0, 0, 86, 0, 0, 'da4d0afe-c6db-4bcf-7d9f-b079791116b9', '0'),
-(304, 'kelins34ss@163.com向您咨询', '1', 26, 0, '您好，您有一条新的服务咨询，编号为63，请到位置："会员后台 > 服务咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/reply.shtml?id=63'' target=''_blank''>或点击此处直接查看</a>', '0', 0, 0, 0, 1473470452, 0, 0, 86, 0, 0, '3ac458c6-ff0e-bc95-ee98-a22b96761c8a', '0'),
-(305, 'kelins34ss@163.com向您咨询', '1', 107, 0, '您好，您有一条新的服务咨询，编号为69，请到位置："会员后台 > 服务咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/reply.shtml?id=69'' target=''_blank''>或点击此处直接查看</a>', '0', 0, 0, 0, 1473470551, 0, 0, 86, 0, 0, '62cdcede-6129-0190-ab50-03dda892db3c', '0'),
-(306, 'kelins34ss@163.com向您咨询', '1', 103, 0, '您好，您有一条新的服务咨询，编号为70，请到位置："会员后台 > 服务咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/reply.shtml?id=70'' target=''_blank''>或点击此处直接查看</a>', '0', 0, 0, 0, 1473470551, 0, 0, 86, 0, 0, '17cddd21-5a33-2496-5531-38da36dd71e6', '0'),
-(307, 'kelins34ss@163.com向您咨询', '1', 87, 0, '您好，您有一条新的服务咨询，编号为71，请到位置："会员后台 > 服务咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/reply.shtml?id=71'' target=''_blank''>或点击此处直接查看</a>', '0', 0, 0, 0, 1473470551, 0, 0, 86, 0, 0, '923b33a4-7868-1049-6521-5c5b173dbdaa', '0'),
-(308, 'kelins34ss@163.com向您咨询', '1', 26, 0, '您好，您有一条新的服务咨询，编号为72，请到位置："会员后台 > 服务咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/reply.shtml?id=72'' target=''_blank''>或点击此处直接查看</a>', '0', 0, 0, 0, 1473470685, 0, 0, 86, 0, 0, '0ac4ea5f-2506-53ca-13de-c73800a7c95b', '0'),
-(309, '超人用户向您追问咨询', '1', 0, 0, '您好，您有一条服务咨询追问信息，编号为23，请到位置："会员后台 > 服务咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/reply.shtml?id=23'' target=''_blank''>或点击此处直接查看</a>', '0', 0, 0, 0, 1473471251, 0, 0, 93, 0, 0, '1e8c5148-fc32-adb9-caef-8a63b4606c77', '0'),
-(310, '超人用户向您追问咨询', '1', 101, 0, '您好，您有一条服务咨询追问信息，编号为19，请到位置："会员后台 > 服务咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/reply.shtml?id=19'' target=''_blank''>或点击此处直接查看</a>', '0', 0, 0, 0, 1473471278, 0, 0, 93, 0, 0, '46e6f81f-2de4-8a6e-1405-2c65f0bba43f', '0'),
-(311, '申报编号：15,审核不通过，请根据审核意见修改。', '1', 93, 0, '您好，请按审核意见修改：十多个地方官,位置：资金申请>我的申请。', '0', 16, 0, 0, 1473471362, 0, 0, 0, 0, 0, '8005ffa5-176a-83b2-f066-74c46ed1eec4', '0'),
-(312, '申报编号:15需要审核！', '1', 0, 16, '您好，管理员，超人用户提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1473471410, 0, 0, 93, 0, 0, 'ede73757-7490-e234-3626-99ed55da9101', '0'),
-(313, '申报编号:15需要审核！', '1', 0, 68, '您好，管理员，超人用户提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1473471410, 0, 0, 93, 0, 0, 'ede73757-7490-e234-3626-99ed55da9101', '0'),
-(314, '申报编号:15需要审核！', '1', 0, 70, '您好，管理员，超人用户提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1473471410, 0, 0, 93, 0, 0, 'ede73757-7490-e234-3626-99ed55da9101', '0'),
-(315, '申报编号:15需要审核！', '1', 0, 71, '您好，管理员，超人用户提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1473471410, 0, 0, 93, 0, 0, 'ede73757-7490-e234-3626-99ed55da9101', '0'),
-(316, '申报编号：15,审核不通过，请根据审核意见修改。', '1', 93, 0, '您好，请按审核意见修改：电饭锅电饭锅,位置：资金申请>我的申请。', '0', 16, 0, 0, 1473471881, 1473473484, 0, 0, 0, 0, '97108210-66e6-e8c1-108e-903ed2326e6e', '1'),
-(317, '申报编号:15需要审核！', '1', 0, 16, '您好，管理员，超人用户提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1473471915, 0, 0, 93, 0, 0, 'd87b4c60-e371-12cd-0180-789858a0a1a3', '0'),
-(318, '申报编号:15需要审核！', '1', 0, 68, '您好，管理员，超人用户提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1473471915, 0, 0, 93, 0, 0, 'd87b4c60-e371-12cd-0180-789858a0a1a3', '0'),
-(319, '申报编号:15需要审核！', '1', 0, 70, '您好，管理员，超人用户提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1473471915, 0, 0, 93, 0, 0, 'd87b4c60-e371-12cd-0180-789858a0a1a3', '0'),
-(320, '申报编号:15需要审核！', '1', 0, 71, '您好，管理员，超人用户提交了申报资料，请查阅后审核。', '0', 0, 0, 0, 1473471915, 0, 0, 93, 0, 0, 'd87b4c60-e371-12cd-0180-789858a0a1a3', '0'),
-(321, '数据需要核对，编号为303', '1', 93, 0, '您好，您有一条数据需要核对，编号为{303}，请到位置："会员后台 > 资料核对" 栏目，<a href=''【adminx/zcq_datamanage/view】?id=303''>查看</a>。', '0', 16, 0, 0, 1473474261, 0, 0, 0, 0, 0, '8b6eed88-fa91-a77c-ed28-1b8ca9d01997', '0'),
-(322, '数据需要核对，编号为304', '1', 93, 0, '您好，您有一条数据需要核对，编号为{304}，请到位置："会员后台 > 资料核对" 栏目，<a href=''【adminx/zcq_datamanage/view】?id=304''>查看</a>。', '0', 16, 0, 0, 1473474262, 1473474280, 0, 0, 0, 0, '4eb77888-5f50-7e2b-0f36-08be68b351c8', '1'),
-(323, '超人用户向您追问咨询', '1', 101, 0, '您好，您有一条服务咨询追问信息，编号为19，请到位置："会员后台 > 服务咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/reply.shtml?id=19'' target=''_blank''>或点击此处直接查看</a>', '0', 0, 0, 0, 1473733632, 1473733744, 0, 93, 0, 0, '1631b2be-3885-680c-f152-e07c33e7d384', '1'),
-(324, '您的追问服务咨询已收到回复，编号为19', '1', 93, 0, '您好，您有一条服务咨询已收到回复，编号为19，请到位置："会员后台 > 我的咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/view.shtml?id=19'' target=''_blank''>点击此处直接查看</a>', '0', 0, 0, 0, 1473733804, 0, 0, 101, 0, 0, '892e05cd-336c-8efd-7290-9e239ace5bc9', '0'),
-(325, '您的追问服务咨询已收到回复，编号为19', '1', 93, 0, '您好，您有一条服务咨询已收到回复，编号为19，请到位置："会员后台 > 我的咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/view.shtml?id=19'' target=''_blank''>点击此处直接查看</a>', '0', 0, 0, 0, 1473733829, 0, 0, 101, 0, 0, '2e7f0884-3d49-8fd5-858e-7abd553f5164', '0'),
-(326, '您的服务咨询已收到回复，编号为19', '1', 93, 0, '您好，您有一条服务咨询已收到回复，编号为19，请到位置："会员后台 > 我的咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/view.shtml?id=19'' target=''_blank''>点击此处直接查看</a>', '0', 0, 0, 0, 1473733907, 0, 0, 101, 0, 0, 'c7912b63-67f7-73e5-9204-cff7bd709ce8', '0'),
-(327, '您的追问服务咨询已收到回复，编号为19', '1', 93, 0, '您好，您有一条服务咨询已收到回复，编号为19，请到位置："会员后台 > 我的咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/view.shtml?id=19'' target=''_blank''>点击此处直接查看</a>', '0', 0, 0, 0, 1473734338, 1473735230, 0, 101, 0, 0, 'cb9e08f4-e37c-5cf8-3259-eb4f84cd2e97', '1'),
-(328, '超人用户向您追问咨询', '1', 101, 0, '您好，您有一条服务咨询追问信息，编号为17，请到位置："会员后台 > 服务咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/reply.shtml?id=17'' target=''_blank''>或点击此处直接查看</a>', '0', 0, 0, 0, 1473736343, 0, 0, 93, 0, 0, '71ff325f-a522-8bec-aa09-31f64dc30c06', '0'),
-(329, '超人用户向您追问咨询', '1', 101, 0, '您好，您有一条服务咨询追问信息，编号为17，请到位置："会员后台 > 服务咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/reply.shtml?id=17'' target=''_blank''>或点击此处直接查看</a>', '0', 0, 0, 0, 1473737067, 0, 0, 93, 0, 0, 'f00c7c48-c8b5-1c77-4f43-4f463f23ec09', '0'),
-(330, '您的追问服务咨询已收到回复，编号为17', '1', 93, 0, '您好，您有一条服务咨询已收到回复，编号为17，请到位置："会员后台 > 我的咨询" 栏目，查看。<a href=''【adminx/zcq_fuwu_zixun/view】'' target=''_blank''>点击此处直接查看</a>', '0', 16, 0, 0, 1473740726, 0, 0, 0, 0, 0, '0308b6b1-20c2-adce-9475-cc1a3218cd6f', '0'),
-(331, '您的追问服务咨询已收到回复，编号为17', '1', 93, 0, '您好，您有一条服务咨询已收到回复，编号为17，请到位置："会员后台 > 我的咨询" 栏目，查看。<a href=''【adminx/zcq_fuwu_zixun/view】'' target=''_blank''>点击此处直接查看</a>', '0', 16, 0, 0, 1473740750, 0, 0, 0, 0, 0, '817924f7-6c3f-24e1-8a35-043088684ee1', '0'),
-(332, '您的追问服务咨询已收到回复，编号为17', '1', 93, 0, '您好，您有一条服务咨询已收到回复，编号为17，请到位置："会员后台 > 我的咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/view.shtml?id=17'' target=''_blank''>点击此处直接查看</a>', '0', 0, 0, 0, 1473740863, 0, 0, 101, 0, 0, '3b139c51-3aa5-1512-fbd7-4ee7f2ba990e', '0'),
-(333, '您的服务咨询已收到回复，编号为17', '1', 93, 0, '您好，您有一条服务咨询已收到回复，编号为17，请到位置："会员后台 > 我的咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/view.shtml?id=17'' target=''_blank''>点击此处直接查看</a>', '0', 0, 0, 0, 1473740875, 0, 0, 101, 0, 0, 'f0edde36-2c3b-ba74-9373-4a7fc355df7d', '0'),
-(334, '超人用户向您追问咨询', '1', 101, 0, '您好，您有一条服务咨询追问信息，编号为17，请到位置："会员后台 > 服务咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/reply.shtml?id=17'' target=''_blank''>或点击此处直接查看</a>', '0', 0, 0, 0, 1473740903, 1473747653, 0, 93, 0, 0, '2c17ab0a-05bf-1494-40e9-bc36cbc54ca5', '1'),
-(335, '您的追问服务咨询已收到回复，编号为17', '1', 93, 0, '您好，您有一条服务咨询已收到回复，编号为17，请到位置："会员后台 > 我的咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/view.shtml?id=17'' target=''_blank''>点击此处直接查看</a>', '0', 0, 0, 0, 1473740915, 1473741041, 0, 101, 0, 0, '95a7bd77-75a5-4f85-dcbf-7343337607d5', '1'),
-(336, '您的追问服务咨询已收到回复，编号为17', '1', 93, 0, '您好，您有一条服务咨询已收到回复，编号为17，请到位置："会员后台 > 我的咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/view.shtml?id=17'' target=''_blank''>点击此处直接查看</a>', '0', 0, 0, 0, 1473740923, 1473740950, 0, 101, 0, 0, 'f2bdd01d-a43e-981c-d670-3c27c9a29bad', '1'),
-(337, '您的追问服务咨询已收到回复，编号为17', '1', 93, 0, '您好，您有一条服务咨询已收到回复，编号为17，请到位置："会员后台 > 我的咨询" 栏目，查看。<a href=''【adminx/zcq_fuwu_zixun/view】'' target=''_blank''>点击此处直接查看</a>', '0', 16, 0, 0, 1473741012, 1473741027, 0, 0, 0, 0, 'dc3d06d6-f3e2-2dea-41d6-dc02d3abed0e', '1'),
-(338, '您的追问服务咨询已收到回复，编号为17', '1', 93, 0, '您好，您有一条服务咨询已收到回复，编号为17，请到位置："会员后台 > 我的咨询" 栏目，查看。<a href=''【adminx/zcq_fuwu_zixun/view】?id=17'' target=''_blank''>点击此处直接查看</a>', '0', 16, 0, 0, 1473741240, 0, 0, 0, 0, 0, 'e5fc1012-c54d-ef59-994c-3a2192a115ed', '0'),
-(339, '您的追问服务咨询已收到回复，编号为17', '1', 93, 0, '您好，您有一条服务咨询已收到回复，编号为17，请到位置："会员后台 > 我的咨询" 栏目，查看。<a href=''【adminx/zcq_fuwu_zixun/view】?id=17'' target=''_blank''>点击此处直接查看</a>', '0', 16, 0, 0, 1473741290, 0, 0, 0, 0, 0, '5053f052-eff3-4918-cab3-e7ba3d2c130f', '0'),
-(340, '您的追问服务咨询已收到回复，编号为17', '1', 93, 0, '您好，您有一条服务咨询已收到回复，编号为17，请到位置："会员后台 > 我的咨询" 栏目，查看。<a href=''【adminx/zcq_fuwu_zixun/view】?id=17'' target=''_blank''>点击此处直接查看</a>', '0', 16, 0, 0, 1473741318, 0, 0, 0, 0, 0, '1d1dc5e9-73f1-f1cf-dac2-9cf41ce14b23', '0'),
-(341, '您的追问服务咨询已收到回复，编号为17', '1', 93, 0, '您好，您有一条服务咨询已收到回复，编号为17，请到位置："会员后台 > 我的咨询" 栏目，查看。<a href=''【adminx/zcq_fuwu_zixun/view】?id=17'' target=''_blank''>点击此处直接查看</a>', '0', 16, 0, 0, 1473741359, 0, 0, 0, 0, 0, '7abab795-38d9-7ffa-fde0-85b9d171de0c', '0'),
-(342, '您的追问服务咨询已收到回复，编号为17', '1', 93, 0, '您好，您有一条服务咨询已收到回复，编号为17，请到位置："会员后台 > 我的咨询" 栏目，查看。<a href=''【adminx/zcq_fuwu_zixun/view】?id=17'' target=''_blank''>点击此处直接查看</a>', '0', 16, 0, 0, 1473745267, 0, 0, 0, 0, 0, '447e4a54-94de-0ecc-d054-7ebba8e9746a', '0'),
-(343, '您的追问服务咨询已收到回复，编号为17', '1', 93, 0, '您好，您有一条服务咨询已收到回复，编号为17，请到位置："会员后台 > 我的咨询" 栏目，查看。<a href=''【adminx/zcq_fuwu_zixun/view】?id=17'' target=''_blank''>点击此处直接查看</a>', '0', 16, 0, 0, 1473745306, 0, 0, 0, 0, 0, 'd9e5a50c-e763-3ec3-d07b-c2c5f3d9cd6b', '0'),
-(344, '您的追问服务咨询已收到回复，编号为17', '1', 93, 0, '您好，您有一条服务咨询已收到回复，编号为17，请到位置："会员后台 > 我的咨询" 栏目，查看。<a href=''【adminx/zcq_fuwu_zixun/view】?id=17'' target=''_blank''>点击此处直接查看</a>', '0', 16, 0, 0, 1473745319, 0, 0, 0, 0, 0, 'bd47d846-a4b8-cf4f-c642-0d7d36218949', '0'),
-(345, '您的追问服务咨询已收到回复，编号为17', '1', 93, 0, '您好，您有一条服务咨询已收到回复，编号为17，请到位置："会员后台 > 我的咨询" 栏目，查看。<a href=''【adminx/zcq_fuwu_zixun/view】?id=17'' target=''_blank''>点击此处直接查看</a>', '0', 16, 0, 0, 1473745327, 0, 0, 0, 0, 0, '27e5963d-e793-af49-38b9-c7ceb5a373d6', '0'),
-(346, '您的追问服务咨询已收到回复，编号为17', '1', 93, 0, '您好，您有一条服务咨询已收到回复，编号为17，请到位置："会员后台 > 我的咨询" 栏目，查看。<a href=''【adminx/zcq_fuwu_zixun/view】?id=17'' target=''_blank''>点击此处直接查看</a>', '0', 16, 0, 0, 1473745434, 0, 0, 0, 0, 0, '3d6e3255-bf04-e9f5-a4bd-13282fa0d479', '0'),
-(347, '超人用户向您追问咨询', '1', 0, 0, '您好，您有一条服务咨询追问信息，编号为79，请到位置："会员后台 > 服务咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/reply.shtml?id=79'' target=''_blank''>或点击此处直接查看</a>', '0', 0, 0, 0, 1473745683, 0, 0, 93, 0, 0, 'a4431a91-92f5-e0a2-c05b-d30492ab1abb', '0'),
-(348, '您的追问服务咨询已收到回复，编号为79', '1', 93, 0, '您好，您有一条服务咨询已收到回复，编号为79，请到位置："会员后台 > 我的咨询" 栏目，查看。<a href=''【adminx/zcq_fuwu_zixun/view】?id=79'' target=''_blank''>点击此处直接查看</a>', '0', 16, 0, 0, 1473746395, 0, 0, 0, 0, 0, '2a0be5a6-d323-500d-9c05-53319cf4a8cf', '0'),
-(349, '您的追问服务咨询已收到回复，编号为79', '1', 93, 0, '您好，您有一条服务咨询已收到回复，编号为79，请到位置："会员后台 > 我的咨询" 栏目，查看。<a href=''【adminx/zcq_fuwu_zixun/view】?id=79'' target=''_blank''>点击此处直接查看</a>', '0', 16, 0, 0, 1473746828, 0, 0, 0, 0, 0, '0c7c7dd0-8123-ccd2-fe02-b0c17fbdf0c4', '0'),
-(350, '您的追问服务咨询已收到回复，编号为79', '1', 93, 0, '您好，您有一条服务咨询已收到回复，编号为79，请到位置："会员后台 > 我的咨询" 栏目，查看。<a href=''【adminx/zcq_fuwu_zixun/view】?id=79'' target=''_blank''>点击此处直接查看</a>', '0', 16, 0, 0, 1473747084, 0, 0, 0, 0, 0, '9a1d99d5-14e2-2a5f-ae56-024ab95de1ca', '0'),
-(351, '您的追问服务咨询已收到回复，编号为79', '1', 93, 0, '您好，您有一条服务咨询已收到回复，编号为79，请到位置："会员后台 > 我的咨询" 栏目，查看。<a href=''【adminx/zcq_fuwu_zixun/view】?id=79'' target=''_blank''>点击此处直接查看</a>', '0', 16, 0, 0, 1473747105, 0, 0, 0, 0, 0, 'ba44e56d-0c7d-2059-8faa-bfce8dc16807', '0'),
-(352, '超人用户向您追问咨询', '1', 0, 0, '您好，您有一条服务咨询追问信息，编号为79，请到位置："会员后台 > 服务咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/reply.shtml?id=79'' target=''_blank''>或点击此处直接查看</a>', '0', 0, 0, 0, 1473747441, 0, 0, 93, 0, 0, 'f7d46569-5457-6227-3516-2c8571016e08', '0'),
-(353, '您的追问服务咨询已收到回复，编号为19', '1', 93, 0, '您好，您有一条服务咨询已收到回复，编号为19，请到位置："会员后台 > 我的咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/view.shtml?id=19'' target=''_blank''>点击此处直接查看</a>', '0', 0, 0, 0, 1473747880, 0, 0, 101, 0, 0, '49a44596-7111-bd25-28b5-b7bd5f168973', '0'),
-(354, '您的追问服务咨询已收到回复，编号为79', '1', 93, 0, '您好，您有一条服务咨询已收到回复，编号为79，请到位置："会员后台 > 我的咨询" 栏目，查看。<a href=''【adminx/zcq_fuwu_zixun/view】?id=79'' target=''_blank''>点击此处直接查看</a>', '0', 16, 0, 0, 1473748070, 0, 0, 0, 0, 0, 'd589217b-9848-e3fa-c118-481bb9296718', '0'),
-(355, '您的追问服务咨询已收到回复，编号为19', '1', 93, 0, '您好，您有一条服务咨询已收到回复，编号为19，请到位置："会员后台 > 我的咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/view.shtml?id=19'' target=''_blank''>点击此处直接查看</a>', '0', 0, 0, 0, 1473748268, 0, 0, 101, 0, 0, 'e74287f6-0b65-7c2c-ac1e-391d454cb4fa', '0'),
-(356, '您的追问服务咨询已收到回复，编号为19', '1', 93, 0, '您好，您有一条服务咨询已收到回复，编号为19，请到位置："会员后台 > 我的咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/view.shtml?id=19'' target=''_blank''>点击此处直接查看</a>', '0', 0, 0, 0, 1473748293, 0, 0, 101, 0, 0, '0b23f632-c254-17fe-51d2-6afd782244b4', '0'),
-(357, '您的追问服务咨询已收到回复，编号为19', '1', 93, 0, '您好，您有一条服务咨询已收到回复，编号为19，请到位置："会员后台 > 我的咨询" 栏目，查看。<a href=''/index.php/adminx/zcq_fuwu_zixun/view.shtml?id=19'' target=''_blank''>点击此处直接查看</a>', '0', 0, 0, 0, 1473748380, 0, 0, 101, 0, 0, '474270f2-d7fa-bb32-670d-37f8d649cb44', '0'),
-(358, '有一条新的对外投资联系表需要审核，编号为', '1', 0, 16, '管理员您好，您有一条新的对外投资联系表需要审核，编号为，请到对外投资联系表管理栏目查看', '0', 0, 16, 0, 1473845771, 1473845811, 0, 93, 0, 0, 'ba389f8c-2d7c-910a-33fc-ed060f80534b', '1'),
-(359, '有一条新的对外投资联系表需要审核，编号为', '1', 0, 68, '管理员您好，您有一条新的对外投资联系表需要审核，编号为，请到对外投资联系表管理栏目查看', '0', 0, 0, 0, 1473845772, 0, 0, 93, 0, 0, 'ba389f8c-2d7c-910a-33fc-ed060f80534b', '0'),
-(360, '有一条新的对外投资联系表需要审核，编号为', '1', 0, 70, '管理员您好，您有一条新的对外投资联系表需要审核，编号为，请到对外投资联系表管理栏目查看', '0', 0, 0, 0, 1473845772, 0, 0, 93, 0, 0, 'ba389f8c-2d7c-910a-33fc-ed060f80534b', '0'),
-(361, '有一条新的对外投资联系表需要审核，编号为', '1', 0, 71, '管理员您好，您有一条新的对外投资联系表需要审核，编号为，请到对外投资联系表管理栏目查看', '0', 0, 0, 0, 1473845772, 0, 0, 93, 0, 0, 'ba389f8c-2d7c-910a-33fc-ed060f80534b', '0'),
-(362, '有一条新的对外投资联系表需要审核，编号为20', '1', 0, 16, '管理员您好，您有一条新的对外投资联系表需要审核，编号为20，请到对外投资联系表管理栏目查看', '0', 0, 0, 0, 1473845912, 0, 0, 93, 0, 0, '8987c099-f01f-87c8-d858-f1eb34a99b71', '0'),
-(363, '有一条新的对外投资联系表需要审核，编号为20', '1', 0, 68, '管理员您好，您有一条新的对外投资联系表需要审核，编号为20，请到对外投资联系表管理栏目查看', '0', 0, 0, 0, 1473845912, 0, 0, 93, 0, 0, '8987c099-f01f-87c8-d858-f1eb34a99b71', '0'),
-(364, '有一条新的对外投资联系表需要审核，编号为20', '1', 0, 70, '管理员您好，您有一条新的对外投资联系表需要审核，编号为20，请到对外投资联系表管理栏目查看', '0', 0, 0, 0, 1473845912, 0, 0, 93, 0, 0, '8987c099-f01f-87c8-d858-f1eb34a99b71', '0'),
-(365, '有一条新的对外投资联系表需要审核，编号为20', '1', 0, 71, '管理员您好，您有一条新的对外投资联系表需要审核，编号为20，请到对外投资联系表管理栏目查看', '0', 0, 0, 0, 1473845913, 0, 0, 93, 0, 0, '8987c099-f01f-87c8-d858-f1eb34a99b71', '0');
-
--- --------------------------------------------------------
-
---
--- 表的结构 `zcq_pro_fujian`
---
-
-CREATE TABLE IF NOT EXISTS `zcq_pro_fujian` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(250) DEFAULT NULL COMMENT '附件标题',
-  `filepath` varchar(250) DEFAULT NULL COMMENT '文件路径',
-  `isdel` enum('0','1') DEFAULT NULL COMMENT '是否删除',
-  `create_sysuserid` int(11) DEFAULT NULL COMMENT '创建管理员ID',
-  `update_sysuserid` int(11) DEFAULT NULL COMMENT '更新管理员ID',
-  `del_sysuserid` int(11) DEFAULT NULL COMMENT '删除管理员ID',
-  `createtime` int(11) DEFAULT NULL,
-  `updatetime` int(11) DEFAULT NULL,
-  `deltime` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `AK_Key_1` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='项目附件表' AUTO_INCREMENT=10 ;
-
---
--- 转存表中的数据 `zcq_pro_fujian`
---
-
-INSERT INTO `zcq_pro_fujian` (`id`, `title`, `filepath`, `isdel`, `create_sysuserid`, `update_sysuserid`, `del_sysuserid`, `createtime`, `updatetime`, `deltime`) VALUES
-(1, '哈哈哈', 'data/upload/user/201608/147062716422842.docx', '1', 16, 0, 16, 1470627167, 0, 1470911020),
-(2, '222', 'data/upload/user/201608/147062719322303.doc', '0', 16, 0, 16, 1470627499, 0, 1470910326),
-(3, '666666', 'data/upload/user/201608/147141703327887.doc', '0', 16, 16, 16, 1470627792, 1471417035, 1470910326),
-(4, '2016年小资报告', 'data/upload/user/201608/147063754914003.xls', '0', 16, 0, 16, 1470637550, 0, 1470910501),
-(5, '2016年公司状态模板', 'data/upload/user/201608/147063756523875.xls', '0', 16, 0, 16, 1470637576, 0, 1470910501),
-(6, '2016综合业务模板', 'data/upload/user/201608/14706377087658.xls', '0', 16, 0, 16, 1470637709, 0, 1470909416),
-(7, '2017即算模板', 'data/upload/user/201608/14706377224008.doc', '0', 16, 16, 16, 1470637726, 1470640854, 1470909416),
-(8, '2089什么末班', 'data/upload/user/201608/147090277724479.docx', '0', 16, 16, 16, 1470902780, 1473232794, 1470909500),
-(9, '测试1', 'data/upload/user/201608/147261494720684.xls', '0', 16, 0, NULL, 1472615023, 0, NULL);
-
--- --------------------------------------------------------
-
---
--- 表的结构 `zcq_pro_guanli`
---
-
-CREATE TABLE IF NOT EXISTS `zcq_pro_guanli` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `companyname` varchar(100) DEFAULT '0' COMMENT '国内投资主体名称',
-  `companyname2` varchar(100) DEFAULT '0' COMMENT '境外企业名称',
-  `guojia` varchar(50) DEFAULT '0' COMMENT '国别（地区）',
-  `sheli_date` int(11) DEFAULT '0' COMMENT '批准设立日期',
-  `sheli_fangshi` varchar(50) DEFAULT NULL COMMENT '设立方式',
-  `bili` varchar(50) DEFAULT NULL COMMENT '中方持股比例',
-  `reg_ziben` varchar(50) DEFAULT NULL COMMENT '注册资本（万美元）',
-  `xieyi_touzi` varchar(50) DEFAULT NULL COMMENT '协议投资额（万美元）',
-  `zhongfang_touzi` varchar(50) DEFAULT NULL COMMENT '中方投资额（万美元）',
-  `zhongfang_shiji_touzi` varchar(50) DEFAULT NULL COMMENT '中方实际投资额（万美元）',
-  `jingyin_fanwei` varchar(50) DEFAULT NULL COMMENT '经营范围',
-  `hangye` varchar(50) DEFAULT NULL COMMENT '所属行业',
-  `wenhao` varchar(50) DEFAULT NULL COMMENT '批准文号',
-  `addr` varchar(250) DEFAULT NULL COMMENT '地址',
-  `zhenqu_id` int(11) DEFAULT NULL COMMENT '所在镇区',
-  `xingzhi` varchar(50) DEFAULT NULL COMMENT '性质',
-  `jingyin_qingkuang` varchar(100) DEFAULT NULL COMMENT '经营情况',
-  `touzi_jilu` varchar(250) DEFAULT NULL COMMENT '再投资记录',
-  `beizhu` text COMMENT '备注',
-  `linkman` varchar(50) DEFAULT NULL COMMENT '联系人',
-  `mobile` varchar(50) DEFAULT NULL COMMENT '联系手机',
-  `tel` varchar(50) DEFAULT NULL COMMENT '联系电话',
-  `fax` varchar(50) DEFAULT NULL COMMENT '传真',
-  `email` varchar(100) DEFAULT NULL COMMENT '邮箱',
-  `isdel` enum('0','1') DEFAULT '0' COMMENT '是否删除',
-  `create_sysuserid` int(11) DEFAULT NULL COMMENT '创建管理员ID',
-  `update_sysuserid` int(11) DEFAULT NULL COMMENT '更新管理员ID',
-  `del_sysuserid` int(11) DEFAULT NULL COMMENT '删除管理员ID',
-  `createtime` int(11) DEFAULT NULL,
-  `updatetime` int(11) DEFAULT NULL,
-  `deltime` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `AK_Key_1` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='项目管理' AUTO_INCREMENT=5 ;
-
---
--- 转存表中的数据 `zcq_pro_guanli`
---
-
-INSERT INTO `zcq_pro_guanli` (`id`, `companyname`, `companyname2`, `guojia`, `sheli_date`, `sheli_fangshi`, `bili`, `reg_ziben`, `xieyi_touzi`, `zhongfang_touzi`, `zhongfang_shiji_touzi`, `jingyin_fanwei`, `hangye`, `wenhao`, `addr`, `zhenqu_id`, `xingzhi`, `jingyin_qingkuang`, `touzi_jilu`, `beizhu`, `linkman`, `mobile`, `tel`, `fax`, `email`, `isdel`, `create_sysuserid`, `update_sysuserid`, `del_sysuserid`, `createtime`, `updatetime`, `deltime`) VALUES
-(1, '13', 'aa13', '13', 1470240000, '13', '12', '12', '13', '13', '13', '13', '13', '13', '13', 30365, '13', '13', '13', NULL, '13', '15362163663', '0755-88880001', '13', '15361363663@qq.com', '1', 16, 16, 16, 1470895788, 1470901124, 1470987413),
-(3, '14', '15361356100', '15361344700', -28800, '15361358300', '15361352900', '15361360800', '15361313300', '15361339200', '15361315200', '15361330200', '15361339500', '15361318500', '15361346800', -1, '15361314900', '15361344800', '15361326900', NULL, '15361357300', '15361341200', '0755-88880000', '15361361600', '15361358500@gmail.com', '1', 16, 16, 16, 1470901155, 1470901195, 1470987568),
-(2, '15361336700', '15361355900', '15361357300', -28800, '15361349600', '15361359900', '15361355300', '15361320700', '15361346800', '15361358900', '15361346700', '15361322100', '15361313300', '15361326200', 30349, '15361341100', '15361335400', '15361329000', NULL, '15361332100', '15361323700', '0755-88880000', '15361333100', '15361324900@gmail.com', '1', 16, 16, 16, 1470897953, 1470901135, 1470987568),
-(4, '15361330100', '15361334800', '15361331300', 2016, '15361351400', '15361333700', '15361315900', '15361354500', '15361331000', '15361327400', '15361322000', '15361341800', '15361325500', '15361328500', -1, '15361348300', '15361345700', '15361329000', NULL, '15361353500', '15361327400', '0755-88880000', '15361349000', '15361362200@163.com', '0', 16, NULL, 0, 1470901204, NULL, NULL);
-
--- --------------------------------------------------------
-
---
--- 表的结构 `zcq_pro_guanli_zengzi`
---
-
-CREATE TABLE IF NOT EXISTS `zcq_pro_guanli_zengzi` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `pro_guanli_id` int(11) DEFAULT '0' COMMENT '读表：zcq_pro_guanli',
-  `companyname` varchar(100) DEFAULT '0' COMMENT '国内投资主体名称',
-  `companyname2` varchar(100) DEFAULT '0' COMMENT '境外企业名称',
-  `guojia` varchar(50) DEFAULT '0' COMMENT '国别（地区）',
-  `zengzi_date` int(11) DEFAULT '0' COMMENT '增资日期',
-  `bili` varchar(50) DEFAULT NULL COMMENT '增资前_中方持股比例',
-  `xieyi_touzi` varchar(50) DEFAULT NULL COMMENT '增资前_协议投资额（万美元）',
-  `zhongfang_touzi` varchar(50) DEFAULT NULL COMMENT '增资前_中方投资额（万美元）',
-  `bili2` varchar(50) DEFAULT NULL COMMENT '增资后_中方持股比例',
-  `xieyi_touzi2` varchar(50) DEFAULT NULL COMMENT '增资后_协议投资额（万美元）',
-  `zhongfang_touzi2` varchar(50) DEFAULT NULL COMMENT '增资后_中方投资额（万美元）',
-  `zengzi_touzi` varchar(50) DEFAULT NULL COMMENT '增资协议投资额',
-  `zengzi_touzi2` varchar(50) DEFAULT NULL COMMENT '增资中方投资额',
-  `wenhao` varchar(50) DEFAULT NULL COMMENT '批准文号',
-  `beizhu` text COMMENT '备注',
-  `isdel` enum('0','1') DEFAULT NULL COMMENT '是否删除',
-  `create_sysuserid` int(11) DEFAULT NULL COMMENT '创建管理员ID',
-  `update_sysuserid` int(11) DEFAULT NULL COMMENT '更新管理员ID',
-  `del_sysuserid` int(11) DEFAULT NULL COMMENT '删除管理员ID',
-  `createtime` int(11) DEFAULT NULL,
-  `updatetime` int(11) DEFAULT NULL,
-  `deltime` int(11) unsigned DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `AK_Key_1` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='项目管理\r\n增资记录' AUTO_INCREMENT=11 ;
-
---
--- 转存表中的数据 `zcq_pro_guanli_zengzi`
---
-
-INSERT INTO `zcq_pro_guanli_zengzi` (`id`, `pro_guanli_id`, `companyname`, `companyname2`, `guojia`, `zengzi_date`, `bili`, `xieyi_touzi`, `zhongfang_touzi`, `bili2`, `xieyi_touzi2`, `zhongfang_touzi2`, `zengzi_touzi`, `zengzi_touzi2`, `wenhao`, `beizhu`, `isdel`, `create_sysuserid`, `update_sysuserid`, `del_sysuserid`, `createtime`, `updatetime`, `deltime`) VALUES
-(4, 0, '15361333500', '15361362700', '15361337900', 2016, '15361345200', '15361331000', '15361323900', '15361340300', '15361331000', '15361315900', '15361362300', '15361319800', '15361341500', '15361361900', '0', 16, NULL, 0, 1470963310, NULL, NULL),
-(5, 1, '10', '15361345900', '15361353600', 1470931200, '12', '16', '22', '13', '10', '22', '15361324000', '15361354500', '15361350400', '15361317100', '1', 16, 16, 16, 1470963608, 1470972334, 1470973662),
-(6, 1, '15361317500', '15361351900', '15361323600', -28800, '12', '15361338800', '15361349100', '13', '15361338800', '15361331300', '15361327300', '15361356900', '15361344300', '15361362500', '1', 16, 16, 16, 1470963795, 1470969733, 1470972276),
-(7, 1, '11222', '15361361700', '15361359000', -28800, '15361351400', '15361359500', '15361358900', '15361317700', '15361359500', '15361331400', '15361331300', '15361333700', '15361360000', '15361331400', '1', 16, 16, 16, 1470967196, 1470970382, 1470972276),
-(8, 1, '25', '23', '22', 1470153600, '12', '13', '15', '11', '13', '16', '18', '17', '20', '21', '0', 16, 16, 0, 1470967206, 1470970371, NULL),
-(9, 4, '15361352800', '15361328900', '15361347600', 1471968000, '15361353600', '15361333500', '15361319200', '15361321200', '15361333500', '15361338700', '15361331400', '15361318500', '15361327300', '15361335700', '0', 16, 16, 0, 1470982590, 1472021851, NULL),
-(10, 4, '15361356100', '15361349700', '15361325600', 2016, '15361313000', '15361313500', '15361337700', '15361314200', '15361313500', '15361332900', '15361342400', '15361323100', '15361352000', '15361324700', '0', 16, NULL, 0, 1472109581, NULL, NULL);
-
--- --------------------------------------------------------
-
---
--- 表的结构 `zcq_pro_shenqing`
---
-
-CREATE TABLE IF NOT EXISTS `zcq_pro_shenqing` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `check_status` smallint(6) DEFAULT '0' COMMENT '0未审 10通过 20不通过 99临时保存',
-  `check_time` int(11) DEFAULT '0' COMMENT '审核通过时间',
-  `check_content` text COMMENT '审核不通过时填写原因',
-  `check_no_time` int(11) DEFAULT '0' COMMENT '审核不通过时间',
-  `check_sysuserid` int(11) DEFAULT '0' COMMENT '审核管理员ID',
-  `title` varchar(250) DEFAULT NULL COMMENT '申请企业名称',
-  `faren` text COMMENT '法人姓名',
-  `faren_tel` varchar(100) DEFAULT '0' COMMENT '法人电话',
-  `addr` text COMMENT '通讯地址',
-  `qiye_linkman` text COMMENT '企业联系人',
-  `qiye_tel` varchar(50) DEFAULT NULL COMMENT '企业联系人电话',
-  `qiye_email` varchar(100) DEFAULT NULL,
-  `qiye_mobile` varchar(100) DEFAULT NULL COMMENT '企业联系人手机',
-  `kaihu` varchar(100) DEFAULT NULL COMMENT '开户银行名称',
-  `kaihu_addr` varchar(250) DEFAULT NULL COMMENT '开户银行地址',
-  `kaihu_zhanghu` varchar(100) DEFAULT NULL COMMENT '银行账户账号',
-  `kaihu_huming` varchar(100) DEFAULT NULL COMMENT '银行账户户名',
-  `type_id` int(11) DEFAULT '0' COMMENT '申请类型 读表：zcq_pro_type',
-  `create_sysuserid` int(11) DEFAULT '0' COMMENT '创建管理员ID',
-  `update_sysuserid` int(11) DEFAULT '0' COMMENT '更新管理员ID',
-  `del_sysuserid` int(11) DEFAULT NULL COMMENT '删除管理员ID',
-  `createtime` int(11) DEFAULT '0',
-  `updatetime` int(11) DEFAULT '0',
-  `deltime` int(11) DEFAULT '0',
-  `create_userid` int(11) DEFAULT '0' COMMENT '创建会员ID',
-  `update_userid` int(11) DEFAULT '0' COMMENT '更新会员ID',
-  `del_userid` int(11) DEFAULT '0' COMMENT '删除会员ID',
-  `isdel` enum('1','0') DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `AK_Key_1` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='项目申报审核表' AUTO_INCREMENT=17 ;
-
---
--- 转存表中的数据 `zcq_pro_shenqing`
---
-
-INSERT INTO `zcq_pro_shenqing` (`id`, `check_status`, `check_time`, `check_content`, `check_no_time`, `check_sysuserid`, `title`, `faren`, `faren_tel`, `addr`, `qiye_linkman`, `qiye_tel`, `qiye_email`, `qiye_mobile`, `kaihu`, `kaihu_addr`, `kaihu_zhanghu`, `kaihu_huming`, `type_id`, `create_sysuserid`, `update_sysuserid`, `del_sysuserid`, `createtime`, `updatetime`, `deltime`, `create_userid`, `update_userid`, `del_userid`, `isdel`) VALUES
-(1, 20, 1470990431, 'sfasfasdf', 1471425240, 16, '报企业名报企业名报企业名', '11111', '222', '1通讯地址', '111', '联系电话', '222Q@qq.com', '联系手机：', '开户银行名称', '*开户行地址', '银行账户账号', '银行账户户名', 3, 0, 16, 16, NULL, 1471056588, 1473846441, 87, 0, 0, '1'),
-(2, 20, 1470990426, 'sfasfasdf', 1471425240, 16, '22222223333', '111', '2222', '1', '111', '联系电话', '222@qq.com', '联系手机', '开户银行名称', '开户行地址', '银行账户账号', '银行账户户名', 3, 0, 16, 16, NULL, 1471222825, 1473846441, 87, 0, 0, '1'),
-(3, 20, 0, 'sfasfasdf', 1471425240, 16, '234234234', '2423', '234234', '4234', '4324', '32423', '4234', '234324', '234234', '23423', '23412341234', '4234234', 0, 0, 0, 16, 0, 1471417443, 1473846631, 99, 0, 0, '1'),
-(4, 20, 0, 'sfasfasdf', 1471425240, 16, '2342', '4324324', '4234', '23432', '234234', '4234', '32432', '32423', '423', '324234', '423423', '4324', 2, 0, 0, 16, 0, 1471417508, 1474159646, 99, 0, 0, '1'),
-(5, 20, 0, 'sfasfasdf', 1471425240, 16, 'asdfsfsfwer', '0', '0', 'qewqwewer', 'rweqrwq', 'rwe', 'rqwweqe@qq.com', 'qrqwerwe', 'rwqr', 'rqwe', 'qwerwqerwe', 'rweqrweqr', 2, 0, 0, 16, 0, 1471424902, 1474159762, 99, 0, 0, '1'),
-(6, 20, 0, 'sfasfasdf', 1471425240, 16, '234234234', '2147483647', '2147483647', '23423', '324324', '4234234', '', '432423423', '234234234234', '23423423', '234234234234', '234234', 2, 0, 0, 16, 0, 1471418331, 1474159916, 99, 0, 0, '1'),
-(7, 20, 1473469733, 'asdfgdfg', 1473469755, 16, '234234234', '2147483647', '2147483647', '23423', '324324', '4234234', '', '432423423', '234234234234', '23423423', '234234234234', '234234', 2, 0, 0, 16, 0, 1471425037, 1474160024, 99, 0, 0, '1'),
-(8, 10, 1473469720, '', 1471428132, 16, '申报企业名称', '0', '0', '通讯地址', '企业联系人', '联系电话', '22@qq.com', '联系手机：', '开户银行名称', '开户行地址', '银行账户账号', '银行账户户名', 3, 0, 0, NULL, 0, 1471427718, 0, 99, 0, 0, '0'),
-(9, 0, 0, 'testetsttestetsttestetst', 1471428131, 16, '234234234', '2147483647', '2341234', '123432', '123412341234', '4124214', '', '234312', '412341234', '32141234', '312412341234', '1234234', 7, 0, 0, NULL, 1471418942, 1471428458, 0, 99, 0, 0, '0'),
-(11, 10, 1473128954, '', 0, 16, '离离原上草', '法人姓名', '1487-78945645', '春风吹又生', '千户万户曈曈日', '0755-88880000', '921977939@qq.com', '15361363220', '天生我才必有用', '千金散尽还复来', '曾经沧海难为水', '除却巫山不是云', 7, 0, 0, NULL, 1472779083, 1472798136, 0, 106, 0, 0, '0'),
-(12, 99, 0, NULL, 0, 0, '申报企业名称申报企业名称', '0', '755', '通讯地址通讯地址通讯地址', '企业联系人企业联系人', '4666-77777777', 'asdfgwer@126.com', '15361363220', '开户银行名称', '开户行地址', '银行账户账号', '银行账户户名', 2, 0, 0, NULL, 1472786896, 1472787628, 0, 106, 0, 0, '0'),
-(13, 0, 0, NULL, 0, 0, '申报企业名称', '法人姓名', '0755-88880000', '通讯地址', '*企业联系人', '4666-77777777', 'dfg@126.com', '15361363220', '*企业联系人', '*企业联系人', '*企业联系人', '*企业联系人', 1, 0, 0, NULL, 1472788066, 1472789064, 0, 106, 0, 0, '0'),
-(14, 99, 0, NULL, 0, 0, 'xxxxasdasd', '*申报企业名称', '0755-88880000', '*申报企业名称', '*企业联系人2', '0755-88880000', '456@qq.com', '15361363220', '*申报企业名称2', '*申报企业名称', '*申报企业名称2', '*申报企业名称', 2, 0, 0, NULL, 1473063972, 1473065786, 1473066043, 93, 0, 93, '0'),
-(15, 0, 1473238462, '电饭锅电饭锅', 1473471881, 16, 'qweqwe', '法人姓名', '1487-78945645', '法人姓名', '法人姓名', '4666-77777777', 'asdqwae@126.com', '15361363220', '法人姓名', '法人姓名', '法人姓名', '法人姓名', 1, 0, 0, NULL, 1473064848, 1473471914, 1473066964, 93, 0, 93, '0'),
-(16, 20, 0, '不通过', 1473469932, 16, '申请一次看看', '23', '0662-73585245', '234', '334', '0662-73585245', '45345@qq.com', '13532065324', '234234', '23', '4534521234', '345345', 2, 0, 16, NULL, 1473469687, 1474160138, 0, 86, 0, 0, '0');
-
--- --------------------------------------------------------
-
---
--- 表的结构 `zcq_pro_shenqing_fujian`
---
-
-CREATE TABLE IF NOT EXISTS `zcq_pro_shenqing_fujian` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `shenqing_id` int(11) DEFAULT NULL COMMENT '审核表ID',
-  `type_id` int(11) DEFAULT NULL COMMENT '申请类型 读表：zcq_pro_type ，负责读出排序值',
-  `fujian_id` int(11) DEFAULT NULL COMMENT '附件ID读表zcq_pro_fujian 负责读出附件标题',
-  `filepath` varchar(250) DEFAULT NULL COMMENT '附件路径',
-  `create_sysuserid` int(11) DEFAULT '0' COMMENT '创建管理员ID',
-  `update_sysuserid` int(11) DEFAULT '0' COMMENT '更新管理员ID',
-  `del_sysuserid` int(11) DEFAULT '0' COMMENT '删除管理员ID',
-  `createtime` int(11) DEFAULT '0',
-  `updatetime` int(11) DEFAULT '0',
-  `deltime` int(11) DEFAULT '0',
-  `create_userid` int(11) DEFAULT '0' COMMENT '创建会员ID',
-  `update_userid` int(11) DEFAULT '0' COMMENT '更新会员ID',
-  `del_userid` int(11) DEFAULT '0' COMMENT '删除会员ID',
-  PRIMARY KEY (`id`),
-  KEY `AK_Key_1` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='项目申报审核表，上传的附件' AUTO_INCREMENT=123 ;
-
---
--- 转存表中的数据 `zcq_pro_shenqing_fujian`
---
-
-INSERT INTO `zcq_pro_shenqing_fujian` (`id`, `shenqing_id`, `type_id`, `fujian_id`, `filepath`, `create_sysuserid`, `update_sysuserid`, `del_sysuserid`, `createtime`, `updatetime`, `deltime`, `create_userid`, `update_userid`, `del_userid`) VALUES
-(1, 2, 3, 8, 'data/upload/user/201608/147122282320605.docx', 16, 0, 0, 1471222825, 0, 0, 0, 0, 0),
-(2, 7, 2, 7, 'data/upload/user/201608/1471418326745.docx', 0, 0, 0, 1471418468, 1471425037, 0, 99, 0, 0),
-(3, 7, 2, 3, 'data/upload/user/201608/1471418318632.docx', 0, 0, 0, 1471418468, 1471425037, 0, 99, 0, 0),
-(4, 7, 2, 7, 'data/upload/user/201608/1471418326745.docx', 0, 0, 0, 1471418468, 0, 0, 99, 0, 0),
-(5, 7, 2, 7, 'data/upload/user/201608/1471418326745.docx', 0, 0, 0, 1471418468, 0, 0, 99, 0, 0),
-(6, 7, 2, 2, 'data/upload/user/201608/1471418322537.docx', 0, 0, 0, 1471418468, 1471425037, 0, 99, 0, 0),
-(7, 7, 2, 7, 'data/upload/user/201608/1471418326745.docx', 0, 0, 0, 1471418468, 0, 0, 99, 0, 0),
-(8, 7, 2, 4, 'data/upload/user/201608/1471418329871.docx', 0, 0, 0, 1471418468, 1471425037, 0, 99, 0, 0),
-(9, 7, 2, 7, 'data/upload/user/201608/1471418326745.docx', 0, 0, 0, 1471418468, 0, 0, 99, 0, 0),
-(10, 7, 2, 7, 'data/upload/user/201608/1471418326745.docx', 0, 0, 0, 1471418468, 0, 0, 99, 0, 0),
-(11, 7, 2, 4, 'data/upload/user/201608/1471418329871.docx', 0, 0, 0, 1471418469, 0, 0, 99, 0, 0),
-(12, 7, 2, 4, 'data/upload/user/201608/1471418329871.docx', 0, 0, 0, 1471418469, 0, 0, 99, 0, 0),
-(13, 7, 2, 4, 'data/upload/user/201608/1471418329871.docx', 0, 0, 0, 1471418469, 0, 0, 99, 0, 0),
-(14, 7, 2, 4, 'data/upload/user/201608/1471418329871.docx', 0, 0, 0, 1471418469, 0, 0, 99, 0, 0),
-(15, 7, 2, 4, 'data/upload/user/201608/1471418329871.docx', 0, 0, 0, 1471418469, 0, 0, 99, 0, 0),
-(16, 7, 2, 4, 'data/upload/user/201608/1471418329871.docx', 0, 0, 0, 1471418469, 0, 0, 99, 0, 0),
-(17, 7, 2, 4, 'data/upload/user/201608/1471418329871.docx', 0, 0, 0, 1471418469, 0, 0, 99, 0, 0),
-(18, 8, 3, 7, 'data/upload/user/201608/1471418694211.docx', 0, 0, 0, 1471418695, 1471427718, 0, 99, 0, 0),
-(19, 8, 3, 8, 'data/upload/user/201608/1471418690798.docx', 0, 0, 0, 1471418695, 1471427718, 0, 99, 0, 0),
-(20, 8, 3, 7, 'data/upload/user/201608/1471418694211.docx', 0, 0, 0, 1471418695, 0, 0, 99, 0, 0),
-(21, 8, 3, 7, 'data/upload/user/201608/1471418694211.docx', 0, 0, 0, 1471418695, 0, 0, 99, 0, 0),
-(22, 8, 3, 7, 'data/upload/user/201608/1471418694211.docx', 0, 0, 0, 1471418704, 0, 0, 99, 0, 0),
-(23, 8, 3, 7, 'data/upload/user/201608/1471418694211.docx', 0, 0, 0, 1471418708, 0, 0, 99, 0, 0),
-(24, 8, 3, 7, 'data/upload/user/201608/1471418694211.docx', 0, 0, 0, 1471418708, 0, 0, 99, 0, 0),
-(25, 9, 7, 8, 'data/upload/user/201608/1471422779108.docx', 0, 0, 0, 1471418942, 1471428458, 0, 99, 0, 0),
-(26, 9, 7, 8, 'data/upload/user/201608/1471418941212.docx', 0, 0, 0, 1471418942, 0, 0, 99, 0, 0),
-(27, 5, 2, 7, 'data/upload/user/201608/1471424895772.docx', 0, 0, 0, 1471424902, 1471424902, 0, 0, 0, 0),
-(28, 5, 2, 3, 'data/upload/user/201608/1471424883820.docx', 0, 0, 0, 1471424902, 0, 0, 0, 0, 0),
-(29, 10, 2, 7, 'data/upload/user/201609/1473063191574.txt', 0, 0, 0, 1472026122, 1473063444, 0, 93, 0, 0),
-(30, 10, 2, 3, 'data/upload/user/201608/147202605439.xls', 0, 0, 0, 1472026122, 0, 0, 93, 0, 0),
-(31, 10, 2, 7, 'data/upload/user/201608/1472026085654.txt', 0, 0, 0, 1472026122, 0, 0, 93, 0, 0),
-(32, 10, 2, 7, 'data/upload/user/201608/1472026085654.txt', 0, 0, 0, 1472026122, 0, 0, 93, 0, 0),
-(33, 10, 2, 2, 'data/upload/user/201608/1472026061594.txt', 0, 0, 0, 1472026122, 0, 0, 93, 0, 0),
-(34, 10, 2, 7, 'data/upload/user/201608/1472026085654.txt', 0, 0, 0, 1472026122, 0, 0, 93, 0, 0),
-(35, 10, 2, 7, 'data/upload/user/201608/1472026085654.txt', 0, 0, 0, 1472026122, 0, 0, 93, 0, 0),
-(36, 10, 2, 7, 'data/upload/user/201608/1472026085654.txt', 0, 0, 0, 1472026122, 0, 0, 93, 0, 0),
-(37, 10, 2, 4, 'data/upload/user/201608/1472026120815.xls', 0, 0, 0, 1472026122, 0, 0, 93, 0, 0),
-(38, 10, 2, 4, 'data/upload/user/201608/1472026120815.xls', 0, 0, 0, 1472026122, 0, 0, 93, 0, 0),
-(39, 10, 2, 4, 'data/upload/user/201608/1472026120815.xls', 0, 0, 0, 1472026122, 0, 0, 93, 0, 0),
-(40, 10, 2, 4, 'data/upload/user/201608/1472026120815.xls', 0, 0, 0, 1472026122, 0, 0, 93, 0, 0),
-(41, 10, 2, 4, 'data/upload/user/201608/1472026120815.xls', 0, 0, 0, 1472026122, 0, 0, 93, 0, 0),
-(42, 10, 2, 4, 'data/upload/user/201608/1472026120815.xls', 0, 0, 0, 1472026122, 0, 0, 93, 0, 0),
-(43, 10, 2, 4, 'data/upload/user/201608/1472026120815.xls', 0, 0, 0, 1472026123, 0, 0, 93, 0, 0),
-(44, 10, 2, 4, 'data/upload/user/201608/1472026120815.xls', 0, 0, 0, 1472026123, 0, 0, 93, 0, 0),
-(45, 11, 7, 8, 'data/upload/user/201609/1472798121116.docx', 0, 0, 0, 1472779083, 1472798136, 0, 106, 0, 0),
-(46, 11, 7, 8, 'data/upload/user/201609/1472779082198.txt', 0, 0, 0, 1472779083, 0, 0, 106, 0, 0),
-(47, 11, 7, 8, 'data/upload/user/201609/1472779082198.txt', 0, 0, 0, 1472779083, 0, 0, 106, 0, 0),
-(48, 12, 2, 7, 'data/upload/user/201609/1472786891960.txt', 0, 0, 0, 1472786896, 1472787629, 0, 106, 0, 0),
-(49, 12, 2, 9, 'data/upload/user/201609/147278688019.txt', 0, 0, 0, 1472786896, 1472787629, 0, 106, 0, 0),
-(50, 12, 2, 7, 'data/upload/user/201609/1472786891960.txt', 0, 0, 0, 1472786896, 0, 0, 106, 0, 0),
-(51, 12, 2, 7, 'data/upload/user/201609/1472786891960.txt', 0, 0, 0, 1472786896, 0, 0, 106, 0, 0),
-(52, 12, 2, 7, 'data/upload/user/201609/1472786891960.txt', 0, 0, 0, 1472786896, 0, 0, 106, 0, 0),
-(53, 12, 2, 3, 'data/upload/user/201609/1472786884276.xls', 0, 0, 0, 1472786896, 1472787629, 0, 106, 0, 0),
-(54, 12, 2, 7, 'data/upload/user/201609/1472786891960.txt', 0, 0, 0, 1472786896, 0, 0, 106, 0, 0),
-(55, 12, 2, 2, 'data/upload/user/201609/1472786888936.txt', 0, 0, 0, 1472786896, 1472787629, 0, 106, 0, 0),
-(56, 12, 2, 4, 'data/upload/user/201609/1472786894148.txt', 0, 0, 0, 1472786896, 1472787630, 0, 106, 0, 0),
-(57, 12, 2, 4, 'data/upload/user/201609/1472786894148.txt', 0, 0, 0, 1472786896, 0, 0, 106, 0, 0),
-(58, 12, 2, 4, 'data/upload/user/201609/1472786894148.txt', 0, 0, 0, 1472786897, 0, 0, 106, 0, 0),
-(59, 12, 2, 7, 'data/upload/user/201609/1472786891960.txt', 0, 0, 0, 1472786897, 0, 0, 106, 0, 0),
-(60, 12, 2, 4, 'data/upload/user/201609/1472786894148.txt', 0, 0, 0, 1472786897, 0, 0, 106, 0, 0),
-(61, 12, 2, 4, 'data/upload/user/201609/1472786894148.txt', 0, 0, 0, 1472786897, 0, 0, 106, 0, 0),
-(62, 12, 2, 4, 'data/upload/user/201609/1472786894148.txt', 0, 0, 0, 1472786897, 0, 0, 106, 0, 0),
-(63, 12, 2, 4, 'data/upload/user/201609/1472786894148.txt', 0, 0, 0, 1472786897, 0, 0, 106, 0, 0),
-(64, 12, 2, 4, 'data/upload/user/201609/1472786894148.txt', 0, 0, 0, 1472786897, 0, 0, 106, 0, 0),
-(65, 13, 1, 6, 'data/upload/user/201609/1472788065962.xls', 0, 0, 0, 1472788066, 1472789065, 0, 106, 0, 0),
-(66, 13, 1, 6, 'data/upload/user/201609/1472788065962.xls', 0, 0, 0, 1472788067, 0, 0, 106, 0, 0),
-(67, 13, 1, 6, 'data/upload/user/201609/1472788065962.xls', 0, 0, 0, 1472788067, 0, 0, 106, 0, 0),
-(68, 13, 1, 7, 'data/upload/user/201609/1472788061763.txt', 0, 0, 0, 1472788067, 1472789065, 0, 106, 0, 0),
-(69, 13, 1, 7, 'data/upload/user/201609/1472788061763.txt', 0, 0, 0, 1472788067, 0, 0, 106, 0, 0),
-(70, 13, 1, 6, 'data/upload/user/201609/1472788065962.xls', 0, 0, 0, 1472788067, 0, 0, 106, 0, 0),
-(71, 13, 1, 7, 'data/upload/user/201609/1472788061763.txt', 0, 0, 0, 1472788067, 0, 0, 106, 0, 0),
-(72, 13, 1, 7, 'data/upload/user/201609/1472788061763.txt', 0, 0, 0, 1472788067, 0, 0, 106, 0, 0),
-(73, 13, 1, 6, 'data/upload/user/201609/1472788065962.xls', 0, 0, 0, 1472788067, 0, 0, 106, 0, 0),
-(74, 13, 1, 7, 'data/upload/user/201609/1472788061763.txt', 0, 0, 0, 1472788067, 0, 0, 106, 0, 0),
-(75, 13, 1, 7, 'data/upload/user/201609/1472788061763.txt', 0, 0, 0, 1472788067, 0, 0, 106, 0, 0),
-(76, 14, 2, 7, 'data/upload/user/201609/1473063967704.txt', 0, 0, 0, 1473063972, 1473065787, 0, 93, 0, 0),
-(77, 14, 2, 9, 'data/upload/user/201609/1473064016284.docx', 0, 0, 0, 1473063972, 1473065786, 0, 93, 0, 0),
-(78, 14, 2, 7, 'data/upload/user/201609/1473063967704.txt', 0, 0, 0, 1473063972, 0, 0, 93, 0, 0),
-(79, 14, 2, 7, 'data/upload/user/201609/1473063967704.txt', 0, 0, 0, 1473063972, 0, 0, 93, 0, 0),
-(80, 14, 2, 7, 'data/upload/user/201609/1473063967704.txt', 0, 0, 0, 1473063972, 0, 0, 93, 0, 0),
-(81, 14, 2, 3, 'data/upload/user/201609/1473063961478.txt', 0, 0, 0, 1473063972, 1473065786, 0, 93, 0, 0),
-(82, 14, 2, 7, 'data/upload/user/201609/1473063967704.txt', 0, 0, 0, 1473063972, 0, 0, 93, 0, 0),
-(83, 14, 2, 2, 'data/upload/user/201609/1473063964215.txt', 0, 0, 0, 1473063972, 1473065787, 0, 93, 0, 0),
-(84, 14, 2, 4, 'data/upload/user/201609/147306397073.txt', 0, 0, 0, 1473063972, 1473065787, 0, 93, 0, 0),
-(85, 14, 2, 4, 'data/upload/user/201609/147306397073.txt', 0, 0, 0, 1473063972, 0, 0, 93, 0, 0),
-(86, 14, 2, 4, 'data/upload/user/201609/147306397073.txt', 0, 0, 0, 1473063972, 0, 0, 93, 0, 0),
-(87, 14, 2, 7, 'data/upload/user/201609/1473063967704.txt', 0, 0, 0, 1473063972, 0, 0, 93, 0, 0),
-(88, 14, 2, 4, 'data/upload/user/201609/147306397073.txt', 0, 0, 0, 1473063972, 0, 0, 93, 0, 0),
-(89, 14, 2, 4, 'data/upload/user/201609/147306397073.txt', 0, 0, 0, 1473063972, 0, 0, 93, 0, 0),
-(90, 14, 2, 4, 'data/upload/user/201609/147306397073.txt', 0, 0, 0, 1473063972, 0, 0, 93, 0, 0),
-(91, 14, 2, 4, 'data/upload/user/201609/147306397073.txt', 0, 0, 0, 1473063973, 0, 0, 93, 0, 0),
-(92, 14, 2, 4, 'data/upload/user/201609/147306397073.txt', 0, 0, 0, 1473063973, 0, 0, 93, 0, 0),
-(93, 15, 1, 6, 'data/upload/user/201609/1473064845969.docx', 0, 0, 0, 1473064848, 1473471914, 0, 93, 0, 0),
-(94, 15, 1, 6, 'data/upload/user/201609/1473064845969.docx', 0, 0, 0, 1473064848, 0, 0, 93, 0, 0),
-(95, 15, 1, 6, 'data/upload/user/201609/1473064845969.docx', 0, 0, 0, 1473064848, 0, 0, 93, 0, 0),
-(96, 15, 1, 7, 'data/upload/user/201609/1473471911384.docx', 0, 0, 0, 1473064848, 1473471915, 0, 93, 0, 0),
-(97, 15, 1, 7, 'data/upload/user/201609/147306484124.txt', 0, 0, 0, 1473064848, 0, 0, 93, 0, 0),
-(98, 15, 1, 6, 'data/upload/user/201609/1473064845969.docx', 0, 0, 0, 1473064848, 0, 0, 93, 0, 0),
-(99, 15, 1, 7, 'data/upload/user/201609/147306484124.txt', 0, 0, 0, 1473064848, 0, 0, 93, 0, 0),
-(100, 15, 1, 7, 'data/upload/user/201609/147306484124.txt', 0, 0, 0, 1473064848, 0, 0, 93, 0, 0),
-(101, 15, 1, 6, 'data/upload/user/201609/1473064845969.docx', 0, 0, 0, 1473064848, 0, 0, 93, 0, 0),
-(102, 15, 1, 7, 'data/upload/user/201609/147306484124.txt', 0, 0, 0, 1473064848, 0, 0, 93, 0, 0),
-(103, 15, 1, 7, 'data/upload/user/201609/147306484124.txt', 0, 0, 0, 1473064848, 0, 0, 93, 0, 0),
-(104, 16, 2, 7, 'data/upload/user/201609/1473469681266.txt', 0, 16, 0, 1473469687, 1474160139, 0, 86, 0, 0),
-(105, 16, 2, 7, 'data/upload/user/201609/1473469681266.txt', 0, 0, 0, 1473469687, 0, 0, 86, 0, 0),
-(106, 16, 2, 9, 'data/upload/user/201609/1473469670470.txt', 0, 16, 0, 1473469687, 1474160139, 0, 86, 0, 0),
-(107, 16, 2, 7, 'data/upload/user/201609/1473469681266.txt', 0, 0, 0, 1473469687, 0, 0, 86, 0, 0),
-(108, 16, 2, 9, 'data/upload/user/201609/1473469670470.txt', 0, 0, 0, 1473469687, 0, 0, 86, 0, 0),
-(109, 16, 2, 3, 'data/upload/user/201609/1473469675338.txt', 0, 16, 0, 1473469687, 1474160139, 0, 86, 0, 0),
-(110, 16, 2, 7, 'data/upload/user/201609/1473469681266.txt', 0, 0, 0, 1473469687, 0, 0, 86, 0, 0),
-(111, 16, 2, 4, 'data/upload/user/201609/1473469686897.txt', 0, 16, 0, 1473469687, 1474160139, 0, 86, 0, 0),
-(112, 16, 2, 7, 'data/upload/user/201609/1473469681266.txt', 0, 0, 0, 1473469688, 0, 0, 86, 0, 0),
-(113, 16, 2, 2, 'data/upload/user/201609/1473469678590.txt', 0, 16, 0, 1473469688, 1474160139, 0, 86, 0, 0),
-(114, 16, 2, 2, 'data/upload/user/201609/1473469678590.txt', 0, 0, 0, 1473469688, 0, 0, 86, 0, 0),
-(115, 16, 2, 4, 'data/upload/user/201609/1473469686897.txt', 0, 0, 0, 1473469688, 0, 0, 86, 0, 0),
-(116, 16, 2, 4, 'data/upload/user/201609/1473469686897.txt', 0, 0, 0, 1473469688, 0, 0, 86, 0, 0),
-(117, 16, 2, 7, 'data/upload/user/201609/1473469681266.txt', 0, 0, 0, 1473469688, 0, 0, 86, 0, 0),
-(118, 16, 2, 4, 'data/upload/user/201609/1473469686897.txt', 0, 0, 0, 1473469688, 0, 0, 86, 0, 0),
-(119, 16, 2, 4, 'data/upload/user/201609/1473469686897.txt', 0, 0, 0, 1473469688, 0, 0, 86, 0, 0),
-(120, 16, 2, 4, 'data/upload/user/201609/1473469686897.txt', 0, 0, 0, 1473469688, 0, 0, 86, 0, 0),
-(121, 16, 2, 4, 'data/upload/user/201609/1473469686897.txt', 0, 0, 0, 1473469688, 0, 0, 86, 0, 0),
-(122, 16, 2, 4, 'data/upload/user/201609/1473469686897.txt', 0, 0, 0, 1473469688, 0, 0, 86, 0, 0);
-
--- --------------------------------------------------------
-
---
--- 表的结构 `zcq_pro_type`
---
-
-CREATE TABLE IF NOT EXISTS `zcq_pro_type` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(250) DEFAULT NULL COMMENT '申报类型名称',
-  `starttime` int(11) DEFAULT '0' COMMENT '开始时间',
-  `endtime` int(11) DEFAULT '0' COMMENT '结束时间',
-  `isshow` enum('0','1') DEFAULT '1' COMMENT '是否显示',
-  `beizhu` text COMMENT '备注',
-  `isdel` enum('0','1') DEFAULT NULL COMMENT '是否删除',
-  `create_sysuserid` int(11) DEFAULT NULL COMMENT '创建管理员ID',
-  `update_sysuserid` int(11) DEFAULT NULL COMMENT '更新管理员ID',
-  `del_sysuserid` int(11) DEFAULT NULL COMMENT '删除管理员ID',
-  `createtime` int(11) DEFAULT NULL,
-  `updatetime` int(11) DEFAULT NULL,
-  `deltime` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `AK_Key_1` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='项目申报类型' AUTO_INCREMENT=10 ;
-
---
--- 转存表中的数据 `zcq_pro_type`
---
-
-INSERT INTO `zcq_pro_type` (`id`, `title`, `starttime`, `endtime`, `isshow`, `beizhu`, `isdel`, `create_sysuserid`, `update_sysuserid`, `del_sysuserid`, `createtime`, `updatetime`, `deltime`) VALUES
-(1, '第一党支部', 1470844800, 1474041600, '1', 'sdfasdfasdfsd', '0', 16, 0, 0, 1472787815, 0, 1470794483),
-(2, '第二申取', 1470844800, 1476288000, '1', '', '0', 16, 0, NULL, 1472785970, 0, NULL),
-(3, '第三申报', 1470758400, 1471881600, '1', '', '0', 16, 0, NULL, 1470901997, 0, NULL),
-(4, '第四申报', 1467302400, 1467388800, '1', '', '0', 16, 0, NULL, 1470902063, 0, NULL),
-(5, '第五申', 1472054400, 1472659200, '0', '', '0', 16, 0, NULL, 1471398247, 0, NULL),
-(6, '第六申', 1470067200, 1472140800, '1', '', '1', 16, 0, 16, 1470902416, 0, 1470908004),
-(7, '最新一批', 1472745600, 1472918400, '1', 'asfasfasfasdf', '0', 16, 0, NULL, 1472778870, 0, NULL),
-(8, '2016年度', 1471363200, 1471449600, '1', '', '0', 16, 0, NULL, 1471419204, 0, NULL),
-(9, '234234', 1473264000, 1473955200, '1', '122234', '0', 16, 0, NULL, 1474160053, 0, NULL);
-
--- --------------------------------------------------------
-
---
--- 表的结构 `zcq_pro_type_fujian`
---
-
-CREATE TABLE IF NOT EXISTS `zcq_pro_type_fujian` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `type_id` int(11) DEFAULT NULL COMMENT '类型ID 读表zcq_pro_type',
-  `fujian_id` int(11) DEFAULT NULL COMMENT '附件ID 读表zcq_pro_fujian',
-  `orderby` smallint(6) DEFAULT '100' COMMENT '从小到大',
-  `create_sysuserid` int(11) DEFAULT NULL COMMENT '创建管理员ID',
-  `update_sysuserid` int(11) DEFAULT NULL COMMENT '更新管理员ID',
-  `del_sysuserid` int(11) DEFAULT NULL COMMENT '删除管理员ID',
-  `createtime` int(11) DEFAULT NULL,
-  `updatetime` int(11) DEFAULT NULL,
-  `deltime` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `AK_Key_1` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='项目申报类型附件表' AUTO_INCREMENT=43 ;
-
---
--- 转存表中的数据 `zcq_pro_type_fujian`
---
-
-INSERT INTO `zcq_pro_type_fujian` (`id`, `type_id`, `fujian_id`, `orderby`, `create_sysuserid`, `update_sysuserid`, `del_sysuserid`, `createtime`, `updatetime`, `deltime`) VALUES
-(1, 1, 6, 100, 16, 0, 16, 1470733838, 0, 1470900181),
-(2, 1, 5, 101, 16, 0, 16, 1470733838, 0, 1470899769),
-(4, 1, 7, 102, 16, 0, 16, 1470898486, NULL, 1470900177),
-(5, 1, 4, 103, 16, 0, 16, 1470898519, 0, 1470899615),
-(6, 1, 4, 104, 16, 0, 16, 1470898805, 0, 1470899590),
-(7, 1, 4, 105, 16, 0, 16, 1470898825, 0, 1470899587),
-(8, 1, 4, 106, 16, 0, 16, 1470898858, 0, 1470899612),
-(9, 1, 7, 100, 16, 0, 0, 1470900185, 0, 0),
-(10, 1, 6, 101, 16, 0, 0, 1470900200, 0, 0),
-(11, 1, 5, 103, 16, 0, 16, 1470900337, 0, 1470900827),
-(12, 1, 4, 102, 16, 0, 16, 1470900338, 0, 1470903090),
-(13, 2, 0, 100, 16, 0, 16, 1470901963, 0, 1470901979),
-(14, 3, 0, 100, 16, 0, 16, 1470901997, 0, 1471059571),
-(15, 4, 0, 100, 16, 0, 0, 1470902063, 0, 0),
-(16, 5, 0, 100, 16, 0, 16, 1470902217, 0, 1470902386),
-(17, 5, 6, 100, 16, 0, 16, 1470902387, 0, 1470902388),
-(18, 5, 6, 100, 16, 0, 0, 1470902389, 0, 0),
-(19, 5, 7, 101, 16, 0, 0, 1470902390, 0, 0),
-(20, 6, 7, 100, 16, 0, 0, 1470902421, 0, 0),
-(21, 6, 6, 101, 16, 0, 0, 1470902422, 0, 0),
-(22, 6, 5, 102, 16, 0, 0, 1470902423, 0, 0),
-(23, 6, 4, 103, 16, 0, 16, 1470902424, 0, 1470907860),
-(24, 6, 4, 103, 16, 0, 0, 1470907907, 0, 0),
-(25, 2, 3, 101, 16, 0, 0, 1470968414, 0, 0),
-(26, 2, 2, 102, 16, 0, 0, 1470968417, 0, 0),
-(27, 2, 4, 104, 16, 0, 0, 1470968418, 0, 0),
-(28, 2, 7, 103, 16, 0, 0, 1470968419, 0, 0),
-(29, 3, 8, 100, 16, 0, 0, 1471059573, 0, 0),
-(30, 3, 7, 101, 16, 0, 0, 1471059574, 0, 0),
-(31, 7, 8, 100, 16, 0, 0, 1471418915, 0, 0),
-(32, 8, 8, 100, 16, 0, 0, 1471419204, 0, 0),
-(33, 2, 9, 100, 16, 0, 0, 1472785949, 0, 0),
-(34, 8, 9, 101, 16, 0, 16, 1473122697, 0, 1473122711),
-(35, 8, 2, 102, 16, 0, 0, 1473122702, 0, 0),
-(36, 9, 9, 100, 16, 0, 0, 1473472061, 0, 0),
-(37, 9, 7, 101, 16, 0, 16, 1473472068, 0, 1473472107),
-(38, 9, 6, 102, 16, 0, 16, 1473472074, 0, 1473472101),
-(39, 9, 5, 103, 16, 0, 16, 1473472088, 0, 1473472097),
-(40, 9, 4, 104, 16, 0, 16, 1473472090, 0, 1473472095),
-(41, 9, 7, 101, 16, 0, 0, 1473472110, 0, 0),
-(42, 9, 5, 102, 16, 0, 0, 1473472112, 0, 0);
-
--- --------------------------------------------------------
-
---
--- 表的结构 `zcq_zhongdian_pro`
---
-
-CREATE TABLE IF NOT EXISTS `zcq_zhongdian_pro` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `zhenqu_id` int(11) DEFAULT NULL COMMENT '镇区ID',
-  `companyname` varchar(100) DEFAULT '0' COMMENT '企业名称',
-  `pro_name` varchar(100) DEFAULT '0' COMMENT '项目名称',
-  `guojia` varchar(250) DEFAULT '0' COMMENT '拟投资国家（地区）',
-  `guimo` varchar(250) DEFAULT '0' COMMENT '预计投资规模(万美元) ',
-  `linkman` varchar(50) DEFAULT NULL COMMENT '联系人',
-  `tel` varchar(50) DEFAULT NULL COMMENT '电话',
-  `beizhu` text COMMENT '备注',
-  `isdel` enum('0','1') DEFAULT NULL COMMENT '是否删除',
-  `create_sysuserid` int(11) DEFAULT NULL COMMENT '创建管理员ID',
-  `update_sysuserid` int(11) DEFAULT NULL COMMENT '更新管理员ID',
-  `del_sysuserid` int(11) DEFAULT NULL COMMENT '删除管理员ID',
-  `createtime` int(11) DEFAULT NULL,
-  `updatetime` int(11) DEFAULT NULL,
-  `deltime` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `AK_Key_1` (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='重点项目表' AUTO_INCREMENT=6 ;
-
---
--- 转存表中的数据 `zcq_zhongdian_pro`
---
-
-INSERT INTO `zcq_zhongdian_pro` (`id`, `zhenqu_id`, `companyname`, `pro_name`, `guojia`, `guimo`, `linkman`, `tel`, `beizhu`, `isdel`, `create_sysuserid`, `update_sysuserid`, `del_sysuserid`, `createtime`, `updatetime`, `deltime`) VALUES
-(1, 30350, '11222', '123123', '123124', '34534', 'fgh', '15361361100', 'sdf', '1', 16, 16, 16, 1470986156, 1470986697, 1470990119),
-(2, 30351, '啊啊', '阿斯蒂', '阿斯蒂', '1235', '15361322300', '15361325100', '15361342000', '1', 16, 16, 16, 1470986356, 1470987609, 1470990130),
-(3, 30348, '15361317100', '15361318700', '15361337400', '15361335500', '15361326600', '15361348500', '15361360700', '1', 16, NULL, 16, 1470987351, NULL, 1470990130),
-(4, 30366, '啊', '阿斯蒂', '阿斯蒂', '123', '阿斯顿', '15361363221', 'asdsdf', '0', 16, 16, 16, 1470987407, 1470990165, 1470987585),
-(5, 30355, '15361359700', '15361335300', '15361336000', '15361338300', '15361349000', '15361342700', '15361342100', '0', 16, NULL, 0, 1470990114, NULL, NULL);
-
--- --------------------------------------------------------
-
---
 -- 表的结构 `zx_user_session`
 --
 
@@ -48709,7 +47314,8 @@ INSERT INTO `zx_user_session` (`session_id`, `ip_address`, `user_agent`, `last_a
 ('d18733f6ba5f28e471f4059569931b0a', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.155 Safari/537.36', 1479281039, '', NULL),
 ('36b4fa4a267e92ce7b56b897887baaf1', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.155 Safari/537.36', 1479281076, '', NULL),
 ('d0faab445861475e2951f908ca6e8f9a', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.155 Safari/537.36', 1479281527, '', NULL),
-('a3d4218ab34c2e16117a89f887181d64', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.155 Safari/537.36', 1479281528, '', NULL);
+('a3d4218ab34c2e16117a89f887181d64', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.155 Safari/537.36', 1479281528, '', NULL),
+('5c95d66ce2cb64319509fc0d20b9cbc4', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.70 Safari/537.36', 1479390983, '', NULL);
 
 -- --------------------------------------------------------
 

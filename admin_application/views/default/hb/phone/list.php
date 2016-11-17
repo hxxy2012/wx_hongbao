@@ -58,8 +58,8 @@ BUI.use('common/page');
     
 
 
-<a class="btn btn-success" id="addnew" href="<?php echo site_url("hb_phone/add")."?backurl=".urlencode(get_url());?>">新增<span class="glyphicon glyphicon-plus"></span></a>
-  
+<a class="btn btn-success" id="addnew" href="<?php echo site_url("hb_phone/add")."?backurl=".urlencode(get_url());?>">新增<span class="glyphicon glyphicon-plus"></span></a>&nbsp;&nbsp; 
+<a id="btn_import" class='btn btn-info' data-href='<?php echo site_url("hb_phone/import"); ?>' data-id='352' title='导入手机号'>导入手机号</a>
 </form>    
 </div>
 
@@ -214,6 +214,24 @@ function chkdel(){
 		*/
 	}
 
- 
+		/**
+     * 点击按钮打开新页面
+     * @param $ele
+     */
+    function btnOpenPage($ele) {
+        top.topManager.openPage({
+            id: $ele.attr("data-id"),
+            href: $ele.attr("data-href"),
+            title: $ele.attr("title"),
+            reload: true
+        });
+    }
+
+    //导入按钮
+    var $btn_import = $('#btn_import');
+    $btn_import.click(function () {
+        var $this = $(this);
+        btnOpenPage($this);
+    });
 		  
 </script>

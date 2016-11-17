@@ -48,19 +48,25 @@ BUI.use('common/page');
 <div class="form-inline definewidth m20" >
 <form method="get" >
 关键字：
-    <input type="text"  name="username" id="username"
+    <input type="text"  name="search_title" id="search_title"
     class="abc input-default" 
-    placeholder="用户名" 
-    value="<?php if(isset($search_val['username'])) echo $search_val['username'];?>"
+    placeholder="微信号/用户名/昵称/手机号" 
+    value="<?php echo $search_val['title'];?>"
     style="width:200px;"
     />
-    <input type="hidden" name='diaocha_id' value="<?php if(isset($search_val['diaocha_id'])) echo $search_val['diaocha_id'];?>">
-    <input type="hidden" name='wenti_id' value="<?php if(isset($search_val['wenti_id'])) echo $search_val['wenti_id'];?>">
+红包活动：
+    <select name="hb_sid" id="hb_sid">
+    	<?php foreach ($hb_list as $key => $value): ?>
+    		<option value="<?php echo $value['id'];?>" <?php if($value['id']==$search_val['hb_sid'])echo 'selected';?>>
+				<?php echo $value['title'];?>
+    		</option>
+    	<?php endforeach ?>
+    </select>
     <button type="submit" class="btn btn-primary" >查询</button>&nbsp;&nbsp; 
     
 
 
-<!-- <a class="btn btn-success" id="addnew" href="<?php echo site_url("zcq_survey/add")."?backurl=".urlencode(get_url());?>">新增<span class="glyphicon glyphicon-plus"></span></a> -->
+<!-- <a class="btn btn-success" id="addnew" href="<?php echo site_url("hb_prize/add")."?backurl=".urlencode(get_url());?>">新增<span class="glyphicon glyphicon-plus"></span></a> -->
   
 </form>    
 </div>
@@ -68,12 +74,16 @@ BUI.use('common/page');
 <table class="table table-bordered table-hover  m10">
     <thead>
     <tr>
-        <th width='20'>编号</th> 
-        <th width="30">用户名</th> 
-        <th width="100">单位</th> 
-        <th width="160">答卷详情</th> 
-        <th width="50">ip</th> 
-        <th width="40">答卷日期</th>
+        <th width='30'>编号</th>  
+        <th>红包标题</th> 
+        <th width="60">中奖手机</th> 
+        <th width="60">中奖金额</th>
+        <th width='130'>中奖时间</th>
+        <th width='60'>用户名</th>
+        <th width="100">微信openid</th>            
+        <th width='80'>微信昵称</th> 
+        <th width='80'>微信头像</th>   
+
     </tr>
     </thead>
   <tbody id="result_">
@@ -85,11 +95,17 @@ BUI.use('common/page');
             	
             	echo "<tr onclick='seltr($(this))'>";
             	echo "<td>".$v["id"]."</td>";
-            	echo "<td>".$v["linkname"]."</td>";
-            	echo "<td>".$v["company"]."</td>";
-            	echo "<td>".$v["hd"]."</td>";
-				echo "<td>".$v["ip"]."</td>";
-				echo "<td>".date('Y-m-d', $v["create_time"])."</td>";                        	            	             	
+            	echo "<td>".$v["title"]."</td>";
+				echo "<td>".$v["tel"]."</td>";
+				echo "<td>".$v["jine"]."</td>";
+				echo "<td>".date('Y-m-d H:i:s', $v['create_time'])."</td>"; 
+				echo "<td>".$v["username"]."</td>"; 
+				echo "<td>".$v["openid"]."</td>"; 
+				echo "<td>".$v["nickname"]."</td>"; 
+				echo "<td><img src='".$v["logo"]."' alt=''></td>";      				
+    //         	echo "<td>";
+				// echo "<a class='page-action icon-edit' data-href='".site_url("hb_prize/edit")."?backurl=".(urlencode(get_url()))."&id=".$v["id"]."' href=\"#\" data-id='open_hb_edit_".$v["id"]."' id='open_hb_edit_".$v["id"]."' title=\"编辑".$v["title"]."的红包\"></a>&nbsp;";
+				// echo "</td>";                          	            	             	
             	echo "</tr>";
             	echo "\n";
             }
@@ -141,14 +157,14 @@ function godel(){
 	if(ids==""){		
 		parent.parent.tip_show('没有选中，请点击某行信息。',2,1000);
 	} else {						
-		var ajax_url = "<?php echo site_url("zcq_survey/del_canjia");?>?idlist="+$("#selid").val();
+		var ajax_url = "<?php echo site_url("hb_prize/del");?>?idlist="+$("#selid").val();
 		//var url = "<?php echo $_SERVER['REQUEST_URI'];?>";
-		var url = "<?php echo base_url();?>gl.php/zcq_survey/index";
+		var url = "<?php echo base_url();?>gl.php/hb_prize/index";
 		/*parent.parent.my_confirm(
-				"确认删除选中问卷？",
+				"确认删除选中红包？",
 				ajax_url,
 				url);*/
-		BUI.Message.Confirm("确认删除选中调查结果？",function(){
+		BUI.Message.Confirm("确认删除选中中奖记录，删除后将不能恢复？",function(){
 			$.ajax({
 		        type: "get",
 		        url: ajax_url,
@@ -174,7 +190,7 @@ function godel(){
 }
 
 function chkdel(){
-		var ajax_url = "<?php echo site_url("zcq_survey/delcheck");?>?idlist="+$("#selid").val();
+		var ajax_url = "<?php echo site_url("hb_prize/delcheck");?>?idlist="+$("#selid").val();
 		i=0;
 		name = "";
 		$.ajax({

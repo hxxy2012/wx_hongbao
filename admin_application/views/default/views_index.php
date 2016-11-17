@@ -193,7 +193,7 @@ if (!defined('BASEPATH')) {
             &nbsp;
 			<a href="#" id="btnShow"  class="dl-log-quit" >[修改密码]</a>
 			&nbsp;
-			<a href="/" target="_blank"   class="dl-log-quit"   >[回到首页]</a>
+			<a href="/" target="_blank" style="display:none;"   class="dl-log-quit"   >[回到首页]</a>
 
             <a href="javascript:void(0)" title="退出系统" class="dl-log-quit" onclick="login_out()">[退出]</a>
                 <div><a href="javascript:void(0);" onclick="cc()">saas</a></div>

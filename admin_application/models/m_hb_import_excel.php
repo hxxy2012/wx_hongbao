@@ -4,7 +4,7 @@
  * 导入excel的模型
  * Class M_zcq_import_excel
  */
-class M_zcq_import_excel extends M_common
+class M_hb_import_excel extends M_common
 {
 
     private $inputFileType = "excel5";//excel类型

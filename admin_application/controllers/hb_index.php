@@ -24,7 +24,7 @@ class hb_index extends MY_Controller {
 		if ($pageindex <= 0) {
 			$pageindex = 1;
 		}
-		$pagesize = 20;
+		$pagesize = 15;
 		$search = array();
 		$search_val = array();
 		$search_val["title"] = "";
