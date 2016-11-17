@@ -1,11 +1,11 @@
 <?php
 
-class M_zcq_diaocha_wenti extends M_common {
+class M_hb_tel extends M_common {
 
-    private $table = "zcq_diaocha_wenti";
-    private $tablename = "调查问卷表所属问题表";
+    private $table = "hb_tel";
+    private $tablename = "能参与红包的手机号表";
 
-    function M_zcq_diaocha_wenti() {
+    function M_hb_tel() {
         parent::__construct();
     }
 
@@ -99,11 +99,11 @@ class M_zcq_diaocha_wenti extends M_common {
         }
         $limit = ($page - 1) * $pagesize;
         $limit.=",{$pagesize}";
-        $where = " where t1.isdel='0' and t2.isdel='0' ";
+        $where = " where 1=1 ";
 
         foreach ($search as $k => $v) {
             if ($k == "title") {
-                $where .= " and (t1.title like '%" . $v . "%' )";
+                $where .= " and (t1.tel like '%" . $v . "%' )";
             }
             /*else if ($k =='pid'&&$v>0) {//显示选项
                 $where .= "and t1.pid>0 ";
@@ -129,14 +129,13 @@ class M_zcq_diaocha_wenti extends M_common {
         } else {
             $orderby_str = " order by id desc"; //默认
         }
-        $sql_count = "SELECT COUNT(*) AS tt FROM " . $this->table . " t1 left join zcq_diaocha t2 on t1.diaocha_id=t2.id 
+        $sql_count = "SELECT COUNT(*) AS tt FROM " . $this->table . " t1 
 		 {$where}";
 
         $total = $this->M_common->query_count($sql_count);
         $page_string = $this->common_page->page_string2($total, $pagesize, $page);
-        $sql = "SELECT t1.*,t2.title diaochatitle FROM " . $this->table . " t1  
-        left join zcq_diaocha t2 on t1.diaocha_id=t2.id 
-       {$where} " . $orderby_str . " limit  {$limit}";
+        $sql = "SELECT t1.* FROM " . $this->table . " t1  
+        {$where} " . $orderby_str . " limit  {$limit}";
 
         $list = $this->M_common->querylist($sql);
         $data = array(

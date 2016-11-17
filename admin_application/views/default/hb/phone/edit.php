@@ -6,7 +6,7 @@ if (! defined('BASEPATH')) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>添加红包</title>
+    <title>修改手机号</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="<?php echo  base_url() ;?>/<?php echo APPPATH?>/views/static/Css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo  base_url() ;?>/<?php echo APPPATH?>/views/static/Css/bootstrap-responsive.css" />
@@ -44,46 +44,21 @@ if (! defined('BASEPATH')) {
 </head>
 <body class="definewidth m20">
 <form action="" method="post"   name="myform" id="myform">
-<input type="hidden" name="action" value="doadd">
+<input type="hidden" name="action" value="doedit">
+<input type="hidden" name="id" value="<?php echo $model['id']?>">
 <input type="hidden" name="ls" value="<?php echo $ls;?>">
-<input type="hidden" name="id" value="<?php echo $model['id'];?>">
 <table class="table table-bordered table-hover m10">
 
     <tr>
-        <td class="tableleft">*红包标题</td>
-        <td><input name="title" type="text" id="title" value="<?php echo $model['title'];?>" required /></td>
-    </tr>
-    <tr>
-      <td class="tableleft">正在进行</td>
-      <td> 
-          <input type="radio" name="curr" value="0" <?php if($model['curr']=='0')echo 'checked';?>>否&nbsp;
-          <input type="radio" name="curr" value="1" <?php if($model['curr']=='1')echo 'checked';?>>是&nbsp;
-          <span class="hint">（所有轮红包中只能选择一轮作为正在进行红包活动）</span>
-      </td>
-    </tr>
-    <tr>
-      <td class="tableleft">随机金额</td>
-      <td> 
-          <input type="radio" name="suiji" value="0" <?php if($model['suiji']=='0')echo 'checked';?>>随机&nbsp;
-          <input type="radio" name="suiji" value="1" <?php if($model['suiji']=='1')echo 'checked';?>>固定&nbsp;
-      </td>
-    </tr>
-    <tr>
-        <td class="tableleft">红包总数</td>
+        <td class="tableleft">*手机号码</td>
         <td>
-        <input name="hongbao_shu" class="cantedit" style="width:80px;" type="text" id="hongbao_shu" value="<?php echo $model['hongbao_shu'];?>" valType="int"/>
+          <input name="tel" type="text" id="tel" valType='mobile' value="<?php echo $model['tel'];?>" required />
         </td>
     </tr>
     <tr>
-        <td class="tableleft">总金额</td>
+        <td class="tableleft">备注</td>
         <td>
-        <input name="jine" class="cantedit" style="width:80px;" type="text" id="jine" value="<?php echo $model['jine'];?>" valType="number"/>
-        </td>
-    </tr>
-    <tr>
-        <td class="tableleft">红包最小金额</td>
-        <td>
-        <input name="qibu_jine" class="cantedit" style="width:80px;" type="text" id="qibu_jine" value="<?php echo $model['qibu_jine'];?>" valType="number" />
+          <textarea name="beizhu" id="beizhu" style="width:270px;" cols="30" rows="5"><?php echo $model['beizhu'];?></textarea>
         </td>
     </tr>
     <tr>
@@ -91,7 +66,6 @@ if (! defined('BASEPATH')) {
         <td>
             <button type="submit" class="btn btn-primary" id="btnSave">保存</button> &nbsp;&nbsp;
 			      <a  class="btn btn-warning" href="#" onClick="top.topManager.closePage();">关闭</a> 
-            <span class="hint">（正在进行红包活动只能修改为标题和是否结束红包活动，其他内容不能修改）</span>      
         </td>
     </tr>
 </table>
@@ -102,48 +76,35 @@ if (! defined('BASEPATH')) {
 <script type="text/javascript" src="<?php echo  base_url() ;?>/<?php echo APPPATH?>/views/static/Js/kindeditor/lang/zh_CN.js"></script>
 <script>
 
-$(function () {       
-    var curr = '<?php echo $model["curr"]?>';
-    if (curr == '1') {
-      //修改正在进行的红包活动，使其他输入框变灰
-      $('.cantedit').attr('readony',true);
-      $('.cantedit').attr('disabled',true);
-      $('input[name="suiji"]').attr('readony',true);
-      $('input[name="suiji"]').attr('disabled',true);
-    }
+$(function () {       		
 		$("#btnSave").click(function(){
 			if($("#myform").Valid() == false || !$("#myform").Valid()) {
 				return false ;
 			}
-      var flag_ing = false;//判断是否可以添加正在进行的红包
+      var flag_ing = false;//判断是否修改了重复添加的号码
       var tishi = '';
-      if ($('input[name="curr"]:checked').val()=='1') {
-          $.ajax({
-              url:"<?php echo site_url("hb_index/checkhasing")?>",
-              dataType: "text",
-              data:{"id":'<?php echo $model["id"]?>'},
-              type: "GET",            
-              async:false,
-              success: function(data){
-                 var obj = eval('(' + data + ')');
-                 tishi = obj.info;
-                 if (obj.code != '0') {
-                    flag_ing = true;
-                 } 
-              },
-              error:function(a,b,c){
+      $.ajax({
+          url:"<?php echo site_url("hb_phone/check_repeat_phone_ajax")?>",
+          dataType: "text",
+          data:{"id":'<?php echo $model["id"]?>','tel':$('#tel').val()},
+          type: "GET",            
+          async:false,
+          success: function(data){
+             var obj = eval('(' + data + ')');
+             tishi = obj.info;
+             if (obj.code != '0') {
                 flag_ing = true;
-                tishi = '出错，请刷新重试';
-              }
-          }); 
-      }
-      //存在正在进行的红包活动
+             } 
+          },
+          error:function(a,b,c){
+            flag_ing = true;
+            tishi    = '出错，请刷新重试';
+          }
+      }); 
+      //存在重复的号码
       if (flag_ing) {
           layer.msg(tishi);
           return false;
-      }
-      if (curr=='0'&&!confirm('您确定要修改吗，修改后中奖记录将清空!')) {
-        return false;
       }
 		});
 
