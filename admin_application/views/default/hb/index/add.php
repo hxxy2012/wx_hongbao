@@ -70,19 +70,19 @@ if (! defined('BASEPATH')) {
     <tr>
         <td class="tableleft">红包总数</td>
         <td>
-        <input name="hongbao_shu" style="width:80px;" type="text" id="hongbao_shu" value="10" valType="int"/>
+        <input name="hongbao_shu" style="width:80px;" type="text" id="hongbao_shu" required value="10" valType="int"/>
         </td>
     </tr>
     <tr>
         <td class="tableleft">总金额</td>
         <td>
-        <input name="jine" style="width:80px;" type="text" id="jine" value="" valType="number"/>
+        <input name="jine" style="width:80px;" type="text" id="jine" value="" required valType="number"/>
         </td>
     </tr>
     <tr>
         <td class="tableleft">红包最小金额</td>
         <td>
-        <input name="qibu_jine" style="width:80px;" type="text" id="qibu_jine" value="1.00" valType="number" />
+        <input name="qibu_jine" style="width:80px;" type="text" id="qibu_jine" required value="1.00" valType="number" />
         </td>
     </tr>
     <tr>

@@ -76,7 +76,9 @@ BUI.use('common/page');
   
 
            <?php
-           
+            if (count($list)<=0) {
+            	echo "<tr><td style='text-align:center;' align='center' colspan='4'>暂无内容</td></tr>";
+            }
             foreach($list as $v){
             	
             	echo "<tr onclick='seltr($(this))'>";

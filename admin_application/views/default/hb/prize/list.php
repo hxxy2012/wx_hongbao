@@ -90,15 +90,17 @@ BUI.use('common/page');
   
 
            <?php
-           
+            if (count($list)<=0) {
+            	echo "<tr><td style='text-align:center;' align='center' colspan='9'>暂无内容</td></tr>";
+            }
             foreach($list as $v){
-            	
+            	$prizetime = date('Y-m-d H:i:s', $v['create_time']);
             	echo "<tr onclick='seltr($(this))'>";
             	echo "<td>".$v["id"]."</td>";
             	echo "<td>".$v["title"]."</td>";
 				echo "<td>".$v["tel"]."</td>";
 				echo "<td>".$v["jine"]."</td>";
-				echo "<td>".date('Y-m-d H:i:s', $v['create_time'])."</td>"; 
+				echo "<td>".($prizetime=='1970-01-01 08:00:00'?'未中奖':$prizetime)."</td>"; 
 				echo "<td>".$v["username"]."</td>"; 
 				echo "<td>".$v["openid"]."</td>"; 
 				echo "<td>".$v["nickname"]."</td>"; 
@@ -122,6 +124,7 @@ BUI.use('common/page');
 <button class="button" onclick="selall()" style=" <?php echo $isjichu?'display:none;':'';?>">全选</button>
 <button class="button" onclick="selall2()" style=" <?php echo $isjichu?'display:none;':'';?>">反选</button>           
 <button class="button button-danger" onclick="godel()" style=" <?php echo $isjichu?'display:none;':'';?>">删除</button>
+&nbsp;<span class="hint" style=" <?php echo $isjichu?'display:none;':'';?>">（提示：如果该记录还没用户信息代表还没被用户抢到，删除后将会减少用户抢红包的数量）</span>
 </td>
 <td style="border:0px;" align="right">  
     

@@ -71,19 +71,19 @@ if (! defined('BASEPATH')) {
     <tr>
         <td class="tableleft">红包总数</td>
         <td>
-        <input name="hongbao_shu" class="cantedit" style="width:80px;" type="text" id="hongbao_shu" value="<?php echo $model['hongbao_shu'];?>" valType="int"/>
+        <input name="hongbao_shu" class="cantedit" style="width:80px;" type="text" id="hongbao_shu" required value="<?php echo $model['hongbao_shu'];?>" valType="int"/>
         </td>
     </tr>
     <tr>
         <td class="tableleft">总金额</td>
         <td>
-        <input name="jine" class="cantedit" style="width:80px;" type="text" id="jine" value="<?php echo $model['jine'];?>" valType="number"/>
+        <input name="jine" class="cantedit" style="width:80px;" type="text" id="jine" required value="<?php echo $model['jine'];?>" valType="number"/>
         </td>
     </tr>
     <tr>
         <td class="tableleft">红包最小金额</td>
         <td>
-        <input name="qibu_jine" class="cantedit" style="width:80px;" type="text" id="qibu_jine" value="<?php echo $model['qibu_jine'];?>" valType="number" />
+        <input name="qibu_jine" class="cantedit" style="width:80px;" type="text" id="qibu_jine" required value="<?php echo $model['qibu_jine'];?>" valType="number" />
         </td>
     </tr>
     <tr>
