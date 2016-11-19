@@ -98,6 +98,47 @@ class Home extends MY_ControllerLogout
         return false;
     }
 
+    //发送现金红包,$money发送的金额
+    public function paybyxjhb() {
+        $this->load->library("weixin");
+        $mch_id = '';//商户id
+        $shkey  = '';//商户里的api密钥，设置路径：微信商户平台(pay.weixin.qq.com)-->账户设置-->API安全-->密钥设置
+        $send_name = '';//商户名称
+        $re_openid = '';//接收红包用户openid
+        $money = '';//发送的金额
+        $wishing = '恭喜您抢到了一个红包,快拆开看看吧！';//红包祝福语
+        $url = "https://api.mch.weixin.qq.com/mmpaymkttransfers/sendredpack";
+        $model = array();//发送post，xml请求的所有信息数组
+        $nowTime = time();
+        $model['nonce_str'] = $this->weixin->createNonceStr(32);//随机字符串
+        //mt_rand(1000000000, 9999999999)商户订单号,唯一,mch_id+yyyymmdd+10位一天内不能重复的数字
+        $model['mch_billno'] = $mch_id . date('Ymd',$nowTime) . mt_rand(10000,99999) . substr($nowTime, 5);
+        $model['mch_id'] = $mch_id;//商户id
+        $model['wxappid'] = $this->weixin->Appkey;//公众号appid
+        $model['send_name'] = $send_name;//公众号appid
+        $model['re_openid'] = $re_openid;//接收红包用户openid
+        $model['total_amount'] = $money;//付款金额,单位分
+        $model['total_num'] = 1;//红包发放总人数
+        $model['wishing'] = $wishing;//红包祝福语
+        $model['client_ip'] = getIP();//ip地址
+        $model['act_name'] = '摇一摇，抢红包';//活动名称
+        $model['remark'] = '摇一摇，抢红包';//备注
+        $model['scene_id'] = 2;//场景id，2代表抽奖
+        // $model['risk_info'] = '';//活动信息,暂时不需要注释
+        // $model['consume_mch_id'] = '';//资金授权商户号,服务商替特约商户发放时使用。暂时不需要注释
+        $model['sign'] = $this->weixin->getxjhbSign($model, $shkey);//获取签名
+        $xmldata = $this->weixin->formArrToXml($model);//将数组转化成xml格式
+        //进行发送红包
+        $result = $this->weixin->httpPostXml($url, $xmldata);//返回xml格式的数据
+        $rst_arr = simplexml_load_string($result, 'SimpleXMLElement', LIBXML_NOCDATA);//转成数组
+        if ($rst_arr['result_code'] == 'SUCCESS') {//发送红包成功
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
     function send_tel_code()
     {
         $post = $this->input->post();

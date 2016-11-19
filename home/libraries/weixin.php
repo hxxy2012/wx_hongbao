@@ -336,7 +336,7 @@ class Weixin extends CI_Model{
 		return $signPackage;
 	}
 	//js sdk
-	private function createNonceStr($length = 16) {
+	public function createNonceStr($length = 16) {
 		$chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 		$str = "";
 		for ($i = 0; $i < $length; $i++) {
@@ -403,7 +403,49 @@ class Weixin extends CI_Model{
 		curl_close($curl);
 	
 		return $res;
+	}
+
+	//发送post，xml格式请求到微信服务器,$url微信服务器连接，$data：xml内容,返回微信相应内容
+	public function httpPostXml($url, $data) {
+		// $url = "http://localhost/response.php";  
+		// $data = '<xml><AppId>wxf8b4f85f3a794e77</AppId><ErrorType>1001</ErrorType><Description>错误描述</Description><AlarmContent>transaction_id=33534453534</AlarmContent><TimeStamp>1393860740</TimeStamp><AppSignature>f8164781a303f4d5a944a2dfc68411a8c7e4fbea</AppSignature><SignMethod>sha1</SignMethod></xml>';  
+		$ch = curl_init();
+		$header[] = "Content-type: text/xml";//定义content-type为xml  
+		curl_setopt($ch, CURLOPT_URL, $url); //定义表单提交地址  
+		curl_setopt($ch, CURLOPT_POST, 1);   //定义提交类型 1：POST ；0：GET  
+		curl_setopt($ch, CURLOPT_HEADER, 1); //定义是否显示状态头 1：显示 ； 0：不显示  
+		curl_setopt($ch, CURLOPT_HTTPHEADER, $header);//定义请求类型  
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);//定义是否直接输出返回流 0 
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $data); //定义提交的数据，这里是XML文件  
+		$result = curl_exec($ch);  
+		curl_close($ch);//关闭 
+
+		return $result;
 	}	
+	//进行现金红包的签名，$model进行签名的一维数组,$shkey为商户的api密钥,使用md5
+	public function getxjhbSign($model, $shkey='') {
+		//先将数组以键值升序排序，之后组合成字符串进行md5运算
+		//拼接的api密钥在key设置路径：微信商户平台(pay.weixin.qq.com)-->账户设置-->API安全-->密钥设置
+		ksort($model);
+		$str = $sign = '';
+		foreach ($model as $key => $value) {//拼接成字符串
+			$str .= $key . "=" . $value ."&";
+		}
+		if ($shkey) {
+			$str .= $shkey;//拼接api密钥
+		}
+		$sign = strtoupper(md5($str));
+		return $sign;
+	}
+	//将数组转成xml格式, $model转换的数组，返回xml格式
+	public function formArrToXml($model) {
+		$xml = "<xml>";
+		foreach ($model as $key => $value) {
+			$xml .= "<" . $key . "><![CDATA[" .$value ."]]></". $key .">";
+		}
+		$xml .= "</xml>";
+		return $xml;
+	}
 }
 
 ?>
