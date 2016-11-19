@@ -2,6 +2,7 @@
 if (!defined('BASEPATH')) {
     exit('Access Denied');
 }
+header("Content-type: text/html; charset=utf-8");
 @ini_set("display_errors", "On");
 
 /**
@@ -46,17 +47,66 @@ class Home extends MY_ControllerLogout
      */
     function index()
     {
+        $userinfo = $this->getUinfoBysq();//用户授权获取用户信息
         // var_dump($this->data["zfwz"]);exit;
         $this->load->view(__TEMPLET_FOLDER__ . "/hb/index", $this->data);
     }
 
+    //中奖纪录
     function zjjl() {
         $this->load->view(__TEMPLET_FOLDER__ . "/hb/zjjl", $this->data);   
+    }
+    //用户授权方式获取用户信息
+    private function getUinfoBysq(){
+         /*用户授权方式获取用户信息开始*/
+        $get = $this->input->get();
+        $this->load->library("weixin");
+        if (isset($get['code'])&&$get['code']!='') {
+            //用户授权获取用户信息
+            $reUrl = site_url('home/index');
+            $wxurl = $this->weixin->getwxurl($reUrl);
+            header("Location: $wxurl");exit;
+        }
+        //通过code获取用户授权access_token
+        $accurl  = "https://api.weixin.qq.com/sns/oauth2/access_token?appid={$this->weixin->Appkey}&secret={$this->weixin->AppSecret}&code={$get['code']}&grant_type=authorization_code";
+        $accjson = $this->weixin->httpGet($accurl);
+        $accinfo = json_decode($accjson,true);
+        if (!isset($accinfo['access_token'])||$accinfo['access_token']=='') {
+            echo '出错，请您退出重试！';exit;
+        }
+        //通过openid判断该用户是否已经关注公众号，没有关注的跳到素材页
+        if (!$this->checksubscribe($accinfo['openid'])) {
+            header("Location: http://www.hao123.com");exit;
+        }
+        //拉取用户信息
+        $useurl  = "https://api.weixin.qq.com/sns/userinfo?access_token={$accinfo['access_token']}&openid={$accinfo['openid']}&lang=zh_CN";
+        $usejson = $this->weixin->httpGet($useurl);
+        $useinfo = json_decode($usejson,true);//用户的信息
+        return $useinfo;
+        /*用户授权方式获取用户信息结束*/
+    } 
+    //通过openid判断该用户是否已经关注公众号,已关注返回true，否则false
+    private function checksubscribe($openid) {
+        $this->load->library("weixin");
+        $acctoken = $this->weixin->getacc();//获取基础调用token
+        $issuburl = "https://api.weixin.qq.com/cgi-bin/user/info?access_token=$acctoken&openid=$openid&lang=zh_CN";
+        $issubjson= $this->weixin->httpGet($issuburl);
+        $issubinfo= json_decode($issubjson,true);
+        if (isset($issubinfo['subscribe'])&&$issubinfo['subscribe']==1) {//已关注
+            return true;
+        }
+        return false;
     }
 
     function send_tel_code()
     {
         $post = $this->input->post();
+        /*$this->parent_showmessage(
+                0
+                , "没有找到该栏目",
+                $backurl,
+                3,
+                'showmessage_logout');*/
         if (!empty($post["tel"])) {
             $tel = trim($post["tel"]);
             $config = $this->parent_sysconfig();

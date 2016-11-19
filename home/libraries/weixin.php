@@ -391,7 +391,7 @@ class Weixin extends CI_Model{
 		return $ticket;
 	}
 	
-	private function httpGet($url) {
+	public function httpGet($url) {
 		$curl = curl_init();
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($curl, CURLOPT_TIMEOUT, 500);
