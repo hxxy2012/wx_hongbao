@@ -27,6 +27,7 @@ class Home extends MY_ControllerLogout
     private $upload_path = "";
 
     var $data = array();
+    var $wx_art = "http://mp.weixin.qq.com/s?__biz=MjM5NDM1NjUzNg==&mid=2652798408&idx=1&sn=862e9d17ee356519f21536fb98601862&chksm=bd63d19f8a14588989491dbf1e74791ddf6560dc71e2a62a43e1bd04ae523812af76c2746a2a#rd";//微信文章页
 
     function Home()
     {
@@ -37,7 +38,8 @@ class Home extends MY_ControllerLogout
         $this->load->model('M_hb_hongbao_set','hbset');
         $this->load->model('M_hb_hongbao_list','hblist');
         $this->load->model('M_hb_tel','hb_tel');
-        // $this->data["sess"] = $this->parent_getsession();//登陆者信息
+        $this->load->library("Weixin","weixin");
+        $this->data["sess"] = $this->parent_getsession();//登陆者信息
         $this->upload_path = __ROOT__ . "/data/upload/user/";
         $this->data["ls"] = get_url();//获取当前连接
     }
@@ -47,9 +49,45 @@ class Home extends MY_ControllerLogout
      */
     function index()
     {
+        if(!isset($this->data["sess"]["tel"])){
+            header("location:".site_url("home/login"));
+            exit();
+        }
+        $this->data["pagetitle"] = "摇一摇";
         $userinfo = $this->getUinfoBysq();//用户授权获取用户信息
         // var_dump($this->data["zfwz"]);exit;
         $this->load->view(__TEMPLET_FOLDER__ . "/hb/index", $this->data);
+    }
+
+    function login(){
+        $openid = $this->weixin->getopenid();
+        if($openid==""){
+            header("location:".$this->getwxurl(site_url("home/login")));
+        }
+        $this->data["openid"]=$openid;
+        $this->load->view(__TEMPLET_FOLDER__ . "/hb/login", $this->data);
+    }
+
+    function dologin(){
+        $post =  $this->input->post();
+        $tel = isset($post["tel"])?$post["tel"]:"";
+        $openid = isset($post["openid"])?$post["openid"]:"";
+        if($tel==""){
+            echo "没有手机号";
+            exit();
+        }
+        $tel = trim($tel);
+        $list = $this->hb_tel->getlist("tel='".$tel."'");
+        if(count($list)>0){
+            $usermodel["tel"] = $tel;
+            $usermodel["openid"] = $openid;
+            $this->parent_setsession($usermodel);
+            echo "ok";
+        }
+        else{
+            echo "手机号不存在，不能参加摇一摇";
+            exit();
+        }
     }
 
     //中奖纪录
@@ -71,19 +109,33 @@ class Home extends MY_ControllerLogout
         $accurl  = "https://api.weixin.qq.com/sns/oauth2/access_token?appid={$this->weixin->Appkey}&secret={$this->weixin->AppSecret}&code={$get['code']}&grant_type=authorization_code";
         $accjson = $this->weixin->httpGet($accurl);
         $accinfo = json_decode($accjson,true);
-        if (!isset($accinfo['access_token'])||$accinfo['access_token']=='') {
-            echo '出错，请您退出重试！';exit;
+        if(!__WXKF__) {
+            if (!isset($accinfo['access_token']) || $accinfo['access_token'] == '') {
+                echo '出错，请您退出重试！';
+                exit;
+            }
         }
         //通过openid判断该用户是否已经关注公众号，没有关注的跳到素材页
-        if (!$this->checksubscribe($accinfo['openid'])) {
-            header("Location: http://www.hao123.com");exit;
+        if(!__WXKF__) {
+            if (!$this->checksubscribe($accinfo['openid'])) {
+                header("Location: " . $this->wx_art);
+                exit;
+            }
         }
         //拉取用户信息
-        $useurl  = "https://api.weixin.qq.com/sns/userinfo?access_token={$accinfo['access_token']}&openid={$accinfo['openid']}&lang=zh_CN";
-        $usejson = $this->weixin->httpGet($useurl);
-        $useinfo = json_decode($usejson,true);//用户的信息
-        return $useinfo;
+        if(!__WXKF__) {
+            $useurl = "https://api.weixin.qq.com/sns/userinfo?access_token={$accinfo['access_token']}&openid={$accinfo['openid']}&lang=zh_CN";
+            $usejson = $this->weixin->httpGet($useurl);
+            $useinfo = json_decode($usejson, true);//用户的信息
+            return $useinfo;
+        }
+        else{
+            return array();
+        }
         /*用户授权方式获取用户信息结束*/
+
+
+
     } 
     //通过openid判断该用户是否已经关注公众号,已关注返回true，否则false
     private function checksubscribe($openid) {

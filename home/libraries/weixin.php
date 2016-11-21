@@ -446,6 +446,30 @@ class Weixin extends CI_Model{
 		$xml .= "</xml>";
 		return $xml;
 	}
+
+
+    //判断当前用户是否有关注，有：1，无：0
+    function getguanzhu($openid){
+
+        if(__WXKF__){
+            return 1;
+        }
+
+        $url = "https://api.weixin.qq.com/cgi-bin/user/info?access_token=".$this->getacc()."&openid=".$openid;
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+        curl_setopt($ch, CURLOPT_BINARYTRANSFER,1);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER,false);
+        //curl_setopt($ch, CURLOPT_SSL_VERIFYHOST,1);
+        //执行并获取HTML文档内容
+        $output = curl_exec($ch);
+        //echo $output;
+        //echo "<br/>".$this->getacc();
+        curl_close($ch);
+        $json = json_decode($output,true);
+        //print_r($json);
+        return isset($json["subscribe"])?$json["subscribe"]:1;
+    }
 }
 
 ?>

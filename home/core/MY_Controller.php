@@ -369,25 +369,8 @@ class MY_ControllerLogout extends CI_Controller{
 	}
 	
 	function parent_setsession($usermodel){
-		if($usermodel["usertype"]>0){
-			$usertype = $this->cd->GetModel($usermodel["usertype"]);
-			$usertype = $usertype["name"];
-		}
-		else{
-			$usertype = "";
-		}
 		$array = array(
-				"userid"=>$usermodel["uid"],				
-				"username"=>$usermodel["username"],
-				"tel"=>$usermodel["tel"],				
-				"last_login"=>$usermodel["lastlogin"],
-				"usertype"=>$usermodel["usertype"],
-				"usertype_name"=>$usertype,
-				"realname"=>$usermodel["realname"],
-				"yuming"=>$usermodel["yuming"],
-				"email"=>$usermodel["email"],
-				"editpwd"=>$usermodel["editpwd"],
-            "checkstatus"=>$usermodel["checkstatus"],//审核状态0:未审,1:已审,99:审核不通过
+            "tel"=>$usermodel["tel"],
             "wxid"=>empty($usermodel["openid"])?"":$usermodel["openid"]
 		);
 		

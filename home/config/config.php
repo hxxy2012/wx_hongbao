@@ -16,6 +16,12 @@
 */
 $config['base_url']	= '/index.php/';
 
+//region 远程路径 用于缓存静态文件，如果为空，就读本地文件
+$config['home_img'] = "";
+$config['home_js'] = "";
+$config['home_css'] = "";
+//endregion
+
 /*
 |--------------------------------------------------------------------------
 | Index File
